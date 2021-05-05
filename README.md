@@ -1,22 +1,29 @@
 # apsfinal
 Environment for final project
 
-# Create a virtual environment
-`conda create --name apsfinal python=3.8`
+# Tutorial
+### Step 1: Download the project
+`git clone https://github.com/yizaochen/apsfinal.git`
+or Download the zip file
 
-# Activate virtual environment
+### Step 2: Create a virtual environment
+`conda create --name apsfinal python=3.8`
+After that, next time you can use the environment by
 `conda activate apsfinal`
 
-## In the environment, install notebook or jupyter-lab
+### Step 3: In the environment, install notebook or jupyter-lab
 `conda install -c conda-forge notebook`
 or
 `conda install -c conda-forge jupyterlab`
 
-# Deactivate
+### Step 4: Install apsfinal package
+`cd xxx/xxx/apsfinal`
+`pip install -e .`
+
+### Deactivate
 `conda deactivate`
 
 # Install apsfinal package
-`pip install -e .`
 
 # Upgrade package
 `pip install -e . --upgrade`
