@@ -11,8 +11,8 @@ class TBTAgent:
     def read_csv(self):
         return pd.read_csv(self.csv_in)
 
-    def show_two_by_two_table(self, feature1, feature2, age_criteria, gluc_criteria, bmi_criteria):
-        tbt = TwoByTwoTable(feature1, feature2, self.df, age_criteria, gluc_criteria, bmi_criteria)
+    def show_two_by_two_table(self, feature1, feature2, age_criteria, gluc_criteria, bmi_criteria, d_worktype):
+        tbt = TwoByTwoTable(feature1, feature2, self.df, age_criteria, gluc_criteria, bmi_criteria, d_worktype)
         table = tbt.get_table()
         print(table)
 
@@ -43,15 +43,13 @@ class TwoByTwoTable:
                      'hypertension': {'Hypertension': [1], 'Non-Hypertension': [0]},
                      'heart_disease': {'Heart-Disease': [1], 'No-Heart-Disease': [0]},
                      'ever_married': {'Ever-Married': ['Yes'], 'Never-Married': ['No']},
-                     'work_type': {'Work Type 1': ['children', 'Govt_job', 'Never_worked', 'Self-employed'],
-                                   'Work Type 2': ['Private']},
                      'Residence_type': {'Rural': ['Rural'], 'Urban': ['Urban']},
                      'smoking_status': {'Smoke': ['smokes', 'formerly smoked'], 'No smoke': ['never smoked']},
                      'stroke': {'Stroke': [1], 'No Stroke': [0]}
 
     }
     
-    def __init__(self, feature1, feature2, df, age_criteria, gluc_criteria, bmi_criteria):
+    def __init__(self, feature1, feature2, df, age_criteria, gluc_criteria, bmi_criteria, d_worktype):
         self.feature1 = feature1 # Top
         self.feature2 = feature2 # Left
         self.df = df
@@ -59,6 +57,7 @@ class TwoByTwoTable:
         self.num_crit = {'age': age_criteria, 
                          'avg_glucose_level': gluc_criteria, 
                          'bmi': bmi_criteria}
+        self.d_subcategory['work_type'] = d_worktype
 
     def get_table(self):
         self.d_data[0][0] = ''

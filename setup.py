@@ -8,7 +8,6 @@ setup(name='apsfinal',
       author_email='yizaochen@gmail.com',
       license='MIT',
       install_requires=[
-          'jupyterlab',
           'pandas',
           'numpy',
           'matplotlib',
