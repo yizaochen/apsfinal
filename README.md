@@ -7,10 +7,15 @@ Environment for final project
 # Activate virtual environment
 `conda activate apsfinal`
 
+## In the environment, install notebook or jupyter-lab
+`conda install -c conda-forge notebook`
+or
+`conda install -c conda-forge jupyterlab`
+
 # Deactivate
 `conda deactivate`
 
-# Install bentdna package
+# Install apsfinal package
 `pip install -e .`
 
 # Upgrade package

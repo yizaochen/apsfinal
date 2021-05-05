@@ -10,6 +10,7 @@ setup(name='apsfinal',
       install_requires=[
           'pandas',
           'numpy',
-          'matplotlib'
+          'matplotlib',
+          'tabulate'
       ]
       )

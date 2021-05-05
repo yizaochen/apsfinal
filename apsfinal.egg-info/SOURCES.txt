@@ -1,0 +1,7 @@
+README.md
+setup.py
+apsfinal.egg-info/PKG-INFO
+apsfinal.egg-info/SOURCES.txt
+apsfinal.egg-info/dependency_links.txt
+apsfinal.egg-info/requires.txt
+apsfinal.egg-info/top_level.txt
