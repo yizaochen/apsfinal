@@ -1,6 +1,6 @@
-from os import path
 import pandas as pd
 from tabulate import tabulate
+import numpy as np
 
 class TBTAgent:
 
@@ -15,6 +15,22 @@ class TBTAgent:
         tbt = TwoByTwoTable(feature1, feature2, self.df, age_criteria, gluc_criteria, bmi_criteria)
         table = tbt.get_table()
         print(table)
+
+    def get_odds_ratio_and_CI(self, feature1, feature2, age_criteria, gluc_criteria, bmi_criteria):
+        tbt = TwoByTwoTable(feature1, feature2, self.df, age_criteria, gluc_criteria, bmi_criteria)
+        theta, ci_left, ci_right = self.get_CI(tbt)
+        print(f'theta: {theta:.3f}')
+        print(f'CI of log(theta): ({ci_left:.3f}, {ci_right:.3f})')
+
+    def get_CI(self, tbt):
+        a, b, c, d = tbt.get_abcd()
+        theta = (a * d) / (b * c)
+        log_theta = np.log(theta)
+        inner_term = (1/a) + (1/b) + (1/c) + (1/d)
+        ci = 1.96 * np.sqrt(inner_term)
+        ci_left = log_theta - ci
+        ci_right = log_theta + ci
+        return theta, ci_left, ci_right
 
     def print_numerical_mean(self):
         for feature in ['age', 'avg_glucose_level', 'bmi']:
