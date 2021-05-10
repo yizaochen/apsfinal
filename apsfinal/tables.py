@@ -16,8 +16,8 @@ class TBTAgent:
         table = tbt.get_table()
         print(table)
 
-    def get_odds_ratio_and_CI(self, feature1, feature2, age_criteria, gluc_criteria, bmi_criteria):
-        tbt = TwoByTwoTable(feature1, feature2, self.df, age_criteria, gluc_criteria, bmi_criteria)
+    def get_odds_ratio_and_CI(self, feature1, feature2, age_criteria, gluc_criteria, bmi_criteria, d_worktype):
+        tbt = TwoByTwoTable(feature1, feature2, self.df, age_criteria, gluc_criteria, bmi_criteria, d_worktype)
         theta, ci_left, ci_right = self.get_CI(tbt)
         print(f'theta: {theta:.3f}')
         print(f'CI of log(theta): ({ci_left:.3f}, {ci_right:.3f})')
