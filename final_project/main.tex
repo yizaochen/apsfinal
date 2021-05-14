@@ -1,0 +1,36 @@
+\documentclass[twoside, 12pt]{book}
+\usepackage{CJKutf8}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{babel}
+\usepackage{natbib}
+\setcitestyle{numbers,square,super}
+
+\title{腦中風資料的統計分析與探討}
+\author{
+        陳奕造~0687203\\
+        施奕如\\
+        楊欣儒\\
+        李長穎\\
+
+}
+\date{\today}
+
+\begin{document}
+\begin{CJK*}{UTF8}{bsmi}
+\maketitle
+\tableofcontents{}
+
+\input{chapters/chapter1}
+\input{chapters/chapter2}
+\input{chapters/chapter3}
+
+%-------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%-------------------------------------------------------------------------------
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+\bibliographystyle{pnas-new}
+\bibliography{reference} % The references information are stored in the file named "Thesis_bibliography.bib"
+
+\end{CJK*}
+\end{document}

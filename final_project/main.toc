@@ -1,0 +1,24 @@
+\babel@toc {nil}{}
+\contentsline {chapter}{\numberline {1}前言：背景與動機}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}背景}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}動機}{5}{section.1.2}%
+\contentsline {chapter}{\numberline {2}資料探討}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}資料來源}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}資料基本型態}{7}{section.2.2}%
+\contentsline {section}{\numberline {2.3}單變數分析: 類別型}{8}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}gender}{8}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Hypertension}{8}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Heart Disease}{9}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Ever married}{9}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}Residence type}{9}{subsection.2.3.5}%
+\contentsline {subsection}{\numberline {2.3.6}Stroke}{10}{subsection.2.3.6}%
+\contentsline {subsection}{\numberline {2.3.7}Smoking status}{10}{subsection.2.3.7}%
+\contentsline {subsection}{\numberline {2.3.8}Work type}{10}{subsection.2.3.8}%
+\contentsline {section}{\numberline {2.4}單變數分析: 數值型}{11}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}age}{11}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Average glucose level}{11}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}BMI}{12}{subsection.2.4.3}%
+\contentsline {chapter}{\numberline {3}影響中風的因素}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Analysis of Contingency Table}{13}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}性別與中風}{13}{subsection.3.1.1}%
+\vspace {2em}
