@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.5.14)  14 MAY 2021 22:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.5.14)  15 MAY 2021 15:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -246,95 +246,149 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibsep=\skip51
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count189
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip52
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+ (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks17
+\ex@=\dimen142
+)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen143
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count190
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count191
+\leftroot@=\count192
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count193
+\DOTSCASE@=\count194
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box46
+\strutbox@=\box47
+\big@size=\dimen144
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count195
+\c@MaxMatrixCols=\count196
+\dotsspace@=\muskip17
+\c@parentequation=\count197
+\dspbrk@lvl=\count198
+\tag@help=\toks18
+\row@=\count199
+\column@=\count266
+\maxfields@=\count267
+\andhelp@=\toks19
+\eqnshift@=\dimen145
+\alignsep@=\dimen146
+\tagshift@=\dimen147
+\tagwidth@=\dimen148
+\totwidth@=\dimen149
+\lineht@=\dimen150
+\@envbody=\toks20
+\multlinegap=\skip53
+\multlinetaggap=\skip54
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count190
-\l__pdf_internal_box=\box46
+\l__kernel_color_stack_int=\count268
+\l__pdf_internal_box=\box48
 ) (/home/yizaochen/courses/apsfinal/final_project/main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-\AtBeginShipoutBox=\box47
-Package hyperref Info: Link coloring OFF on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+\AtBeginShipoutBox=\box49
+Package hyperref Info: Link coloring OFF on input line 20.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -342,28 +396,28 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count191
+\c@section@level=\count269
 )
-LaTeX Info: Redefining \ref on input line 19.
-LaTeX Info: Redefining \pageref on input line 19.
-LaTeX Info: Redefining \nameref on input line 19.
+LaTeX Info: Redefining \ref on input line 20.
+LaTeX Info: Redefining \pageref on input line 20.
+LaTeX Info: Redefining \nameref on input line 20.
  (/home/yizaochen/courses/apsfinal/final_project/main.out) (/home/yizaochen/courses/apsfinal/final_project/main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count192
-\scratchdimen=\dimen142
-\scratchbox=\box48
-\nofMPsegments=\count193
-\nofMParguments=\count194
-\everyMPshowfont=\toks17
-\MPscratchCnt=\count195
-\MPscratchDim=\dimen143
-\MPnumerator=\count196
-\makeMPintoPDFobject=\count197
-\everyMPtoPDFconversion=\toks18
+\scratchcounter=\count270
+\scratchdimen=\dimen151
+\scratchbox=\box50
+\nofMPsegments=\count271
+\nofMParguments=\count272
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count273
+\MPscratchDim=\dimen152
+\MPnumerator=\count274
+\makeMPintoPDFobject=\count275
+\everyMPtoPDFconversion=\toks23
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -376,152 +430,163 @@ File: UTF8.enc 2015/04/18 4.8.4
 ) (/usr/share/texmf/tex/latex/CJK/UTF8/UTF8.chr
 File: UTF8.chr 2015/04/18 4.8.4
 )
-LaTeX Font Info:    Trying to load font information for C70+bsmi on input line 22.
+LaTeX Font Info:    Trying to load font information for C70+bsmi on input line 23.
  (/usr/share/texmf/tex/latex/CJK/UTF8/c70bsmi.fd
 File: c70bsmi.fd 2008/10/03 4.8.1
 ) (/usr/share/texmf/tex/latex/CJK/UTF8/c70bsmi.fdx
 File: c70bsmi.fdx 2012/05/07 4.8.3
-)
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 22.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 22.
- [1
+) [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
-
-] (/home/yizaochen/courses/apsfinal/final_project/main.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 3.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 3.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 3.
-)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (/home/yizaochen/courses/apsfinal/final_project/main.toc)
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- (/home/yizaochen/courses/apsfinal/final_project/chapters/chapter1.tex [3] [4
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.24 
+      [1
 
-]
+] (/home/yizaochen/courses/apsfinal/final_project/chapters/chapter1.tex [2]
 Chapter 1.
-) (/home/yizaochen/courses/apsfinal/final_project/chapters/chapter2.tex [5]
-
-LaTeX Font Warning: Font shape `C70/bsmi/m/sl' undefined
-(Font)              using `C70/bsmi/m/n' instead on input line 1.
-
-[6
+) (/home/yizaochen/courses/apsfinal/final_project/chapters/chapter2.tex [3
 
 ]
 Chapter 2.
-<./images/gender_bar_pie.png, id=298, 4265.9375pt x 1505.625pt>
+<./images/gender_bar_pie.png, id=317, 4265.9375pt x 1505.625pt>
 File: ./images/gender_bar_pie.png Graphic file (type png)
 <use ./images/gender_bar_pie.png>
 Package pdftex.def Info: ./images/gender_bar_pie.png  used on input line 17.
 (pdftex.def)             Requested size: 384.1122pt x 135.56932pt.
+[4
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [7]
-<./images/hypert_bar_pie.png, id=308, 4265.9375pt x 1505.625pt>
+]
+<./images/hypert_bar_pie.png, id=325, 4265.9375pt x 1505.625pt>
 File: ./images/hypert_bar_pie.png Graphic file (type png)
 <use ./images/hypert_bar_pie.png>
 Package pdftex.def Info: ./images/hypert_bar_pie.png  used on input line 20.
 (pdftex.def)             Requested size: 384.1122pt x 135.56932pt.
-<./images/heartd_bar_pie.png, id=309, 4265.9375pt x 1505.625pt>
+<./images/heartd_bar_pie.png, id=326, 4265.9375pt x 1505.625pt>
 File: ./images/heartd_bar_pie.png Graphic file (type png)
 <use ./images/heartd_bar_pie.png>
 Package pdftex.def Info: ./images/heartd_bar_pie.png  used on input line 23.
 (pdftex.def)             Requested size: 384.1122pt x 135.56932pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8 <./images/gender_bar_pie.png> <./images/hypert_bar_pie.png>]
-<./images/evermarry_bar_pie.png, id=316, 4265.9375pt x 1505.625pt>
+LaTeX Font Warning: Font shape `C70/bsmi/m/sl' undefined
+(Font)              using `C70/bsmi/m/n' instead on input line 25.
+
+[5 <./images/gender_bar_pie.png> <./images/hypert_bar_pie.png>]
+<./images/evermarry_bar_pie.png, id=333, 4265.9375pt x 1505.625pt>
 File: ./images/evermarry_bar_pie.png Graphic file (type png)
 <use ./images/evermarry_bar_pie.png>
 Package pdftex.def Info: ./images/evermarry_bar_pie.png  used on input line 26.
 (pdftex.def)             Requested size: 384.1122pt x 135.56932pt.
-<./images/resit_bar_chart.png, id=317, 4265.9375pt x 1505.625pt>
+<./images/resit_bar_chart.png, id=334, 4265.9375pt x 1505.625pt>
 File: ./images/resit_bar_chart.png Graphic file (type png)
 <use ./images/resit_bar_chart.png>
 Package pdftex.def Info: ./images/resit_bar_chart.png  used on input line 29.
 (pdftex.def)             Requested size: 384.1122pt x 135.56932pt.
-<./images/stroke_bar_pie.png, id=318, 4265.9375pt x 1505.625pt>
+<./images/stroke_bar_pie.png, id=335, 4265.9375pt x 1505.625pt>
 File: ./images/stroke_bar_pie.png Graphic file (type png)
 <use ./images/stroke_bar_pie.png>
 Package pdftex.def Info: ./images/stroke_bar_pie.png  used on input line 32.
 (pdftex.def)             Requested size: 384.1122pt x 135.56932pt.
- [9 <./images/heartd_bar_pie.png> <./images/evermarry_bar_pie.png> <./images/resit_bar_chart.png>]
-<./images/smoking_bar_pie.png, id=326, 4265.9375pt x 1505.625pt>
+ [6 <./images/heartd_bar_pie.png> <./images/evermarry_bar_pie.png> <./images/resit_bar_chart.png>]
+<./images/smoking_bar_pie.png, id=344, 4265.9375pt x 1505.625pt>
 File: ./images/smoking_bar_pie.png Graphic file (type png)
 <use ./images/smoking_bar_pie.png>
 Package pdftex.def Info: ./images/smoking_bar_pie.png  used on input line 35.
 (pdftex.def)             Requested size: 384.1122pt x 135.56932pt.
-<./images/worktype_bar_pie.png, id=327, 4265.9375pt x 1505.625pt>
+<./images/worktype_bar_pie.png, id=345, 4265.9375pt x 1505.625pt>
 File: ./images/worktype_bar_pie.png Graphic file (type png)
 <use ./images/worktype_bar_pie.png>
 Package pdftex.def Info: ./images/worktype_bar_pie.png  used on input line 38.
 (pdftex.def)             Requested size: 384.1122pt x 135.56932pt.
-<./images/age_distribution.png, id=328, 2007.5pt x 1254.6875pt>
+<./images/age_distribution.png, id=346, 2007.5pt x 1254.6875pt>
 File: ./images/age_distribution.png Graphic file (type png)
 <use ./images/age_distribution.png>
 Package pdftex.def Info: ./images/age_distribution.png  used on input line 42.
 (pdftex.def)             Requested size: 318.66411pt x 199.16928pt.
- [10 <./images/stroke_bar_pie.png> <./images/smoking_bar_pie.png> <./images/worktype_bar_pie.png>]
-<./images/avg_glucose_distribution.png, id=336, 2007.5pt x 1254.6875pt>
+ [7 <./images/stroke_bar_pie.png> <./images/smoking_bar_pie.png> <./images/worktype_bar_pie.png>]
+<./images/avg_glucose_distribution.png, id=354, 2007.5pt x 1254.6875pt>
 File: ./images/avg_glucose_distribution.png Graphic file (type png)
 <use ./images/avg_glucose_distribution.png>
 Package pdftex.def Info: ./images/avg_glucose_distribution.png  used on input line 45.
 (pdftex.def)             Requested size: 318.66411pt x 199.16928pt.
-<./images/bmi_distribution.png, id=337, 2007.5pt x 1254.6875pt>
+<./images/bmi_distribution.png, id=355, 2007.5pt x 1254.6875pt>
 File: ./images/bmi_distribution.png Graphic file (type png)
 <use ./images/bmi_distribution.png>
 Package pdftex.def Info: ./images/bmi_distribution.png  used on input line 48.
 (pdftex.def)             Requested size: 318.66411pt x 199.16928pt.
-) (/home/yizaochen/courses/apsfinal/final_project/chapters/chapter3.tex
-Underfull \vbox (badness 5893) has occurred while \output is active []
-
- [11 <./images/age_distribution.png> <./images/avg_glucose_distribution.png>] [12 <./images/bmi_distribution.png>]
+) (/home/yizaochen/courses/apsfinal/final_project/chapters/chapter3.tex [8 <./images/age_distribution.png> <./images/avg_glucose_distribution.png>] [9 <./images/bmi_distribution.png>]
 Chapter 3.
-<./two_by_two_table/gender_stroke.png, id=349, 485.815pt x 185.69376pt>
+<./two_by_two_table/gender_stroke.png, id=367, 485.815pt x 185.69376pt>
 File: ./two_by_two_table/gender_stroke.png Graphic file (type png)
 <use ./two_by_two_table/gender_stroke.png>
-Package pdftex.def Info: ./two_by_two_table/gender_stroke.png  used on input line 5.
+Package pdftex.def Info: ./two_by_two_table/gender_stroke.png  used on input line 8.
 (pdftex.def)             Requested size: 227.62204pt x 87.00406pt.
-) (/home/yizaochen/courses/apsfinal/final_project/main.bbl [13
+<./two_by_two_table/resitype_stroke.png, id=369, 483.8075pt x 184.69pt>
+File: ./two_by_two_table/resitype_stroke.png Graphic file (type png)
+<use ./two_by_two_table/resitype_stroke.png>
+Package pdftex.def Info: ./two_by_two_table/resitype_stroke.png  used on input line 22.
+(pdftex.def)             Requested size: 227.62204pt x 86.89447pt.
+[10
 
- <./two_by_two_table/gender_stroke.png>] [14
+ <./two_by_two_table/gender_stroke.png>]
+<./two_by_two_table/evermarry_stroke.png, id=378, 495.8525pt x 186.6975pt>
+File: ./two_by_two_table/evermarry_stroke.png Graphic file (type png)
+<use ./two_by_two_table/evermarry_stroke.png>
+Package pdftex.def Info: ./two_by_two_table/evermarry_stroke.png  used on input line 36.
+(pdftex.def)             Requested size: 227.62204pt x 85.70241pt.
+ [11 <./two_by_two_table/resitype_stroke.png> <./two_by_two_table/evermarry_stroke.png>]
+<./two_by_two_table/hypert_stroke.png, id=385, 519.9425pt x 184.69pt>
+File: ./two_by_two_table/hypert_stroke.png Graphic file (type png)
+<use ./two_by_two_table/hypert_stroke.png>
+Package pdftex.def Info: ./two_by_two_table/hypert_stroke.png  used on input line 56.
+(pdftex.def)             Requested size: 227.62204pt x 80.85239pt.
+<./two_by_two_table/heartd_stroke.png, id=386, 518.93875pt x 182.6825pt>
+File: ./two_by_two_table/heartd_stroke.png Graphic file (type png)
+<use ./two_by_two_table/heartd_stroke.png>
+Package pdftex.def Info: ./two_by_two_table/heartd_stroke.png  used on input line 76.
+(pdftex.def)             Requested size: 227.62204pt x 80.12965pt.
+ [12 <./two_by_two_table/hypert_stroke.png> <./two_by_two_table/heartd_stroke.png>]
+<./two_by_two_table/smoke_stroke.png, id=394, 482.80376pt x 189.70876pt>
+File: ./two_by_two_table/smoke_stroke.png Graphic file (type png)
+<use ./two_by_two_table/smoke_stroke.png>
+Package pdftex.def Info: ./two_by_two_table/smoke_stroke.png  used on input line 96.
+(pdftex.def)             Requested size: 227.62204pt x 89.43811pt.
+) (/home/yizaochen/courses/apsfinal/final_project/main.bbl [13 <./two_by_two_table/smoke_stroke.png>])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 37.
+ [14
 
-])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 36.
- [15]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 36.
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 37.
  (/home/yizaochen/courses/apsfinal/final_project/main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 36.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 36.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 37.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 37.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D8B6C11081F2262F9FCC1A77129D189E;1651.
+(rerunfilecheck)             Checksum: 16E333407E6140169308C86FCD9C661E;2161.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 36.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 37.
  ) 
 Here is how much of TeX's memory you used:
- 8864 strings out of 482590
- 130412 string characters out of 5953557
- 387566 words of memory out of 5000000
- 23559 multiletter control sequences out of 15000+600000
- 575542 words of font info for 173 fonts, out of 8000000 for 9000
+ 9626 strings out of 482590
+ 140181 string characters out of 5953557
+ 398825 words of memory out of 5000000
+ 24288 multiletter control sequences out of 15000+600000
+ 580782 words of font info for 192 fonts, out of 8000000 for 9000
  309 hyphenation exceptions out of 8191
- 34i,6n,32p,718b,1245s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/yizaochen/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu30.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu4e.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu4f.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu50.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu51.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu52.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu53.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu54.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu55.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu56.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu57.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu58.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu59.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu5b.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu5c.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu5d.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu5e.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu5f.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu60.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu61.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu62.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu63.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu64.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu65.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu66.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu67.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu69.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu6a.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu6b.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu6c.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu6d.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu6e.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu70.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu71.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu72.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu73.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu74.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu75.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu76.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu77.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu78.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu79.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu7a.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu7b.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu7c.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu7d.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu7e.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu7f.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu80.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu81.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu82.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu84.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu86.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu88.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu89.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu8a.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu8b.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu8c.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu8d.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu8f.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu90.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu91.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu95.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu96.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu97.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu98.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu9a.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu9f.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiuff.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on /home/yizaochen/courses/apsfinal/final_project/main.pdf (15 pages, 2021945 bytes).
+ 34i,6n,32p,718b,1312s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/yizaochen/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu30.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu4e.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu4f.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu50.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu51.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu52.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu53.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu54.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu55.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu56.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu57.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu58.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu59.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu5a.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu5b.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu5c.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu5d.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu5e.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu5f.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu60.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu61.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu62.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu63.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu64.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu65.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu66.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu67.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu69.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu6a.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu6b.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu6c.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu6d.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu6e.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu70.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu71.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu72.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu73.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu74.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu75.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu76.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu77.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu78.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu79.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu7a.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu7b.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu7c.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu7d.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu7e.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu7f.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu80.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu81.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu82.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu84.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu86.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu88.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu89.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu8a.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu8b.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu8c.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu8d.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu8f.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu90.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu91.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu95.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu96.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu97.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu98.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu9a.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu9e.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu9f.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiuff.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on /home/yizaochen/courses/apsfinal/final_project/main.pdf (15 pages, 2159000 bytes).
 PDF statistics:
- 616 PDF objects out of 1000 (max. 8388607)
- 426 compressed objects within 5 object streams
- 50 named destinations out of 1000 (max. 500000)
- 513 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 668 PDF objects out of 1000 (max. 8388607)
+ 462 compressed objects within 5 object streams
+ 54 named destinations out of 1000 (max. 500000)
+ 586 words of extra memory for PDF output out of 10000 (max. 10000000)
 
