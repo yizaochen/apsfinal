@@ -12,6 +12,8 @@ setup(name='apsfinal',
           'numpy',
           'matplotlib',
           'tabulate',
-          'scipy'
+          'scipy',
+          'jupyter-book',
+          'pyppeteer'
       ]
       )

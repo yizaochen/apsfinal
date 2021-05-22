@@ -3,3 +3,5 @@ numpy
 matplotlib
 tabulate
 scipy
+jupyter-book
+pyppeteer
