@@ -1,6 +1,7 @@
 import pandas as pd
 from tabulate import tabulate
 import numpy as np
+from scipy.stats import chi2_contingency
 
 class TBTAgent:
 
@@ -139,4 +140,108 @@ class TwoByTwoTable:
         return df_small, df_big
 
 
+class ContigencyAgent:
+    feature_cates = {'age': ['<50', '50-60', '60-70', '70-80', '>80'],
+                     'work_type': ['Private', 'Govt_job', 'Self-employed', 'Never_worked', 'children'],
+                     'avg_glucose_level': ['<80', '80-110', '110-160', '>160'],
+                     'bmi': ['<24', '24-27', '27-30', '30-35', '>35'],
+                     'stroke': ['Stroke', 'No Stroke']}
+
+    feature_values = {'age': ['<50', '50-60', '60-70', '70-80', '>80'],
+                      'work_type': ['Private', 'Govt_job', 'Self-employed', 'Never_worked', 'children'],
+                      'avg_glucose_level': ['<80', '80-110', '110-160', '>160'],
+                      'bmi': ['<24', '24-27', '27-30', '30-35', '>35'],
+                      'stroke': [1, 0]}
+
+    def __init__(self, csv_in):
+        self.df = pd.read_csv(csv_in)
+
+    def show_contingency_table(self, feature1, feature2):
+        data_array = self.initialize_data_array(feature1, feature2)
+        data_array, table = self.get_table(data_array, feature1, feature2)
+        print(table)
+        chi2, p, dof, ex = self.get_chi_square(data_array, feature1)
+        print(f'X-square={chi2:.2f}, df={dof}, p-value={p:.3e}')
+        return data_array
+
+    def get_table_shape(self, feature1, feature2):
+        n_row = len(self.feature_cates[feature2]) + 2
+        n_col = len(self.feature_cates[feature1]) + 2
+        return n_row, n_col
+
+    def initialize_data_array(self, feature1, feature2):
+        n_row, n_col = self.get_table_shape(feature1, feature2)
+        return np.empty((n_row,n_col), dtype=object)
+
+    def get_table(self, data_array, feature1, feature2):
+        n_row, n_col = self.get_table_shape(feature1, feature2)
+        data_array[0,0] = ''
+        data_array[0,n_col-1] = 'Row Total'
+        data_array[n_row-1,0] = 'Column Total'
+
+        for idx, subfeature in enumerate(self.feature_cates[feature1]):
+            data_array[0,idx+1] = subfeature # Put title on the top row
+        for idx, subfeature in enumerate(self.feature_cates[feature2]):
+            data_array[idx+1,0] = subfeature # Put title on the most left column
+
+        for idx_f1, subfeature1 in enumerate(self.feature_values[feature1]):
+            for idx_f2, subfeature2 in enumerate(self.feature_values[feature2]):                
+                df_temp_1 = self.df[self.df[feature1] == subfeature1]
+
+                if feature2 == 'age':
+                    mask = self.get_age_mask(df_temp_1, subfeature2)
+                    df_temp_2 = df_temp_1[mask]
+                elif feature2 == 'work_type':
+                    df_temp_2 = df_temp_1[df_temp_1[feature2] == subfeature2]
+                elif feature2 == 'avg_glucose_level':
+                    mask = self.get_glucose_mask(df_temp_1, subfeature2)
+                    df_temp_2 = df_temp_1[mask]
+                elif feature2 == 'bmi':
+                    mask = self.get_bmi_mask(df_temp_1, subfeature2)
+                    df_temp_2 = df_temp_1[mask]
+
+                data_array[idx_f2+1, idx_f1+1] = df_temp_2.shape[0]
+
+        # Row Total
+        for row_id in range(len(self.feature_cates[feature2])):
+            data_array[row_id+1, n_col-1] = data_array[row_id+1, 1:-1].sum()
+
+        # Column Total
+        for col_id in range(len(self.feature_cates[feature1])):
+            data_array[n_row-1, col_id+1] = data_array[1:-1, col_id+1].sum()
+
+        # Total
+        data_array[n_row-1, n_col-1] = data_array[1:-1, n_col-1].sum()
+        return data_array, tabulate(data_array, tablefmt='fancy_grid')
+
+    def get_age_mask(self, df_in, age_range):
+        d_mask = {'<50': df_in['age'] < 50, 
+                  '50-60': (df_in['age'] >= 50) & (df_in['age'] < 60), 
+                  '60-70': (df_in['age'] >= 60) & (df_in['age'] < 70), 
+                  '70-80': (df_in['age'] >= 70) & (df_in['age'] < 80),
+                  '>80': df_in['age'] >= 80}
+        return d_mask[age_range]
+
+    def get_glucose_mask(self, df_in, glu_range):
+        d_mask = {'<80': df_in['avg_glucose_level'] < 80, 
+                  '80-110': (df_in['avg_glucose_level'] >= 80) & (df_in['avg_glucose_level'] < 110), 
+                  '110-160': (df_in['avg_glucose_level'] >= 110) & (df_in['avg_glucose_level'] < 160), 
+                  '>160': df_in['avg_glucose_level'] >= 160}
+        return d_mask[glu_range]
+
+    def get_bmi_mask(self, df_in, bmi_range):
+        d_mask = {'<24': df_in['bmi'] < 24, 
+                  '24-27': (df_in['bmi'] >= 24) & (df_in['bmi'] < 27), 
+                  '27-30': (df_in['bmi'] >= 27) & (df_in['bmi'] < 30), 
+                  '30-35': (df_in['bmi'] >= 30) & (df_in['bmi'] < 35), 
+                  '>35': df_in['bmi'] >= 35}
+        return d_mask[bmi_range]
+    
+    def get_chi_square(self, data_array, feature1):
+        obs_list = list()
+        for col_id in range(len(self.feature_cates[feature1])):
+            obs_list.append(data_array[1:-1, col_id+1])
+        obs_array = np.array(obs_list)
+        chi2, p, dof, ex = chi2_contingency(obs_array, correction=False)
+        return chi2, p, dof, ex
 

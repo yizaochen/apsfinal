@@ -11,6 +11,7 @@ setup(name='apsfinal',
           'pandas',
           'numpy',
           'matplotlib',
-          'tabulate'
+          'tabulate',
+          'scipy'
       ]
       )

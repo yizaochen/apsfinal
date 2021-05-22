@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.5.14)  15 MAY 2021 15:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.5.14)  22 MAY 2021 18:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -438,23 +438,23 @@ File: c70bsmi.fdx 2012/05/07 4.8.3
 ) [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (/home/yizaochen/courses/apsfinal/final_project/main.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (/home/yizaochen/courses/apsfinal/final_project/main.tocpdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.29 ...1.7}中風與年齡}{14}{subsection.3.1.7}
+                                                  % [1
+
+])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.24 
-      [1
-
-] (/home/yizaochen/courses/apsfinal/final_project/chapters/chapter1.tex [2]
+ (/home/yizaochen/courses/apsfinal/final_project/chapters/chapter1.tex [2]
 Chapter 1.
 ) (/home/yizaochen/courses/apsfinal/final_project/chapters/chapter2.tex [3
 
 ]
 Chapter 2.
-<./images/gender_bar_pie.png, id=317, 4265.9375pt x 1505.625pt>
+<./images/gender_bar_pie.png, id=342, 4265.9375pt x 1505.625pt>
 File: ./images/gender_bar_pie.png Graphic file (type png)
 <use ./images/gender_bar_pie.png>
 Package pdftex.def Info: ./images/gender_bar_pie.png  used on input line 17.
@@ -462,12 +462,12 @@ Package pdftex.def Info: ./images/gender_bar_pie.png  used on input line 17.
 [4
 
 ]
-<./images/hypert_bar_pie.png, id=325, 4265.9375pt x 1505.625pt>
+<./images/hypert_bar_pie.png, id=350, 4265.9375pt x 1505.625pt>
 File: ./images/hypert_bar_pie.png Graphic file (type png)
 <use ./images/hypert_bar_pie.png>
 Package pdftex.def Info: ./images/hypert_bar_pie.png  used on input line 20.
 (pdftex.def)             Requested size: 384.1122pt x 135.56932pt.
-<./images/heartd_bar_pie.png, id=326, 4265.9375pt x 1505.625pt>
+<./images/heartd_bar_pie.png, id=351, 4265.9375pt x 1505.625pt>
 File: ./images/heartd_bar_pie.png Graphic file (type png)
 <use ./images/heartd_bar_pie.png>
 Package pdftex.def Info: ./images/heartd_bar_pie.png  used on input line 23.
@@ -478,56 +478,56 @@ LaTeX Font Warning: Font shape `C70/bsmi/m/sl' undefined
 (Font)              using `C70/bsmi/m/n' instead on input line 25.
 
 [5 <./images/gender_bar_pie.png> <./images/hypert_bar_pie.png>]
-<./images/evermarry_bar_pie.png, id=333, 4265.9375pt x 1505.625pt>
+<./images/evermarry_bar_pie.png, id=358, 4265.9375pt x 1505.625pt>
 File: ./images/evermarry_bar_pie.png Graphic file (type png)
 <use ./images/evermarry_bar_pie.png>
 Package pdftex.def Info: ./images/evermarry_bar_pie.png  used on input line 26.
 (pdftex.def)             Requested size: 384.1122pt x 135.56932pt.
-<./images/resit_bar_chart.png, id=334, 4265.9375pt x 1505.625pt>
+<./images/resit_bar_chart.png, id=359, 4265.9375pt x 1505.625pt>
 File: ./images/resit_bar_chart.png Graphic file (type png)
 <use ./images/resit_bar_chart.png>
 Package pdftex.def Info: ./images/resit_bar_chart.png  used on input line 29.
 (pdftex.def)             Requested size: 384.1122pt x 135.56932pt.
-<./images/stroke_bar_pie.png, id=335, 4265.9375pt x 1505.625pt>
+<./images/stroke_bar_pie.png, id=360, 4265.9375pt x 1505.625pt>
 File: ./images/stroke_bar_pie.png Graphic file (type png)
 <use ./images/stroke_bar_pie.png>
 Package pdftex.def Info: ./images/stroke_bar_pie.png  used on input line 32.
 (pdftex.def)             Requested size: 384.1122pt x 135.56932pt.
  [6 <./images/heartd_bar_pie.png> <./images/evermarry_bar_pie.png> <./images/resit_bar_chart.png>]
-<./images/smoking_bar_pie.png, id=344, 4265.9375pt x 1505.625pt>
+<./images/smoking_bar_pie.png, id=369, 4265.9375pt x 1505.625pt>
 File: ./images/smoking_bar_pie.png Graphic file (type png)
 <use ./images/smoking_bar_pie.png>
 Package pdftex.def Info: ./images/smoking_bar_pie.png  used on input line 35.
 (pdftex.def)             Requested size: 384.1122pt x 135.56932pt.
-<./images/worktype_bar_pie.png, id=345, 4265.9375pt x 1505.625pt>
+<./images/worktype_bar_pie.png, id=370, 4265.9375pt x 1505.625pt>
 File: ./images/worktype_bar_pie.png Graphic file (type png)
 <use ./images/worktype_bar_pie.png>
 Package pdftex.def Info: ./images/worktype_bar_pie.png  used on input line 38.
 (pdftex.def)             Requested size: 384.1122pt x 135.56932pt.
-<./images/age_distribution.png, id=346, 2007.5pt x 1254.6875pt>
+<./images/age_distribution.png, id=371, 2007.5pt x 1254.6875pt>
 File: ./images/age_distribution.png Graphic file (type png)
 <use ./images/age_distribution.png>
 Package pdftex.def Info: ./images/age_distribution.png  used on input line 42.
 (pdftex.def)             Requested size: 318.66411pt x 199.16928pt.
  [7 <./images/stroke_bar_pie.png> <./images/smoking_bar_pie.png> <./images/worktype_bar_pie.png>]
-<./images/avg_glucose_distribution.png, id=354, 2007.5pt x 1254.6875pt>
+<./images/avg_glucose_distribution.png, id=379, 2007.5pt x 1254.6875pt>
 File: ./images/avg_glucose_distribution.png Graphic file (type png)
 <use ./images/avg_glucose_distribution.png>
 Package pdftex.def Info: ./images/avg_glucose_distribution.png  used on input line 45.
 (pdftex.def)             Requested size: 318.66411pt x 199.16928pt.
-<./images/bmi_distribution.png, id=355, 2007.5pt x 1254.6875pt>
+<./images/bmi_distribution.png, id=380, 2007.5pt x 1254.6875pt>
 File: ./images/bmi_distribution.png Graphic file (type png)
 <use ./images/bmi_distribution.png>
 Package pdftex.def Info: ./images/bmi_distribution.png  used on input line 48.
 (pdftex.def)             Requested size: 318.66411pt x 199.16928pt.
 ) (/home/yizaochen/courses/apsfinal/final_project/chapters/chapter3.tex [8 <./images/age_distribution.png> <./images/avg_glucose_distribution.png>] [9 <./images/bmi_distribution.png>]
 Chapter 3.
-<./two_by_two_table/gender_stroke.png, id=367, 485.815pt x 185.69376pt>
+<./two_by_two_table/gender_stroke.png, id=392, 485.815pt x 185.69376pt>
 File: ./two_by_two_table/gender_stroke.png Graphic file (type png)
 <use ./two_by_two_table/gender_stroke.png>
 Package pdftex.def Info: ./two_by_two_table/gender_stroke.png  used on input line 8.
 (pdftex.def)             Requested size: 227.62204pt x 87.00406pt.
-<./two_by_two_table/resitype_stroke.png, id=369, 483.8075pt x 184.69pt>
+<./two_by_two_table/resitype_stroke.png, id=394, 483.8075pt x 184.69pt>
 File: ./two_by_two_table/resitype_stroke.png Graphic file (type png)
 <use ./two_by_two_table/resitype_stroke.png>
 Package pdftex.def Info: ./two_by_two_table/resitype_stroke.png  used on input line 22.
@@ -535,58 +535,94 @@ Package pdftex.def Info: ./two_by_two_table/resitype_stroke.png  used on input l
 [10
 
  <./two_by_two_table/gender_stroke.png>]
-<./two_by_two_table/evermarry_stroke.png, id=378, 495.8525pt x 186.6975pt>
+<./two_by_two_table/evermarry_stroke.png, id=403, 495.8525pt x 186.6975pt>
 File: ./two_by_two_table/evermarry_stroke.png Graphic file (type png)
 <use ./two_by_two_table/evermarry_stroke.png>
 Package pdftex.def Info: ./two_by_two_table/evermarry_stroke.png  used on input line 36.
 (pdftex.def)             Requested size: 227.62204pt x 85.70241pt.
  [11 <./two_by_two_table/resitype_stroke.png> <./two_by_two_table/evermarry_stroke.png>]
-<./two_by_two_table/hypert_stroke.png, id=385, 519.9425pt x 184.69pt>
+<./two_by_two_table/hypert_stroke.png, id=410, 519.9425pt x 184.69pt>
 File: ./two_by_two_table/hypert_stroke.png Graphic file (type png)
 <use ./two_by_two_table/hypert_stroke.png>
 Package pdftex.def Info: ./two_by_two_table/hypert_stroke.png  used on input line 56.
 (pdftex.def)             Requested size: 227.62204pt x 80.85239pt.
-<./two_by_two_table/heartd_stroke.png, id=386, 518.93875pt x 182.6825pt>
+<./two_by_two_table/heartd_stroke.png, id=411, 518.93875pt x 182.6825pt>
 File: ./two_by_two_table/heartd_stroke.png Graphic file (type png)
 <use ./two_by_two_table/heartd_stroke.png>
 Package pdftex.def Info: ./two_by_two_table/heartd_stroke.png  used on input line 76.
 (pdftex.def)             Requested size: 227.62204pt x 80.12965pt.
  [12 <./two_by_two_table/hypert_stroke.png> <./two_by_two_table/heartd_stroke.png>]
-<./two_by_two_table/smoke_stroke.png, id=394, 482.80376pt x 189.70876pt>
+<./two_by_two_table/smoke_stroke.png, id=419, 482.80376pt x 189.70876pt>
 File: ./two_by_two_table/smoke_stroke.png Graphic file (type png)
 <use ./two_by_two_table/smoke_stroke.png>
 Package pdftex.def Info: ./two_by_two_table/smoke_stroke.png  used on input line 96.
 (pdftex.def)             Requested size: 227.62204pt x 89.43811pt.
-) (/home/yizaochen/courses/apsfinal/final_project/main.bbl [13 <./two_by_two_table/smoke_stroke.png>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 37.
- [14
+<./chisquare/age_stroke.png, id=420, 580.1675pt x 399.4925pt>
+File: ./chisquare/age_stroke.png Graphic file (type png)
+<use ./chisquare/age_stroke.png>
+Package pdftex.def Info: ./chisquare/age_stroke.png  used on input line 115.
+(pdftex.def)             Requested size: 227.62204pt x 156.73409pt.
+ [13 <./two_by_two_table/smoke_stroke.png>]
+<./images/glucose_category_ref.png, id=426, 1658.195pt x 610.28pt>
+File: ./images/glucose_category_ref.png Graphic file (type png)
+<use ./images/glucose_category_ref.png>
+Package pdftex.def Info: ./images/glucose_category_ref.png  used on input line 121.
+(pdftex.def)             Requested size: 227.62204pt x 83.77174pt.
+<./chisquare/glucose_stroke.png, id=427, 684.5575pt x 404.51125pt>
+File: ./chisquare/glucose_stroke.png Graphic file (type png)
+<use ./chisquare/glucose_stroke.png>
+Package pdftex.def Info: ./chisquare/glucose_stroke.png  used on input line 125.
+(pdftex.def)             Requested size: 227.62204pt x 134.50137pt.
+<./images/bmi_category_ref.jpg, id=428, 2055.68pt x 1156.32pt>
+File: ./images/bmi_category_ref.jpg Graphic file (type jpg)
+<use ./images/bmi_category_ref.jpg>
+Package pdftex.def Info: ./images/bmi_category_ref.jpg  used on input line 131.
+(pdftex.def)             Requested size: 227.62204pt x 128.02486pt.
+ [14 <./chisquare/age_stroke.png> <./images/glucose_category_ref.png> <./chisquare/glucose_stroke.png>]
+<./chisquare/bmi_stroke.png, id=436, 673.51625pt x 459.7175pt>
+File: ./chisquare/bmi_stroke.png Graphic file (type png)
+<use ./chisquare/bmi_stroke.png>
+Package pdftex.def Info: ./chisquare/bmi_stroke.png  used on input line 135.
+(pdftex.def)             Requested size: 227.62204pt x 155.36891pt.
+) (/home/yizaochen/courses/apsfinal/final_project/chapters/chapter4.tex [15 <./images/bmi_category_ref.jpg> <./chisquare/bmi_stroke.png>]
+Chapter 4.
+<./images/all_vari_corre.jpg, id=442, 1266.7325pt x 411.5375pt>
+File: ./images/all_vari_corre.jpg Graphic file (type jpg)
+<use ./images/all_vari_corre.jpg>
+Package pdftex.def Info: ./images/all_vari_corre.jpg  used on input line 4.
+(pdftex.def)             Requested size: 341.43306pt x 110.92194pt.
+) (/home/yizaochen/courses/apsfinal/final_project/main.bbl [16
+
+ <./images/all_vari_corre.jpg>])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 38.
+ [17
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 37.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 38.
  (/home/yizaochen/courses/apsfinal/final_project/main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 37.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 37.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 38.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 38.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 16E333407E6140169308C86FCD9C661E;2161.
+(rerunfilecheck)             Checksum: 79566B472CE90441246D3C1EB3FA20C3;2547.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 37.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 38.
  ) 
 Here is how much of TeX's memory you used:
- 9626 strings out of 482590
- 140181 string characters out of 5953557
- 398825 words of memory out of 5000000
- 24288 multiletter control sequences out of 15000+600000
- 580782 words of font info for 192 fonts, out of 8000000 for 9000
+ 9697 strings out of 482590
+ 141898 string characters out of 5953557
+ 398828 words of memory out of 5000000
+ 24336 multiletter control sequences out of 15000+600000
+ 581879 words of font info for 196 fonts, out of 8000000 for 9000
  309 hyphenation exceptions out of 8191
- 34i,6n,32p,718b,1312s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,6n,32p,718b,1313s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/yizaochen/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu30.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu4e.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu4f.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu50.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu51.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu52.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu53.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu54.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu55.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu56.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu57.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu58.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu59.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu5a.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu5b.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu5c.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu5d.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu5e.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu5f.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu60.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu61.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu62.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu63.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu64.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu65.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu66.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu67.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu69.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu6a.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu6b.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu6c.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu6d.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu6e.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu70.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu71.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu72.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu73.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu74.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu75.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu76.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu77.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu78.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu79.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu7a.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu7b.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu7c.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu7d.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu7e.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu7f.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu80.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu81.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu82.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu84.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu86.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu88.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu89.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu8a.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu8b.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu8c.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu8d.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu8f.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu90.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu91.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu95.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu96.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu97.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu98.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu9a.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu9e.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiu9f.pfb></usr/share/texmf/fonts/type1/arphic/bsmiu/bsmiuff.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on /home/yizaochen/courses/apsfinal/final_project/main.pdf (15 pages, 2159000 bytes).
+Output written on /home/yizaochen/courses/apsfinal/final_project/main.pdf (18 pages, 2492322 bytes).
 PDF statistics:
- 668 PDF objects out of 1000 (max. 8388607)
- 462 compressed objects within 5 object streams
- 54 named destinations out of 1000 (max. 500000)
- 586 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 717 PDF objects out of 1000 (max. 8388607)
+ 498 compressed objects within 5 object streams
+ 62 named destinations out of 1000 (max. 500000)
+ 656 words of extra memory for PDF output out of 10000 (max. 10000000)
 

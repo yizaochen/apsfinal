@@ -26,4 +26,9 @@
 \contentsline {subsection}{\numberline {3.1.4}中風與壓力}{12}{subsection.3.1.4}%
 \contentsline {subsection}{\numberline {3.1.5}中風與心臟病}{12}{subsection.3.1.5}%
 \contentsline {subsection}{\numberline {3.1.6}中風與抽煙習慣}{13}{subsection.3.1.6}%
+\contentsline {subsection}{\numberline {3.1.7}中風與年齡}{14}{subsection.3.1.7}%
+\contentsline {subsection}{\numberline {3.1.8}中風與血糖}{14}{subsection.3.1.8}%
+\contentsline {subsection}{\numberline {3.1.9}中風與BMI}{14}{subsection.3.1.9}%
+\contentsline {chapter}{\numberline {4}Clustering}{16}{chapter.4}%
+\contentsline {section}{\numberline {4.1}The table of correlation}{16}{section.4.1}%
 \vspace {2em}
