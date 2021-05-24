@@ -1,0 +1,1310 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>因素之間交互作用 &#8212; 腦中風資料的統計分析與探討</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Cluster analysis" href="clustering.html" />
+    <link rel="prev" title="數值型解釋變數" href="numerical.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">腦中風資料的統計分析與探討</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   前言：背景與動機
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="dataexplore.html">
+   資料探討
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="simplecategorical.html">
+   簡單類別型解釋變數
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="multiplecategorical.html">
+   多重類別型解釋變數
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numerical.html">
+   數值型解釋變數
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   因素之間交互作用
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clustering.html">
+   Cluster analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression.html">
+   迴歸分析
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/interaction1.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Finteraction1.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   其他因素與心臟病的關聯
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     心臟病與性別
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#odds-ratio">
+       Odds Ratio
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chi-square">
+       Chi-square
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     心臟病與居住環境
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       Odds Ratio
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       Chi-square
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     心臟病與婚姻
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       Odds Ratio
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       Chi-square
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     心臟病與高血壓
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id11">
+       Odds Ratio
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id12">
+       Chi-square
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     心臟病與抽煙
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id14">
+       Odds Ratio
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id15">
+       Chi-square
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id16">
+   其他因素與婚姻的關聯
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     婚姻與性別
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id18">
+       Odds Ratio
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id19">
+       Chi-square
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     婚姻與高血壓
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id21">
+       Odds Ratio
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id22">
+       Chi-square
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id23">
+     婚姻與抽煙
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id24">
+       Odds Ratio
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id25">
+       Chi-square
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bmi">
+     婚姻與bmi
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id26">
+       Chi-square
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bmi-age">
+   BMI &amp; Age
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id27">
+     Chi-square
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="id1">
+<h1>因素之間交互作用<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>其他因素與心臟病的關聯<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>心臟病與性別<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="odds-ratio">
+<h4>Odds Ratio<a class="headerlink" href="#odds-ratio" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/k7QT2XQ.png" /></p></li>
+<li><p>Odds ratio <span class="math notranslate nohighlight">\(\hat{\theta}=2.129\)</span></p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(0.509, 1.002)\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="chi-square">
+<h4>Chi-square<a class="headerlink" href="#chi-square" title="Permalink to this headline">¶</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Female</p></th>
+<th class="head"><p>Male</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HeartD</p></td>
+<td><p>113</p></td>
+<td><p>162</p></td>
+<td><p>206</p></td>
+</tr>
+<tr class="row-odd"><td><p>Normal</p></td>
+<td><p>2881</p></td>
+<td><p>1952</p></td>
+<td><p>3112</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p>2994</p></td>
+<td><p>2114</p></td>
+<td><p>5108</p></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p>gender of others were not included</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X^2\)</span> = 36.031,  df = 1,  p-value = 1.942e-09</p>
+<ul>
+<li><p>故性別與心臟病關係並不獨立，與odds ratio結果相符</p></li>
+</ul>
+</li>
+<li><p>且根據residual下表顯示，女性較不容易罹患心臟疾病，男性則有較高機會罹患心臟病</p></li>
+</ul>
+<ul>
+<li><p>round(result_cvdGender$residuals, 3)</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Female</p></th>
+<th class="head"><p>Male</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HeartD</p></td>
+<td><p>-3.796</p></td>
+<td><p>4.517</p></td>
+</tr>
+<tr class="row-odd"><td><p>Normal</p></td>
+<td><p>0.905</p></td>
+<td><p>-1.077</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>心臟病與居住環境<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h4>Odds Ratio<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/tdhkXh9.png" /></p></li>
+<li><p>Odds ratio <span class="math notranslate nohighlight">\(\hat{\theta}=0.973\)</span></p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(-0.270, 0.215)\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h4>Chi-square<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>以下範圍為年紀&gt;=16之統計</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Residence</p></th>
+<th class="head"><p>Rural</p></th>
+<th class="head"><p>Urban</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HeartD</p></td>
+<td><p>134</p></td>
+<td><p>141</p></td>
+<td><p>275</p></td>
+</tr>
+<tr class="row-odd"><td><p>normal</p></td>
+<td><p>2013</p></td>
+<td><p>2078</p></td>
+<td><p>4091</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p>2147</p></td>
+<td><p>2219</p></td>
+<td><p>4366</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X^2\)</span> = 0.0083308,  df = 1,  p-value = 0.9273</p></li>
+<li><p>故居住地與心臟病關係並<strong>無顯著相關性</strong>，與odds ratio結果相符</p></li>
+</ul>
+<blockquote>
+<div><p>若將資料涵蓋小於16歲的樣本，也可見同樣的趨勢</p>
+</div></blockquote>
+<ul>
+<li><p>round(result_CVDresid$residuals, 3)</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Residence</p></th>
+<th class="head"><p>Rural</p></th>
+<th class="head"><p>Urban</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HeartD</p></td>
+<td><p>-0.106</p></td>
+<td><p>0.104</p></td>
+</tr>
+<tr class="row-odd"><td><p>Normal</p></td>
+<td><p>0.027</p></td>
+<td><p>-0.027</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>心臟病與婚姻<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h4>Odds Ratio<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/E0kh7xu.png" /></p></li>
+<li><p>Odds ratio <span class="math notranslate nohighlight">\(\hat{\theta}=  4.231\)</span></p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(1.069, 1.816)\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h4>Chi-square<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>以下範圍為年紀&gt;=16之統計</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>EverMarr</p></th>
+<th class="head"><p>Yes</p></th>
+<th class="head"><p>No</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HeartD</p></td>
+<td><p>244</p></td>
+<td><p>31</p></td>
+<td><p>275</p></td>
+</tr>
+<tr class="row-odd"><td><p>normal</p></td>
+<td><p>3109</p></td>
+<td><p>982</p></td>
+<td><p>4091</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p>206</p></td>
+<td><p>3113</p></td>
+<td><p>4366</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X^2\)</span> = 22.73,  df = 1,  p-value = 1.864e-06
+-故結婚經驗有否與心臟病關係並不獨立，與odds ratio結果相符，且根據residual下表顯示，有婚姻經驗較容易罹患心臟病</p></li>
+</ul>
+<ul>
+<li><p>round(result_cvdGender$residuals, 3)</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>EverMarr</p></th>
+<th class="head"><p>Yes</p></th>
+<th class="head"><p>No</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HeartD</p></td>
+<td><p>2.257</p></td>
+<td><p>-4.107</p></td>
+</tr>
+<tr class="row-odd"><td><p>Normal</p></td>
+<td><p>-0.585</p></td>
+<td><p>1.065</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>心臟病與高血壓<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h4>Odds Ratio<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/yRSczJF.png" /></p></li>
+<li><p>Odds ratio <span class="math notranslate nohighlight">\(\hat{\theta}=3.061\)</span></p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(0.822, 1.415)\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h4>Chi-square<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Residence</p></th>
+<th class="head"><p>Hyper</p></th>
+<th class="head"><p>Normal</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HeartD</p></td>
+<td><p>64</p></td>
+<td><p>434</p></td>
+<td><p>498</p></td>
+</tr>
+<tr class="row-odd"><td><p>normal</p></td>
+<td><p>212</p></td>
+<td><p>4400</p></td>
+<td><p>4612</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p>276</p></td>
+<td><p>4834</p></td>
+<td><p>5110</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X^2\)</span> = 58.337,  df = 1,  p-value = 2.209e-14</p></li>
+<li><p>故高血壓與心臟病關係<strong>具顯著相關性</strong>，與odds ratio結果相符，且具高血壓的患者易伴隨有心臟病。</p></li>
+</ul>
+<ul>
+<li><p>round(result_HDhyper$residuals, 3)</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Residence</p></th>
+<th class="head"><p>Hyper</p></th>
+<th class="head"><p>Normal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HeartD</p></td>
+<td><p>7.154</p></td>
+<td><p>-1.709</p></td>
+</tr>
+<tr class="row-odd"><td><p>Normal</p></td>
+<td><p>-2.351</p></td>
+<td><p>0.562</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id13">
+<h3>心臟病與抽煙<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id14">
+<h4>Odds Ratio<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/YNKlrv7.png" /></p></li>
+<li><p>Odds ratio <span class="math notranslate nohighlight">\(\hat{\theta}=1.799\)</span></p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(0.313, 0.861)\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="id15">
+<h4>Chi-square<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>smoking status of unknown is removed</p>
+</div></blockquote>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>smoking</p></th>
+<th class="head"><p>smokes</p></th>
+<th class="head"><p>formerly</p></th>
+<th class="head"><p>never</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HeartD</p></td>
+<td><p>61</p></td>
+<td><p>77</p></td>
+<td><p>90</p></td>
+<td><p>228</p></td>
+</tr>
+<tr class="row-odd"><td><p>Normal</p></td>
+<td><p>728</p></td>
+<td><p>808</p></td>
+<td><p>1802</p></td>
+<td><p>3338</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p>789</p></td>
+<td><p>885</p></td>
+<td><p>1892</p></td>
+<td><p>3566</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X^2\)</span> = 18.698,  df = 2,  p-value = 8.707e-05</p></li>
+<li><p>故抽菸習慣與心臟病關係<strong>具顯著相關性</strong>，與odds ratio結果相符，由residual觀察曾有抽菸習慣者，甚至比正在抽菸者有更高機會罹患心臟病，與中風傾向相同。</p></li>
+</ul>
+<ul>
+<li><p>round(result_HDsmoke$residuals, 3)</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>smoking</p></th>
+<th class="head"><p>smokes</p></th>
+<th class="head"><p>formerly</p></th>
+<th class="head"><p>never</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HeartD</p></td>
+<td><p>1.486</p></td>
+<td><p>2.714</p></td>
+<td><p>-2.816</p></td>
+</tr>
+<tr class="row-odd"><td><p>Normal</p></td>
+<td><p>-0.388</p></td>
+<td><p>-0.709</p></td>
+<td><p>0.736</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="id16">
+<h2>其他因素與婚姻的關聯<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id17">
+<h3>婚姻與性別<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id18">
+<h4>Odds Ratio<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/FHIOPXF.png" /></p></li>
+<li><p>Odds ratio <span class="math notranslate nohighlight">\(\hat{\theta}= 0.879\)</span>，表示<strong>婚姻與性別有相關</strong>。</p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(-0.245, -0.012)\)</span></p>
+<ul>
+<li><p>95%的信賴區間不包含0</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id19">
+<h4>Chi-square<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>remove the gender of others</p>
+</div></blockquote>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>gender</p></th>
+<th class="head"><p>Female</p></th>
+<th class="head"><p>Male</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Married</p></td>
+<td><p>2001</p></td>
+<td><p>1352</p></td>
+<td><p>3353</p></td>
+</tr>
+<tr class="row-odd"><td><p>NevMarr</p></td>
+<td><p>1352</p></td>
+<td><p>370</p></td>
+<td><p>1012</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p>2643</p></td>
+<td><p>1722</p></td>
+<td><p>4365</p></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(X^2\)</span> = 4.4469, df = 1, p-value = 0.03497</p>
+<ul>
+<li><p>round(result_MarGender$residuals, 3)</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>gender</p></th>
+<th class="head"><p>Female</p></th>
+<th class="head"><p>Male</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Married</p></td>
+<td><p>-0.649</p></td>
+<td><p>0.804</p></td>
+</tr>
+<tr class="row-odd"><td><p>NevMarr</p></td>
+<td><p>1.181</p></td>
+<td><p>-1.463</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ul class="simple">
+<li><p>結果顯示<strong>婚姻與性別關係不獨立</strong>，女性較傾向單身，男性易有結婚經驗。然而須注意的是，在如此巨大的樣本數下，多種情況即便差異不大也會顯示具有統計顯著性，而在本檢定中，p-value僅稍稍小於0.05，且我們不確定採樣的母體是否位於同性婚姻合法化的地區，或是樣本是否為自願受試，而婚姻經驗又與受試意願不夠獨立。倘若同性婚姻合法為否，男女結婚狀況比例應一致，倘若為是，依據下面連結所示，女性具有婚姻經驗的結果應較高，residual應為正，故本檢定結果可能在本報告中無法被解釋。</p>
+<ul>
+<li><p><a class="reference external" href="https://www.abc.net.au/news/2019-11-29/same-sex-gay-marriage-women-more-likely-to-wed-marry/11555456">Gay marriage data shows more women are tying the knot</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id20">
+<h3>婚姻與高血壓<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id21">
+<h4>Odds Ratio<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/njZCKOB.png" /></p></li>
+<li><p>Odds ratio <span class="math notranslate nohighlight">\(\hat{\theta}= 4.920\)</span>，表示<strong>婚姻與高血壓不是獨立的</strong>。</p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(1.302, 1.884)\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="id22">
+<h4>Chi-square<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>hyperT</p></th>
+<th class="head"><p>hyperT</p></th>
+<th class="head"><p>Normal</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Married</p></td>
+<td><p>445</p></td>
+<td><p>2908</p></td>
+<td><p>3353</p></td>
+</tr>
+<tr class="row-odd"><td><p>NevMarr</p></td>
+<td><p>53</p></td>
+<td><p>960</p></td>
+<td><p>1013</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p>498</p></td>
+<td><p>3868</p></td>
+<td><p>4366</p></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(X^2\)</span> = 48.969, df = 1, p-value =2.601e-12</p>
+<ul>
+<li><p>round(result_MarHypertension$residuals, 3)</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>hyperT</p></th>
+<th class="head"><p>hyperT</p></th>
+<th class="head"><p>Normal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Married</p></td>
+<td><p>3.198</p></td>
+<td><p>-1.148</p></td>
+</tr>
+<tr class="row-odd"><td><p>NevMarr</p></td>
+<td><p>-5.819</p></td>
+<td><p>2.088</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ul class="simple">
+<li><p>結果顯示<strong>婚姻經驗與高血壓相關</strong>，婚姻經驗者傾向有高血壓。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id23">
+<h3>婚姻與抽煙<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id24">
+<h4>Odds Ratio<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/NWC2Dxp.png" /></p></li>
+<li><p>Odds ratio <span class="math notranslate nohighlight">\(\hat{\theta}= 1.609\)</span>，表示<strong>婚姻與抽煙不是獨立的</strong>。</p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(0.318, 0.633)\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="id25">
+<h4>Chi-square<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>data with unknown smoking status were not taken into consideration</p>
+</div></blockquote>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>smoking</p></th>
+<th class="head"><p>smokes</p></th>
+<th class="head"><p>formerly</p></th>
+<th class="head"><p>never</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Married</p></td>
+<td><p>610</p></td>
+<td><p>738</p></td>
+<td><p>1362</p></td>
+<td><p>2710</p></td>
+</tr>
+<tr class="row-odd"><td><p>NevMarr</p></td>
+<td><p>176</p></td>
+<td><p>128</p></td>
+<td><p>443</p></td>
+<td><p>747</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p>786</p></td>
+<td><p>866</p></td>
+<td><p>866</p></td>
+<td><p>3457</p></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(X^2\)</span>  = 33.295, df = 2, p-value = 5.891e-08</p>
+<ul class="simple">
+<li><p>與odds ration結果相近，<strong>婚姻與抽菸習慣並不獨立</strong>，針對下表或許我們可以這樣解讀：對於曾有結婚經驗者，他們有較高機會成為成功戒菸者(formerly smoked)，對於單身者而言，則明顯較難，但他們與已婚者(或離婚失婚者相比)更有可能從未有抽菸習慣。</p></li>
+</ul>
+<ul>
+<li><p>round(result_HDsmoke$residuals, 3)</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>smoking</p></th>
+<th class="head"><p>smokes</p></th>
+<th class="head"><p>formerly</p></th>
+<th class="head"><p>never</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Married</p></td>
+<td><p>-0.248</p></td>
+<td><p>2.269</p></td>
+<td><p>-1.408</p></td>
+</tr>
+<tr class="row-odd"><td><p>NevMarr</p></td>
+<td><p>0.473</p></td>
+<td><p>-4.322</p></td>
+<td><p>2.682</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="bmi">
+<h3>婚姻與bmi<a class="headerlink" href="#bmi" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id26">
+<h4>Chi-square<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>移除BMI unknown值</p>
+</div></blockquote>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Category</p></th>
+<th class="head"><p>BMI</p></th>
+<th class="head"><p>Married</p></th>
+<th class="head"><p>NevMarri</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>underWeight</p></td>
+<td><p>&lt;18.5</p></td>
+<td><p>26</p></td>
+<td><p>16</p></td>
+<td><p>42</p></td>
+</tr>
+<tr class="row-odd"><td><p>healthy</p></td>
+<td><p>18.5-24</p></td>
+<td><p>422</p></td>
+<td><p>285</p></td>
+<td><p>707</p></td>
+</tr>
+<tr class="row-even"><td><p>overWeight</p></td>
+<td><p>24-27</p></td>
+<td><p>584</p></td>
+<td><p>175</p></td>
+<td><p>759</p></td>
+</tr>
+<tr class="row-odd"><td><p>slightObesi</p></td>
+<td><p>27-30</p></td>
+<td><p>655</p></td>
+<td><p>165</p></td>
+<td><p>820</p></td>
+</tr>
+<tr class="row-even"><td><p>mid-Obesity</p></td>
+<td><p>30-35</p></td>
+<td><p>793</p></td>
+<td><p>165</p></td>
+<td><p>958</p></td>
+</tr>
+<tr class="row-odd"><td><p>heaviObesi</p></td>
+<td><p>&gt;35</p></td>
+<td><p>724</p></td>
+<td><p>172</p></td>
+<td><p>896</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p></p></td>
+<td><p>3204</p></td>
+<td><p>978</p></td>
+<td><p>4182</p></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(X^2\)</span> = 152.12,  df = 5,  p-value &lt; 2.2e-16</p>
+<p>結果顯示<strong>婚姻與BMI不獨立</strong>，曾有結婚經驗者有高傾向成為肥胖，單身者同時體態健康則較為容易。–&gt;幸福肥？</p>
+<ul>
+<li><p>round(result_bmiMarital$residuals, 3)</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Category</p></th>
+<th class="head"><p>BMI</p></th>
+<th class="head"><p>Married</p></th>
+<th class="head"><p>NevMarri</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>underWeight</p></td>
+<td><p>&lt;18.5</p></td>
+<td><p>-1.089</p></td>
+<td><p>1.971</p></td>
+</tr>
+<tr class="row-odd"><td><p>healthy</p></td>
+<td><p>18.5-24</p></td>
+<td><p>-5.142</p></td>
+<td><p>9.306</p></td>
+</tr>
+<tr class="row-even"><td><p>overWeight</p></td>
+<td><p>24-27</p></td>
+<td><p>0.104</p></td>
+<td><p>-0.188</p></td>
+</tr>
+<tr class="row-odd"><td><p>slightObesi</p></td>
+<td><p>27-30</p></td>
+<td><p>1.068</p></td>
+<td><p>-1.933</p></td>
+</tr>
+<tr class="row-even"><td><p>mid-Obesity</p></td>
+<td><p>30-35</p></td>
+<td><p>2.179</p></td>
+<td><p>-3.944</p></td>
+</tr>
+<tr class="row-odd"><td><p>heaviObesi</p></td>
+<td><p>&gt;35</p></td>
+<td><p>1.433</p></td>
+<td><p>-2.593</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="bmi-age">
+<h2>BMI &amp; Age<a class="headerlink" href="#bmi-age" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id27">
+<h3>Chi-square<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>BMI的計算本不適用於嬰兒，故移除小於(含)兩歲之嬰兒，並移除BMI unknown值</p></li>
+<li><p>Since sample size of youth was too small, heavily obesity was then merged into mid-Obesity.</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>BMI/Age</p></th>
+<th class="head"><p>Age Range</p></th>
+<th class="head"><p>UnderWei</p></th>
+<th class="head"><p>Healthy</p></th>
+<th class="head"><p>OverWei</p></th>
+<th class="head"><p>slight Obe</p></th>
+<th class="head"><p>Obesity</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>BMI Ran</p></td>
+<td><p></p></td>
+<td><p>&lt;18.5</p></td>
+<td><p>18.5-24</p></td>
+<td><p>24-27</p></td>
+<td><p>27-30</p></td>
+<td><p>&gt;30</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>youth</p></td>
+<td><p>02 - 12</p></td>
+<td><p>186</p></td>
+<td><p>135</p></td>
+<td><p>16</p></td>
+<td><p>13</p></td>
+<td><p>10</p></td>
+<td><p>360</p></td>
+</tr>
+<tr class="row-even"><td><p>teen</p></td>
+<td><p>13 - 17</p></td>
+<td><p>31</p></td>
+<td><p>135</p></td>
+<td><p>54</p></td>
+<td><p>30</p></td>
+<td><p>57</p></td>
+<td><p>307</p></td>
+</tr>
+<tr class="row-odd"><td><p>youngAd</p></td>
+<td><p>18 - 35</p></td>
+<td><p>12</p></td>
+<td><p>276</p></td>
+<td><p>207</p></td>
+<td><p>171</p></td>
+<td><p>347</p></td>
+<td><p>1013</p></td>
+</tr>
+<tr class="row-even"><td><p>mid-Age</p></td>
+<td><p>36 - 55</p></td>
+<td><p>18</p></td>
+<td><p>194</p></td>
+<td><p>287</p></td>
+<td><p>356</p></td>
+<td><p>741</p></td>
+<td><p>1469</p></td>
+</tr>
+<tr class="row-odd"><td><p>elder</p></td>
+<td><p>56-</p></td>
+<td><p>8</p></td>
+<td><p>190</p></td>
+<td><p>247</p></td>
+<td><p>283</p></td>
+<td><p>736</p></td>
+<td><p>1591</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p></p></td>
+<td><p>255</p></td>
+<td><p>930</p></td>
+<td><p>811</p></td>
+<td><p>853</p></td>
+<td><p>1891</p></td>
+<td><p>4740</p></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(X^2\)</span> = 2194.1,  df = 16,  p-value &lt; 2.2e-16</p>
+<ul class="simple">
+<li><p>登燈，驚不驚喜？意不意外？<strong>年齡與BMI有顯著相關性</strong></p></li>
+</ul>
+<ul>
+<li><p>round(result_bmiAge$residuals, 3)</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>BMI/Age</p></th>
+<th class="head"><p>Age Range</p></th>
+<th class="head"><p>UnderWei</p></th>
+<th class="head"><p>Healthy</p></th>
+<th class="head"><p>OverWei</p></th>
+<th class="head"><p>slight Obe</p></th>
+<th class="head"><p>Obes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>BMI Ran</p></td>
+<td><p></p></td>
+<td><p>&lt;18.5</p></td>
+<td><p>18.5-24</p></td>
+<td><p>24-27</p></td>
+<td><p>27-30</p></td>
+<td><p>&gt;30</p></td>
+</tr>
+<tr class="row-odd"><td><p>youth</p></td>
+<td><p>02 - 12</p></td>
+<td><p>==37.864==</p></td>
+<td><p>==7.659==</p></td>
+<td><p>-5.810</p></td>
+<td><p>-6.434</p></td>
+<td><p>-11.150</p></td>
+</tr>
+<tr class="row-even"><td><p>teen</p></td>
+<td><p>13 - 17</p></td>
+<td><p>==3.564==</p></td>
+<td><p>==9.633==</p></td>
+<td><p>0.203</p></td>
+<td><p>-3.397</p></td>
+<td><p>-5.916</p></td>
+</tr>
+<tr class="row-odd"><td><p>youngAd</p></td>
+<td><p>18 - 35</p></td>
+<td><p>-5.757</p></td>
+<td><p>==5.479==</p></td>
+<td><p>==2.558==</p></td>
+<td><p>-0.837</p></td>
+<td><p>-2.842</p></td>
+</tr>
+<tr class="row-even"><td><p>mid-Age</p></td>
+<td><p>36 - 55</p></td>
+<td><p>-7.990</p></td>
+<td><p>-5.786</p></td>
+<td><p>-0.274</p></td>
+<td><p>==1.147==</p></td>
+<td><p>==6.401==</p></td>
+</tr>
+<tr class="row-odd"><td><p>elder</p></td>
+<td><p>56-</p></td>
+<td><p>-7.306</p></td>
+<td><p>-6.688</p></td>
+<td><p>0.896</p></td>
+<td><p>==4.118==</p></td>
+<td><p>==4.020==</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ul class="simple">
+<li><p>MURMUR: 就演化或是人類生長週期(?)的角度而言，其實這樣的分布狀況是可以理解的，青少年以前，生長快速，代謝的迅速程度讓身體無暇儲存養分，青少年後段至青壯年時期，生長停滯，且處於人生巔峰期，體態自然維持在最佳狀態，故而可見體重趨勢在青少年由過輕，漸漸往健康移動，到了中年與老年，細胞本身工作能力已降低，對於細胞本身而言，更趨向休眠狀態，更遑論已趨衰老抵抗氧化壓力等等能力大幅降低下，會自然更趨向儲存能量，故而在人體反應肥胖狀態。</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="numerical.html" title="previous page">數值型解釋變數</a>
+    <a class='right-next' id="next-link" href="clustering.html" title="next page">Cluster analysis</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By 陳奕造 施奕如 楊欣儒 李長穎<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

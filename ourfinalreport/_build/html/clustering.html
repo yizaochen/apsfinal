@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cluster analysis &#8212; 腦中風資料的統計分析與探討</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="迴歸分析" href="regression.html" />
+    <link rel="prev" title="因素之間交互作用" href="interaction1.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">腦中風資料的統計分析與探討</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   前言：背景與動機
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="dataexplore.html">
+   資料探討
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="simplecategorical.html">
+   簡單類別型解釋變數
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="multiplecategorical.html">
+   多重類別型解釋變數
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numerical.html">
+   數值型解釋變數
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="interaction1.html">
+   因素之間交互作用
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Cluster analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression.html">
+   迴歸分析
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/clustering.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fclustering.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   資料前置處理
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     隨機抽樣
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       轉換後的資料：
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   相似矩陣與距離矩陣
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   群聚樹
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     最大距離:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     平均距離：
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     最小距離：
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   分析
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#complete-linkage">
+     Complete-linkage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#average-linkage">
+     Average-linkage
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="cluster-analysis">
+<h1>Cluster analysis<a class="headerlink" href="#cluster-analysis" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>資料前置處理<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>隨機抽樣<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>將中風的人分組看關聯性，但是如果做180個人可能會跑出密密麻麻的樹，所以我從中抽20人，如下</p>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/NQ4NJXL.jpg" /></p></li>
+</ul>
+</li>
+<li><p>並把數值跟類別變數換成成二元變數。</p></li>
+<li><p>分組依據: 參考前面分類，大致分成正常跟不正常。</p></li>
+<li><p>只有工作型態把兒童跟工作者分開。</p></li>
+</ol>
+<div class="section" id="id3">
+<h4>轉換後的資料：<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/nYT6ZYx.png" /></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>相似矩陣與距離矩陣<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>根據12章講義，我是用<span class="math notranslate nohighlight">\(\frac{a+d}{p}\)</span>的公式，也就是把兩個人相同的變數數量除以總變數量，在這裡總共有8個變數，所以是除以8就是兩個人之間的相似度。距離矩陣就是用1去減相似度矩陣得到的。</p>
+</div>
+<div class="section" id="id5">
+<h2>群聚樹<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>最大距離:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/uROuQjN.png" /></p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>平均距離：<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/Bv95vx7.png" /></p></li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h3>最小距離：<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/tDTuB0s.png" /></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>分析<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="complete-linkage">
+<h3>Complete-linkage<a class="headerlink" href="#complete-linkage" title="Permalink to this headline">¶</a></h3>
+<p><img alt="" src="https://i.imgur.com/CLfsYmG.png" /></p>
+<ul class="simple">
+<li><p>依照Complete-linkage cluster dendrogram可大致分成五群，以下為各群的詳細抽樣內容說明：</p>
+<ul>
+<li><p><font color="#3433FF">第一群：共通點為「無心臟疾病、大於50歲、已婚、有工作、BMI異常」</font></p>
+<ol class="simple">
+<li><p>第一層有兩小群：兩小群合併於第三層，一個差異在於<font color="#9133FF">”血糖是否正常“</font></p>
+<ul>
+<li><p>(8, 1, 7): 高血壓、無心臟疾病、大於50歲、已婚、有工作、血糖正常、BMI異常、有抽煙史</p></li>
+<li><p>(17, 5, 15): 高血壓、無心臟疾病、大於50歲、已婚、有工作、血糖異常、BMI異常、有抽煙史</p></li>
+</ul>
+</li>
+<li><p>第二層：(2)與(8, 1, 7)合併，一個差異在於<font color="#9133FF">”有無高血壓“</font></p>
+<ul>
+<li><p>(2): 無高血壓、無心臟疾病、大於50歲、已婚、有工作、血糖正常、BMI異常、有抽煙史</p></li>
+</ul>
+</li>
+<li><p>第三層：(6)與(2, 8, 1, 7)和(17, 5, 15)合併，三個差異在於<font color="#9133FF">“有無高血壓”、“血糖是否正常”、“有無抽菸史”</font></p>
+<ul>
+<li><p>(6): 高血壓、無心臟疾病、大於50歲、已婚、有工作、血糖正常、BMI異常、無抽煙史</p></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><font color="#3433FF">第二群：共通點為「高血壓、無心臟疾病、大於50歲、已婚、有工作、血糖異常、無抽煙史」</font></p>
+<ol class="simple">
+<li><p>第一層：</p>
+<ul>
+<li><p>(3, 10): 高血壓、無心臟疾病、大於50歲、已婚、有工作、血糖異常、BMI正常、無抽煙史</p></li>
+</ul>
+</li>
+<li><p>第二層：(18)與(3, 10)合併，一個差異在於<font color="#9133FF">“BMI是否正常”</font></p>
+<ul>
+<li><p>(18): 高血壓、無心臟疾病、大於50歲、已婚、有工作、血糖異常、BMI異常、無抽煙史</p></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><font color="#3433FF">第三群：共通點為「無高血壓、大於50歲、已婚、有工作、血糖異常、BMI異常、有抽煙史」</font></p>
+<ol class="simple">
+<li><p>第一層有兩小群：兩小群合併於第二層，一個差異在於<font color="#9133FF">“有無心臟疾病”</font></p>
+<ul>
+<li><p>(4, 16): 無高血壓、有心臟疾病、大於50歲、已婚、有工作、血糖異常、BMI異常、有抽煙史</p></li>
+<li><p>(20, 14, 12, 13): 無高血壓、無心臟疾病、大於50歲、已婚、有工作、血糖異常、BMI異常、有抽煙史</p></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><font color="F83344">以上，第一、二、三群合併於第四層，共通點為「大於50歲、已婚、有工作」</font></p></li>
+<li><p><font color="#3433FF">第四群：共通點為「高血壓、有心臟疾病、大於50歲、未婚、有工作、BMI正常、有抽煙史」</font></p>
+<ol class="simple">
+<li><p>第一層：在整體的第二層出現，一個差異在於<font color="#9133FF">“血糖是否異常”</font></p>
+<ul>
+<li><p>(9): 高血壓、有心臟疾病、大於50歲、未婚、有工作、血糖異常、BMI正常、有抽煙</p></li>
+<li><p>(19): 高血壓、有心臟疾病、大於50歲、未婚、有工作、血糖正常、BMI正常、有抽煙</p></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><font color="F83344">以上，第四群與第一、二、三群合併於第五層，共通點為「大於50歲、有工作」</font></p></li>
+<li><p><font color="#3433FF">第五群：</font></p>
+<ol class="simple">
+<li><p>第一層：只有一位</p>
+<ul>
+<li><p>(11): 無高血壓、無心臟疾病、小於50歲、未婚、有工作、血糖正常、BMI正常、有抽煙史</p></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><font color="F83344">全圖，第五群與第一、二、三、四群合併於第六層，共通點為「有工作」</font></p></li>
+</ul>
+</li>
+<li><p>各群的第一個決策點：</p>
+<ol class="simple">
+<li><p>第一群中，(2)與(8, 1, 7)的決策為「是否有高血壓」</p></li>
+<li><p>第二群中，(18)與(3, 10)的決策為「BMI是否正常」</p></li>
+<li><p>第三群中，(4, 16)與(20, 14, 12, 13)的決策為「有無心臟疾病」</p></li>
+<li><p>第四群中，(9)與(19)的決策為「是否有高血壓」</p></li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="section" id="average-linkage">
+<h3>Average-linkage<a class="headerlink" href="#average-linkage" title="Permalink to this headline">¶</a></h3>
+<p><img alt="" src="https://i.imgur.com/YEtZkus.png" /></p>
+<ul class="simple">
+<li><p>在Average-linkage cluster dendrogram中，可以發現與Complete-linkage cluster dendrogram只有些微的不同。</p>
+<ul>
+<li><p>(6)被提出到更下一層: 代表(6)、(17, 5, 15)、(2, 8, 1, 7)這三小群的最大距離相同，但在平均距離上，(6)與其他兩小群的平均距離比(17, 5, 15)和(2, 8, 1, 7)的平均距離更大。</p></li>
+<li><p>(9, 19)也被提出到更下一層</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="interaction1.html" title="previous page">因素之間交互作用</a>
+    <a class='right-next' id="next-link" href="regression.html" title="next page">迴歸分析</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By 陳奕造 施奕如 楊欣儒 李長穎<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
