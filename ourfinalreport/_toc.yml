@@ -2,7 +2,8 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
 - file: intro
-- file: content
-  sections:
-    - file: markdown
-    - file: notebooks
+- file: dataexplore
+- file: simplecategorical
+- file: multiplecategorical
+- file: numerical
+- file: regression
