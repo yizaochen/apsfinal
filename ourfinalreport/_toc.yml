@@ -7,5 +7,6 @@
 - file: multiplecategorical
 - file: numerical
 - file: interaction1
+- file: interaction2
 - file: clustering
 - file: regression
