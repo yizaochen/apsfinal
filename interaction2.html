@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>數值型解釋變數 &#8212; 腦中風資料的統計分析與探討</title>
+    <title>因素之間交互作用:數值型 &#8212; 腦中風資料的統計分析與探討</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,12 +49,10 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="因素之間交互作用" href="interaction1.html" />
-    <link rel="prev" title="多重類別型解釋變數" href="multiplecategorical.html" />
+    <link rel="next" title="Cluster analysis" href="clustering.html" />
+    <link rel="prev" title="因素之間交互作用" href="interaction1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -107,8 +105,8 @@
    多重類別型解釋變數
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="numerical.html">
    數值型解釋變數
   </a>
  </li>
@@ -117,8 +115,8 @@
    因素之間交互作用
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="interaction2.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    因素之間交互作用:數值型
   </a>
  </li>
@@ -183,7 +181,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/numerical.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/interaction2.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -203,7 +201,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnumerical.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Finteraction2.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -231,17 +229,7 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   中風與年齡
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   中風與血糖
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bmi">
-   中風與BMI
+   三種數值型變數兩兩關係
   </a>
  </li>
 </ul>
@@ -256,32 +244,30 @@
               <div>
                 
   <div class="section" id="id1">
-<h1>數值型解釋變數<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>因素之間交互作用:數值型<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>在卡方檢定中，我們已經知道年齡、bmi、血糖與中風不是獨立的</p></li>
+</ul>
 <div class="section" id="id2">
-<h2>中風與年齡<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/age_stroke.png"><img alt="age_stroke" class="bg-primary mb-1 align-center" src="_images/age_stroke.png" style="width: 800px;" /></a>
-</div>
-<div class="section" id="id3">
-<h2>中風與血糖<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>三種數值型變數兩兩關係<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>分類依據:</p></li>
+<li><p>這一個部份，我們想了解這三個變數所含有的資訊是否有重疊?</p></li>
 </ul>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/glucose_category_ref.png"><img alt="glucose_category_ref" class="bg-primary mb-1 align-center" src="_images/glucose_category_ref.png" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/numerical_scatter.png"><img alt="numerical_scatter" class="bg-primary mb-1 align-center" src="_images/numerical_scatter.png" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/numerical_pearsonr.png"><img alt="numerical_pearsonr" class="bg-primary mb-1 align-center" src="_images/numerical_pearsonr.png" style="width: 800px;" /></a>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> test:</p></li>
+<li><p>先用Scatter plots提供視覺化的資訊</p>
+<ul>
+<li><p>年紀小的，中風的機率小</p></li>
 </ul>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/glucose_stroke.png"><img alt="glucose_stroke" class="bg-primary mb-1 align-center" src="_images/glucose_stroke.png" style="width: 800px;" /></a>
-</div>
-<div class="section" id="bmi">
-<h2>中風與BMI<a class="headerlink" href="#bmi" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>分類依據:</p></li>
+</li>
+<li><p>我們分成中風與沒有中風兩組，分別算出相關係數</p>
+<ul>
+<li><p>可以看到相關係數都靠近0，表示三個解釋變數的相關性低</p></li>
 </ul>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/bmi_category_ref.jpg"><img alt="glucose_stroke" class="bg-primary mb-1 align-center" src="_images/bmi_category_ref.jpg" style="width: 800px;" /></a>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> test:</p></li>
+</li>
+<li><p>因此，之後的模型中，這三個解釋變數都得考慮</p></li>
 </ul>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/bmi_stroke.png"><img alt="glucose_stroke" class="bg-primary mb-1 align-center" src="_images/bmi_stroke.png" style="width: 800px;" /></a>
 </div>
 </div>
 
@@ -310,8 +296,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="multiplecategorical.html" title="previous page">多重類別型解釋變數</a>
-    <a class='right-next' id="next-link" href="interaction1.html" title="next page">因素之間交互作用</a>
+    <a class='left-prev' id="prev-link" href="interaction1.html" title="previous page">因素之間交互作用</a>
+    <a class='right-next' id="next-link" href="clustering.html" title="next page">Cluster analysis</a>
 
         </div>
         

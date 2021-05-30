@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>數值型解釋變數 &#8212; 腦中風資料的統計分析與探討</title>
+    <title>迴歸分析: 數值型變數 &#8212; 腦中風資料的統計分析與探討</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,12 +49,10 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="因素之間交互作用" href="interaction1.html" />
-    <link rel="prev" title="多重類別型解釋變數" href="multiplecategorical.html" />
+    <link rel="next" title="迴歸分析: 綜合模型" href="regression.html" />
+    <link rel="prev" title="迴歸分析: 類別型變數" href="regression_categorical.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -107,8 +105,8 @@
    多重類別型解釋變數
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="numerical.html">
    數值型解釋變數
   </a>
  </li>
@@ -132,8 +130,8 @@
    迴歸分析: 類別型變數
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="regression_numerical.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    迴歸分析: 數值型變數
   </a>
  </li>
@@ -183,9 +181,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/numerical.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/regression_numerical.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -203,7 +201,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnumerical.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fregression_numerical.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -219,34 +217,28 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/regression_numerical.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   中風與年齡
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   中風與血糖
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bmi">
-   中風與BMI
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -256,33 +248,7 @@
               <div>
                 
   <div class="section" id="id1">
-<h1>數值型解釋變數<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id2">
-<h2>中風與年齡<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/age_stroke.png"><img alt="age_stroke" class="bg-primary mb-1 align-center" src="_images/age_stroke.png" style="width: 800px;" /></a>
-</div>
-<div class="section" id="id3">
-<h2>中風與血糖<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>分類依據:</p></li>
-</ul>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/glucose_category_ref.png"><img alt="glucose_category_ref" class="bg-primary mb-1 align-center" src="_images/glucose_category_ref.png" style="width: 800px;" /></a>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> test:</p></li>
-</ul>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/glucose_stroke.png"><img alt="glucose_stroke" class="bg-primary mb-1 align-center" src="_images/glucose_stroke.png" style="width: 800px;" /></a>
-</div>
-<div class="section" id="bmi">
-<h2>中風與BMI<a class="headerlink" href="#bmi" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>分類依據:</p></li>
-</ul>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/bmi_category_ref.jpg"><img alt="glucose_stroke" class="bg-primary mb-1 align-center" src="_images/bmi_category_ref.jpg" style="width: 800px;" /></a>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> test:</p></li>
-</ul>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/bmi_stroke.png"><img alt="glucose_stroke" class="bg-primary mb-1 align-center" src="_images/bmi_stroke.png" style="width: 800px;" /></a>
-</div>
+<h1>迴歸分析: 數值型變數<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 </div>
 
     <script type="text/x-thebe-config">
@@ -310,8 +276,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="multiplecategorical.html" title="previous page">多重類別型解釋變數</a>
-    <a class='right-next' id="next-link" href="interaction1.html" title="next page">因素之間交互作用</a>
+    <a class='left-prev' id="prev-link" href="regression_categorical.html" title="previous page">迴歸分析: 類別型變數</a>
+    <a class='right-next' id="next-link" href="regression.html" title="next page">迴歸分析: 綜合模型</a>
 
         </div>
         
