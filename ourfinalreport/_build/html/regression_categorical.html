@@ -1,0 +1,788 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>迴歸分析: 類別型變數 &#8212; 腦中風資料的統計分析與探討</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="迴歸分析: 數值型變數" href="regression_numerical.html" />
+    <link rel="prev" title="Cluster analysis" href="clustering.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">腦中風資料的統計分析與探討</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   前言：背景與動機
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="dataexplore.html">
+   資料探討
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="simplecategorical.html">
+   簡單類別型解釋變數
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="multiplecategorical.html">
+   多重類別型解釋變數
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numerical.html">
+   數值型解釋變數
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="interaction1.html">
+   因素之間交互作用
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="interaction2.html">
+   因素之間交互作用:數值型
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clustering.html">
+   Cluster analysis
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   迴歸分析: 類別型變數
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_numerical.html">
+   迴歸分析: 數值型變數
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression.html">
+   迴歸分析: 綜合模型
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/regression_categorical.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fregression_categorical.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/regression_categorical.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   讀取與清理資料
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-models">
+   Simple Models: 只含有一個解釋變數
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hypertension">
+     Hypertension:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#heart-disease">
+     Heart-disease
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ever-married">
+     Ever-Married
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#work-type">
+     Work-type
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#smoke-status">
+     Smoke Status
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     小節結論
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-selection-with-without-smoke-status">
+   Model Selection: with/without smoke status
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#likelihood-ratio-test">
+     Likelihood-Ratio Test
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#final-model">
+   Final Model
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     模型解釋
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="id1">
+<h1>迴歸分析: 類別型變數<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>從前面列聯表分析中: 中風與性別及住處型態無關，因此先剔除</p></li>
+<li><p>首先，我們先針對每一個數值變數做Logistic regression</p></li>
+</ul>
+<div class="section" id="id2">
+<h2>讀取與清理資料<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>資料清理</p>
+<ul>
+<li><p>BMI為Null</p></li>
+<li><p>Smoking status為unknown</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">strokedata</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s">&#39;../data/healthcare-dataset-stroke-data-cleanbmi.csv&#39;</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">strokedata</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>age</th><th scope=col>hypertension</th><th scope=col>heart_disease</th><th scope=col>ever_married</th><th scope=col>work_type</th><th scope=col>avg_glucose_level</th><th scope=col>bmi</th><th scope=col>smoking_status</th><th scope=col>stroke</th></tr></thead>
+<tbody>
+	<tr><td>67             </td><td>0              </td><td>1              </td><td>Yes            </td><td>Private        </td><td>228.69         </td><td>36.6           </td><td>formerly smoked</td><td>1              </td></tr>
+	<tr><td>80             </td><td>0              </td><td>1              </td><td>Yes            </td><td>Private        </td><td>105.92         </td><td>32.5           </td><td>never smoked   </td><td>1              </td></tr>
+	<tr><td>49             </td><td>0              </td><td>0              </td><td>Yes            </td><td>Private        </td><td>171.23         </td><td>34.4           </td><td>smokes         </td><td>1              </td></tr>
+	<tr><td>79             </td><td>1              </td><td>0              </td><td>Yes            </td><td>Self-employed  </td><td>174.12         </td><td>24.0           </td><td>never smoked   </td><td>1              </td></tr>
+	<tr><td>81             </td><td>0              </td><td>0              </td><td>Yes            </td><td>Private        </td><td>186.21         </td><td>29.0           </td><td>formerly smoked</td><td>1              </td></tr>
+	<tr><td>74             </td><td>1              </td><td>1              </td><td>Yes            </td><td>Private        </td><td> 70.09         </td><td>27.4           </td><td>never smoked   </td><td>1              </td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<ul class="simple">
+<li><p>清理完的資料含有3426資料點</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">nrow</span><span class="p">(</span><span class="n">strokedata</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">3426</div></div>
+</div>
+</div>
+<div class="section" id="simple-models">
+<h2>Simple Models: 只含有一個解釋變數<a class="headerlink" href="#simple-models" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="hypertension">
+<h3>Hypertension:<a class="headerlink" href="#hypertension" title="Permalink to this headline">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_hypert</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">hypertension</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_hypert</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ hypertension, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.5486  -0.2885  -0.2885  -0.2885   2.5299  
+
+Coefficients:
+             Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)  -3.15856    0.09206 -34.309  &lt; 2e-16 ***
+hypertension  1.34082    0.16991   7.892 2.99e-15 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1411.0  on 3425  degrees of freedom
+Residual deviance: 1358.2  on 3424  degrees of freedom
+AIC: 1362.2
+
+Number of Fisher Scoring iterations: 6
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="heart-disease">
+<h3>Heart-disease<a class="headerlink" href="#heart-disease" title="Permalink to this headline">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{heartd}}x_{\rm{heartd}}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_heartd</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">heart_disease</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_heartd</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ heart_disease, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.6198  -0.3025  -0.3025  -0.3025   2.4929  
+
+Coefficients:
+              Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)   -3.06157    0.08525  -35.91  &lt; 2e-16 ***
+heart_disease  1.50929    0.20231    7.46 8.62e-14 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1411.0  on 3425  degrees of freedom
+Residual deviance: 1367.3  on 3424  degrees of freedom
+AIC: 1371.3
+
+Number of Fisher Scoring iterations: 5
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ever-married">
+<h3>Ever-Married<a class="headerlink" href="#ever-married" title="Permalink to this headline">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{marry}}x_{\rm{marry}}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_marry</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">ever_married</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_marry</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ ever_married, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.3565  -0.3565  -0.3565  -0.2213   2.7284  
+
+Coefficients:
+                Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)      -3.6976     0.2264 -16.335  &lt; 2e-16 ***
+ever_marriedYes   0.9734     0.2406   4.045 5.22e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1411.0  on 3425  degrees of freedom
+Residual deviance: 1390.4  on 3424  degrees of freedom
+AIC: 1394.4
+
+Number of Fisher Scoring iterations: 6
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="work-type">
+<h3>Work-type<a class="headerlink" href="#work-type" title="Permalink to this headline">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{GovJob}}x_{\rm{GovJob}} + \beta_{\rm{Neverworked}}x_{\rm{Neverworked}} + \beta_{\rm{Private}}x_{\rm{Private}} + \beta_{\rm{Selfemployed}}x_{\rm{Selfemployed}}\)</span></p>
+<ul class="simple">
+<li><p>Baseline group: children</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_worktype</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">work_type</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_worktype</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ work_type, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.3985  -0.3187  -0.3187  -0.3187   2.4927  
+
+Coefficients:
+                         Estimate Std. Error z value Pr(&gt;|z|)
+(Intercept)            -1.757e+01  4.798e+02  -0.037    0.971
+work_typeGovt_job       1.451e+01  4.798e+02   0.030    0.976
+work_typeNever_worked   4.643e-09  1.161e+03   0.000    1.000
+work_typePrivate        1.461e+01  4.798e+02   0.030    0.976
+work_typeSelf-employed  1.507e+01  4.798e+02   0.031    0.975
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1411.0  on 3425  degrees of freedom
+Residual deviance: 1394.8  on 3421  degrees of freedom
+AIC: 1404.8
+
+Number of Fisher Scoring iterations: 16
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>z-test的p-value都很大，表示我們沒辦法拒絕下面的<span class="math notranslate nohighlight">\(H_0\)</span><br />
+<span class="math notranslate nohighlight">\(H_0: \beta_{\rm{GovJob}} = 0\)</span><br />
+<span class="math notranslate nohighlight">\(H_0: \beta_{\rm{Neverworked}} = 0\)</span><br />
+<span class="math notranslate nohighlight">\(H_0: \beta_{\rm{Private}} = 0\)</span><br />
+<span class="math notranslate nohighlight">\(H_0: \beta_{\rm{Selfemployed}} = 0\)</span></p></li>
+<li><p>因此，工作型態對於預測中風是沒有幫助的</p></li>
+</ul>
+</div>
+<div class="section" id="smoke-status">
+<h3>Smoke Status<a class="headerlink" href="#smoke-status" title="Permalink to this headline">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{Neversmoke}}x_{\rm{Neversmoke}} + \beta_{\rm{smoke}}x_{\rm{smoke}}\)</span></p>
+<ul class="simple">
+<li><p>Baseline group: ‘formerly smoked’</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_smoke</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">smoking_status</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_smoke</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ smoking_status, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.3756  -0.3297  -0.3047  -0.3047   2.4872  
+
+Coefficients:
+                           Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)                 -2.6162     0.1372 -19.068   &lt;2e-16 ***
+smoking_statusnever smoked  -0.4305     0.1769  -2.434   0.0149 *  
+smoking_statussmokes        -0.2684     0.2142  -1.253   0.2102    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1411.0  on 3425  degrees of freedom
+Residual deviance: 1405.3  on 3423  degrees of freedom
+AIC: 1411.3
+
+Number of Fisher Scoring iterations: 5
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>小節結論<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>從每一個Simple model對於<span class="math notranslate nohighlight">\(\beta\)</span>的z-test，可以發現</p>
+<ul>
+<li><p>高血壓、心臟疾病、結婚狀態與中風的預測是顯著相關的</p></li>
+<li><p>抽煙狀態就比較不這麼顯著</p>
+<ul>
+<li><p>formerly smoke, never smoke的p-value &lt; 5%: 還是有提供預測中風的資訊</p></li>
+<li><p>smoke的p-value=0.21: 對於預測中風，沒辦法提供什麼資訊</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>為了決定是否要將smoke status考慮進去最後的模型，將在下個部份做Model Selection</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="model-selection-with-without-smoke-status">
+<h2>Model Selection: with/without smoke status<a class="headerlink" href="#model-selection-with-without-smoke-status" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Full Model:
+<span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{marry}}x_{\rm{marry}} + \beta_{\rm{Neversmoke}}x_{\rm{Neversmoke}} + \beta_{\rm{smoke}}x_{\rm{smoke}}\)</span></p></li>
+<li><p>Reduced Model: <span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{marry}}x_{\rm{marry}}\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_full</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">hypertension</span> <span class="o">+</span> <span class="n">heart_disease</span> <span class="o">+</span> <span class="n">ever_married</span> <span class="o">+</span> <span class="n">smoking_status</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_full</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ hypertension + heart_disease + ever_married + 
+    smoking_status, family = binomial(link = &quot;logit&quot;), data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.9456  -0.3194  -0.2799  -0.2226   2.8192  
+
+Coefficients:
+                           Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)                 -3.6853     0.2682 -13.742  &lt; 2e-16 ***
+hypertension                 1.1382     0.1748   6.510 7.49e-11 ***
+heart_disease                1.2389     0.2099   5.902 3.58e-09 ***
+ever_marriedYes              0.7351     0.2451   3.000   0.0027 ** 
+smoking_statusnever smoked  -0.2698     0.1824  -1.479   0.1390    
+smoking_statussmokes        -0.1920     0.2196  -0.874   0.3820    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1411.0  on 3425  degrees of freedom
+Residual deviance: 1311.8  on 3420  degrees of freedom
+AIC: 1323.8
+
+Number of Fisher Scoring iterations: 6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_reduce</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">hypertension</span> <span class="o">+</span> <span class="n">heart_disease</span> <span class="o">+</span> <span class="n">ever_married</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_reduce</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ hypertension + heart_disease + ever_married, 
+    family = binomial(link = &quot;logit&quot;), data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.8899  -0.2930  -0.2930  -0.2012   2.7965  
+
+Coefficients:
+                Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)      -3.8899     0.2308 -16.858  &lt; 2e-16 ***
+hypertension      1.1374     0.1746   6.513 7.34e-11 ***
+heart_disease     1.2675     0.2085   6.080 1.20e-09 ***
+ever_marriedYes   0.7631     0.2443   3.124  0.00178 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1411  on 3425  degrees of freedom
+Residual deviance: 1314  on 3422  degrees of freedom
+AIC: 1322
+
+Number of Fisher Scoring iterations: 6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="likelihood-ratio-test">
+<h3>Likelihood-Ratio Test<a class="headerlink" href="#likelihood-ratio-test" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Full Model與Reduced Model的差異可以轉換成  <span class="math notranslate nohighlight">\(H_0: \beta_{\rm{Neversmoke}} = \beta_{\rm{smoke}}= 0\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">anova</span><span class="p">(</span><span class="n">model_reduce</span><span class="p">,</span> <span class="n">model_full</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="s">&quot;LRT&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>Resid. Df</th><th scope=col>Resid. Dev</th><th scope=col>Df</th><th scope=col>Deviance</th><th scope=col>Pr(&gt;Chi)</th></tr></thead>
+<tbody>
+	<tr><td>3422     </td><td>1313.986 </td><td>NA       </td><td>     NA  </td><td>       NA</td></tr>
+	<tr><td>3420     </td><td>1311.820 </td><td> 2       </td><td>2.16591  </td><td>0.3385936</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<ul class="simple">
+<li><p>根據Deviance的p-value=0.3385</p>
+<ul>
+<li><p>不能拒絕 <span class="math notranslate nohighlight">\(H_0\)</span>，所以最終模型將會捨棄掉抽煙的變數</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="final-model">
+<h2>Final Model<a class="headerlink" href="#final-model" title="Permalink to this headline">¶</a></h2>
+<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{marry}}x_{\rm{marry}}\)</span></p>
+<div class="section" id="id4">
+<h3>模型解釋<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/cate_model_full_plot.png"><img alt="glucose_stroke" class="bg-primary mb-1 align-center" src="_images/cate_model_full_plot.png" style="width: 800px;" /></a>
+<ul class="simple">
+<li><p>首先，高血壓、心臟疾病與結婚都會增加中風機率</p>
+<ul>
+<li><p>最右邊灰色的點，三種狀況都有，擁有最高的中風機率</p></li>
+<li><p>最左邊藍色的點，三種狀況都沒有，中風機率最低</p></li>
+</ul>
+</li>
+<li><p>當 <span class="math notranslate nohighlight">\(x_{\rm{hypert}}+ x_{\rm{heartd}}+ x_{\rm{marry}}=1\)</span> 或是 <span class="math notranslate nohighlight">\(x_{\rm{hypert}}+ x_{\rm{heartd}}+ x_{\rm{marry}}=2\)</span></p>
+<ul>
+<li><p>婚姻的影響是小於高血壓與心臟疾病的</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="clustering.html" title="previous page">Cluster analysis</a>
+    <a class='right-next' id="next-link" href="regression_numerical.html" title="next page">迴歸分析: 數值型變數</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By 陳奕造 施奕如 楊欣儒 李長穎<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

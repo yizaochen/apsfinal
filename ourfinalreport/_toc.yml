@@ -9,4 +9,6 @@
 - file: interaction1
 - file: interaction2
 - file: clustering
+- file: regression_categorical.ipynb
+- file: regression_numerical.ipynb
 - file: regression
