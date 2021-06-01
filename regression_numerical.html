@@ -49,9 +49,11 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="迴歸分析: 綜合模型" href="regression.html" />
+    <link rel="next" title="迴歸分析: 綜合模型" href="regression_mix.html" />
     <link rel="prev" title="迴歸分析: 類別型變數" href="regression_categorical.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -136,7 +138,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="regression.html">
+  <a class="reference internal" href="regression_mix.html">
    迴歸分析: 綜合模型
   </a>
  </li>
@@ -239,6 +241,124 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   讀取與清理資料
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-models">
+   Simple Models: 只含有一個解釋變數
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#age">
+     Age
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#average-glucose-level">
+     Average Glucose Level
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bmi">
+     BMI
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-selection-with-without-bmi">
+   Model Selection: with/without bmi
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#likelihood-ratio-test">
+     Likelihood-Ratio Test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#final-selection">
+     Final Selection:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   數值型轉換成類別型
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Age
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       資料處理
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#model-age-full">
+       Model-Age-Full:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#model-age-selected">
+       Model-Age-Selected:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       比較:數值型與類別型
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Average Glucose Level
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       資料處理
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#model-glucose-full">
+       Model-Glucose-Full:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#model-glucose-selected">
+       Model-Glucose-Selected:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       比較:數值型與類別型
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     Final Selection
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -249,6 +369,568 @@
                 
   <div class="section" id="id1">
 <h1>迴歸分析: 數值型變數<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>讀取與清理資料<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>資料清理</p>
+<ul>
+<li><p>BMI為Null</p></li>
+<li><p>Smoking status為unknown</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">strokedata</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s">&#39;../data/healthcare-dataset-stroke-data-cleanbmi.csv&#39;</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">strokedata</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>age</th><th scope=col>hypertension</th><th scope=col>heart_disease</th><th scope=col>ever_married</th><th scope=col>work_type</th><th scope=col>avg_glucose_level</th><th scope=col>bmi</th><th scope=col>smoking_status</th><th scope=col>stroke</th></tr></thead>
+<tbody>
+	<tr><td>67             </td><td>0              </td><td>1              </td><td>Yes            </td><td>Private        </td><td>228.69         </td><td>36.6           </td><td>formerly smoked</td><td>1              </td></tr>
+	<tr><td>80             </td><td>0              </td><td>1              </td><td>Yes            </td><td>Private        </td><td>105.92         </td><td>32.5           </td><td>never smoked   </td><td>1              </td></tr>
+	<tr><td>49             </td><td>0              </td><td>0              </td><td>Yes            </td><td>Private        </td><td>171.23         </td><td>34.4           </td><td>smokes         </td><td>1              </td></tr>
+	<tr><td>79             </td><td>1              </td><td>0              </td><td>Yes            </td><td>Self-employed  </td><td>174.12         </td><td>24.0           </td><td>never smoked   </td><td>1              </td></tr>
+	<tr><td>81             </td><td>0              </td><td>0              </td><td>Yes            </td><td>Private        </td><td>186.21         </td><td>29.0           </td><td>formerly smoked</td><td>1              </td></tr>
+	<tr><td>74             </td><td>1              </td><td>1              </td><td>Yes            </td><td>Private        </td><td> 70.09         </td><td>27.4           </td><td>never smoked   </td><td>1              </td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="simple-models">
+<h2>Simple Models: 只含有一個解釋變數<a class="headerlink" href="#simple-models" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="age">
+<h3>Age<a class="headerlink" href="#age" title="Permalink to this headline">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{age}}x_{\rm{age}}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_age</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">age</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_age</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ age, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.7433  -0.3532  -0.2094  -0.1101   3.1489  
+
+Coefficients:
+             Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept) -7.386557   0.413389  -17.87   &lt;2e-16 ***
+age          0.076116   0.006051   12.58   &lt;2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1411.0  on 3425  degrees of freedom
+Residual deviance: 1180.3  on 3424  degrees of freedom
+AIC: 1184.3
+
+Number of Fisher Scoring iterations: 7
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="nume_model_age" src="_images/nume_model_age.png" /></p>
+</div>
+<div class="section" id="average-glucose-level">
+<h3>Average Glucose Level<a class="headerlink" href="#average-glucose-level" title="Permalink to this headline">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{glucose}}x_{\rm{glucose}}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_glucose</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">avg_glucose_level</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_glucose</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ avg_glucose_level, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.6635  -0.3162  -0.2829  -0.2613   2.6724  
+
+Coefficients:
+                   Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)       -4.109807   0.188774 -21.771  &lt; 2e-16 ***
+avg_glucose_level  0.010115   0.001286   7.866 3.66e-15 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1411.0  on 3425  degrees of freedom
+Residual deviance: 1355.4  on 3424  degrees of freedom
+AIC: 1359.4
+
+Number of Fisher Scoring iterations: 6
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="nume_model_glucose" src="_images/nume_model_glucose.png" /></p>
+</div>
+<div class="section" id="bmi">
+<h3>BMI<a class="headerlink" href="#bmi" title="Permalink to this headline">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{bmi}}x_{\rm{bmi}}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_bmi</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">bmi</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_bmi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ bmi, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.4043  -0.3322  -0.3266  -0.3220   2.4642  
+
+Coefficients:
+             Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept) -3.104671   0.321897  -9.645   &lt;2e-16 ***
+bmi          0.006975   0.010207   0.683    0.494    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1411.0  on 3425  degrees of freedom
+Residual deviance: 1410.5  on 3424  degrees of freedom
+AIC: 1414.5
+
+Number of Fisher Scoring iterations: 5
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="nume_model_bmi" src="_images/nume_model_bmi.png" /></p>
+<ul class="simple">
+<li><p>bmi的數值對於預測中風沒有什麼資訊</p>
+<ul>
+<li><p>可以看到<span class="math notranslate nohighlight">\(\hat{\beta}_{\rm{bmi}}\)</span>非常接近0</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\beta}_{\rm{bmi}}\)</span> 的z-test p-value很大</p></li>
+</ul>
+</li>
+<li><p>下一個部份會利用Deviance 來決定是否要捨棄bmi這個解釋變數</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="model-selection-with-without-bmi">
+<h2>Model Selection: with/without bmi<a class="headerlink" href="#model-selection-with-without-bmi" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Full Model: <span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{age}}x_{\rm{age}} + \beta_{\rm{glucose}}x_{\rm{glucose}} + \beta_{\rm{bmi}}x_{\rm{bmi}}\)</span></p></li>
+<li><p>Reduced Model: <span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{age}}x_{\rm{age}} + \beta_{\rm{glucose}}x_{\rm{glucose}}\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_full</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">age</span> <span class="o">+</span> <span class="n">avg_glucose_level</span> <span class="o">+</span> <span class="n">bmi</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_full</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ age + avg_glucose_level + bmi, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.9252  -0.3444  -0.1970  -0.1050   3.2052  
+
+Coefficients:
+                   Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)       -8.158626   0.620082 -13.157  &lt; 2e-16 ***
+age                0.073656   0.006365  11.572  &lt; 2e-16 ***
+avg_glucose_level  0.005208   0.001350   3.858 0.000114 ***
+bmi                0.009182   0.012712   0.722 0.470102    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1411.0  on 3425  degrees of freedom
+Residual deviance: 1163.3  on 3422  degrees of freedom
+AIC: 1171.3
+
+Number of Fisher Scoring iterations: 7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_reduce</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">age</span> <span class="o">+</span> <span class="n">avg_glucose_level</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_reduce</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ age + avg_glucose_level, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.9514  -0.3432  -0.1975  -0.1068   3.1972  
+
+Coefficients:
+                   Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)       -7.845862   0.434271  -18.07  &lt; 2e-16 ***
+age                0.072708   0.006176   11.77  &lt; 2e-16 ***
+avg_glucose_level  0.005442   0.001311    4.15 3.33e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1411.0  on 3425  degrees of freedom
+Residual deviance: 1163.8  on 3423  degrees of freedom
+AIC: 1169.8
+
+Number of Fisher Scoring iterations: 7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="likelihood-ratio-test">
+<h3>Likelihood-Ratio Test<a class="headerlink" href="#likelihood-ratio-test" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Full Model與Reduced Model的差異可以轉換成 <span class="math notranslate nohighlight">\(H_0: \beta_{\rm{bmi}} = 0\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">anova</span><span class="p">(</span><span class="n">model_reduce</span><span class="p">,</span> <span class="n">model_full</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="s">&quot;LRT&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>Resid. Df</th><th scope=col>Resid. Dev</th><th scope=col>Df</th><th scope=col>Deviance</th><th scope=col>Pr(&gt;Chi)</th></tr></thead>
+<tbody>
+	<tr><td>3423     </td><td>1163.793 </td><td>NA       </td><td>       NA</td><td>       NA</td></tr>
+	<tr><td>3422     </td><td>1163.279 </td><td> 1       </td><td>0.5142007</td><td>0.4733261</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<ul class="simple">
+<li><p>根據Deviance的p-value=0.4733</p>
+<ul>
+<li><p>不能拒絕 <span class="math notranslate nohighlight">\(H_0\)</span>，所以最終模型將會捨棄掉bmi的變數</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="final-selection">
+<h3>Final Selection:<a class="headerlink" href="#final-selection" title="Permalink to this headline">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{age}}x_{\rm{age}} + \beta_{\rm{glucose}}x_{\rm{glucose}}\)</span></p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>數值型轉換成類別型<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>為了在綜合型Model能做一個簡單的分類，我們希望能將數值型的age與glucose轉換成類別型</p></li>
+</ul>
+<div class="section" id="id4">
+<h3>Age<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h4>資料處理<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">strokedata</span><span class="o">$</span><span class="n">age_greater_50</span> <span class="o">&lt;-</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">strokedata</span><span class="o">$</span><span class="n">age</span><span class="o">&gt;</span><span class="m">50</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span>
+<span class="n">strokedata</span><span class="o">$</span><span class="n">age_greater_60</span> <span class="o">&lt;-</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">strokedata</span><span class="o">$</span><span class="n">age</span><span class="o">&gt;</span><span class="m">60</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span>
+<span class="n">strokedata</span><span class="o">$</span><span class="n">age_greater_70</span> <span class="o">&lt;-</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">strokedata</span><span class="o">$</span><span class="n">age</span><span class="o">&gt;</span><span class="m">70</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span>
+<span class="n">strokedata</span><span class="o">$</span><span class="n">age_greater_80</span> <span class="o">&lt;-</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">strokedata</span><span class="o">$</span><span class="n">age</span><span class="o">&gt;</span><span class="m">80</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">strokedata</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>age</th><th scope=col>hypertension</th><th scope=col>heart_disease</th><th scope=col>ever_married</th><th scope=col>work_type</th><th scope=col>avg_glucose_level</th><th scope=col>bmi</th><th scope=col>smoking_status</th><th scope=col>stroke</th><th scope=col>age_greater_50</th><th scope=col>age_greater_60</th><th scope=col>age_greater_70</th><th scope=col>age_greater_80</th></tr></thead>
+<tbody>
+	<tr><td>67             </td><td>0              </td><td>1              </td><td>Yes            </td><td>Private        </td><td>228.69         </td><td>36.6           </td><td>formerly smoked</td><td>1              </td><td>1              </td><td>1              </td><td>0              </td><td>0              </td></tr>
+	<tr><td>80             </td><td>0              </td><td>1              </td><td>Yes            </td><td>Private        </td><td>105.92         </td><td>32.5           </td><td>never smoked   </td><td>1              </td><td>1              </td><td>1              </td><td>1              </td><td>0              </td></tr>
+	<tr><td>49             </td><td>0              </td><td>0              </td><td>Yes            </td><td>Private        </td><td>171.23         </td><td>34.4           </td><td>smokes         </td><td>1              </td><td>0              </td><td>0              </td><td>0              </td><td>0              </td></tr>
+	<tr><td>79             </td><td>1              </td><td>0              </td><td>Yes            </td><td>Self-employed  </td><td>174.12         </td><td>24.0           </td><td>never smoked   </td><td>1              </td><td>1              </td><td>1              </td><td>1              </td><td>0              </td></tr>
+	<tr><td>81             </td><td>0              </td><td>0              </td><td>Yes            </td><td>Private        </td><td>186.21         </td><td>29.0           </td><td>formerly smoked</td><td>1              </td><td>1              </td><td>1              </td><td>1              </td><td>1              </td></tr>
+	<tr><td>74             </td><td>1              </td><td>1              </td><td>Yes            </td><td>Private        </td><td> 70.09         </td><td>27.4           </td><td>never smoked   </td><td>1              </td><td>1              </td><td>1              </td><td>1              </td><td>0              </td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="model-age-full">
+<h4>Model-Age-Full:<a class="headerlink" href="#model-age-full" title="Permalink to this headline">¶</a></h4>
+<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{age&gt;50}}x_{\rm{age&gt;50}} + \beta_{\rm{age&gt;60}}x_{\rm{age&gt;60}} + \beta_{\rm{age&gt;70}}x_{\rm{age&gt;70}} + \beta_{\rm{age&gt;80}}x_{\rm{age&gt;80}}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_age_cate_full</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">age_greater_50</span> <span class="o">+</span> <span class="n">age_greater_60</span> <span class="o">+</span> <span class="n">age_greater_70</span> <span class="o">+</span> <span class="n">age_greater_80</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_age_cate_full</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ age_greater_50 + age_greater_60 + age_greater_70 + 
+    age_greater_80, family = binomial(link = &quot;logit&quot;), data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.6959  -0.4063  -0.1427  -0.1427   3.0308  
+
+Coefficients:
+               Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)     -4.5827     0.2369 -19.344  &lt; 2e-16 ***
+age_greater_50   1.6891     0.2952   5.721 1.06e-08 ***
+age_greater_60   0.4408     0.2457   1.794  0.07288 .  
+age_greater_70   0.8048     0.2148   3.746  0.00018 ***
+age_greater_80   0.3534     0.2837   1.246  0.21292    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1411.0  on 3425  degrees of freedom
+Residual deviance: 1212.1  on 3421  degrees of freedom
+AIC: 1222.1
+
+Number of Fisher Scoring iterations: 7
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>根據z-test的p-value，無法拒絕下面的<span class="math notranslate nohighlight">\(H_0\)</span><br />
+<span class="math notranslate nohighlight">\(H_0: \beta_{\rm{age&gt;60}} = 0\)</span><br />
+<span class="math notranslate nohighlight">\(H_0: \beta_{\rm{age&gt;80}} = 0\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="model-age-selected">
+<h4>Model-Age-Selected:<a class="headerlink" href="#model-age-selected" title="Permalink to this headline">¶</a></h4>
+<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{age&gt;50}}x_{\rm{age&gt;50}} + \beta_{\rm{age&gt;70}}x_{\rm{age&gt;70}}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_age_cate_selected</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">age_greater_50</span> <span class="o">+</span>  <span class="n">age_greater_70</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_age_cate_selected</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ age_greater_50 + age_greater_70, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.6119  -0.3628  -0.1427  -0.1427   3.0308  
+
+Coefficients:
+               Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)     -4.5827     0.2369 -19.344  &lt; 2e-16 ***
+age_greater_50   1.8946     0.2668   7.102 1.23e-12 ***
+age_greater_70   1.1077     0.1682   6.585 4.54e-11 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1411.0  on 3425  degrees of freedom
+Residual deviance: 1216.8  on 3423  degrees of freedom
+AIC: 1222.8
+
+Number of Fisher Scoring iterations: 7
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h4>比較:數值型與類別型<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<p><img alt="age_nume_cate_model" src="_images/age_nume_cate_model.bgwhite.png" /></p>
+<ul class="simple">
+<li><p>可以看出，Numerical還是表現的比較好</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>Average Glucose Level<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h4>資料處理<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">strokedata</span><span class="o">$</span><span class="n">glc_greater_80</span> <span class="o">&lt;-</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">strokedata</span><span class="o">$</span><span class="n">avg_glucose_level</span><span class="o">&gt;</span><span class="m">80</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span>
+<span class="n">strokedata</span><span class="o">$</span><span class="n">glc_greater_110</span> <span class="o">&lt;-</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">strokedata</span><span class="o">$</span><span class="n">avg_glucose_level</span><span class="o">&gt;</span><span class="m">110</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span>
+<span class="n">strokedata</span><span class="o">$</span><span class="n">glc_greater_160</span> <span class="o">&lt;-</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">strokedata</span><span class="o">$</span><span class="n">avg_glucose_level</span><span class="o">&gt;</span><span class="m">160</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">strokedata</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>age</th><th scope=col>hypertension</th><th scope=col>heart_disease</th><th scope=col>ever_married</th><th scope=col>work_type</th><th scope=col>avg_glucose_level</th><th scope=col>bmi</th><th scope=col>smoking_status</th><th scope=col>stroke</th><th scope=col>age_greater_50</th><th scope=col>age_greater_60</th><th scope=col>age_greater_70</th><th scope=col>age_greater_80</th><th scope=col>glc_greater_80</th><th scope=col>glc_greater_110</th><th scope=col>glc_greater_160</th></tr></thead>
+<tbody>
+	<tr><td>67             </td><td>0              </td><td>1              </td><td>Yes            </td><td>Private        </td><td>228.69         </td><td>36.6           </td><td>formerly smoked</td><td>1              </td><td>1              </td><td>1              </td><td>0              </td><td>0              </td><td>1              </td><td>1              </td><td>1              </td></tr>
+	<tr><td>80             </td><td>0              </td><td>1              </td><td>Yes            </td><td>Private        </td><td>105.92         </td><td>32.5           </td><td>never smoked   </td><td>1              </td><td>1              </td><td>1              </td><td>1              </td><td>0              </td><td>1              </td><td>0              </td><td>0              </td></tr>
+	<tr><td>49             </td><td>0              </td><td>0              </td><td>Yes            </td><td>Private        </td><td>171.23         </td><td>34.4           </td><td>smokes         </td><td>1              </td><td>0              </td><td>0              </td><td>0              </td><td>0              </td><td>1              </td><td>1              </td><td>1              </td></tr>
+	<tr><td>79             </td><td>1              </td><td>0              </td><td>Yes            </td><td>Self-employed  </td><td>174.12         </td><td>24.0           </td><td>never smoked   </td><td>1              </td><td>1              </td><td>1              </td><td>1              </td><td>0              </td><td>1              </td><td>1              </td><td>1              </td></tr>
+	<tr><td>81             </td><td>0              </td><td>0              </td><td>Yes            </td><td>Private        </td><td>186.21         </td><td>29.0           </td><td>formerly smoked</td><td>1              </td><td>1              </td><td>1              </td><td>1              </td><td>1              </td><td>1              </td><td>1              </td><td>1              </td></tr>
+	<tr><td>74             </td><td>1              </td><td>1              </td><td>Yes            </td><td>Private        </td><td> 70.09         </td><td>27.4           </td><td>never smoked   </td><td>1              </td><td>1              </td><td>1              </td><td>1              </td><td>0              </td><td>0              </td><td>0              </td><td>0              </td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="model-glucose-full">
+<h4>Model-Glucose-Full:<a class="headerlink" href="#model-glucose-full" title="Permalink to this headline">¶</a></h4>
+<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{glc&gt;80}}x_{\rm{glc&gt;80}} + \beta_{\rm{glc&gt;110}}x_{\rm{glc&gt;110}} + \beta_{\rm{glc&gt;160}}x_{\rm{glc&gt;160}}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_glc_cate_full</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">glc_greater_80</span> <span class="o">+</span> <span class="n">glc_greater_110</span> <span class="o">+</span> <span class="n">glc_greater_160</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_glc_cate_full</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ glc_greater_80 + glc_greater_110 + glc_greater_160, 
+    family = binomial(link = &quot;logit&quot;), data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.5350  -0.2945  -0.2932  -0.2632   2.5999  
+
+Coefficients:
+                Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)      -3.1161     0.1558 -19.995  &lt; 2e-16 ***
+glc_greater_80   -0.2289     0.2152  -1.064    0.287    
+glc_greater_110   0.2195     0.2636   0.833    0.405    
+glc_greater_160   1.2538     0.2538   4.940 7.82e-07 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1411.0  on 3425  degrees of freedom
+Residual deviance: 1348.9  on 3422  degrees of freedom
+AIC: 1356.9
+
+Number of Fisher Scoring iterations: 6
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>根據z-test的p-value，無法拒絕下面的<span class="math notranslate nohighlight">\(H_0\)</span><br />
+<span class="math notranslate nohighlight">\(H_0: \beta_{\rm{glc&gt;80}} = 0\)</span><br />
+<span class="math notranslate nohighlight">\(H_0: \beta_{\rm{glc&gt;110}} = 0\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="model-glucose-selected">
+<h4>Model-Glucose-Selected:<a class="headerlink" href="#model-glucose-selected" title="Permalink to this headline">¶</a></h4>
+<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{glc&gt;160}}x_{\rm{glc&gt;160}}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_glc_cate_selected</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">glc_greater_160</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_glc_cate_selected</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ glc_greater_160, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.5350  -0.2799  -0.2799  -0.2799   2.5532  
+
+Coefficients:
+                Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)     -3.22030    0.09636 -33.420   &lt;2e-16 ***
+glc_greater_160  1.34850    0.16203   8.323   &lt;2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1411.0  on 3425  degrees of freedom
+Residual deviance: 1350.3  on 3424  degrees of freedom
+AIC: 1354.3
+
+Number of Fisher Scoring iterations: 6
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id9">
+<h4>比較:數值型與類別型<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<p><img alt="glucose_nume_cate_model" src="_images/glucose_nume_cate_model.bgwhite.png" /></p>
+<ul class="simple">
+<li><p>意外的，分類的avg-glucose-level會比數值型的好</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>Final Selection<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{age&gt;50}}x_{\rm{age&gt;50}} + \beta_{\rm{age&gt;70}}x_{\rm{age&gt;70}}  + \beta_{\rm{glc&gt;160}}x_{\rm{glc&gt;160}}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_cate_final</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">age_greater_50</span> <span class="o">+</span>  <span class="n">age_greater_70</span> <span class="o">+</span> <span class="n">glc_greater_160</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_cate_final</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ age_greater_50 + age_greater_70 + glc_greater_160, 
+    family = binomial(link = &quot;logit&quot;), data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.7632  -0.3276  -0.1377  -0.1377   3.0539  
+
+Coefficients:
+                Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)      -4.6538     0.2380 -19.557  &lt; 2e-16 ***
+age_greater_50    1.7558     0.2695   6.515 7.28e-11 ***
+age_greater_70    1.0429     0.1698   6.140 8.23e-10 ***
+glc_greater_160   0.7707     0.1699   4.536 5.72e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1411.0  on 3425  degrees of freedom
+Residual deviance: 1197.3  on 3422  degrees of freedom
+AIC: 1205.3
+
+Number of Fisher Scoring iterations: 7
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>相比於純數值型的final selection(AIC=1169.8)，還是比較不好</p></li>
+</ul>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -260,16 +942,16 @@
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "r"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "ir",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'ir'</script>
 
               </div>
               
@@ -277,7 +959,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="regression_categorical.html" title="previous page">迴歸分析: 類別型變數</a>
-    <a class='right-next' id="next-link" href="regression.html" title="next page">迴歸分析: 綜合模型</a>
+    <a class='right-next' id="next-link" href="regression_mix.html" title="next page">迴歸分析: 綜合模型</a>
 
         </div>
         
