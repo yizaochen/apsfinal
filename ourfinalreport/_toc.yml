@@ -11,4 +11,4 @@
 - file: clustering
 - file: regression_categorical.ipynb
 - file: regression_numerical.ipynb
-- file: regression
+- file: regression_mix.ipynb

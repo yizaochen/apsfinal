@@ -23,3 +23,13 @@
    - 可以看到相關係數都靠近0，表示三個解釋變數的相關性低
 - 因此，之後的模型中，這三個解釋變數都得考慮
 
+## 變數關聯性分析
+- 由列聯表分析，我們總結出了下面這張圖
+   - "+"代表有關聯
+   - "-"代表無關連 
+```{image} ./images/all_vari_corre.jpg
+:alt: all_vari_corre
+:class: bg-primary mb-1
+:width: 800px
+:align: center
+```
