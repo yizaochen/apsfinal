@@ -9,6 +9,9 @@
    id="svg5"
    inkscape:version="1.1 (1:1.1+202105261517+ce6663b3b7)"
    sodipodi:docname="age_categories.svg"
+   inkscape:export-filename="/home/yizaochen/courses/apsfinal/notebooks/images/age_categories.png"
+   inkscape:export-xdpi="200"
+   inkscape:export-ydpi="200"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -27,8 +30,8 @@
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:zoom="1.3416246"
-     inkscape:cx="370.81909"
-     inkscape:cy="244.47972"
+     inkscape:cx="371.56445"
+     inkscape:cy="245.22508"
      inkscape:window-width="1920"
      inkscape:window-height="1043"
      inkscape:window-x="1920"
@@ -233,6 +236,12 @@
        width="77.814034"
        height="70.869858"
        id="rect6728-3-7-6-2" />
+    <rect
+       x="74.884613"
+       y="44.330154"
+       width="77.814034"
+       height="70.869858"
+       id="rect6728-3-7-6-3" />
   </defs>
   <g
      inkscape:label="Layer 1"
@@ -240,7 +249,7 @@
      id="layer1">
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,1.1017536,49.006995)"
+       transform="matrix(0.26458333,0,0,0.26458333,1.1017536,48.477828)"
        id="text6726"
        style="font-weight:bold;font-size:29.3333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Bold';white-space:pre;shape-inside:url(#rect6728)"
        inkscape:export-filename="/home/yizaochen/courses/apsfinal/notebooks/images/age_nume_cate_model.png"
@@ -248,10 +257,10 @@
        inkscape:export-ydpi="200"><tspan
          x="74.884766"
          y="70.752177"
-         id="tspan62841">50</tspan></text>
+         id="tspan22649">50</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,102.70532,49.270577)"
+       transform="matrix(0.26458333,0,0,0.26458333,102.70532,47.683076)"
        id="text6726-6-5-2"
        style="font-weight:bold;font-size:29.3333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Bold';white-space:pre;shape-inside:url(#rect6728-3-7-6)"
        inkscape:export-filename="/home/yizaochen/courses/apsfinal/notebooks/images/age_nume_cate_model.png"
@@ -259,7 +268,18 @@
        inkscape:export-ydpi="200"><tspan
          x="74.884766"
          y="70.752177"
-         id="tspan62843">70</tspan></text>
+         id="tspan22651">70</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,51.939718,47.980012)"
+       id="text6726-6-5-2-6"
+       style="font-weight:bold;font-size:29.3333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Bold';white-space:pre;shape-inside:url(#rect6728-3-7-6-3)"
+       inkscape:export-filename="/home/yizaochen/courses/apsfinal/notebooks/images/age_nume_cate_model.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200"><tspan
+         x="74.884766"
+         y="70.752177"
+         id="tspan22653">60</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,72.681323,14.833566)"
@@ -270,24 +290,17 @@
        inkscape:export-ydpi="200"><tspan
          x="74.884766"
          y="70.752177"
-         id="tspan62845">age</tspan></text>
+         id="tspan22655">age</tspan></text>
     <path
-       style="fill:none;stroke:#aaeeff;stroke-width:1.778;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 2.54,59.16892 H 25.4"
+       style="fill:none;stroke:#b7c4c8;stroke-width:1.778;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 2.54,58.639753 H 25.4"
        id="path10722"
        inkscape:export-filename="/home/yizaochen/courses/apsfinal/notebooks/images/age_nume_cate_model.png"
        inkscape:export-xdpi="200"
        inkscape:export-ydpi="200" />
     <path
-       style="fill:none;stroke:#ffb380;stroke-width:1.778;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 25.4,59.16892 H 127"
-       id="path41658"
-       inkscape:export-filename="/home/yizaochen/courses/apsfinal/notebooks/images/age_nume_cate_model.png"
-       inkscape:export-xdpi="200"
-       inkscape:export-ydpi="200" />
-    <path
        style="fill:none;stroke:#37c8ab;stroke-width:1.778;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 127,59.16892 h 73.66"
+       d="m 127,58.639753 h 73.66"
        id="path41693"
        inkscape:export-filename="/home/yizaochen/courses/apsfinal/notebooks/images/age_nume_cate_model.png"
        inkscape:export-xdpi="200"
@@ -309,7 +322,7 @@
        inkscape:export-ydpi="200"><tspan
          x="9.5996094"
          y="164.43577"
-         id="tspan62847">Categorical:   AIC=1222.8</tspan></text>
+         id="tspan22657">Categorical:   AIC=1213.1</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-0.28671135,-24.825466)"
@@ -320,6 +333,20 @@
        inkscape:export-ydpi="200"><tspan
          x="9.5996094"
          y="164.43577"
-         id="tspan62849">Numerical:   AIC=1184.3</tspan></text>
+         id="tspan22659">Numerical:   AIC=1184.3</tspan></text>
+    <path
+       style="fill:none;stroke:#ffb380;stroke-width:1.778;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 25.4,58.737491 H 76.199999"
+       id="path6075"
+       inkscape:export-filename="/home/yizaochen/courses/apsfinal/notebooks/images/age_nume_cate_model.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <path
+       style="fill:#aaeeff;fill-opacity:1;stroke:#aaeeff;stroke-width:1.778;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 76.199999,58.737491 H 127"
+       id="path6223"
+       inkscape:export-filename="/home/yizaochen/courses/apsfinal/notebooks/images/age_nume_cate_model.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
   </g>
 </svg>

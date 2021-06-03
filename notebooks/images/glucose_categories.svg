@@ -248,7 +248,7 @@
        inkscape:export-ydpi="200"><tspan
          x="74.884766"
          y="70.752177"
-         id="tspan25034">160</tspan></text>
+         id="tspan933">160</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,47.810474,14.833566)"
@@ -259,7 +259,7 @@
        inkscape:export-ydpi="200"><tspan
          x="74.884766"
          y="70.752177"
-         id="tspan25036">avg-glucose-level</tspan></text>
+         id="tspan935">avg-glucose-level</tspan></text>
     <path
        style="fill:none;stroke:#ffccaa;stroke-width:1.778;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 127,60.227254 h 73.66"
@@ -284,7 +284,7 @@
        inkscape:export-ydpi="200"><tspan
          x="9.5996094"
          y="164.43577"
-         id="tspan25038">Categorical:   AIC=1354.3</tspan></text>
+         id="tspan937">Categorical:   AIC=1354.5</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-0.28671135,-24.825466)"
@@ -295,7 +295,7 @@
        inkscape:export-ydpi="200"><tspan
          x="9.5996094"
          y="164.43577"
-         id="tspan25040">Numerical:   AIC=1359.4</tspan></text>
+         id="tspan939">Numerical:   AIC=1359.4</tspan></text>
     <path
        style="fill:none;stroke:#aaeeff;stroke-width:1.778;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="M 2.54,60.324992 H 127"

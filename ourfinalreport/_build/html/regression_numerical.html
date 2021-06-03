@@ -306,13 +306,8 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#model-age-full">
-       Model-Age-Full:
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#model-age-selected">
-       Model-Age-Selected:
+      <a class="reference internal nav-link" href="#model">
+       Model:
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
@@ -333,24 +328,19 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#model-glucose-full">
-       Model-Glucose-Full:
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#model-glucose-selected">
-       Model-Glucose-Selected:
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id9">
+       Model:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
        比較:數值型與類別型
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
+    <a class="reference internal nav-link" href="#id11">
      Final Selection
     </a>
    </li>
@@ -652,107 +642,66 @@ Number of Fisher Scoring iterations: 7
 <h4>資料處理<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">strokedata</span><span class="o">$</span><span class="n">age_greater_50</span> <span class="o">&lt;-</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">strokedata</span><span class="o">$</span><span class="n">age</span><span class="o">&gt;</span><span class="m">50</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span>
-<span class="n">strokedata</span><span class="o">$</span><span class="n">age_greater_60</span> <span class="o">&lt;-</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">strokedata</span><span class="o">$</span><span class="n">age</span><span class="o">&gt;</span><span class="m">60</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span>
-<span class="n">strokedata</span><span class="o">$</span><span class="n">age_greater_70</span> <span class="o">&lt;-</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">strokedata</span><span class="o">$</span><span class="n">age</span><span class="o">&gt;</span><span class="m">70</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span>
-<span class="n">strokedata</span><span class="o">$</span><span class="n">age_greater_80</span> <span class="o">&lt;-</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">strokedata</span><span class="o">$</span><span class="n">age</span><span class="o">&gt;</span><span class="m">80</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">strokedata</span><span class="o">$</span><span class="n">age_group</span> <span class="o">&lt;-</span> <span class="nf">with</span><span class="p">(</span><span class="n">strokedata</span><span class="p">,</span> <span class="nf">ifelse</span><span class="p">(</span>
+    <span class="n">age</span> <span class="o">&lt;</span> <span class="m">50</span><span class="p">,</span> <span class="s">&#39;0-49&#39;</span><span class="p">,</span> <span class="nf">ifelse</span><span class="p">(</span>
+    <span class="n">age</span> <span class="o">&gt;=</span> <span class="m">50</span> <span class="o">&amp;</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="m">60</span><span class="p">,</span> <span class="s">&#39;50-59&#39;</span><span class="p">,</span> <span class="nf">ifelse</span><span class="p">(</span>
+    <span class="n">age</span> <span class="o">&gt;=</span> <span class="m">60</span> <span class="o">&amp;</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="m">70</span><span class="p">,</span> <span class="s">&#39;60-69&#39;</span><span class="p">,</span> <span class="s">&#39;&gt;=70&#39;</span><span class="p">))))</span>
+<span class="n">strokedata</span><span class="o">$</span><span class="n">age_group</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">strokedata</span><span class="o">$</span><span class="n">age_group</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;0-49&#39;</span><span class="p">,</span> <span class="s">&#39;50-59&#39;</span><span class="p">,</span> <span class="s">&#39;60-69&#39;</span><span class="p">,</span> <span class="s">&#39;&gt;=70&#39;</span><span class="p">))</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">strokedata</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
-<thead><tr><th scope=col>age</th><th scope=col>hypertension</th><th scope=col>heart_disease</th><th scope=col>ever_married</th><th scope=col>work_type</th><th scope=col>avg_glucose_level</th><th scope=col>bmi</th><th scope=col>smoking_status</th><th scope=col>stroke</th><th scope=col>age_greater_50</th><th scope=col>age_greater_60</th><th scope=col>age_greater_70</th><th scope=col>age_greater_80</th></tr></thead>
+<thead><tr><th scope=col>age</th><th scope=col>hypertension</th><th scope=col>heart_disease</th><th scope=col>ever_married</th><th scope=col>work_type</th><th scope=col>avg_glucose_level</th><th scope=col>bmi</th><th scope=col>smoking_status</th><th scope=col>stroke</th><th scope=col>age_group</th></tr></thead>
 <tbody>
-	<tr><td>67             </td><td>0              </td><td>1              </td><td>Yes            </td><td>Private        </td><td>228.69         </td><td>36.6           </td><td>formerly smoked</td><td>1              </td><td>1              </td><td>1              </td><td>0              </td><td>0              </td></tr>
-	<tr><td>80             </td><td>0              </td><td>1              </td><td>Yes            </td><td>Private        </td><td>105.92         </td><td>32.5           </td><td>never smoked   </td><td>1              </td><td>1              </td><td>1              </td><td>1              </td><td>0              </td></tr>
-	<tr><td>49             </td><td>0              </td><td>0              </td><td>Yes            </td><td>Private        </td><td>171.23         </td><td>34.4           </td><td>smokes         </td><td>1              </td><td>0              </td><td>0              </td><td>0              </td><td>0              </td></tr>
-	<tr><td>79             </td><td>1              </td><td>0              </td><td>Yes            </td><td>Self-employed  </td><td>174.12         </td><td>24.0           </td><td>never smoked   </td><td>1              </td><td>1              </td><td>1              </td><td>1              </td><td>0              </td></tr>
-	<tr><td>81             </td><td>0              </td><td>0              </td><td>Yes            </td><td>Private        </td><td>186.21         </td><td>29.0           </td><td>formerly smoked</td><td>1              </td><td>1              </td><td>1              </td><td>1              </td><td>1              </td></tr>
-	<tr><td>74             </td><td>1              </td><td>1              </td><td>Yes            </td><td>Private        </td><td> 70.09         </td><td>27.4           </td><td>never smoked   </td><td>1              </td><td>1              </td><td>1              </td><td>1              </td><td>0              </td></tr>
+	<tr><td>67             </td><td>0              </td><td>1              </td><td>Yes            </td><td>Private        </td><td>228.69         </td><td>36.6           </td><td>formerly smoked</td><td>1              </td><td>60-69          </td></tr>
+	<tr><td>80                                                     </td><td>0                                                      </td><td>1                                                      </td><td>Yes                                                    </td><td><span style=white-space:pre-wrap>Private      </span>  </td><td>105.92                                                 </td><td>32.5                                                   </td><td><span style=white-space:pre-wrap>never smoked   </span></td><td>1                                                      </td><td>&gt;=70                                                </td></tr>
+	<tr><td>49             </td><td>0              </td><td>0              </td><td>Yes            </td><td>Private        </td><td>171.23         </td><td>34.4           </td><td>smokes         </td><td>1              </td><td>0-49           </td></tr>
+	<tr><td>79                                                     </td><td>1                                                      </td><td>0                                                      </td><td>Yes                                                    </td><td>Self-employed                                          </td><td>174.12                                                 </td><td>24.0                                                   </td><td><span style=white-space:pre-wrap>never smoked   </span></td><td>1                                                      </td><td>&gt;=70                                                </td></tr>
+	<tr><td>81                                                   </td><td>0                                                    </td><td>0                                                    </td><td>Yes                                                  </td><td><span style=white-space:pre-wrap>Private      </span></td><td>186.21                                               </td><td>29.0                                                 </td><td>formerly smoked                                      </td><td>1                                                    </td><td>&gt;=70                                              </td></tr>
+	<tr><td>74                                                     </td><td>1                                                      </td><td>1                                                      </td><td>Yes                                                    </td><td><span style=white-space:pre-wrap>Private      </span>  </td><td> 70.09                                                 </td><td>27.4                                                   </td><td><span style=white-space:pre-wrap>never smoked   </span></td><td>1                                                      </td><td>&gt;=70                                                </td></tr>
 </tbody>
 </table>
 </div></div>
 </div>
 </div>
-<div class="section" id="model-age-full">
-<h4>Model-Age-Full:<a class="headerlink" href="#model-age-full" title="Permalink to this headline">¶</a></h4>
-<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{age&gt;50}}x_{\rm{age&gt;50}} + \beta_{\rm{age&gt;60}}x_{\rm{age&gt;60}} + \beta_{\rm{age&gt;70}}x_{\rm{age&gt;70}} + \beta_{\rm{age&gt;80}}x_{\rm{age&gt;80}}\)</span></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_age_cate_full</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">age_greater_50</span> <span class="o">+</span> <span class="n">age_greater_60</span> <span class="o">+</span> <span class="n">age_greater_70</span> <span class="o">+</span> <span class="n">age_greater_80</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">model_age_cate_full</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
-glm(formula = stroke ~ age_greater_50 + age_greater_60 + age_greater_70 + 
-    age_greater_80, family = binomial(link = &quot;logit&quot;), data = strokedata)
-
-Deviance Residuals: 
-    Min       1Q   Median       3Q      Max  
--0.6959  -0.4063  -0.1427  -0.1427   3.0308  
-
-Coefficients:
-               Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)     -4.5827     0.2369 -19.344  &lt; 2e-16 ***
-age_greater_50   1.6891     0.2952   5.721 1.06e-08 ***
-age_greater_60   0.4408     0.2457   1.794  0.07288 .  
-age_greater_70   0.8048     0.2148   3.746  0.00018 ***
-age_greater_80   0.3534     0.2837   1.246  0.21292    
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-(Dispersion parameter for binomial family taken to be 1)
-
-    Null deviance: 1411.0  on 3425  degrees of freedom
-Residual deviance: 1212.1  on 3421  degrees of freedom
-AIC: 1222.1
-
-Number of Fisher Scoring iterations: 7
-</pre></div>
-</div>
-</div>
-</div>
+<div class="section" id="model">
+<h4>Model:<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h4>
+<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{50-59}}x_{\rm{50-59}} + \beta_{\rm{60-69}}x_{\rm{60-69}} + \beta_{\rm{age&gt;=70}}x_{\rm{age&gt;=70}}\)</span></p>
 <ul class="simple">
-<li><p>根據z-test的p-value，無法拒絕下面的<span class="math notranslate nohighlight">\(H_0\)</span><br />
-<span class="math notranslate nohighlight">\(H_0: \beta_{\rm{age&gt;60}} = 0\)</span><br />
-<span class="math notranslate nohighlight">\(H_0: \beta_{\rm{age&gt;80}} = 0\)</span></p></li>
+<li><p>Baseline group:  0-49</p></li>
 </ul>
-</div>
-<div class="section" id="model-age-selected">
-<h4>Model-Age-Selected:<a class="headerlink" href="#model-age-selected" title="Permalink to this headline">¶</a></h4>
-<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{age&gt;50}}x_{\rm{age&gt;50}} + \beta_{\rm{age&gt;70}}x_{\rm{age&gt;70}}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_age_cate_selected</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">age_greater_50</span> <span class="o">+</span>  <span class="n">age_greater_70</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">model_age_cate_selected</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_age_cate</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">age_group</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_age_cate</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
-glm(formula = stroke ~ age_greater_50 + age_greater_70, family = binomial(link = &quot;logit&quot;), 
+glm(formula = stroke ~ age_group, family = binomial(link = &quot;logit&quot;), 
     data = strokedata)
 
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
--0.6119  -0.3628  -0.1427  -0.1427   3.0308  
+-0.6114  -0.3870  -0.1327  -0.1327   3.0781  
 
 Coefficients:
                Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)     -4.5827     0.2369 -19.344  &lt; 2e-16 ***
-age_greater_50   1.8946     0.2668   7.102 1.23e-12 ***
-age_greater_70   1.1077     0.1682   6.585 4.54e-11 ***
+(Intercept)     -4.7286     0.2593 -18.234  &lt; 2e-16 ***
+age_group50-59   1.7841     0.3149   5.666 1.46e-08 ***
+age_group60-69   2.1747     0.3131   6.945 3.78e-12 ***
+age_group&gt;=70    3.1463     0.2823  11.146  &lt; 2e-16 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
     Null deviance: 1411.0  on 3425  degrees of freedom
-Residual deviance: 1216.8  on 3423  degrees of freedom
-AIC: 1222.8
+Residual deviance: 1205.1  on 3422  degrees of freedom
+AIC: 1213.1
 
 Number of Fisher Scoring iterations: 7
 </pre></div>
@@ -774,104 +723,61 @@ Number of Fisher Scoring iterations: 7
 <h4>資料處理<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">strokedata</span><span class="o">$</span><span class="n">glc_greater_80</span> <span class="o">&lt;-</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">strokedata</span><span class="o">$</span><span class="n">avg_glucose_level</span><span class="o">&gt;</span><span class="m">80</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span>
-<span class="n">strokedata</span><span class="o">$</span><span class="n">glc_greater_110</span> <span class="o">&lt;-</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">strokedata</span><span class="o">$</span><span class="n">avg_glucose_level</span><span class="o">&gt;</span><span class="m">110</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span>
-<span class="n">strokedata</span><span class="o">$</span><span class="n">glc_greater_160</span> <span class="o">&lt;-</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">strokedata</span><span class="o">$</span><span class="n">avg_glucose_level</span><span class="o">&gt;</span><span class="m">160</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">strokedata</span><span class="o">$</span><span class="n">glc_group</span> <span class="o">&lt;-</span> <span class="nf">with</span><span class="p">(</span><span class="n">strokedata</span><span class="p">,</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">avg_glucose_level</span> <span class="o">&lt;</span> <span class="m">160</span><span class="p">,</span> <span class="s">&#39;&lt;160&#39;</span><span class="p">,</span> <span class="s">&#39;&gt;=160&#39;</span><span class="p">))</span>
+<span class="n">strokedata</span><span class="o">$</span><span class="n">glc_group</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">strokedata</span><span class="o">$</span><span class="n">glc_group</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;&lt;160&#39;</span><span class="p">,</span> <span class="s">&#39;&gt;=160&#39;</span><span class="p">))</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">strokedata</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
-<thead><tr><th scope=col>age</th><th scope=col>hypertension</th><th scope=col>heart_disease</th><th scope=col>ever_married</th><th scope=col>work_type</th><th scope=col>avg_glucose_level</th><th scope=col>bmi</th><th scope=col>smoking_status</th><th scope=col>stroke</th><th scope=col>age_greater_50</th><th scope=col>age_greater_60</th><th scope=col>age_greater_70</th><th scope=col>age_greater_80</th><th scope=col>glc_greater_80</th><th scope=col>glc_greater_110</th><th scope=col>glc_greater_160</th></tr></thead>
+<thead><tr><th scope=col>age</th><th scope=col>hypertension</th><th scope=col>heart_disease</th><th scope=col>ever_married</th><th scope=col>work_type</th><th scope=col>avg_glucose_level</th><th scope=col>bmi</th><th scope=col>smoking_status</th><th scope=col>stroke</th><th scope=col>age_group</th><th scope=col>glc_group</th></tr></thead>
 <tbody>
-	<tr><td>67             </td><td>0              </td><td>1              </td><td>Yes            </td><td>Private        </td><td>228.69         </td><td>36.6           </td><td>formerly smoked</td><td>1              </td><td>1              </td><td>1              </td><td>0              </td><td>0              </td><td>1              </td><td>1              </td><td>1              </td></tr>
-	<tr><td>80             </td><td>0              </td><td>1              </td><td>Yes            </td><td>Private        </td><td>105.92         </td><td>32.5           </td><td>never smoked   </td><td>1              </td><td>1              </td><td>1              </td><td>1              </td><td>0              </td><td>1              </td><td>0              </td><td>0              </td></tr>
-	<tr><td>49             </td><td>0              </td><td>0              </td><td>Yes            </td><td>Private        </td><td>171.23         </td><td>34.4           </td><td>smokes         </td><td>1              </td><td>0              </td><td>0              </td><td>0              </td><td>0              </td><td>1              </td><td>1              </td><td>1              </td></tr>
-	<tr><td>79             </td><td>1              </td><td>0              </td><td>Yes            </td><td>Self-employed  </td><td>174.12         </td><td>24.0           </td><td>never smoked   </td><td>1              </td><td>1              </td><td>1              </td><td>1              </td><td>0              </td><td>1              </td><td>1              </td><td>1              </td></tr>
-	<tr><td>81             </td><td>0              </td><td>0              </td><td>Yes            </td><td>Private        </td><td>186.21         </td><td>29.0           </td><td>formerly smoked</td><td>1              </td><td>1              </td><td>1              </td><td>1              </td><td>1              </td><td>1              </td><td>1              </td><td>1              </td></tr>
-	<tr><td>74             </td><td>1              </td><td>1              </td><td>Yes            </td><td>Private        </td><td> 70.09         </td><td>27.4           </td><td>never smoked   </td><td>1              </td><td>1              </td><td>1              </td><td>1              </td><td>0              </td><td>0              </td><td>0              </td><td>0              </td></tr>
+	<tr><td>67                                                   </td><td>0                                                    </td><td>1                                                    </td><td>Yes                                                  </td><td><span style=white-space:pre-wrap>Private      </span></td><td>228.69                                               </td><td>36.6                                                 </td><td>formerly smoked                                      </td><td>1                                                    </td><td>60-69                                                </td><td>&gt;=160                                             </td></tr>
+	<tr><td>80                                                     </td><td>0                                                      </td><td>1                                                      </td><td>Yes                                                    </td><td><span style=white-space:pre-wrap>Private      </span>  </td><td>105.92                                                 </td><td>32.5                                                   </td><td><span style=white-space:pre-wrap>never smoked   </span></td><td>1                                                      </td><td>&gt;=70                                                </td><td>&lt;160                                                </td></tr>
+	<tr><td>49                                                     </td><td>0                                                      </td><td>0                                                      </td><td>Yes                                                    </td><td><span style=white-space:pre-wrap>Private      </span>  </td><td>171.23                                                 </td><td>34.4                                                   </td><td><span style=white-space:pre-wrap>smokes         </span></td><td>1                                                      </td><td>0-49                                                   </td><td>&gt;=160                                               </td></tr>
+	<tr><td>79                                                     </td><td>1                                                      </td><td>0                                                      </td><td>Yes                                                    </td><td>Self-employed                                          </td><td>174.12                                                 </td><td>24.0                                                   </td><td><span style=white-space:pre-wrap>never smoked   </span></td><td>1                                                      </td><td>&gt;=70                                                </td><td>&gt;=160                                               </td></tr>
+	<tr><td>81                                                   </td><td>0                                                    </td><td>0                                                    </td><td>Yes                                                  </td><td><span style=white-space:pre-wrap>Private      </span></td><td>186.21                                               </td><td>29.0                                                 </td><td>formerly smoked                                      </td><td>1                                                    </td><td>&gt;=70                                              </td><td>&gt;=160                                             </td></tr>
+	<tr><td>74                                                     </td><td>1                                                      </td><td>1                                                      </td><td>Yes                                                    </td><td><span style=white-space:pre-wrap>Private      </span>  </td><td> 70.09                                                 </td><td>27.4                                                   </td><td><span style=white-space:pre-wrap>never smoked   </span></td><td>1                                                      </td><td>&gt;=70                                                </td><td>&lt;160                                                </td></tr>
 </tbody>
 </table>
 </div></div>
 </div>
 </div>
-<div class="section" id="model-glucose-full">
-<h4>Model-Glucose-Full:<a class="headerlink" href="#model-glucose-full" title="Permalink to this headline">¶</a></h4>
-<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{glc&gt;80}}x_{\rm{glc&gt;80}} + \beta_{\rm{glc&gt;110}}x_{\rm{glc&gt;110}} + \beta_{\rm{glc&gt;160}}x_{\rm{glc&gt;160}}\)</span></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_glc_cate_full</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">glc_greater_80</span> <span class="o">+</span> <span class="n">glc_greater_110</span> <span class="o">+</span> <span class="n">glc_greater_160</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">model_glc_cate_full</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
-glm(formula = stroke ~ glc_greater_80 + glc_greater_110 + glc_greater_160, 
-    family = binomial(link = &quot;logit&quot;), data = strokedata)
-
-Deviance Residuals: 
-    Min       1Q   Median       3Q      Max  
--0.5350  -0.2945  -0.2932  -0.2632   2.5999  
-
-Coefficients:
-                Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)      -3.1161     0.1558 -19.995  &lt; 2e-16 ***
-glc_greater_80   -0.2289     0.2152  -1.064    0.287    
-glc_greater_110   0.2195     0.2636   0.833    0.405    
-glc_greater_160   1.2538     0.2538   4.940 7.82e-07 ***
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-(Dispersion parameter for binomial family taken to be 1)
-
-    Null deviance: 1411.0  on 3425  degrees of freedom
-Residual deviance: 1348.9  on 3422  degrees of freedom
-AIC: 1356.9
-
-Number of Fisher Scoring iterations: 6
-</pre></div>
-</div>
-</div>
-</div>
+<div class="section" id="id9">
+<h4>Model:<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{glc&gt;=160}}x_{\rm{glc&gt;=160}}\)</span></p>
 <ul class="simple">
-<li><p>根據z-test的p-value，無法拒絕下面的<span class="math notranslate nohighlight">\(H_0\)</span><br />
-<span class="math notranslate nohighlight">\(H_0: \beta_{\rm{glc&gt;80}} = 0\)</span><br />
-<span class="math notranslate nohighlight">\(H_0: \beta_{\rm{glc&gt;110}} = 0\)</span></p></li>
+<li><p>Baseline group: glc&lt;160</p></li>
 </ul>
-</div>
-<div class="section" id="model-glucose-selected">
-<h4>Model-Glucose-Selected:<a class="headerlink" href="#model-glucose-selected" title="Permalink to this headline">¶</a></h4>
-<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{glc&gt;160}}x_{\rm{glc&gt;160}}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_glc_cate_selected</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">glc_greater_160</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">model_glc_cate_selected</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_glc_cate</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">glc_group</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_glc_cate</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
-glm(formula = stroke ~ glc_greater_160, family = binomial(link = &quot;logit&quot;), 
+glm(formula = stroke ~ glc_group, family = binomial(link = &quot;logit&quot;), 
     data = strokedata)
 
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
--0.5350  -0.2799  -0.2799  -0.2799   2.5532  
+-0.5344  -0.2799  -0.2799  -0.2799   2.5531  
 
 Coefficients:
-                Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)     -3.22030    0.09636 -33.420   &lt;2e-16 ***
-glc_greater_160  1.34850    0.16203   8.323   &lt;2e-16 ***
+               Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)    -3.21995    0.09636 -33.416   &lt;2e-16 ***
+glc_group&gt;=160  1.34588    0.16201   8.307   &lt;2e-16 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
     Null deviance: 1411.0  on 3425  degrees of freedom
-Residual deviance: 1350.3  on 3424  degrees of freedom
-AIC: 1354.3
+Residual deviance: 1350.5  on 3424  degrees of freedom
+AIC: 1354.5
 
 Number of Fisher Scoring iterations: 6
 </pre></div>
@@ -879,47 +785,48 @@ Number of Fisher Scoring iterations: 6
 </div>
 </div>
 </div>
-<div class="section" id="id9">
-<h4>比較:數值型與類別型<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id10">
+<h4>比較:數值型與類別型<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
 <p><img alt="glucose_nume_cate_model" src="_images/glucose_nume_cate_model.bgwhite.png" /></p>
 <ul class="simple">
 <li><p>意外的，分類的avg-glucose-level會比數值型的好</p></li>
 </ul>
 </div>
 </div>
-<div class="section" id="id10">
-<h3>Final Selection<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
-<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{age&gt;50}}x_{\rm{age&gt;50}} + \beta_{\rm{age&gt;70}}x_{\rm{age&gt;70}}  + \beta_{\rm{glc&gt;160}}x_{\rm{glc&gt;160}}\)</span></p>
+<div class="section" id="id11">
+<h3>Final Selection<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{50-59}}x_{\rm{50-59}} + \beta_{\rm{60-69}}x_{\rm{60-69}} + \beta_{\rm{age&gt;=70}}x_{\rm{age&gt;=70}} + \beta_{\rm{glc&gt;=160}}x_{\rm{glc&gt;=160}}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_cate_final</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">age_greater_50</span> <span class="o">+</span>  <span class="n">age_greater_70</span> <span class="o">+</span> <span class="n">glc_greater_160</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_cate_final</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">age_group</span> <span class="o">+</span> <span class="n">glc_group</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
 <span class="nf">summary</span><span class="p">(</span><span class="n">model_cate_final</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
-glm(formula = stroke ~ age_greater_50 + age_greater_70 + glc_greater_160, 
-    family = binomial(link = &quot;logit&quot;), data = strokedata)
+glm(formula = stroke ~ age_group + glc_group, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
 
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
--0.7632  -0.3276  -0.1377  -0.1377   3.0539  
+-0.7608  -0.3466  -0.1283  -0.1283   3.0998  
 
 Coefficients:
-                Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)      -4.6538     0.2380 -19.557  &lt; 2e-16 ***
-age_greater_50    1.7558     0.2695   6.515 7.28e-11 ***
-age_greater_70    1.0429     0.1698   6.140 8.23e-10 ***
-glc_greater_160   0.7707     0.1699   4.536 5.72e-06 ***
+               Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)     -4.7961     0.2602 -18.430  &lt; 2e-16 ***
+age_group50-59   1.6730     0.3167   5.283 1.27e-07 ***
+age_group60-69   2.0137     0.3165   6.363 1.98e-10 ***
+age_group&gt;=70    2.9499     0.2868  10.286  &lt; 2e-16 ***
+glc_group&gt;=160   0.7546     0.1700   4.439 9.02e-06 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
     Null deviance: 1411.0  on 3425  degrees of freedom
-Residual deviance: 1197.3  on 3422  degrees of freedom
-AIC: 1205.3
+Residual deviance: 1186.4  on 3421  degrees of freedom
+AIC: 1196.4
 
 Number of Fisher Scoring iterations: 7
 </pre></div>
