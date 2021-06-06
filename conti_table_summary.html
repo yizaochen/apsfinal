@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>列聯表分析:數值型 &#8212; 腦中風資料的統計分析與探討</title>
+    <title>列聯表分析:綜合結論 &#8212; 腦中風資料的統計分析與探討</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,8 +51,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="列聯表分析:綜合結論" href="conti_table_summary.html" />
-    <link rel="prev" title="列聯表分析:多重類別型" href="multiplecategorical.html" />
+    <link rel="next" title="迴歸分析: 類別型變數" href="regression_categorical.html" />
+    <link rel="prev" title="列聯表分析:數值型" href="numerical.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -105,13 +105,13 @@
    列聯表分析:多重類別型
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="numerical.html">
    列聯表分析:數值型
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="conti_table_summary.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    列聯表分析:綜合結論
   </a>
  </li>
@@ -191,7 +191,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/numerical.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/conti_table_summary.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -211,7 +211,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnumerical.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fconti_table_summary.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -239,39 +239,8 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   中風與年齡
+   變數之間關係
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#chi-square">
-     Chi-square
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   中風與血糖
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Chi-square
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bmi">
-   中風與BMI
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     Chi-square
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -285,27 +254,10 @@
               <div>
                 
   <div class="section" id="id1">
-<h1>列聯表分析:數值型<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>列聯表分析:綜合結論<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
-<h2>中風與年齡<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="chi-square">
-<h3>Chi-square<a class="headerlink" href="#chi-square" title="Permalink to this headline">¶</a></h3>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/age_stroke.png"><img alt="age_stroke" class="bg-primary mb-1 align-center" src="_images/age_stroke.png" style="width: 800px;" /></a>
-</div>
-</div>
-<div class="section" id="id3">
-<h2>中風與血糖<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id4">
-<h3>Chi-square<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/glucose_stroke.png"><img alt="glucose_stroke" class="bg-primary mb-1 align-center" src="_images/glucose_stroke.png" style="width: 800px;" /></a>
-</div>
-</div>
-<div class="section" id="bmi">
-<h2>中風與BMI<a class="headerlink" href="#bmi" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id5">
-<h3>Chi-square<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/bmi_stroke.png"><img alt="glucose_stroke" class="bg-primary mb-1 align-center" src="_images/bmi_stroke.png" style="width: 800px;" /></a>
-</div>
+<h2>變數之間關係<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="https://i.imgur.com/VD9XXMc.jpg" /></p>
 </div>
 </div>
 
@@ -334,8 +286,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="multiplecategorical.html" title="previous page">列聯表分析:多重類別型</a>
-    <a class='right-next' id="next-link" href="conti_table_summary.html" title="next page">列聯表分析:綜合結論</a>
+    <a class='left-prev' id="prev-link" href="numerical.html" title="previous page">列聯表分析:數值型</a>
+    <a class='right-next' id="next-link" href="regression_categorical.html" title="next page">迴歸分析: 類別型變數</a>
 
         </div>
         

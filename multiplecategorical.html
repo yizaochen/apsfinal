@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>多重類別型解釋變數 &#8212; 腦中風資料的統計分析與探討</title>
+    <title>列聯表分析:多重類別型 &#8212; 腦中風資料的統計分析與探討</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="數值型解釋變數" href="numerical.html" />
-    <link rel="prev" title="簡單類別型解釋變數" href="simplecategorical.html" />
+    <link rel="next" title="列聯表分析:數值型" href="numerical.html" />
+    <link rel="prev" title="列聯表分析:簡單類別型" href="simplecategorical.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -99,32 +99,22 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="simplecategorical.html">
-   簡單類別型解釋變數
+   列聯表分析:簡單類別型
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   多重類別型解釋變數
+   列聯表分析:多重類別型
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="numerical.html">
-   數值型解釋變數
+   列聯表分析:數值型
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="interaction1.html">
-   因素之間交互作用
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="interaction2.html">
-   因素之間交互作用:數值型
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="clustering.html">
-   Cluster analysis
+  <a class="reference internal" href="conti_table_summary.html">
+   列聯表分析:綜合結論
   </a>
  </li>
  <li class="toctree-l1">
@@ -140,6 +130,26 @@
  <li class="toctree-l1">
   <a class="reference internal" href="regression_mix.html">
    迴歸分析: 綜合模型
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clustering.html">
+   Cluster analysis: 測試與中風組內分群
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clustering_batch.html">
+   Cluster analysis: 中風者與非中風者做分群
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="interaction1.html">
+   補充: 因素之間交互作用
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="interaction2.html">
+   補充: 因素之間交互作用(數值型)
   </a>
  </li>
 </ul>
@@ -238,6 +248,20 @@
     <a class="reference internal nav-link" href="#id3">
      分類成兩組
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#odds-ratio">
+       Odds Ratio:
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#fix-row">
+         Fix Row比較:
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id4">
@@ -247,11 +271,6 @@
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#chi-square">
        Chi-square
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#odds-ratio">
-       Odds Ratio
       </a>
      </li>
     </ul>
@@ -264,12 +283,17 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#chi-squared-test">
-     Chi-squared test
+    <a class="reference internal nav-link" href="#id6">
+     資料清理
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
+    <a class="reference internal nav-link" href="#id7">
+     Chi-square
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
      兩兩分組做chi-square
     </a>
     <ul class="nav section-nav flex-column">
@@ -304,7 +328,16 @@
               <div>
                 
   <div class="section" id="id1">
-<h1>多重類別型解釋變數<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>列聯表分析:多重類別型<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<style>
+.blue {
+    color: blue;
+}
+
+.awk {
+    color: #b6b4cf;
+}
+</style>
 <div class="section" id="id2">
 <h2>中風與抽煙習慣<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id3">
@@ -312,26 +345,52 @@
 <ul class="simple">
 <li><p>smoke包含smokes與formerly smoked</p></li>
 <li><p>never smoke自己一組</p></li>
+<li><p>註記: unknown有1544個資料點，被拿掉了</p></li>
 <li><p>基本假設:有抽煙的人比較容易中風</p></li>
 </ul>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/smoke_stroke.png"><img alt="smoke_stroke" class="bg-primary mb-1 align-center" src="_images/smoke_stroke.png" style="width: 800px;" /></a>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Smoke</p></th>
+<th class="head"><p>Never Smoke</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Stroke</p></td>
+<td><p>112</p></td>
+<td><p>90</p></td>
+<td><p>202</p></td>
+</tr>
+<tr class="row-odd"><td><p>Non-stroke</p></td>
+<td><p>1562</p></td>
+<td><p>1802</p></td>
+<td><p>3364</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p>1674</p></td>
+<td><p>1892</p></td>
+<td><p>3566</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="odds-ratio">
+<h4>Odds Ratio:<a class="headerlink" href="#odds-ratio" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li><p>註記: unknown有1544個資料點，被拿掉了</p></li>
-<li><p>Odds ratio <span class="math notranslate nohighlight">\(\hat{\theta}=1.436\)</span></p></li>
-<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(0.076, 0.647)\)</span></p>
-<ul>
+<li><p><span class="math notranslate nohighlight">\(\hat{\theta}=1.436\)</span></p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(0.076, 0.647)\)</span></p></li>
 <li><p>95%的信賴區間不包含0，表示 <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}\)</span> 與0有顯著差異。</p></li>
 </ul>
-</li>
-<li><p>結論:中風跟抽煙有關聯。但相比於婚姻、壓力與心臟病，抽煙的<span class="math notranslate nohighlight">\(\hat{\theta}\)</span>比較靠近<span class="math notranslate nohighlight">\(1\)</span>，表示抽煙相對來說不是一個重要的因子</p></li>
-<li><p>Fix column比較:</p>
-<ul>
-<li><p>中風患者: <span class="math notranslate nohighlight">\(\frac{\text{Smoke}}{\text{No smoke}}=1.24\)</span></p></li>
-<li><p>非中風者: <span class="math notranslate nohighlight">\(\frac{\text{Smoke}}{\text{No smoke}}=0.87\)</span></p></li>
-<li><p>符和基本假設，中風患者中有抽煙的比例高</p></li>
+<p><span class ="blue"><em>中風跟抽煙有關聯。但相比於婚姻、壓力與心臟病，抽煙的<span class="math notranslate nohighlight">\(\hat{\theta}\)</span>比較靠近<span class="math notranslate nohighlight">\(1\)</span>，表示抽煙相對來說不是一個重要的因子</em></span></p>
+<div class="section" id="fix-row">
+<h5>Fix Row比較:<a class="headerlink" href="#fix-row" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>中風患者: <span class="math notranslate nohighlight">\(\frac{\text{Smoke}}{\text{Never smoke}}=1.24\)</span></p></li>
+<li><p>非中風者: <span class="math notranslate nohighlight">\(\frac{\text{Smoke}}{\text{Never smoke}}=0.87\)</span></p></li>
 </ul>
-</li>
-</ul>
+<p><span class ="blue"><em>符和基本假設，中風患者中有抽煙的比例高</em></span></p>
+</div>
+</div>
 </div>
 <div class="section" id="id4">
 <h3>三組分開做<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
@@ -368,8 +427,10 @@
 </tr>
 </tbody>
 </table>
-<p><span class="math notranslate nohighlight">\(X^2\)</span> = 11.436, df = 2, p-value = 0.003285</p>
-<p><code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">round(smokeStroke_chi$residuals,</span> <span class="pre">3)</span></code></p>
+<p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 11.436, df = 2, p-value = 0.003285</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt; round(smokeStroke_chi$residuals, 3)
+</pre></div>
+</div>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
@@ -396,51 +457,9 @@
 <li><p>結論:</p>
 <ul>
 <li><p><strong>曾經抽菸者甚至比正有抽菸習慣者更容易中風</strong></p></li>
-<li><p>從不抽菸者還是最不容易中風</p></li>
-<li><p>由於右欄未大於0.5，本表中較難以下結論，以下用odds ratio補足</p></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="section" id="odds-ratio">
-<h4>Odds Ratio<a class="headerlink" href="#odds-ratio" title="Permalink to this headline">¶</a></h4>
-<p>首先，我們先計算Odds</p>
-<p><span class="math notranslate nohighlight">\(\rm{Odds}_{1} = \cfrac{P(\rm{stroke}|\rm{smokes})}{P(\rm{No stroke}|\rm{smokes})} = \cfrac{42}{747} = 0.056\)</span></p>
-<p><span class="math notranslate nohighlight">\(\rm{Odds}_{2} = \cfrac{P(\rm{stroke}|\rm{former})}{P(\rm{No stroke}|\rm{former})} = \cfrac{70}{815} = 0.086\)</span></p>
-<p><span class="math notranslate nohighlight">\(\rm{Odds}_{3} = \cfrac{P(\rm{stroke}|\rm{NevSmoke})}{P(\rm{No stroke}|\rm{NevSmoke})} = \cfrac{202}{3364} = 0.060\)</span></p>
-<p>Odds Ratio:</p>
-<ul class="simple">
-<li><p>formerly smoked to smokes</p>
-<ol class="simple">
-<li><p><span class="math notranslate nohighlight">\(\hat{OR}_{21} = \cfrac{0.086}{0.056} = 1.54\)</span></p></li>
-<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\ln(θ)： (0.037, 0.827)\)</span>，範圍不涵蓋0，故與odds ratio與1有顯著差異</p></li>
-<li><p>formerly smoked 比 smokes 容易中風</p></li>
-</ol>
-</li>
-<li><p>formerly smoked to never smokes</p>
-<ol class="simple">
-<li><p><span class="math notranslate nohighlight">\(\hat{OR}_{23} = \cfrac{0.086}{0.060} = 1.43\)</span></p></li>
-<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\ln(θ)： (0.035, 0.681)\)</span>，範圍不涵蓋0，故與odds ratio與1有顯著差異</p></li>
-</ol>
-</li>
-<li><p>never smokes to smokes</p>
-<ol class="simple">
-<li><p><span class="math notranslate nohighlight">\(\hat{OR}_{13} = \cfrac{0.056}{0.060} = 0.93\)</span></p></li>
-<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\ln(θ)： (-0.45, 0.30)\)</span>，範圍涵蓋0，故與odds ratio與1<strong>無</strong>顯著差異，無法從本樣本區分出有吸菸習慣與未曾吸菸組的差異</p></li>
-</ol>
-</li>
-</ul>
-<ul class="simple">
-<li><p>討論:</p>
-<ul>
-<li><p>type I error要維持在0.05的話可能”95%”的數字要調整，但是我們沒有調</p></li>
-<li><p>猜測:</p>
-<ul>
-<li><p>Formerly 可能都是年紀比較大的</p></li>
-<li><p>Smokes 可能都是年紀輕的</p></li>
-</ul>
-</li>
 <li><p><strong>應該要區分formely與smokes</strong></p></li>
+<li><p>從不抽菸者還是最不容易中風</p></li>
+<li><p>即便右欄未大於0.5，要說未曾抽菸者不容易中風可能較勉強，但前一項odds ratio已能補足這結論</p></li>
 </ul>
 </li>
 </ul>
@@ -449,12 +468,53 @@
 </div>
 <div class="section" id="id5">
 <h2>中風與工作<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="chi-squared-test">
-<h3>Chi-squared test<a class="headerlink" href="#chi-squared-test" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>children 2 removed</p></li>
-<li><p>never-worked none removed</p></li>
-</ul>
+<div class="section" id="id6">
+<h3>資料清理<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Stroke</p></th>
+<th class="head"><p>No Stroke</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Government</p></td>
+<td><p>23</p></td>
+<td><p>491</p></td>
+<td><p>514</p></td>
+</tr>
+<tr class="row-odd"><td><p>Private</p></td>
+<td><p>109</p></td>
+<td><p>2092</p></td>
+<td><p>2201</p></td>
+</tr>
+<tr class="row-even"><td><p>Self-empl</p></td>
+<td><p>48</p></td>
+<td><p>581</p></td>
+<td><p>629</p></td>
+</tr>
+<tr class="row-odd"><td><p>children</p></td>
+<td><p><strong>2</strong></p></td>
+<td><p>685</p></td>
+<td><p>687</p></td>
+</tr>
+<tr class="row-even"><td><p>NeverWork</p></td>
+<td><p><strong>0</strong></p></td>
+<td><p>22</p></td>
+<td><p>22</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sum</p></td>
+<td><p>108</p></td>
+<td><p>3164</p></td>
+<td><p>3344</p></td>
+</tr>
+</tbody>
+</table>
+<p><span class ="blue"><em>孩童與未曾工作者的樣本數不適用於卡方檢定</em></span></p>
+</div>
+<div class="section" id="id7">
+<h3>Chi-square<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
@@ -487,9 +547,11 @@
 </tbody>
 </table>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(X^2\)</span> = 7.8764, df = 2, p-value = 0.01948</p></li>
+<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 7.8764, df = 2, p-value = 0.01948</p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">round(workStroke_chi$residuals,</span> <span class="pre">3)</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt; round(workStroke_chi$residuals, 3)
+</pre></div>
+</div>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
@@ -512,16 +574,14 @@
 </tr>
 </tbody>
 </table>
-<ul class="simple">
-<li><p>結論: 自行創業者較容易中風</p></li>
-</ul>
+<p><span class="blue"><em>創業者在兩種分類的卡方檢定中，均顯示較容易中風，且具有統計意義，故在後續迴歸分析中，仍會考慮是否將工作類型作為解釋變數</em></span></p>
 </div>
-<div class="section" id="id6">
-<h3>兩兩分組做chi-square<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3>兩兩分組做chi-square<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="private">
 <h4>Private<a class="headerlink" href="#private" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Work</span> <span class="n">Type</span> <span class="mi">1</span><span class="p">:</span> <span class="n">children</span><span class="p">,</span> <span class="n">Govt_job</span><span class="p">,</span> <span class="n">Self</span><span class="o">-</span><span class="n">employed</span><span class="p">,</span> <span class="n">Never_worked</span>
-<span class="n">Work</span> <span class="n">Type</span> <span class="mi">2</span><span class="s1">&#39;: Private</span>
+<span class="n">Work</span> <span class="n">Type</span> <span class="mi">2</span><span class="p">:</span> <span class="n">Private</span>
 </pre></div>
 </div>
 <table class="colwidths-auto table">
@@ -551,14 +611,14 @@
 </tbody>
 </table>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(X^2\)</span> = 0.6149, df = 1, p-value = 0.4329</p></li>
+<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 0.6149, df = 1, p-value = 0.4329</p></li>
 <li><p>因此工作類型是否是私人企業(Private)與中風沒有顯著的關聯性</p></li>
 </ul>
 </div>
 <div class="section" id="self-employed">
 <h4>Self-employed<a class="headerlink" href="#self-employed" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Work</span> <span class="n">Type</span> <span class="mi">1</span><span class="p">:</span> <span class="n">children</span><span class="p">,</span> <span class="n">Govt_job</span><span class="p">,</span> <span class="n">Private</span><span class="p">,</span> <span class="n">Never_worked</span>
-<span class="n">Work</span> <span class="n">Type</span> <span class="mi">2</span><span class="s1">&#39;: Self-employed</span>
+<span class="n">Work</span> <span class="n">Type</span> <span class="mi">2</span><span class="p">:</span> <span class="n">Self</span><span class="o">-</span><span class="n">employed</span>
 </pre></div>
 </div>
 <table class="colwidths-auto table">
@@ -588,14 +648,14 @@
 </tbody>
 </table>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(X^2\)</span> = 18.97, df = 1, p-value = 1.328e-05</p></li>
+<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 18.97, df = 1, p-value = 1.328e-05</p></li>
 <li><p>因此工作類型是否是自行創業者(Self-employed)與中風有顯著的關聯性</p></li>
 </ul>
 </div>
 <div class="section" id="govt-job">
 <h4>Govt_job<a class="headerlink" href="#govt-job" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Work</span> <span class="n">Type</span> <span class="mi">1</span><span class="p">:</span> <span class="n">children</span><span class="p">,</span> <span class="n">Self</span><span class="o">-</span><span class="n">employed</span><span class="p">,</span> <span class="n">Private</span><span class="p">,</span> <span class="n">Never_worked</span>
-<span class="n">Work</span> <span class="n">Type</span> <span class="mi">2</span><span class="s1">&#39;: Govt_job</span>
+<span class="n">Work</span> <span class="n">Type</span> <span class="mi">2</span><span class="p">:</span> <span class="n">Govt_job</span>
 </pre></div>
 </div>
 <table class="colwidths-auto table">
@@ -625,7 +685,7 @@
 </tbody>
 </table>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(X^2\)</span> = 0.0088896, df = 1, p-value = 0.9249</p></li>
+<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 0.0088896, df = 1, p-value = 0.9249</p></li>
 <li><p>因此工作類型是否在政府機關(Govt_job)與中風沒有顯著的關聯性</p></li>
 </ul>
 </div>
@@ -658,8 +718,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="simplecategorical.html" title="previous page">簡單類別型解釋變數</a>
-    <a class='right-next' id="next-link" href="numerical.html" title="next page">數值型解釋變數</a>
+    <a class='left-prev' id="prev-link" href="simplecategorical.html" title="previous page">列聯表分析:簡單類別型</a>
+    <a class='right-next' id="next-link" href="numerical.html" title="next page">列聯表分析:數值型</a>
 
         </div>
         

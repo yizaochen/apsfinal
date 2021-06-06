@@ -51,7 +51,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="簡單類別型解釋變數" href="simplecategorical.html" />
+    <link rel="next" title="列聯表分析:簡單類別型" href="simplecategorical.html" />
     <link rel="prev" title="前言：背景與動機" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -97,32 +97,22 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="simplecategorical.html">
-   簡單類別型解釋變數
+   列聯表分析:簡單類別型
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="multiplecategorical.html">
-   多重類別型解釋變數
+   列聯表分析:多重類別型
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="numerical.html">
-   數值型解釋變數
+   列聯表分析:數值型
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="interaction1.html">
-   因素之間交互作用
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="interaction2.html">
-   因素之間交互作用:數值型
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="clustering.html">
-   Cluster analysis
+  <a class="reference internal" href="conti_table_summary.html">
+   列聯表分析:綜合結論
   </a>
  </li>
  <li class="toctree-l1">
@@ -138,6 +128,26 @@
  <li class="toctree-l1">
   <a class="reference internal" href="regression_mix.html">
    迴歸分析: 綜合模型
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clustering.html">
+   Cluster analysis: 測試與中風組內分群
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clustering_batch.html">
+   Cluster analysis: 中風者與非中風者做分群
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="interaction1.html">
+   補充: 因素之間交互作用
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="interaction2.html">
+   補充: 因素之間交互作用(數值型)
   </a>
  </li>
 </ul>
@@ -319,6 +329,16 @@
                 
   <div class="section" id="id1">
 <h1>資料探討<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<style>
+.blue {
+    color: blue;
+}
+
+.awk {
+    color: #b6b4cf;
+}
+</style>
+<p><span class="blue"><em>以下資料在類別變數分析中，均會依據狀況刪去部分資料，因此各項初步分析中的資料數可能不盡一致。但在分群分析與迴歸分析中，若有任一欄為「unknown」、「N/A」、或「null」，該筆資料會整筆刪除，採用內容一致的資料集。</em></span></p>
 <div class="section" id="id2">
 <h2>資料來源<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -342,6 +362,7 @@
 <div class="section" id="gender">
 <h3>gender<a class="headerlink" href="#gender" title="Permalink to this headline">¶</a></h3>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/gender_bar_pie.png"><img alt="gender" class="bg-primary mb-1 align-center" src="_images/gender_bar_pie.png" style="width: 800px;" /></a>
+<p><span class="blue"><em>一筆資料被紀錄為Others，基於分析結果的可信度考量，後面關於性別的類別變數分析均不使用該筆資料</em></span></p>
 </div>
 <div class="section" id="hypertension">
 <h3>Hypertension<a class="headerlink" href="#hypertension" title="Permalink to this headline">¶</a></h3>
@@ -354,6 +375,7 @@
 <div class="section" id="ever-married">
 <h3>Ever married<a class="headerlink" href="#ever-married" title="Permalink to this headline">¶</a></h3>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/evermarry_bar_pie.png"><img alt="evermarry" class="bg-primary mb-1 align-center" src="_images/evermarry_bar_pie.png" style="width: 800px;" /></a>
+<p><span class="blue"><em>簡單類別型解釋變數分析中，若用於分析婚姻經驗與其他變數的關係，剔除年齡小於16歲的資料</em></span></p>
 </div>
 <div class="section" id="residence-type">
 <h3>Residence type<a class="headerlink" href="#residence-type" title="Permalink to this headline">¶</a></h3>
@@ -366,6 +388,8 @@
 <div class="section" id="smoking-status">
 <h3>Smoking status<a class="headerlink" href="#smoking-status" title="Permalink to this headline">¶</a></h3>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/smoking_bar_pie.png"><img alt="smoking" class="bg-primary mb-1 align-center" src="_images/smoking_bar_pie.png" style="width: 800px;" /></a>
+<p><span class="blue"><em>Unknown資料於使用到smoking_status的變數的類別型分析中均已剃除，值得注意的是，下面histogram紀錄所有抽菸狀態未知的資料總共1544筆，其中635筆為小於等於十六歲的樣本(虛線)，也就是說剔除的樣本約有一半屬於孩童或是青少年</em></span>
+<img alt="" src="https://i.imgur.com/qQdT9fT.png" /></p>
 </div>
 <div class="section" id="work-type">
 <h3>Work type<a class="headerlink" href="#work-type" title="Permalink to this headline">¶</a></h3>
@@ -380,10 +404,26 @@
 </div>
 <div class="section" id="average-glucose-level">
 <h3>Average glucose level<a class="headerlink" href="#average-glucose-level" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>我們參考日本糖尿病協會的分類</p>
+<ul>
+<li><p><img alt="" src="https://i.imgur.com/odgJgbX.png" /></p></li>
+</ul>
+</li>
+</ul>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/avg_glucose_distribution.png"><img alt="avg_glucose" class="bg-primary mb-1 align-center" src="_images/avg_glucose_distribution.png" style="width: 800px;" /></a>
+<p><span class="blue"><em>雖然不確定收集資料時是取飯前(FPG)或是飯後血糖(OGTT)，本報告仍先採用空腹血糖做為參考標準。</em></span></p>
 </div>
 <div class="section" id="bmi">
 <h3>BMI<a class="headerlink" href="#bmi" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>BMI的計算與BMI數值的意義</p>
+<ul>
+<li><p><img alt="" src="https://i.imgur.com/Q7nEzN6.jpg" />
+<span class="blue"><em>BMI的分類參考值如上圖。下圖是本資料的histogram</em></span></p></li>
+</ul>
+</li>
+</ul>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/bmi_distribution.png"><img alt="bmi_distribution" class="bg-primary mb-1 align-center" src="_images/bmi_distribution.png" style="width: 800px;" /></a>
 </div>
 </div>
@@ -415,7 +455,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="intro.html" title="previous page">前言：背景與動機</a>
-    <a class='right-next' id="next-link" href="simplecategorical.html" title="next page">簡單類別型解釋變數</a>
+    <a class='right-next' id="next-link" href="simplecategorical.html" title="next page">列聯表分析:簡單類別型</a>
 
         </div>
         

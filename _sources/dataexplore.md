@@ -1,6 +1,15 @@
 資料探討
 =======================
+<style>
+.blue {
+    color: blue;
+}
 
+.awk {
+    color: #b6b4cf;
+}
+</style>
+<span class="blue">*以下資料在類別變數分析中，均會依據狀況刪去部分資料，因此各項初步分析中的資料數可能不盡一致。但在分群分析與迴歸分析中，若有任一欄為「unknown」、「N/A」、或「null」，該筆資料會整筆刪除，採用內容一致的資料集。*</span>
 ## 資料來源
 - 我們選擇了一筆2018年釋出的網路資料
   - [McKinsey Analytics: Online Hackathon on Healthcare](https://datahack.analyticsvidhya.com/contest/mckinsey-analytics-online-hackathon/)
@@ -12,6 +21,7 @@
 - 數值型: age, avg_glucose_level, bmi
 
 ## 單變數分析: 類別型
+
 ### gender
 ```{image} ./images/gender_bar_pie.png
 :alt: gender
@@ -19,6 +29,7 @@
 :width: 800px
 :align: center
 ```
+<span class="blue">*一筆資料被紀錄為Others，基於分析結果的可信度考量，後面關於性別的類別變數分析均不使用該筆資料*</span>
 
 ### Hypertension
 ```{image} ./images/hypert_bar_pie.png
@@ -43,6 +54,7 @@
 :width: 800px
 :align: center
 ```
+<span class="blue">*簡單類別型解釋變數分析中，若用於分析婚姻經驗與其他變數的關係，剔除年齡小於16歲的資料*</span>
 
 ### Residence type
 ```{image} ./images/resit_bar_chart.png
@@ -67,6 +79,8 @@
 :width: 800px
 :align: center
 ```
+<span class="blue">*Unknown資料於使用到smoking_status的變數的類別型分析中均已剃除，值得注意的是，下面histogram紀錄所有抽菸狀態未知的資料總共1544筆，其中635筆為小於等於十六歲的樣本(虛線)，也就是說剔除的樣本約有一半屬於孩童或是青少年*</span>
+![](https://i.imgur.com/qQdT9fT.png)
 
 ### Work type
 ```{image} ./images/worktype_bar_pie.png
@@ -86,14 +100,20 @@
 ```
 
 ### Average glucose level
+- 我們參考日本糖尿病協會的分類
+    - ![](https://i.imgur.com/odgJgbX.png)
 ```{image} ./images/avg_glucose_distribution.png
 :alt: avg_glucose
 :class: bg-primary mb-1
 :width: 800px
 :align: center
 ```
+<span class="blue">*雖然不確定收集資料時是取飯前(FPG)或是飯後血糖(OGTT)，本報告仍先採用空腹血糖做為參考標準。*</span>
 
 ### BMI
+- BMI的計算與BMI數值的意義
+    - ![](https://i.imgur.com/Q7nEzN6.jpg)
+<span class="blue">*BMI的分類參考值如上圖。下圖是本資料的histogram*</span>
 ```{image} ./images/bmi_distribution.png
 :alt: bmi_distribution
 :class: bg-primary mb-1
