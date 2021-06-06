@@ -6,9 +6,11 @@
 - file: simplecategorical
 - file: multiplecategorical
 - file: numerical
-- file: interaction1
-- file: interaction2
-- file: clustering
+- file: conti_table_summary
 - file: regression_categorical.ipynb
 - file: regression_numerical.ipynb
 - file: regression_mix.ipynb
+- file: clustering
+- file: clustering_batch
+- file: interaction1
+- file: interaction2

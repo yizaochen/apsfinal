@@ -1,89 +1,133 @@
-簡單類別型解釋變數
+列聯表分析:簡單類別型
 =======================
+<style>
+.blue {
+    color: blue;
+}
+
+.awk {
+    color: #b6b4cf;
+}
+</style>
+
 ## 中風與性別
 - 基本假設:性別與中風沒有關聯
 
-```{image} ./two_by_two_table/gender_stroke.png
-:alt: gender_stroke
-:class: bg-primary mb-1
-:width: 800px
-:align: center
-```
+|            | Female  | Male | Sum  |
+| ---------- | ------- | ---- | ---- |
+| Stroke     | 141     | 108  | 249  |
+| Non-stroke | 2853    | 2007 | 4860 |
+| Sum        | 2994    | 1225 | 5109 |
 
-- 註記: 有一個性別是Other，被拿掉了
-- Odds ratio $\hat{\theta}=1.089$
-- 95% Confidence Interval of $\log{(\hat{\theta})}=(-0.172, 0.342)$
-- 結論:中風跟性別是獨立的，符合我們一開始的猜想
+### Odds Ratio:
+   - $\hat{\theta}=1.089$
+   - 95% Confidence Interval of $\log{(\hat{\theta})}=(-0.172, 0.342)$
+### Chi-square:
+   - $\chi^2$ = 0.34, df = 1, p-value = 0.5598
+
+<span class ="blue">*性別與中風的關係在兩項檢定中均未有證據支持具有相關性*</span>
 
 ## 中風與居住環境
 - 基本假設:只有一點點關聯，鄉下的中風比例可能比住在城市的低
-```{image} ./two_by_two_table/resitype_stroke.png
-:alt: resitype_stroke
-:class: bg-primary mb-1
-:width: 800px
-:align: center
-```
 
-- Odds ratio $\hat{\theta}=0.866$
-- 95% Confidence Interval of $\log{(\hat{\theta})}=(-0.400, 0.112)$
-- 雖然資料符合我們的猜想，鄉下中風的比例比較低，但是95\%的信賴區間包含0，表示 $\log{(\hat{\theta})}$ 與0無顯著差異
-- 結論:中風與居住環境是獨立的
+|            | Urban | Rural | Sum  |
+| ---------- | ----- | ----- | ---- |
+| Stroke     | 135   | 141   | 249  |
+| Non-stroke | 2461  | 2400  | 4861 |
+| Sum        | 2596  | 2514  | 5110 |
+
+### Odds Ratio:
+   - $\hat{\theta}=0.866$
+   - 95% Confidence Interval of $\log{(\hat{\theta})}=(-0.400, 0.112)$
+   - 雖然資料符合我們的猜想，鄉下中風的比例比較低，但是95\%的信賴區間包含0，表示 $\log{(\hat{\theta})}$ 與0無顯著差異
+### Chi-square:
+   - $\chi^2$ = 1.0816, df = 1, p-value = 0.2983
+
+<span class ="blue">*居住環境與中風的關係在兩項檢定中均未有證據支持具有相關性*</span>
 
 ## 中風與婚姻
 - 基本假設:婚姻與中風沒有關聯
-```{image} ./two_by_two_table/evermarry_stroke.png
-:alt: evermarry_stroke
-:class: bg-primary mb-1
-:width: 800px
-:align: center
+
+|            | Married | NevMar | Sum  |
+| ---------- | ------- | ------ | ---- |
+| Stroke     | 220     | 27     | 247  |
+| Non-stroke | 3133    | 986    | 4119 |
+| Sum        | 3353    | 1013   | 4366 |
+
+### Odds Ratio:
+   - $\hat{\theta}=2.564$
+   - 95% Confidence Interval of $\log{(\hat{\theta})}=(0.536, 1.348)$
+   - 95%的信賴區間不包含0，表示 $\log{(\hat{\theta})}$ 與0有顯著差異。
+### Chi-square:
+   - $\chi^2$ = 21.4, df = 1, p-value = 3.728e-06  
+
+<span class ="blue">*婚姻經驗與中風的在本檢定中顯示具有相關性，如同odds ratio所顯示，進一步分析殘差瞭解其分布：*</span> 
+```
+round(result_StrokeMarri$residuals, 3)
 ```
 
-- Odds ratio $\hat{\theta}=4.184$
-- 95% Confidence Interval of $\log{(\hat{\theta})}=(1.040, 1.823)$
-   - 95%的信賴區間不包含0，表示 $\log{(\hat{\theta})}$ 與0有顯著差異。
-- 結論:跟我們的基本假設相反，中風跟"有無結過婚"有關聯
-- Fix column比較:
-   - 中風患者: $\frac{\text{Ever-Married}}{\text{Never-Married}}=7.59$
-   - 非中風者: $\frac{\text{Ever-Married}}{\text{Never-Married}}=1.81$
-   - 中風患者中"結婚與沒結婚"的比例高於非中風者
+|            | Married | NevMar |
+| ---------- | ------- | ------ |
+| Stroke     | 2.201   | -4.004 |
+| Non-stroke | -0.539  | 0.980  |
 
+<span class ="blue">*發現未曾有婚姻經驗者，較不容易中風，而婚姻經驗除了在附表(?)中可見與高血壓有關連性之外，相對於未結婚者也較容易中風*</span>
 
 ## 中風與高血壓
 - 基本假設:高血壓愈大的人愈容易中風
-```{image} ./two_by_two_table/hypert_stroke.png
-:alt: hypert_stroke
-:class: bg-primary mb-1
-:width: 800px
-:align: center
+
+|            | hypertension | Normal | Sum  |
+| ---------- | ------------ | ------ | ---- |
+| Stroke     | 66           | 183    | 249  |
+| Non-stroke | 432          | 4429   | 4861 |
+| Sum        | 498          | 4612   | 5110 |
+
+### Odds Ratio:
+   - $\hat{\theta}=3.698$
+   - 95% Confidence Interval of $\log{(\hat{\theta})}=(1.009, 1.606)$
+   - 95%的信賴區間不包含0，表示 $\log{(\hat{\theta})}$ 與0有顯著差異。
+### Chi-square:
+   - $\chi^2$ = 81.605, df = 1, p-value < 2.2e-16
+
+<span class ="blue">*高血壓與中風的在本檢定中顯示具有高度相關性，如同odds ratio所顯示，進一步分析殘差了解其分布：*</span>
+```
+>round(result_StrokeHyper$residuals, 3)
 ```
 
-- Odds ratio $\hat{\theta}=3.698$
-- 95% Confidence Interval of $\log{(\hat{\theta})}=(1.009, 1.606)$
-   - 95%的信賴區間不包含0，表示 $\log{(\hat{\theta})}$ 與0有顯著差異。
-- 結論:中風跟高血壓有關聯
-- Fix column比較:
-   - 中風患者: $\frac{\text{Hypertension}}{\text{Non-Hypertension}}=0.36$
-   - 非中風者: $\frac{\text{Hypertension}}{\text{Non-Hypertension}}=0.10$
-   - 符和基本假設，高血壓愈大的人愈容易中風
+|            | hypertension | Normal |
+| ---------- | ------------ | ------ |
+| Stroke     | 8.472        | -2.784 |
+| Non-stroke | -1.917       | 0.630  | 
+
+<span class ="blue">*高血壓與中風的發生有高度相關性，殘差顯示血壓正常者與高血壓者在中風條件下有最大的差異。*</span>
 
 ## 中風與心臟病
 - 基本假設:中風是心血管疾病，要與心臟病相關
-```{image} ./two_by_two_table/heartd_stroke.png
-:alt: hypert_stroke
-:class: bg-primary mb-1
-:width: 800px
-:align: center
+
+|            | heart D | Normal | Sum  |
+| ---------- | ------- | ------ | ---- |
+| Stroke     | 47      | 202    | 249  |
+| Non-stroke | 229     | 4632   | 4861 |
+| Sum        | 276     | 4834   | 5110 |
+
+### Odds Ratio:
+   - $\hat{\theta}=4.706$
+   - 95% Confidence Interval of $\log{(\hat{\theta})}=(1.205, 1.893)$
+   - 95%的信賴區間不包含0，表示 $\log{(\hat{\theta})}$ 與0有顯著差異。
+### Chi-square:
+   - $\chi^2$ = 90.26, df = 1, p-value < 2.2e-16  
+
+<span class ="blue">*心臟病與中風的在本檢定中顯示具有高度相關性，如同odds ratio所顯示，進一步分析殘差瞭解其分布：*</span>
+```
+>round(result_StrokeHD$residuals, 3)
 ```
 
-- Odds ratio $\hat{\theta}=4.706$
-- 95% Confidence Interval of $\log{(\hat{\theta})}=(1.205, 1.893)$
-   - 95%的信賴區間不包含0，表示 $\log{(\hat{\theta})}$ 與0有顯著差異。
-- 結論:中風跟心臟病有關聯
-- Fix column比較:
-    - 中風患者: $\frac{\text{Heart-Disease }}{\text{No-Heart-Disease}}=0.23$
-    - 非中風者: $\frac{\text{Heart-Disease }}{\text{No-Heart-Disease}}=0.05$
-    - 符和基本假設，中風患者中有心臟病的比例高
+|            | heart D | Normal |
+| ---------- | ------- | ------ |
+| Stroke     | 9.149   | -2.186 |
+| Non-stroke | -2.071  | 0.495  | 
 
+<span class ="blue">*心臟病與中風的發生有高度相關性，殘差與$X^2$顯示心臟病患者與中風的關聯性甚至比高血壓之於中風要高。*</span>
 
 ## 綜合比較
 ```{image} ./images/oddsratio_bar.png

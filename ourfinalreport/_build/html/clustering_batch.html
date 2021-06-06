@@ -1,0 +1,642 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cluster analysis: 中風者與非中風者做分群 &#8212; 腦中風資料的統計分析與探討</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="補充: 因素之間交互作用" href="interaction1.html" />
+    <link rel="prev" title="Cluster analysis: 測試與中風組內分群" href="clustering.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">腦中風資料的統計分析與探討</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   前言：背景與動機
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="dataexplore.html">
+   資料探討
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="simplecategorical.html">
+   列聯表分析:簡單類別型
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="multiplecategorical.html">
+   列聯表分析:多重類別型
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numerical.html">
+   列聯表分析:數值型
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="conti_table_summary.html">
+   列聯表分析:綜合結論
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_categorical.html">
+   迴歸分析: 類別型變數
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_numerical.html">
+   迴歸分析: 數值型變數
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_mix.html">
+   迴歸分析: 綜合模型
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clustering.html">
+   Cluster analysis: 測試與中風組內分群
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Cluster analysis: 中風者與非中風者做分群
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="interaction1.html">
+   補充: 因素之間交互作用
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="interaction2.html">
+   補充: 因素之間交互作用(數值型)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/clustering_batch.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fclustering_batch.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   中風者與非中風者各抽樣10人進行分組分析
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ten-trees">
+   Ten Trees
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tree-1">
+     Tree 1 👍
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tree-2">
+     Tree 2 👍
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tree-3">
+     Tree 3 👍
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tree-4">
+     Tree 4 ☠️
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tree-5">
+     Tree 5 ☠️
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tree-6">
+     Tree 6 ☠️
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tree-7">
+     Tree 7 ☠️
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tree-8">
+     Tree 8 👍
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tree-9">
+     Tree 9 👍
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tree-10">
+     Tree 10 ☠️
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="cluster-analysis">
+<h1>Cluster analysis: 中風者與非中風者做分群<a class="headerlink" href="#cluster-analysis" title="Permalink to this headline">¶</a></h1>
+<style>
+.blue {
+    color: blue;
+}
+
+.awk {
+    color: #b6b4cf;
+}
+</style>
+<p><span class="blue"><em>在這部份，我們從中風與非中風的樣本中各隨機抽樣10人進行分群分類，觀察前面列聯表分析與回歸分析中顯示對中風具有相關性的變數，能造成中風與非中風者的分群。在分群距離計算方法中方法中，我們一開始考慮了single linkage、complete linkage、average linkage clustering，然而，single-linkage分群結果較不顯著，complete linkage與average-linkage的結果類似，我們最後採用complete linkage完成後續分析。</em></span></p>
+<div class="section" id="id1">
+<h2>中風者與非中風者各抽樣10人進行分組分析<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>隨機抽樣資料</p>
+<ul>
+<li><p>1-10號是有中風的人，11-20號是抽樣無中風的人
+<img alt="" src="https://i.imgur.com/9MD58ie.png" /></p></li>
+<li><p>原始數據
+<img alt="" src="https://i.imgur.com/Ptmqx54.png" /></p></li>
+</ul>
+</li>
+<li><p>群聚樹分析：</p>
+<ol class="simple">
+<li><p>Single-linkage cluster dendrogram
+<img alt="" src="https://i.imgur.com/xppKwGa.jpg" /></p>
+<ul>
+<li><p>用最小距離分群的結果看起來很怪異，沒有一個分群的感覺。</p></li>
+</ul>
+</li>
+<li><p>Complete-linkage cluster dendrogram
+<img alt="" src="https://i.imgur.com/43crdm1.jpg" /></p>
+<ul>
+<li><p>由上圖可以大致分成三組：
+<img alt="" src="https://i.imgur.com/MBMvqWk.jpg" /></p>
+<ol class="simple">
+<li><p>第一群：含有<font color="#F71E86">9個中風者(81.8%)</font>、<font color="#0517B7">2個無中風者(18.2%)</font>，屬「高風險族群」</p>
+<ul>
+<li><p>共通點為「大於50歲」、「已婚」、「有工作」</p></li>
+<li><p>這組混雜了較多的抽樣，因此共通點較少。但看細一點可發現此群可以再細分為三小群。若只依照這幾個健康數據分析，當中
+(1)最右邊的小群其身體狀況最差，皆為中風患者，皆有血糖異常與抽菸史
+(2)中間的小群中含有一個非中風樣本，健康狀況中等，雖也皆有血糖異常與抽菸史，但全部皆無高血壓
+(3)左邊的小群含有一個非中風樣本，身體狀況大部分正常，只有一個有BMI的問題</p></li>
+<li><p>這群較特別的是涵蓋了所有有抽菸史的樣本</p></li>
+</ul>
+</li>
+<li><p>第二群：含有<font color="#F71E86">1個中風者(25%)</font>、<font color="#0517B7">3個無中風者(75%)</font>，屬「中風險族群」</p>
+<ul>
+<li><p>共通點為「高血壓」、「大於50歲」、「有工作」、「BMI異常」、「無抽煙」</p></li>
+<li><p>雖然這群也混雜了中風與非中風樣本，但可以發現唯一的一位中風患者被分在最外層，是這群中較不一樣的，最大距離最遠。</p></li>
+</ul>
+</li>
+<li><p>第三群：含有<font color="#0517B7">5個無中風者(100%)</font>，屬「低風險族群」</p>
+<ul>
+<li><p>共通點為「無高血壓」、「無心臟疾病」、「小於50歲」、「血糖正常」、「BMI正常」、「無抽菸史」</p></li>
+<li><p>這群皆為非中風樣本，可以明顯地發現他們的身體狀況與生活型態皆較健康</p></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>綜合結果：以最大距離分群可以初略得將樣本歸類在高風險、中風險與低風險等三族群，但單以分群似乎無法作出準確的判斷是否中風</p></li>
+</ul>
+</li>
+<li><p>Average-linkage cluster dendrogram
+<img alt="" src="https://i.imgur.com/eY0RS00.jpg" /></p>
+<ul>
+<li><p>與Complete-linkage cluster dendrogram比較，大部分分群結果相似：</p>
+<ol class="simple">
+<li><p>(9)從高風險族群跑到中風險族群，但仍在較外層，因此仍然屬於中風險族群中較不健康的樣本</p></li>
+<li><p>低風險族群的樣本都沒變</p></li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="section" id="ten-trees">
+<h2>Ten Trees<a class="headerlink" href="#ten-trees" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>＊抽樣方法：從中風與非中風的兩群人中，個別隨機抽樣10組不重複的10個人。
+＊分群資料：每顆群聚樹含有中風與非中風各一組隨機抽樣樣本，共20人。
+        (1-10為有中風，11-20為沒中風)
+＊分群方法：Complete-linkage cluster dendrogram
+＊比例計算：同群裡去算多少比例有中風、多少比例沒中風。
+          例如某一個小群裡有10人(100%)，有2人中風(20%)，有8人沒中風(80%)。
+
+＊初步結論：只有Tree1, 2, 3, 8, 9有較明顯的中風與非中風分群
+</pre></div>
+</div>
+<div class="section" id="tree-1">
+<h3>Tree 1 👍<a class="headerlink" href="#tree-1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>隨機抽樣資料：
+<img alt="" src="https://i.imgur.com/UdQGtoU.png" />
+<img alt="" src="https://i.imgur.com/maGCLmZ.png" /></p></li>
+<li><p>群聚樹分析：
+<img alt="" src="https://i.imgur.com/gmJ4fBh.jpg" /></p>
+<ul>
+<li><p>最外層可分為兩群：</p>
+<ul>
+<li><p>左：含有<font color="#F71E86">10個中風者(76.9%)</font>、<font color="#0517B7">3個無中風者(23.1%)</font></p></li>
+<li><p>右：含有<font color="#0517B7">7個無中風者(100%)</font></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="tree-2">
+<h3>Tree 2 👍<a class="headerlink" href="#tree-2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>隨機抽樣資料：
+<img alt="" src="https://i.imgur.com/nV5wYOP.png" />
+<img alt="" src="https://i.imgur.com/IS9pHxW.png" /></p></li>
+<li><p>群聚樹分析：
+<img alt="" src="https://i.imgur.com/kXm5XuT.jpg" /></p>
+<ul>
+<li><p>最外層可分為兩群：</p>
+<ul>
+<li><p>左：含有<font color="#F71E86">6個中風者(85.7%)</font>、<font color="#0517B7">1個無中風者(14.3%)</font></p></li>
+<li><p>右：含有<font color="#F71E86">4個中風者(30.8%)</font>、<font color="#0517B7">9個無中風者(69.2%)</font></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="tree-3">
+<h3>Tree 3 👍<a class="headerlink" href="#tree-3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>隨機抽樣資料：
+<img alt="" src="https://i.imgur.com/bBcdDZk.png" />
+<img alt="" src="https://i.imgur.com/6n9Dc0L.png" /></p></li>
+<li><p>群聚樹分析：
+<img alt="" src="https://i.imgur.com/SBXhdxe.jpg" /></p>
+<ul>
+<li><p>最外層可分為兩群：</p>
+<ul>
+<li><p>左：含有<font color="#F71E86">6個中風者(85.7%)</font>、<font color="#0517B7">1個無中風者(14.3%)</font></p></li>
+<li><p>右：含有<font color="#F71E86">4個中風者(30.8%)</font>、<font color="#0517B7">9個無中風者(69.2%)</font></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="tree-4">
+<h3>Tree 4 ☠️<a class="headerlink" href="#tree-4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>隨機抽樣資料：
+<img alt="" src="https://i.imgur.com/FHQ3MqH.png" />
+<img alt="" src="https://i.imgur.com/weam0Oa.png" /></p></li>
+<li><p>群聚樹分析：
+<img alt="" src="https://i.imgur.com/zwQnp3F.jpg" /></p>
+<ul>
+<li><p>此棵樹沒有明顯的中風與非中風分群關係</p></li>
+<li><p>最外層可分為兩群：</p>
+<ul>
+<li><p>左：含有<font color="#F71E86">2個中風者(40%)</font>、<font color="#0517B7">3個無中風者(60%)</font></p></li>
+<li><p>右：含有<font color="#F71E86">8個中風者(53.3%)</font>、<font color="#0517B7">7個無中風者(46.7%)</font></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="tree-5">
+<h3>Tree 5 ☠️<a class="headerlink" href="#tree-5" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>隨機抽樣資料：
+<img alt="" src="https://i.imgur.com/zEAqYX4.png" />
+<img alt="" src="https://i.imgur.com/OoLZ5YX.png" /></p></li>
+<li><p>群聚樹分析：
+<img alt="" src="https://i.imgur.com/RkTtwOD.jpg" /></p>
+<ul>
+<li><p>此棵樹沒有明顯的中風與非中風分群關係</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="tree-6">
+<h3>Tree 6 ☠️<a class="headerlink" href="#tree-6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>隨機抽樣資料：
+<img alt="" src="https://i.imgur.com/SDLlOWw.png" />
+<img alt="" src="https://i.imgur.com/zcw0Dtv.png" /></p></li>
+<li><p>群聚樹分析：
+<img alt="" src="https://i.imgur.com/HNQyQaE.jpg" /></p>
+<ul>
+<li><p>此棵樹沒有明顯的中風與非中風分群關係</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="tree-7">
+<h3>Tree 7 ☠️<a class="headerlink" href="#tree-7" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>隨機抽樣資料：
+<img alt="" src="https://i.imgur.com/hQQjqJb.png" />
+<img alt="" src="https://i.imgur.com/lxPIWjj.png" /></p></li>
+<li><p>群聚樹分析：
+<img alt="" src="https://i.imgur.com/7GPOzP6.jpg" /></p>
+<ul>
+<li><p>此棵樹沒有明顯的中風與非中風分群關係</p></li>
+<li><p>最外層可分為兩群：</p>
+<ul>
+<li><p>左：含有<font color="#F71E86">7個中風者(50%)</font>、<font color="#0517B7">7個無中風者(50%)</font></p></li>
+<li><p>右：含有<font color="#F71E86">3個中風者(50%)</font>、<font color="#0517B7">3個無中風者(50%)</font></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="tree-8">
+<h3>Tree 8 👍<a class="headerlink" href="#tree-8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>隨機抽樣資料：
+<img alt="" src="https://i.imgur.com/FoKXj3R.png" />
+<img alt="" src="https://i.imgur.com/B1pG8eg.png" /></p></li>
+<li><p>群聚樹分析：
+<img alt="" src="https://i.imgur.com/SVCuMNs.jpg" /></p>
+<ul>
+<li><p>最外層可分為兩群：</p>
+<ul>
+<li><p>左：含有<font color="#F71E86">4個中風者(100%)</font></p></li>
+<li><p>右：含有<font color="#F71E86">6個中風者(37.5%)</font>、<font color="#0517B7">10個無中風者(62.5%)</font></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="tree-9">
+<h3>Tree 9 👍<a class="headerlink" href="#tree-9" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>隨機抽樣資料：
+<img alt="" src="https://i.imgur.com/cpTRuDx.png" />
+<img alt="" src="https://i.imgur.com/kHR84Cn.png" /></p></li>
+<li><p>群聚樹分析：
+<img alt="" src="https://i.imgur.com/AgnXfN4.jpg" /></p>
+<ul>
+<li><p>最外層可分為兩群：</p>
+<ul>
+<li><p>左：含有<font color="#0517B7">3個無中風者(100%)</font></p></li>
+<li><p>右：含有<font color="#F71E86">10個中風者(58.8%)</font>、<font color="#0517B7">7個無中風者(41.2%)</font></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="tree-10">
+<h3>Tree 10 ☠️<a class="headerlink" href="#tree-10" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>隨機抽樣資料：
+<img alt="" src="https://i.imgur.com/SkHF6II.png" />
+<img alt="" src="https://i.imgur.com/04hovCr.png" /></p></li>
+<li><p>群聚樹分析：
+<img alt="" src="https://i.imgur.com/q9lpaWv.jpg" /></p>
+<ul>
+<li><p>此棵樹沒有明顯的中風與非中風分群關係</p></li>
+<li><p>最外層可分為兩群：</p>
+<ul>
+<li><p>左：含有<font color="#F71E86">2個中風者(50%)</font>、<font color="#0517B7">2個無中風者(50%)</font></p></li>
+<li><p>右：含有<font color="#F71E86">8個中風者(50%)</font>、<font color="#0517B7">8個無中風者(50%)</font></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="clustering.html" title="previous page">Cluster analysis: 測試與中風組內分群</a>
+    <a class='right-next' id="next-link" href="interaction1.html" title="next page">補充: 因素之間交互作用</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By 陳奕造 施奕如 楊欣儒 李長穎<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
