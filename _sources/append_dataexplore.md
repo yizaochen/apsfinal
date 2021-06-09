@@ -1,4 +1,4 @@
-資料探討
+補充:資料清理前統計分析
 =======================
 <style>
 .blue {
@@ -14,25 +14,15 @@
 }
 </style>
 
-## 資料來源
-- 我們選擇了一筆2018年釋出的網路資料
-  - [McKinsey Analytics: Online Hackathon on Healthcare](https://datahack.analyticsvidhya.com/contest/mckinsey-analytics-online-hackathon/)
-
-## 資料清理
-- 我們將符合以下條件的資料清掉
-   - Gender為Other
-   - BMI為N/A
-   - Smoking status為Unknown
-
 ## 資料基本型態
-- 資料總數: 3425個人 (清理前為5110)
+- 資料總數: 5110個人
 - 類別型: gender, hypertension, heart_disease, ever_married, work_type, Residence_type, smoking_status, stroke
 - 數值型: age, avg_glucose_level, bmi
 
 ## 單變數分析: 類別型
 
 ### gender
-```{image} https://i.imgur.com/VOikmMR.png
+```{image} ./images/gender_bar_pie.png
 :alt: gender
 :class: bg-primary mb-1
 :width: 800px
@@ -40,7 +30,7 @@
 ```
 
 ### Hypertension
-```{image} https://i.imgur.com/V2ls7hO.png
+```{image} ./images/hypert_bar_pie.png
 :alt: hypertension
 :class: bg-primary mb-1
 :width: 800px
@@ -48,7 +38,7 @@
 ```
 
 ### Heart Disease
-```{image} https://i.imgur.com/IMe8y6F.png
+```{image} ./images/heartd_bar_pie.png
 :alt: heartdisease
 :class: bg-primary mb-1
 :width: 800px
@@ -56,16 +46,15 @@
 ```
 
 ### Ever married
-```{image} https://i.imgur.com/Pua54Dk.png
+```{image} ./images/evermarry_bar_pie.png
 :alt: evermarry
 :class: bg-primary mb-1
 :width: 800px
 :align: center
 ```
-<span class="blue">*簡單類別型解釋變數分析中，若用於分析婚姻經驗與其他變數的關係，剔除年齡小於16歲的資料*</span>
 
 ### Residence type
-```{image} https://i.imgur.com/3UNDxmf.png
+```{image} ./images/resit_bar_chart.png
 :alt: residtype
 :class: bg-primary mb-1
 :width: 800px
@@ -73,7 +62,7 @@
 ```
 
 ### Stroke
-```{image} https://i.imgur.com/BJbNHxr.png
+```{image} ./images/stroke_bar_pie.png
 :alt: strokebar
 :class: bg-primary mb-1
 :width: 800px
@@ -81,15 +70,17 @@
 ```
 
 ### Smoking status
-```{image} https://i.imgur.com/wn6c5i3.png
+```{image} ./images/smoking_bar_pie.png
 :alt: smoking
 :class: bg-primary mb-1
 :width: 800px
 :align: center
 ```
+<span class="blue">*Unknown資料於使用到smoking_status的變數的類別型分析中均已剃除，值得注意的是，下面histogram紀錄所有抽菸狀態未知的資料總共1544筆，其中635筆為小於等於十六歲的樣本(虛線)，也就是說剔除的樣本約有一半屬於孩童或是青少年*</span>
+![](https://i.imgur.com/qQdT9fT.png)
 
 ### Work type
-```{image} https://i.imgur.com/foUU50y.png
+```{image} ./images/worktype_bar_pie.png
 :alt: worktype
 :class: bg-primary mb-1
 :width: 800px
@@ -99,7 +90,7 @@
 ## 單變數分析: 數值型
 ### 年齡
 #### 整體資料年齡分佈
-```{image} https://i.imgur.com/Uie1iYd.png
+```{image} ./images/age_distribution.png
 :alt: age
 :class: bg-primary mb-1
 :width: 800px
@@ -125,7 +116,7 @@
 <span class="grey">*註: 雖然不確定收集資料時是取飯前(FPG)或是飯後血糖(OGTT)，本報告仍先採用空腹血糖做為參考標準。*</span>
 
 #### 整體資料血糖分佈
-```{image} https://i.imgur.com/5Gwb4HB.png
+```{image} ./images/avg_glucose_distribution.png
 :alt: avg_glucose
 :class: bg-primary mb-1
 :width: 800px
@@ -137,7 +128,7 @@
 
 ### BMI
 #### 整體資料BMI分佈
-```{image} https://i.imgur.com/UoOZ8vh.png
+```{image} ./images/bmi_distribution.png
 :alt: bmi_distribution
 :class: bg-primary mb-1
 :width: 800px
@@ -146,9 +137,6 @@
 #### 分成中風與非中風
 - 下圖呈現條件機率 $P(\text{stroke}|\text{BMI:group})$ 與 $P(\text{Non-stroke}|\text{BMI:group})$
 - ![](https://i.imgur.com/DMvA9b9.png)  
-  
 
 ## 資料綜觀
-![](https://i.imgur.com/KF0MfYP.png)
-
-<span class="grey">*註: 以上資料在類別變數分析中，均會依據狀況刪去部分資料，因此各項初步分析中的資料數可能不盡一致。但在分群分析與迴歸分析中，若有任一欄為「unknown」、「N/A」、或「null」，該筆資料會整筆刪除，採用內容一致的資料集。*</span>
+![](https://i.imgur.com/dwN9pcL.png)
