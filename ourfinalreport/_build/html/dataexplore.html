@@ -49,6 +49,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="列聯表分析:簡單類別型" href="simplecategorical.html" />
@@ -116,6 +118,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="interaction_plot.html">
+   解釋變數與中風的交互作用
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="regression_categorical.html">
    迴歸分析: 類別型變數
   </a>
@@ -148,6 +155,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="interaction2.html">
    補充: 因素之間交互作用(數值型)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="appen_classify_ref.html">
+   補充: 血糖與BMI分類依據
   </a>
  </li>
 </ul>
@@ -300,19 +312,60 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#age">
-     age
+    <a class="reference internal nav-link" href="#id6">
+     年齡
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       整體資料年齡分佈
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       分成中風與非中風
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       所有中風的人:年紀與性別的分佈
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#average-glucose-level">
      Average glucose level
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       整體資料血糖分佈
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id11">
+       分成中風與非中風
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#bmi">
      BMI
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id12">
+       整體資料BMI分佈
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id13">
+       分成中風與非中風
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -334,11 +387,14 @@
     color: blue;
 }
 
+.grey {
+    color: grey;
+}
+
 .awk {
     color: #b6b4cf;
 }
 </style>
-<p><span class="blue"><em>以下資料在類別變數分析中，均會依據狀況刪去部分資料，因此各項初步分析中的資料數可能不盡一致。但在分群分析與迴歸分析中，若有任一欄為「unknown」、「N/A」、或「null」，該筆資料會整筆刪除，採用內容一致的資料集。</em></span></p>
 <div class="section" id="id2">
 <h2>資料來源<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -398,33 +454,50 @@
 </div>
 <div class="section" id="id5">
 <h2>單變數分析: 數值型<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="age">
-<h3>age<a class="headerlink" href="#age" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>年齡<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h4>整體資料年齡分佈<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/age_distribution.png"><img alt="age" class="bg-primary mb-1 align-center" src="_images/age_distribution.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="id8">
+<h4>分成中風與非中風<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/mwyEex0.png"><img alt="age" class="bg-primary mb-1 align-center" src="https://i.imgur.com/mwyEex0.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="id9">
+<h4>所有中風的人:年紀與性別的分佈<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/eHOKXqd.png"><img alt="age" class="bg-primary mb-1 align-center" src="https://i.imgur.com/eHOKXqd.png" style="width: 800px;" /></a>
+</div>
 </div>
 <div class="section" id="average-glucose-level">
 <h3>Average glucose level<a class="headerlink" href="#average-glucose-level" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>我們參考日本糖尿病協會的分類</p>
-<ul>
-<li><p><img alt="" src="https://i.imgur.com/odgJgbX.png" /></p></li>
-</ul>
-</li>
-</ul>
+<p><span class="grey"><em>註: 雖然不確定收集資料時是取飯前(FPG)或是飯後血糖(OGTT)，本報告仍先採用空腹血糖做為參考標準。</em></span></p>
+<div class="section" id="id10">
+<h4>整體資料血糖分佈<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/avg_glucose_distribution.png"><img alt="avg_glucose" class="bg-primary mb-1 align-center" src="_images/avg_glucose_distribution.png" style="width: 800px;" /></a>
-<p><span class="blue"><em>雖然不確定收集資料時是取飯前(FPG)或是飯後血糖(OGTT)，本報告仍先採用空腹血糖做為參考標準。</em></span></p>
+</div>
+<div class="section" id="id11">
+<h4>分成中風與非中風<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>下圖呈現條件機率 <span class="math notranslate nohighlight">\(P(\text{stroke}|\text{Glu:group})\)</span> 與 <span class="math notranslate nohighlight">\(P(\text{Non-stroke}|\text{Glu:group})\)</span></p></li>
+<li><p><img alt="" src="https://i.imgur.com/Wf9P7xi.png" /></p></li>
+</ul>
+</div>
 </div>
 <div class="section" id="bmi">
 <h3>BMI<a class="headerlink" href="#bmi" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>BMI的計算與BMI數值的意義</p>
-<ul>
-<li><p><img alt="" src="https://i.imgur.com/Q7nEzN6.jpg" />
-<span class="blue"><em>BMI的分類參考值如上圖。下圖是本資料的histogram</em></span></p></li>
-</ul>
-</li>
-</ul>
+<div class="section" id="id12">
+<h4>整體資料BMI分佈<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/bmi_distribution.png"><img alt="bmi_distribution" class="bg-primary mb-1 align-center" src="_images/bmi_distribution.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="id13">
+<h4>分成中風與非中風<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>下圖呈現條件機率 <span class="math notranslate nohighlight">\(P(\text{stroke}|\text{BMI:group})\)</span> 與 <span class="math notranslate nohighlight">\(P(\text{Non-stroke}|\text{BMI:group})\)</span></p></li>
+<li><p><img alt="" src="https://i.imgur.com/DMvA9b9.png" /></p></li>
+</ul>
+<p><span class="grey"><em>註: 以上資料在類別變數分析中，均會依據狀況刪去部分資料，因此各項初步分析中的資料數可能不盡一致。但在分群分析與迴歸分析中，若有任一欄為「unknown」、「N/A」、或「null」，該筆資料會整筆刪除，採用內容一致的資料集。</em></span></p>
+</div>
 </div>
 </div>
 </div>
