@@ -20,8 +20,3 @@
     - 「迴歸分析: 類別型變數」 - 「迴歸分析: 綜合模型」
 3. 最後以cluster analysis來獨立探討較容易中風的族群與因素，再次驗證前面的分析結果
     - 「Cluster analysis: 測試與中風組內分群」 - 「Cluster analysis: 中風者與非中風者做分群」
-
-## 參考資料
-```{bibliography}
-```
-    

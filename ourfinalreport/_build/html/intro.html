@@ -145,6 +145,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="append_dataexplore.html">
+   補充:資料清理前統計分析
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="interaction1.html">
    補充: 因素之間交互作用
   </a>
@@ -157,6 +162,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="appen_classify_ref.html">
    補充: 血糖與BMI分類依據
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliography.html">
+   參考資料
   </a>
  </li>
 </ul>
@@ -273,11 +283,6 @@
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id15">
-   參考資料
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -293,13 +298,13 @@
 <h1>前言：背景與動機<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
 <h2>背景<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>隨著年齡增長，罹患腦中風、缺血性心臟病與癌症的風險也越高，亦為1990年以來WHO統計已開發國家的前三大死因<span id="id3">[<a class="reference internal" href="#id18"><span>18b</span></a>]</span>，2016年全球的中風病患高達八千萬人，其中近一千四百萬人為新增病例，同年有550萬人死於中風，為全球第二大死因<span id="id4">[<a class="reference internal" href="#id17"><span>JNR+19</span></a>]</span>，其中75%來自、低收入國家<span id="id5">[<a class="reference internal" href="#id19"><span>Col18</span></a>]</span>，過去十年來(4/6止，衛服部公布至2019，每年國人十大死因)一直列在臺灣國人十大死因的前五名<span id="id6">[<a class="reference internal" href="#id21"><span>18a</span></a>,<a class="reference internal" href="#id20"><span>20</span></a>]</span>。</p>
-<p>中風、或是腦中風(stroke, cerebrovasular accident)，在衛生福利部上，我們又可以看到另一個稱呼「腦血管疾病」。當腦部血管受到阻塞或破裂，腦部細胞欠缺血液的運輸而導致缺氧，細胞進而損傷或死亡，便稱之為腦中風<span id="id7">[<a class="reference internal" href="#id22"><span>JOOS16</span></a>]</span>。罹患中風後，可能需要面對許多併發症，包含肌肉能力喪失，部分癱瘓、吞嚥困難，中樞神經系統大腦上則有記憶喪失、思覺異常、癲癇等等<span id="id8">[<a class="reference internal" href="#id23"><span>LSR+00</span></a>,<a class="reference internal" href="#id24"><span>KSC10</span></a>]</span>，其中又有1/3的患者在癒後仍會伴隨這些後遺症<span id="id9">[<a class="reference internal" href="#id25"><span>Org21</span></a>]</span>。</p>
+<p>隨著年齡增長，罹患腦中風、缺血性心臟病與癌症的風險也越高，亦為1990年以來WHO統計已開發國家的前三大死因<span id="id3">[<a class="reference internal" href="bibliography.html#id4"><span>18b</span></a>]</span>，2016年全球的中風病患高達八千萬人，其中近一千四百萬人為新增病例，同年有550萬人死於中風，為全球第二大死因<span id="id4">[<a class="reference internal" href="bibliography.html#id3"><span>JNR+19</span></a>]</span>，其中75%來自、低收入國家<span id="id5">[<a class="reference internal" href="bibliography.html#id5"><span>Col18</span></a>]</span>，過去十年來(4/6止，衛服部公布至2019，每年國人十大死因)一直列在臺灣國人十大死因的前五名<span id="id6">[<a class="reference internal" href="bibliography.html#id7"><span>18a</span></a>,<a class="reference internal" href="bibliography.html#id6"><span>20</span></a>]</span>。</p>
+<p>中風、或是腦中風(stroke, cerebrovasular accident)，在衛生福利部上，我們又可以看到另一個稱呼「腦血管疾病」。當腦部血管受到阻塞或破裂，腦部細胞欠缺血液的運輸而導致缺氧，細胞進而損傷或死亡，便稱之為腦中風<span id="id7">[<a class="reference internal" href="bibliography.html#id8"><span>JOOS16</span></a>]</span>。罹患中風後，可能需要面對許多併發症，包含肌肉能力喪失，部分癱瘓、吞嚥困難，中樞神經系統大腦上則有記憶喪失、思覺異常、癲癇等等<span id="id8">[<a class="reference internal" href="bibliography.html#id9"><span>LSR+00</span></a>,<a class="reference internal" href="bibliography.html#id10"><span>KSC10</span></a>]</span>，其中又有1/3的患者在癒後仍會伴隨這些後遺症<span id="id9">[<a class="reference internal" href="bibliography.html#id11"><span>Org21</span></a>]</span>。</p>
 <p>除了高死亡率，國家亦需要付出大量的醫療成本，對中風患者進行治療與病後照護，近數十年，腦中風對於全球各國均是不可忽視的問題。</p>
 </div>
 <div class="section" id="id10">
 <h2>動機<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
-<p>腦中風已被證實與血壓、糖尿病(肥胖)、年齡密切相關<span id="id11">[<a class="reference internal" href="#id26"><span>BEE17</span></a>]</span>，而後兩者又可能導致高血壓，因此光探討糖尿病與肥胖，可能就已經足以涵蓋血壓所造成的影響力。故，本次報告除了想要再次證實已知的腦中風與其他病史已知的關係，我們想要瞭解，當不考慮糖尿病史與年齡時，生活環境對血壓與腦中風所造成的關係。</p>
+<p>腦中風已被證實與血壓、糖尿病(肥胖)、年齡密切相關<span id="id11">[<a class="reference internal" href="bibliography.html#id12"><span>BEE17</span></a>]</span>，而後兩者又可能導致高血壓，因此光探討糖尿病與肥胖，可能就已經足以涵蓋血壓所造成的影響力。故，本次報告除了想要再次證實已知的腦中風與其他病史已知的關係，我們想要瞭解，當不考慮糖尿病史與年齡時，生活環境對血壓與腦中風所造成的關係。</p>
 </div>
 <div class="section" id="id12">
 <h2>目標與研究流程:<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
@@ -325,44 +330,8 @@
 </ul>
 </li>
 </ol>
-</div>
-</div>
-<div class="section" id="id15">
-<h2>參考資料<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
-<p id="id16"><dl class="citation">
-<dt class="label" id="id26"><span class="brackets"><a class="fn-backref" href="#id11">BEE17</a></span></dt>
-<dd><p>Amelia K. Boehme, Charles Esenwa, and Mitchell S.V. Elkind. Stroke Risk Factors, Genetics, and Prevention. <em>Circulation Research</em>, 120(3):472–495, feb 2017. URL: <a class="reference external" href="https://www.ahajournals.org/doi/10.1161/CIRCRESAHA.116.308398">https://www.ahajournals.org/doi/10.1161/CIRCRESAHA.116.308398</a>, <a class="reference external" href="https://doi.org/10.1161/CIRCRESAHA.116.308398">doi:10.1161/CIRCRESAHA.116.308398</a>.</p>
-</dd>
-<dt class="label" id="id19"><span class="brackets"><a class="fn-backref" href="#id5">Col18</a></span></dt>
-<dd><p>The GBD 2016 Lifetime Risk of Stroke Collaborators. Global, Regional, and Country-Specific Lifetime Risks of Stroke, 1990 and 2016. <em>New England Journal of Medicine</em>, 379(25):2429–2437, dec 2018. URL: <a class="reference external" href="http://www.nejm.org/doi/10.1056/NEJMoa1804492">http://www.nejm.org/doi/10.1056/NEJMoa1804492</a>, <a class="reference external" href="https://doi.org/10.1056/NEJMoa1804492">doi:10.1056/NEJMoa1804492</a>.</p>
-</dd>
-<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id4">JNR+19</a></span></dt>
-<dd><p>Catherine Owens Johnson, Minh Nguyen, Gregory A Roth, Emma Nichols, Tahiya Alam, Degu Abate, Foad Abd-Allah, Ahmed Abdelalim, Haftom Niguse Abraha, Niveen ME Abu-Rmeileh, Oladimeji M Adebayo, Abiodun Moshood Adeoye, Gina Agarwal, Sutapa Agrawal, Amani Nidhal Aichour, Ibtihel Aichour, Miloud Taki Eddine Aichour, Fares Alahdab, Raghib Ali, Nelson Alvis-Guzman, Nahla Hamed Anber, Mina Anjomshoa, Jalal Arabloo, Antonio Arauz, Johan Ärnlöv, Amit Arora, Ashish Awasthi, Maciej Banach, Miguel A Barboza, Suzanne Lyn Barker-Collo, Till Winfried Bärnighausen, Sanjay Basu, Abate Bekele Belachew, Yaschilal Muche Belayneh, Derrick A. Bennett, Isabela M Bensenor, Krittika Bhattacharyya, Belete Biadgo, Ali Bijani, Boris Bikbov, Muhammad Shahdaat Bin Sayeed, Zahid A Butt, Lucero Cahuana-Hurtado, Juan J Carrero, Félix Carvalho, Carlos A Castañeda-Orjuela, Franz Castro, Ferrán Catalá-López, Yazan Chaiah, Peggy Pei-Chia Chiang, Jee-Young J Choi, Hanne Christensen, Dinh-Toi Chu, Monica Cortinovis, Albertino Antonio Moura Damasceno, Lalit Dandona, Rakhi Dandona, Ahmad Daryani, Kairat Davletov, Barbora de Courten, Vanessa De la Cruz-Góngora, Meaza Girma Degefa, Samath Dhamminda Dharmaratne, Daniel Diaz, Manisha Dubey, Eyasu Ejeta Duken, Dumessa Edessa, Matthias Endres, EMERITO JOSE A FARAON, Farshad Farzadfar, Eduarda Fernandes, Florian Fischer, Luisa Sorio Flor, Morsaleh Ganji, Abadi Kahsu Gebre, Teklu Gebrehiwo Gebremichael, Birhanu Geta, Kebede Embaye Gezae, Paramjit Singh Gill, Elena V. Gnedovskaya, Hector Gómez-Dantés, Alessandra C Goulart, Giuseppe Grosso, Yuming Guo, Rajeev Gupta, Arvin Haj-Mirzaian, Arya Haj-Mirzaian, Samer Hamidi, Graeme J. Hankey, Hamid Yimam Hassen, Simon I. Hay, Mohamed I Hegazy, Behnam Heidari, Nabeel A Herial, Mohammad Ali Hosseini, Sorin Hostiuc, Seyed Sina Naghibi Irvani, Sheikh Mohammed Shariful Islam, Nader Jahanmehr, Mehdi Javanbakht, Ravi Prakash Jha, Jost B. Jonas, Jacek Jerzy Jozwiak, Mikk Jürisson, Amaha Kahsay, Rizwan Kalani, Yogeshwar Kalkonde, Teshome Abegaz Kamil, Tanuj Kanchan, André Karch, Narges Karimi, Hamidreza Karimi-Sari, Amir Kasaeian, Tesfaye Dessale Kassa, Hossein Kazemeini, Adane Teshome Kefale, Yousef Saleh Khader, Ibrahim A. Khalil, Ejaz Ahmad Khan, Young-Ho Khang, Jagdish Khubchandani, Daniel Kim, Yun Jin Kim, Adnan Kisa, Mika Kivimäki, Ai Koyanagi, Rita K Krishnamurthi, G Anil Kumar, Alessandra Lafranconi, Sarah Lewington, Shanshan Li, Warren David Lo, Alan D Lopez, Stefan Lorkowski, Paulo A. Lotufo, Mark T Mackay, Marek Majdan, Reza Majdzadeh, Azeem Majeed, Reza Malekzadeh, Navid Manafi, Mohammad Ali Mansournia, Man Mohan Mehndiratta, Varshil Mehta, Getnet Mengistu, Atte Meretoja, Tuomo J Meretoja, Bartosz Miazgowski, Tomasz Miazgowski, Ted R Miller, Erkin M Mirrakhimov, Bahram Mohajer, Yousef Mohammad, Milad Mohammadoo-khorasani, Shafiu Mohammed, Farnam Mohebi, Ali H Mokdad, Yaser Mokhayeri, Ghobad Moradi, Lidia Morawska, Ilais Moreno Velásquez, Seyyed Meysam Mousavi, Oumer Sada S Muhammed, Walter Muruet, Mehdi Naderi, Mohsen Naghavi, Gurudatta Naik, Bruno Ramos Nascimento, Ruxandra Irina Negoi, Cuong Tat Nguyen, Long Hoang Nguyen, Yirga Legesse Nirayo, Bo Norrving, Jean Jacques Noubiap, Richard Ofori-Asenso, Felix Akpojene Ogbo, Andrew T Olagunju, Tinuke O Olagunju, Mayowa Ojo Owolabi, Jeyaraj Durai Pandian, Shanti Patel, Norberto Perico, Michael A Piradov, Suzanne Polinder, Maarten J Postma, Hossein Poustchi, V Prakash, Mostafa Qorbani, Alireza Rafiei, Fakher Rahim, Kazem Rahimi, Vafa Rahimi-Movaghar, Mahfuzar Rahman, Muhammad Aziz Rahman, Cesar Reis, Giuseppe Remuzzi, Andre M.N. Renzaho, Stefano Ricci, Nicholas L S Roberts, Stephen R Robinson, Leonardo Roever, Gholamreza Roshandel, Parisa Sabbagh, Hosein Safari, Saeed Safari, Saeid Safiri, Amirhossein Sahebkar, Saleh Salehi Zahabi, Abdallah M. Samy, Paola Santalucia, Itamar S Santos, João Vasco Santos, Milena M Santric Milicevic, Benn Sartorius, Arundhati R Sawant, Aletta Elisabeth Schutte, Sadaf G. Sepanlou, Azadeh Shafieesabet, Masood Ali Shaikh, Mehran Shams-Beyranvand, Aziz Sheikh, Kevin N. Sheth, Kenji Shibuya, Mika Shigematsu, Min-Jeong Shin, Ivy Shiue, Soraya Siabani, Badr Hasan Sobaih, Luciano A. Sposato, Ipsita Sutradhar, PN Sylaja, Cassandra E I Szoeke, Braden James Te Ao, Mohamad-Hani Temsah, Omar Temsah, Amanda G Thrift, Marcello Tonelli, Roman Topor-Madry, Bach Xuan Tran, Khanh Bao Tran, Thomas Clement Truelsen, Afewerki Gebremeskel Tsadik, Irfan Ullah, Olalekan A Uthman, Muthiah Vaduganathan, Pascual R Valdez, Tommi Juhani Vasankari, Rajagopalan Vasanthan, Narayanaswamy Venketasubramanian, Kia Vosoughi, Giang Thu Vu, Yasir Waheed, Elisabete Weiderpass, Kidu Gidey Weldegwergs, Ronny Westerman, Charles D A Wolfe, Dawit Zewdu Wondafrash, Gelin Xu, Ali Yadollahpour, Tomohide Yamada, Hiroshi Yatsuya, Ebrahim M Yimer, Naohiro Yonemoto, Mahmoud Yousefifard, Chuanhua Yu, Zoubida Zaidi, Mohammad Zamani, Afshin Zarghi, Yunquan Zhang, Sanjay Zodpey, Valery L. Feigin, Theo Vos, and Christopher J L Murray. Global, regional, and national burden of stroke, 1990–2016: a systematic analysis for the Global Burden of Disease Study 2016. <em>The Lancet Neurology</em>, 18(5):439–458, may 2019. URL: <a class="reference external" href="https://linkinghub.elsevier.com/retrieve/pii/S1474442219300341">https://linkinghub.elsevier.com/retrieve/pii/S1474442219300341</a>, <a class="reference external" href="https://doi.org/10.1016/S1474-4422(19)30034-1">doi:10.1016/S1474-4422(19)30034-1</a>.</p>
-</dd>
-<dt class="label" id="id22"><span class="brackets"><a class="fn-backref" href="#id7">JOOS16</a></span></dt>
-<dd><p>Walter Johnson, Oyere Onuma, Mayowa Owolabi, and Sonal Sachdev. Stroke: a global response is needed. <em>Bulletin of the World Health Organization</em>, 94(9):634–634A, sep 2016. URL: <a class="reference external" href="http://www.who.int/entity/bulletin/volumes/94/9/16-181636.pdf">http://www.who.int/entity/bulletin/volumes/94/9/16-181636.pdf</a>, <a class="reference external" href="https://doi.org/10.2471/BLT.16.181636">doi:10.2471/BLT.16.181636</a>.</p>
-</dd>
-<dt class="label" id="id24"><span class="brackets"><a class="fn-backref" href="#id8">KSC10</a></span></dt>
-<dd><p>Sandeep Kumar, Magdy H Selim, and Louis R Caplan. Medical complications after stroke. <em>The Lancet Neurology</em>, 9(1):105–118, jan 2010. URL: <a class="reference external" href="https://linkinghub.elsevier.com/retrieve/pii/S1474442209702662">https://linkinghub.elsevier.com/retrieve/pii/S1474442209702662</a>, <a class="reference external" href="https://doi.org/10.1016/S1474-4422(09)70266-2">doi:10.1016/S1474-4422(09)70266-2</a>.</p>
-</dd>
-<dt class="label" id="id23"><span class="brackets"><a class="fn-backref" href="#id8">LSR+00</a></span></dt>
-<dd><p>P. Langhorne, D. J. Stott, L. Robertson, J. MacDonald, L. Jones, C. McAlpine, F. Dick, G. S. Taylor, and G. Murray. Medical Complications After Stroke. <em>Stroke</em>, 31(6):1223–1229, jun 2000. URL: <a class="reference external" href="https://www.ahajournals.org/doi/10.1161/01.STR.31.6.1223">https://www.ahajournals.org/doi/10.1161/01.STR.31.6.1223</a>, <a class="reference external" href="https://doi.org/10.1161/01.STR.31.6.1223">doi:10.1161/01.STR.31.6.1223</a>.</p>
-</dd>
-<dt class="label" id="id25"><span class="brackets"><a class="fn-backref" href="#id9">Org21</a></span></dt>
-<dd><p>World Health Organization. Stroke, Cerebrovascular Accident. 2021.</p>
-</dd>
-<dt class="label" id="id21"><span class="brackets"><a class="fn-backref" href="#id6">18a</a></span></dt>
-<dd><p>衛生福利部統計處. 死因統計. 2018. URL: <a class="reference external" href="https://dep.mohw.gov.tw/DOS/np-1776-113.html">https://dep.mohw.gov.tw/DOS/np-1776-113.html</a>.</p>
-</dd>
-<dt class="label" id="id20"><span class="brackets"><a class="fn-backref" href="#id6">20</a></span></dt>
-<dd><p>衛福部-慢性疾病防治組. 健康主題:慢性病防治-腦血管疾病. 2020. URL: <a class="reference external" href="https://www.hpa.gov.tw/Pages/List.aspx?nodeid=213">https://www.hpa.gov.tw/Pages/List.aspx?nodeid=213</a>.</p>
-</dd>
-<dt class="label" id="id18"><span class="brackets"><a class="fn-backref" href="#id3">18b</a></span></dt>
-<dd><p>邱弘毅. 腦中風之現況與流行病學特徵. 2018. URL: <a class="reference external" href="https://www.stroke.org.tw/GoWeb2/include/index.php?Page=5-1&amp;paper02=4156067525bc96c3a9ee9b">https://www.stroke.org.tw/GoWeb2/include/index.php?Page=5-1&amp;paper02=4156067525bc96c3a9ee9b</a>.</p>
-</dd>
-</dl>
-</p>
 <div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 </div>

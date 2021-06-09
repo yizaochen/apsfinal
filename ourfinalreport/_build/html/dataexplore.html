@@ -148,6 +148,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="append_dataexplore.html">
+   補充:資料清理前統計分析
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="interaction1.html">
    補充: 因素之間交互作用
   </a>
@@ -160,6 +165,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="appen_classify_ref.html">
    補充: 血糖與BMI分類依據
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliography.html">
+   參考資料
   </a>
  </li>
 </ul>
@@ -256,11 +266,16 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   資料基本型態
+   資料清理
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
+   資料基本型態
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
    單變數分析: 類別型
   </a>
   <ul class="nav section-nav flex-column">
@@ -307,27 +322,27 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
+  <a class="reference internal nav-link" href="#id6">
    單變數分析: 數值型
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
+    <a class="reference internal nav-link" href="#id7">
      年齡
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id7">
+      <a class="reference internal nav-link" href="#id8">
        整體資料年齡分佈
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id8">
+      <a class="reference internal nav-link" href="#id9">
        分成中風與非中風
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id9">
+      <a class="reference internal nav-link" href="#id10">
        所有中風的人:年紀與性別的分佈
       </a>
      </li>
@@ -339,12 +354,12 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id10">
+      <a class="reference internal nav-link" href="#id11">
        整體資料血糖分佈
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id11">
+      <a class="reference internal nav-link" href="#id12">
        分成中風與非中風
       </a>
      </li>
@@ -356,18 +371,23 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id12">
+      <a class="reference internal nav-link" href="#id13">
        整體資料BMI分佈
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id13">
+      <a class="reference internal nav-link" href="#id14">
        分成中風與非中風
       </a>
      </li>
     </ul>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id15">
+   資料綜觀
+  </a>
  </li>
 </ul>
 
@@ -406,78 +426,87 @@
 </ul>
 </div>
 <div class="section" id="id3">
-<h2>資料基本型態<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>資料清理<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>資料總數: 5110個人</p></li>
+<li><p>我們將符合以下條件的資料清掉</p>
+<ul>
+<li><p>Gender為Other</p></li>
+<li><p>BMI為N/A</p></li>
+<li><p>Smoking status為Unknown</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>資料基本型態<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>資料總數: 3425個人 (清理前為5110)</p></li>
 <li><p>類別型: gender, hypertension, heart_disease, ever_married, work_type, Residence_type, smoking_status, stroke</p></li>
 <li><p>數值型: age, avg_glucose_level, bmi</p></li>
 </ul>
 </div>
-<div class="section" id="id4">
-<h2>單變數分析: 類別型<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>單變數分析: 類別型<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="gender">
 <h3>gender<a class="headerlink" href="#gender" title="Permalink to this headline">¶</a></h3>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/gender_bar_pie.png"><img alt="gender" class="bg-primary mb-1 align-center" src="_images/gender_bar_pie.png" style="width: 800px;" /></a>
-<p><span class="blue"><em>一筆資料被紀錄為Others，基於分析結果的可信度考量，後面關於性別的類別變數分析均不使用該筆資料</em></span></p>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/VOikmMR.png"><img alt="gender" class="bg-primary mb-1 align-center" src="https://i.imgur.com/VOikmMR.png" style="width: 800px;" /></a>
 </div>
 <div class="section" id="hypertension">
 <h3>Hypertension<a class="headerlink" href="#hypertension" title="Permalink to this headline">¶</a></h3>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/hypert_bar_pie.png"><img alt="hypertension" class="bg-primary mb-1 align-center" src="_images/hypert_bar_pie.png" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/V2ls7hO.png"><img alt="hypertension" class="bg-primary mb-1 align-center" src="https://i.imgur.com/V2ls7hO.png" style="width: 800px;" /></a>
 </div>
 <div class="section" id="heart-disease">
 <h3>Heart Disease<a class="headerlink" href="#heart-disease" title="Permalink to this headline">¶</a></h3>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/heartd_bar_pie.png"><img alt="heartdisease" class="bg-primary mb-1 align-center" src="_images/heartd_bar_pie.png" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/IMe8y6F.png"><img alt="heartdisease" class="bg-primary mb-1 align-center" src="https://i.imgur.com/IMe8y6F.png" style="width: 800px;" /></a>
 </div>
 <div class="section" id="ever-married">
 <h3>Ever married<a class="headerlink" href="#ever-married" title="Permalink to this headline">¶</a></h3>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/evermarry_bar_pie.png"><img alt="evermarry" class="bg-primary mb-1 align-center" src="_images/evermarry_bar_pie.png" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/Pua54Dk.png"><img alt="evermarry" class="bg-primary mb-1 align-center" src="https://i.imgur.com/Pua54Dk.png" style="width: 800px;" /></a>
 <p><span class="blue"><em>簡單類別型解釋變數分析中，若用於分析婚姻經驗與其他變數的關係，剔除年齡小於16歲的資料</em></span></p>
 </div>
 <div class="section" id="residence-type">
 <h3>Residence type<a class="headerlink" href="#residence-type" title="Permalink to this headline">¶</a></h3>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/resit_bar_chart.png"><img alt="residtype" class="bg-primary mb-1 align-center" src="_images/resit_bar_chart.png" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/3UNDxmf.png"><img alt="residtype" class="bg-primary mb-1 align-center" src="https://i.imgur.com/3UNDxmf.png" style="width: 800px;" /></a>
 </div>
 <div class="section" id="stroke">
 <h3>Stroke<a class="headerlink" href="#stroke" title="Permalink to this headline">¶</a></h3>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/stroke_bar_pie.png"><img alt="strokebar" class="bg-primary mb-1 align-center" src="_images/stroke_bar_pie.png" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/BJbNHxr.png"><img alt="strokebar" class="bg-primary mb-1 align-center" src="https://i.imgur.com/BJbNHxr.png" style="width: 800px;" /></a>
 </div>
 <div class="section" id="smoking-status">
 <h3>Smoking status<a class="headerlink" href="#smoking-status" title="Permalink to this headline">¶</a></h3>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/smoking_bar_pie.png"><img alt="smoking" class="bg-primary mb-1 align-center" src="_images/smoking_bar_pie.png" style="width: 800px;" /></a>
-<p><span class="blue"><em>Unknown資料於使用到smoking_status的變數的類別型分析中均已剃除，值得注意的是，下面histogram紀錄所有抽菸狀態未知的資料總共1544筆，其中635筆為小於等於十六歲的樣本(虛線)，也就是說剔除的樣本約有一半屬於孩童或是青少年</em></span>
-<img alt="" src="https://i.imgur.com/qQdT9fT.png" /></p>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/wn6c5i3.png"><img alt="smoking" class="bg-primary mb-1 align-center" src="https://i.imgur.com/wn6c5i3.png" style="width: 800px;" /></a>
 </div>
 <div class="section" id="work-type">
 <h3>Work type<a class="headerlink" href="#work-type" title="Permalink to this headline">¶</a></h3>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/worktype_bar_pie.png"><img alt="worktype" class="bg-primary mb-1 align-center" src="_images/worktype_bar_pie.png" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/foUU50y.png"><img alt="worktype" class="bg-primary mb-1 align-center" src="https://i.imgur.com/foUU50y.png" style="width: 800px;" /></a>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>單變數分析: 數值型<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id6">
-<h3>年齡<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<h2>單變數分析: 數值型<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id7">
-<h4>整體資料年齡分佈<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/age_distribution.png"><img alt="age" class="bg-primary mb-1 align-center" src="_images/age_distribution.png" style="width: 800px;" /></a>
-</div>
+<h3>年齡<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id8">
-<h4>分成中風與非中風<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
-<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/mwyEex0.png"><img alt="age" class="bg-primary mb-1 align-center" src="https://i.imgur.com/mwyEex0.png" style="width: 800px;" /></a>
+<h4>整體資料年齡分佈<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/Uie1iYd.png"><img alt="age" class="bg-primary mb-1 align-center" src="https://i.imgur.com/Uie1iYd.png" style="width: 800px;" /></a>
 </div>
 <div class="section" id="id9">
-<h4>所有中風的人:年紀與性別的分佈<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<h4>分成中風與非中風<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/mwyEex0.png"><img alt="age" class="bg-primary mb-1 align-center" src="https://i.imgur.com/mwyEex0.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="id10">
+<h4>所有中風的人:年紀與性別的分佈<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
 <a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/eHOKXqd.png"><img alt="age" class="bg-primary mb-1 align-center" src="https://i.imgur.com/eHOKXqd.png" style="width: 800px;" /></a>
 </div>
 </div>
 <div class="section" id="average-glucose-level">
 <h3>Average glucose level<a class="headerlink" href="#average-glucose-level" title="Permalink to this headline">¶</a></h3>
 <p><span class="grey"><em>註: 雖然不確定收集資料時是取飯前(FPG)或是飯後血糖(OGTT)，本報告仍先採用空腹血糖做為參考標準。</em></span></p>
-<div class="section" id="id10">
-<h4>整體資料血糖分佈<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/avg_glucose_distribution.png"><img alt="avg_glucose" class="bg-primary mb-1 align-center" src="_images/avg_glucose_distribution.png" style="width: 800px;" /></a>
-</div>
 <div class="section" id="id11">
-<h4>分成中風與非中風<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<h4>整體資料血糖分佈<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/5Gwb4HB.png"><img alt="avg_glucose" class="bg-primary mb-1 align-center" src="https://i.imgur.com/5Gwb4HB.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="id12">
+<h4>分成中風與非中風<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>下圖呈現條件機率 <span class="math notranslate nohighlight">\(P(\text{stroke}|\text{Glu:group})\)</span> 與 <span class="math notranslate nohighlight">\(P(\text{Non-stroke}|\text{Glu:group})\)</span></p></li>
 <li><p><img alt="" src="https://i.imgur.com/Wf9P7xi.png" /></p></li>
@@ -486,19 +515,23 @@
 </div>
 <div class="section" id="bmi">
 <h3>BMI<a class="headerlink" href="#bmi" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id12">
-<h4>整體資料BMI分佈<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/bmi_distribution.png"><img alt="bmi_distribution" class="bg-primary mb-1 align-center" src="_images/bmi_distribution.png" style="width: 800px;" /></a>
-</div>
 <div class="section" id="id13">
-<h4>分成中風與非中風<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<h4>整體資料BMI分佈<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/UoOZ8vh.png"><img alt="bmi_distribution" class="bg-primary mb-1 align-center" src="https://i.imgur.com/UoOZ8vh.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="id14">
+<h4>分成中風與非中風<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>下圖呈現條件機率 <span class="math notranslate nohighlight">\(P(\text{stroke}|\text{BMI:group})\)</span> 與 <span class="math notranslate nohighlight">\(P(\text{Non-stroke}|\text{BMI:group})\)</span></p></li>
 <li><p><img alt="" src="https://i.imgur.com/DMvA9b9.png" /></p></li>
 </ul>
+</div>
+</div>
+</div>
+<div class="section" id="id15">
+<h2>資料綜觀<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="https://i.imgur.com/KF0MfYP.png" /></p>
 <p><span class="grey"><em>註: 以上資料在類別變數分析中，均會依據狀況刪去部分資料，因此各項初步分析中的資料數可能不盡一致。但在分群分析與迴歸分析中，若有任一欄為「unknown」、「N/A」、或「null」，該筆資料會整筆刪除，採用內容一致的資料集。</em></span></p>
-</div>
-</div>
 </div>
 </div>
 
