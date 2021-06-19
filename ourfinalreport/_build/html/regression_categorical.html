@@ -49,7 +49,7 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -278,7 +278,7 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   讀取與清理資料
+   讀取資料
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -355,20 +355,11 @@
                 
   <div class="section" id="id1">
 <h1>迴歸分析: 類別型變數<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p>從前面列聯表分析中: 中風與性別及住處型態無關，因此先剔除</p></li>
-<li><p>首先，我們先針對每一個變數做Logistic regression</p></li>
-</ul>
+<p>由於列聯表分析只能探討中風與一種解釋變數之間的關係，迴歸分析則可以提供我們一次分析多種解釋變數對於中風的影響。
+在這個部份，我們首先做了只有類別型變數的迴歸模型，下一個部份則做了只有數值型變數的迴歸模型，第三部份結合了所有的變數並做出一個最終模型。</p>
+<p><span style="color:blue"> <em>從前面列聯表分析中: 中風與”性別”及”住處型態”無關，因此在迴歸分析是直接被拿掉的</em></span></p>
 <div class="section" id="id2">
-<h2>讀取與清理資料<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>資料清理</p>
-<ul>
-<li><p>BMI為Null</p></li>
-<li><p>Smoking status為unknown</p></li>
-</ul>
-</li>
-</ul>
+<h2>讀取資料<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">strokedata</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s">&#39;../data/healthcare-dataset-stroke-data-cleanbmi.csv&#39;</span><span class="p">)</span>
@@ -407,7 +398,8 @@
 <h2>Simple Models: 只含有一個解釋變數<a class="headerlink" href="#simple-models" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="hypertension">
 <h3>Hypertension:<a class="headerlink" href="#hypertension" title="Permalink to this headline">¶</a></h3>
-<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_hypert</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">hypertension</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>

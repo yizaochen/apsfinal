@@ -1,30 +1,24 @@
 strokedata <- read.csv(file = '../data/healthcare-dataset-stroke-data-cleanbmi.csv')
 head(strokedata)
 
-model1_full = glm(stroke ~ hypertension + heart_disease + ever_married + age + avg_glucose_level, data=strokedata, family=binomial(link="logit"))
-summary(model1_full)
+model1 = glm(stroke ~ hypertension + heart_disease + ever_married + age + avg_glucose_level, data=strokedata, family=binomial(link="logit"))
+summary(model1)
 
-model1_reduce = glm(stroke ~ hypertension + heart_disease + age + avg_glucose_level, data=strokedata, family=binomial(link="logit"))
-summary(model1_reduce)
+model2 = glm(stroke ~ hypertension + heart_disease + age + avg_glucose_level, data=strokedata, family=binomial(link="logit"))
+summary(model2)
 
-anova(model1_reduce, model1_full, test="LRT")
+anova(model1, model2, test="LRT")
 
-strokedata$age_group <- with(strokedata, ifelse(
-    age < 50, '0-49', ifelse(
-    age >= 50 & age < 60, '50-59', ifelse(
-    age >= 60 & age < 70, '60-69', '>=70'))))
-strokedata$age_group <- factor(strokedata$age_group, levels= c('0-49', '50-59', '60-69', '>=70'))
-strokedata$glc_group <- with(strokedata, ifelse(avg_glucose_level < 160, '<160', '>=160'))
-strokedata$glc_group <- factor(strokedata$glc_group, levels= c('<160', '>=160'))
-head(strokedata)
+summary(model2)
 
-model2_full = glm(stroke ~ hypertension + heart_disease + ever_married + age_group + glc_group, data=strokedata, 
-                  family=binomial(link="logit"))
-summary(model2_full)
+model_age_hypert = glm(stroke ~ ever_married + hypertension, data=strokedata, family=binomial(link="logit"))
+summary(model_age_hypert)
 
-model2_reduce = glm(stroke ~ hypertension + heart_disease +  age_group + glc_group, data=strokedata, family=binomial(link="logit"))
-summary(model2_reduce)
+model_age_heartd = glm(stroke ~ ever_married + heart_disease, data=strokedata, family=binomial(link="logit"))
+summary(model_age_heartd)
 
-anova(model2_reduce, model2_full, test="LRT")
+model_age_marry = glm(stroke ~ ever_married + age, data=strokedata, family=binomial(link="logit"))
+summary(model_age_marry)
 
-
+model_age_glc = glm(stroke ~ ever_married + avg_glucose_level, data=strokedata, family=binomial(link="logit"))
+summary(model_age_glc)

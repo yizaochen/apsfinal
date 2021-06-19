@@ -2097,7 +2097,6 @@ age,hypertension,heart_disease,ever_married,work_type,avg_glucose_level,bmi,smok
 45.0,0,0,Yes,Govt_job,82.02,41.8,smokes,0
 62.0,1,0,Yes,Private,78.02,36.4,never smoked,0
 72.0,0,0,Yes,Self-employed,65.12,28.3,never smoked,0
-26.0,0,0,No,Private,143.33,22.4,formerly smoked,0
 31.0,0,0,Yes,Govt_job,88.2,22.7,never smoked,0
 22.0,0,0,No,Private,86.53,20.8,never smoked,0
 57.0,1,0,Yes,Self-employed,63.72,35.8,smokes,0
