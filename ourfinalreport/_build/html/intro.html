@@ -2055,7 +2055,7 @@ Number of Fisher Scoring iterations: 7
 </div>
 </div>
 <div class="section" id="final-model">
-<h4>Final Model:<a class="headerlink" href="#final-model" title="Permalink to this headline">¶</a></h4>
+<h4>Final Model<a class="headerlink" href="#final-model" title="Permalink to this headline">¶</a></h4>
 <div class="math notranslate nohighlight">
 \[
 \log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{age}}x_{\rm{age}} + \beta_{\rm{glucose}}x_{\rm{glucose}}
@@ -2096,12 +2096,22 @@ Number of Fisher Scoring iterations: 7
 </div>
 </div>
 </div>
-<div class="section" id="data">
-<h5>假想Data測試最終模型(待補)<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h5>
-</div>
-</div>
 <div class="section" id="id3">
-<h4>討論: 結婚狀態與年齡<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<h5>Final Model圖像化與討論<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<p>以下四張圖，是我們將Final Model圖像化。四張圖對應到四組血糖(80,110,150,200)。每一張圖的橫軸是age，一張圖裏面的四條線分別對應到高血壓與心臟病的不同狀況。</p>
+<ul class="simple">
+<li><p><span style="color:blue">年齡的影響大約是在50-60歲之後開始增加中風的機率</span></p></li>
+<li><p><span style="color:blue">高血壓與心臟病的影響是差不多的。對於年紀大的人，兩者都有(紅色線)對比於兩者都沒有(藍色線)，中風的機率大概相差0.2</span></p></li>
+<li><p><span style="color:blue">比較四張圖，血糖的影響沒這麼大。對於年紀大的人，血糖250對比於血糖80，中風的機率大概相差0.1</span></p></li>
+</ul>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/regr_final_model_glu_80.png"><img alt="regr_final_model_glu_80" class="bg-primary mb-1 align-center" src="_images/regr_final_model_glu_80.png" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/regr_final_model_glu_110.png"><img alt="regr_final_model_glu_110" class="bg-primary mb-1 align-center" src="_images/regr_final_model_glu_110.png" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/regr_final_model_glu_150.png"><img alt="regr_final_model_glu_110" class="bg-primary mb-1 align-center" src="_images/regr_final_model_glu_150.png" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/regr_final_model_glu_200.png"><img alt="regr_final_model_glu_110" class="bg-primary mb-1 align-center" src="_images/regr_final_model_glu_200.png" style="width: 800px;" /></a>
+</div>
+</div>
+<div class="section" id="id4">
+<h4>討論: 結婚狀態與年齡<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <p>類別型簡單模型的分析指出有結婚的人，中風的機率會提升，且顯著性高。不過，在上面的Model 1，則說有結婚的人，中風的機率會下降，而且顯著性下降很多。我們直覺上認為有結婚與沒結婚這個資訊含有年齡的資訊。<br />
 <span style="color:blue">因此，我們以下面四個模型來看是哪個變數造成<span class="math notranslate nohighlight">\(\beta_{\rm{marry}}\)</span>變號</span></p>
 <div class="math notranslate nohighlight">
