@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>前言：背景與動機 &#8212; 腦中風資料的統計分析與探討</title>
+    <title>腦中風資料的統計分析與探討</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,9 +49,10 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="資料探討" href="dataexplore.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -65,119 +66,8 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+<div class="col-12 col-md-2 bd-sidebar site-navigation show single-page" id="site-navigation">
     
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">腦中風資料的統計分析與探討</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
-   前言：背景與動機
-  </a>
- </li>
-</ul>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="dataexplore.html">
-   資料探討
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="simplecategorical.html">
-   列聯表分析:簡單類別型
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="multiplecategorical.html">
-   列聯表分析:多重類別型
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="numerical.html">
-   列聯表分析:數值型
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="conti_table_summary.html">
-   列聯表分析:綜合結論
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="interaction_plot.html">
-   解釋變數與中風的交互作用
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="regression_categorical.html">
-   迴歸分析: 類別型變數
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="regression_numerical.html">
-   迴歸分析: 數值型變數
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="regression_mix.html">
-   迴歸分析: 綜合模型
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="clustering.html">
-   Cluster analysis: 測試與中風組內分群
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="clustering_batch.html">
-   Cluster analysis: 中風者與非中風者做分群
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="append_dataexplore.html">
-   補充:資料清理前統計分析
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="interaction1.html">
-   補充: 因素之間交互作用
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="interaction2.html">
-   補充: 因素之間交互作用(數值型)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="appen_classify_ref.html">
-   補充: 血糖與BMI分類依據
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="bibliography.html">
-   參考資料
-  </a>
- </li>
-</ul>
-
-    </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
 </div>
 
 
@@ -192,33 +82,7 @@
         <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
         <div class="col pl-md-4 topbar-main">
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
             
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
             <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
@@ -256,32 +120,85 @@
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   背景
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="intro.html#document-dataexplore">
+   資料探討
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id10">
-   動機
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="intro.html#document-simplecategorical">
+   列聯表分析:簡單類別型
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id12">
-   目標與研究流程:
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="intro.html#document-multiplecategorical">
+   列聯表分析:多重類別型
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id13">
-     目標: 找出與中風最相關的解釋變數
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id14">
-     研究流程:
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="intro.html#document-numerical">
+   列聯表分析:數值型
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="intro.html#document-conti_table_summary">
+   列聯表分析:綜合結論
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="intro.html#document-interaction_plot">
+   解釋變數與中風的交互作用
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="intro.html#document-regression_categorical">
+   迴歸分析1: 類別型變數
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="intro.html#document-regression_numerical">
+   迴歸分析2: 數值型變數
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="intro.html#document-regression_mix">
+   迴歸分析3: 綜合模型
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="intro.html#document-clustering">
+   Cluster analysis: 測試與中風組內分群
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="intro.html#document-clustering_batch">
+   Cluster analysis: 中風者與非中風者做分群
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="intro.html#document-append_dataexplore">
+   補充:資料清理前統計分析
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="intro.html#document-interaction1">
+   補充: 因素之間交互作用
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="intro.html#document-interaction2">
+   補充: 因素之間交互作用(數值型)
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="intro.html#document-appen_classify_ref">
+   補充: 血糖與BMI分類依據
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="intro.html#document-bibliography">
+   參考資料
+  </a>
  </li>
 </ul>
 
@@ -298,13 +215,13 @@
 <h1>前言：背景與動機<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
 <h2>背景<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>隨著年齡增長，罹患腦中風、缺血性心臟病與癌症的風險也越高，亦為1990年以來WHO統計已開發國家的前三大死因<span id="id3">[<a class="reference internal" href="bibliography.html#id4"><span>18b</span></a>]</span>，2016年全球的中風病患高達八千萬人，其中近一千四百萬人為新增病例，同年有550萬人死於中風，為全球第二大死因<span id="id4">[<a class="reference internal" href="bibliography.html#id3"><span>JNR+19</span></a>]</span>，其中75%來自、低收入國家<span id="id5">[<a class="reference internal" href="bibliography.html#id5"><span>Col18</span></a>]</span>，過去十年來(4/6止，衛服部公布至2019，每年國人十大死因)一直列在臺灣國人十大死因的前五名<span id="id6">[<a class="reference internal" href="bibliography.html#id7"><span>18a</span></a>,<a class="reference internal" href="bibliography.html#id6"><span>20</span></a>]</span>。</p>
-<p>中風、或是腦中風(stroke, cerebrovasular accident)，在衛生福利部上，我們又可以看到另一個稱呼「腦血管疾病」。當腦部血管受到阻塞或破裂，腦部細胞欠缺血液的運輸而導致缺氧，細胞進而損傷或死亡，便稱之為腦中風<span id="id7">[<a class="reference internal" href="bibliography.html#id8"><span>JOOS16</span></a>]</span>。罹患中風後，可能需要面對許多併發症，包含肌肉能力喪失，部分癱瘓、吞嚥困難，中樞神經系統大腦上則有記憶喪失、思覺異常、癲癇等等<span id="id8">[<a class="reference internal" href="bibliography.html#id9"><span>LSR+00</span></a>,<a class="reference internal" href="bibliography.html#id10"><span>KSC10</span></a>]</span>，其中又有1/3的患者在癒後仍會伴隨這些後遺症<span id="id9">[<a class="reference internal" href="bibliography.html#id11"><span>Org21</span></a>]</span>。</p>
+<p>隨著年齡增長，罹患腦中風、缺血性心臟病與癌症的風險也越高，亦為1990年以來WHO統計已開發國家的前三大死因<span id="id3">[<a class="reference internal" href="intro.html#id4"><span>18b</span></a>]</span>，2016年全球的中風病患高達八千萬人，其中近一千四百萬人為新增病例，同年有550萬人死於中風，為全球第二大死因<span id="id4">[<a class="reference internal" href="intro.html#id3"><span>JNR+19</span></a>]</span>，其中75%來自、低收入國家<span id="id5">[<a class="reference internal" href="intro.html#id5"><span>Col18</span></a>]</span>，過去十年來(4/6止，衛服部公布至2019，每年國人十大死因)一直列在臺灣國人十大死因的前五名<span id="id6">[<a class="reference internal" href="intro.html#id7"><span>18a</span></a>,<a class="reference internal" href="intro.html#id6"><span>20</span></a>]</span>。</p>
+<p>中風、或是腦中風(stroke, cerebrovasular accident)，在衛生福利部上，我們又可以看到另一個稱呼「腦血管疾病」。當腦部血管受到阻塞或破裂，腦部細胞欠缺血液的運輸而導致缺氧，細胞進而損傷或死亡，便稱之為腦中風<span id="id7">[<a class="reference internal" href="intro.html#id8"><span>JOOS16</span></a>]</span>。罹患中風後，可能需要面對許多併發症，包含肌肉能力喪失，部分癱瘓、吞嚥困難，中樞神經系統大腦上則有記憶喪失、思覺異常、癲癇等等<span id="id8">[<a class="reference internal" href="intro.html#id9"><span>LSR+00</span></a>,<a class="reference internal" href="intro.html#id10"><span>KSC10</span></a>]</span>，其中又有1/3的患者在癒後仍會伴隨這些後遺症<span id="id9">[<a class="reference internal" href="intro.html#id11"><span>Org21</span></a>]</span>。</p>
 <p>除了高死亡率，國家亦需要付出大量的醫療成本，對中風患者進行治療與病後照護，近數十年，腦中風對於全球各國均是不可忽視的問題。</p>
 </div>
 <div class="section" id="id10">
 <h2>動機<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
-<p>腦中風已被證實與血壓、糖尿病(肥胖)、年齡密切相關<span id="id11">[<a class="reference internal" href="bibliography.html#id12"><span>BEE17</span></a>]</span>，而後兩者又可能導致高血壓，因此光探討糖尿病與肥胖，可能就已經足以涵蓋血壓所造成的影響力。故，本次報告除了想要再次證實已知的腦中風與其他病史已知的關係，我們想要瞭解，當不考慮糖尿病史與年齡時，生活環境對血壓與腦中風所造成的關係。</p>
+<p>腦中風已被證實與血壓、糖尿病(肥胖)、年齡密切相關<span id="id11">[<a class="reference internal" href="intro.html#id12"><span>BEE17</span></a>]</span>，而後兩者又可能導致高血壓，因此光探討糖尿病與肥胖，可能就已經足以涵蓋血壓所造成的影響力。故，本次報告除了想要再次證實已知的腦中風與其他病史已知的關係，我們想要瞭解，當不考慮糖尿病史與年齡時，生活環境對血壓與腦中風所造成的關係。</p>
 </div>
 <div class="section" id="id12">
 <h2>目標與研究流程:<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
@@ -330,7 +247,3586 @@
 </ul>
 </li>
 </ol>
+</div>
+</div>
+<div class="section" id="math-equation-test">
+<h2>Math Equation Test<a class="headerlink" href="#math-equation-test" title="Permalink to this headline">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+\]</div>
 <div class="toctree-wrapper compound">
+<span id="document-dataexplore"></span><div class="section" id="id1">
+<h3>資料探討<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<style>
+.blue {
+    color: blue;
+}
+
+.grey {
+    color: grey;
+}
+
+.awk {
+    color: #b6b4cf;
+}
+</style>
+<div class="section" id="id2">
+<h4>資料來源<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>我們選擇了一筆2018年釋出的網路資料</p>
+<ul>
+<li><p><a class="reference external" href="https://datahack.analyticsvidhya.com/contest/mckinsey-analytics-online-hackathon/">McKinsey Analytics: Online Hackathon on Healthcare</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h4>資料清理<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>我們將符合以下條件的資料清掉</p>
+<ul>
+<li><p>Gender為Other</p></li>
+<li><p>BMI為N/A</p></li>
+<li><p>Smoking status為Unknown</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h4>資料基本型態<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>資料總數: 3425個人 (清理前為5110)</p></li>
+<li><p>類別型: gender, hypertension, heart_disease, ever_married, work_type, Residence_type, smoking_status, stroke</p></li>
+<li><p>數值型: age, avg_glucose_level, bmi</p></li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h4>單變數分析: 類別型<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="gender">
+<h5>gender<a class="headerlink" href="#gender" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/VOikmMR.png"><img alt="gender" class="bg-primary mb-1 align-center" src="https://i.imgur.com/VOikmMR.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="hypertension">
+<h5>Hypertension<a class="headerlink" href="#hypertension" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/V2ls7hO.png"><img alt="hypertension" class="bg-primary mb-1 align-center" src="https://i.imgur.com/V2ls7hO.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="heart-disease">
+<h5>Heart Disease<a class="headerlink" href="#heart-disease" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/IMe8y6F.png"><img alt="heartdisease" class="bg-primary mb-1 align-center" src="https://i.imgur.com/IMe8y6F.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="ever-married">
+<h5>Ever married<a class="headerlink" href="#ever-married" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/Pua54Dk.png"><img alt="evermarry" class="bg-primary mb-1 align-center" src="https://i.imgur.com/Pua54Dk.png" style="width: 800px;" /></a>
+<p><span class="blue"><em>簡單類別型解釋變數分析中，若用於分析婚姻經驗與其他變數的關係，剔除年齡小於16歲的資料</em></span></p>
+</div>
+<div class="section" id="residence-type">
+<h5>Residence type<a class="headerlink" href="#residence-type" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/3UNDxmf.png"><img alt="residtype" class="bg-primary mb-1 align-center" src="https://i.imgur.com/3UNDxmf.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="stroke">
+<h5>Stroke<a class="headerlink" href="#stroke" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/BJbNHxr.png"><img alt="strokebar" class="bg-primary mb-1 align-center" src="https://i.imgur.com/BJbNHxr.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="smoking-status">
+<h5>Smoking status<a class="headerlink" href="#smoking-status" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/wn6c5i3.png"><img alt="smoking" class="bg-primary mb-1 align-center" src="https://i.imgur.com/wn6c5i3.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="work-type">
+<h5>Work type<a class="headerlink" href="#work-type" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/foUU50y.png"><img alt="worktype" class="bg-primary mb-1 align-center" src="https://i.imgur.com/foUU50y.png" style="width: 800px;" /></a>
+</div>
+</div>
+<div class="section" id="id6">
+<h4>單變數分析: 數值型<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id7">
+<h5>年齡<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id8">
+<h6>整體資料年齡分佈<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h6>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/Uie1iYd.png"><img alt="age" class="bg-primary mb-1 align-center" src="https://i.imgur.com/Uie1iYd.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="id9">
+<h6>分成中風與非中風<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h6>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/mwyEex0.png"><img alt="age" class="bg-primary mb-1 align-center" src="https://i.imgur.com/mwyEex0.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="id10">
+<h6>所有中風的人:年紀與性別的分佈<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h6>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/eHOKXqd.png"><img alt="age" class="bg-primary mb-1 align-center" src="https://i.imgur.com/eHOKXqd.png" style="width: 800px;" /></a>
+</div>
+</div>
+<div class="section" id="average-glucose-level">
+<h5>Average glucose level<a class="headerlink" href="#average-glucose-level" title="Permalink to this headline">¶</a></h5>
+<p><span class="grey"><em>註: 雖然不確定收集資料時是取飯前(FPG)或是飯後血糖(OGTT)，本報告仍先採用空腹血糖做為參考標準。</em></span></p>
+<div class="section" id="id11">
+<h6>整體資料血糖分佈<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h6>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/5Gwb4HB.png"><img alt="avg_glucose" class="bg-primary mb-1 align-center" src="https://i.imgur.com/5Gwb4HB.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="id12">
+<h6>分成中風與非中風<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h6>
+<ul class="simple">
+<li><p>下圖呈現條件機率 <span class="math notranslate nohighlight">\(P(\text{stroke}|\text{Glu:group})\)</span> 與 <span class="math notranslate nohighlight">\(P(\text{Non-stroke}|\text{Glu:group})\)</span></p></li>
+<li><p><img alt="" src="https://i.imgur.com/Wf9P7xi.png" /></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="bmi">
+<h5>BMI<a class="headerlink" href="#bmi" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id13">
+<h6>整體資料BMI分佈<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h6>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/UoOZ8vh.png"><img alt="bmi_distribution" class="bg-primary mb-1 align-center" src="https://i.imgur.com/UoOZ8vh.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="id14">
+<h6>分成中風與非中風<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h6>
+<ul class="simple">
+<li><p>下圖呈現條件機率 <span class="math notranslate nohighlight">\(P(\text{stroke}|\text{BMI:group})\)</span> 與 <span class="math notranslate nohighlight">\(P(\text{Non-stroke}|\text{BMI:group})\)</span></p></li>
+<li><p><img alt="" src="https://i.imgur.com/DMvA9b9.png" /></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="id15">
+<h4>資料綜觀<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<p><img alt="" src="https://i.imgur.com/KF0MfYP.png" /></p>
+<p><span class="grey"><em>註: 以上資料在類別變數分析中，均會依據狀況刪去部分資料，因此各項初步分析中的資料數可能不盡一致。但在分群分析與迴歸分析中，若有任一欄為「unknown」、「N/A」、或「null」，該筆資料會整筆刪除，採用內容一致的資料集。</em></span></p>
+</div>
+</div>
+<span id="document-simplecategorical"></span><div class="section" id="id1">
+<h3>列聯表分析:簡單類別型<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<style>
+.blue {
+    color: blue;
+}
+
+.awk {
+    color: #b6b4cf;
+}
+</style>
+<div class="section" id="id2">
+<h4>中風與性別<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>基本假設:性別與中風沒有關聯</p></li>
+</ul>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Female</p></th>
+<th class="head"><p>Male</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Stroke</p></td>
+<td><p>141</p></td>
+<td><p>108</p></td>
+<td><p>249</p></td>
+</tr>
+<tr class="row-odd"><td><p>Non-stroke</p></td>
+<td><p>2853</p></td>
+<td><p>2007</p></td>
+<td><p>4860</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p>2994</p></td>
+<td><p>1225</p></td>
+<td><p>5109</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="odds-ratio">
+<h5>Odds Ratio:<a class="headerlink" href="#odds-ratio" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{\theta}=1.089\)</span></p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(-0.172, 0.342)\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="chi-square">
+<h5>Chi-square:<a class="headerlink" href="#chi-square" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 0.34, df = 1, p-value = 0.5598</p></li>
+</ul>
+<p><span class ="blue"><em>性別與中風的關係在兩項檢定中均未有證據支持具有相關性</em></span></p>
+</div>
+</div>
+<div class="section" id="id3">
+<h4>中風與居住環境<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>基本假設:只有一點點關聯，鄉下的中風比例可能比住在城市的低</p></li>
+</ul>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Urban</p></th>
+<th class="head"><p>Rural</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Stroke</p></td>
+<td><p>135</p></td>
+<td><p>141</p></td>
+<td><p>249</p></td>
+</tr>
+<tr class="row-odd"><td><p>Non-stroke</p></td>
+<td><p>2461</p></td>
+<td><p>2400</p></td>
+<td><p>4861</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p>2596</p></td>
+<td><p>2514</p></td>
+<td><p>5110</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id4">
+<h5>Odds Ratio:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{\theta}=0.866\)</span></p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(-0.400, 0.112)\)</span></p></li>
+<li><p>雖然資料符合我們的猜想，鄉下中風的比例比較低，但是95%的信賴區間包含0，表示 <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}\)</span> 與0無顯著差異</p></li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h5>Chi-square:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 1.0816, df = 1, p-value = 0.2983</p></li>
+</ul>
+<p><span class ="blue"><em>居住環境與中風的關係在兩項檢定中均未有證據支持具有相關性</em></span></p>
+</div>
+</div>
+<div class="section" id="id6">
+<h4>中風與婚姻<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>基本假設:婚姻與中風沒有關聯</p></li>
+</ul>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Married</p></th>
+<th class="head"><p>NevMar</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Stroke</p></td>
+<td><p>220</p></td>
+<td><p>27</p></td>
+<td><p>247</p></td>
+</tr>
+<tr class="row-odd"><td><p>Non-stroke</p></td>
+<td><p>3133</p></td>
+<td><p>986</p></td>
+<td><p>4119</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p>3353</p></td>
+<td><p>1013</p></td>
+<td><p>4366</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id7">
+<h5>Odds Ratio:<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{\theta}=2.564\)</span></p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(0.536, 1.348)\)</span></p></li>
+<li><p>95%的信賴區間不包含0，表示 <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}\)</span> 與0有顯著差異。</p></li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h5>Chi-square:<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 21.4, df = 1, p-value = 3.728e-06</p></li>
+</ul>
+<p><span class ="blue"><em>婚姻經驗與中風的在本檢定中顯示具有相關性，如同odds ratio所顯示，進一步分析殘差瞭解其分布：</em></span></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>round(result_StrokeMarri$residuals, 3)
+</pre></div>
+</div>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Married</p></th>
+<th class="head"><p>NevMar</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Stroke</p></td>
+<td><p>2.201</p></td>
+<td><p>-4.004</p></td>
+</tr>
+<tr class="row-odd"><td><p>Non-stroke</p></td>
+<td><p>-0.539</p></td>
+<td><p>0.980</p></td>
+</tr>
+</tbody>
+</table>
+<p><span class ="blue"><em>發現未曾有婚姻經驗者，較不容易中風，而婚姻經驗除了在附表(?)中可見與高血壓有關連性之外，相對於未結婚者也較容易中風</em></span></p>
+</div>
+</div>
+<div class="section" id="id9">
+<h4>中風與高血壓<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>基本假設:高血壓愈大的人愈容易中風</p></li>
+</ul>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>hypertension</p></th>
+<th class="head"><p>Normal</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Stroke</p></td>
+<td><p>66</p></td>
+<td><p>183</p></td>
+<td><p>249</p></td>
+</tr>
+<tr class="row-odd"><td><p>Non-stroke</p></td>
+<td><p>432</p></td>
+<td><p>4429</p></td>
+<td><p>4861</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p>498</p></td>
+<td><p>4612</p></td>
+<td><p>5110</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id10">
+<h5>Odds Ratio:<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{\theta}=3.698\)</span></p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(1.009, 1.606)\)</span></p></li>
+<li><p>95%的信賴區間不包含0，表示 <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}\)</span> 與0有顯著差異。</p></li>
+</ul>
+</div>
+<div class="section" id="id11">
+<h5>Chi-square:<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 81.605, df = 1, p-value &lt; 2.2e-16</p></li>
+</ul>
+<p><span class ="blue"><em>高血壓與中風的在本檢定中顯示具有高度相關性，如同odds ratio所顯示，進一步分析殘差了解其分布：</em></span></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;round(result_StrokeHyper$residuals, 3)
+</pre></div>
+</div>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>hypertension</p></th>
+<th class="head"><p>Normal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Stroke</p></td>
+<td><p>8.472</p></td>
+<td><p>-2.784</p></td>
+</tr>
+<tr class="row-odd"><td><p>Non-stroke</p></td>
+<td><p>-1.917</p></td>
+<td><p>0.630</p></td>
+</tr>
+</tbody>
+</table>
+<p><span class ="blue"><em>高血壓與中風的發生有高度相關性，殘差顯示血壓正常者與高血壓者在中風條件下有最大的差異。</em></span></p>
+</div>
+</div>
+<div class="section" id="id12">
+<h4>中風與心臟病<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>基本假設:中風是心血管疾病，要與心臟病相關</p></li>
+</ul>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>heart D</p></th>
+<th class="head"><p>Normal</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Stroke</p></td>
+<td><p>47</p></td>
+<td><p>202</p></td>
+<td><p>249</p></td>
+</tr>
+<tr class="row-odd"><td><p>Non-stroke</p></td>
+<td><p>229</p></td>
+<td><p>4632</p></td>
+<td><p>4861</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p>276</p></td>
+<td><p>4834</p></td>
+<td><p>5110</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id13">
+<h5>Odds Ratio:<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{\theta}=4.706\)</span></p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(1.205, 1.893)\)</span></p></li>
+<li><p>95%的信賴區間不包含0，表示 <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}\)</span> 與0有顯著差異。</p></li>
+</ul>
+</div>
+<div class="section" id="id14">
+<h5>Chi-square:<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 90.26, df = 1, p-value &lt; 2.2e-16</p></li>
+</ul>
+<p><span class ="blue"><em>心臟病與中風的在本檢定中顯示具有高度相關性，如同odds ratio所顯示，進一步分析殘差瞭解其分布：</em></span></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;round(result_StrokeHD$residuals, 3)
+</pre></div>
+</div>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>heart D</p></th>
+<th class="head"><p>Normal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Stroke</p></td>
+<td><p>9.149</p></td>
+<td><p>-2.186</p></td>
+</tr>
+<tr class="row-odd"><td><p>Non-stroke</p></td>
+<td><p>-2.071</p></td>
+<td><p>0.495</p></td>
+</tr>
+</tbody>
+</table>
+<p><span class ="blue"><em>心臟病與中風的發生有高度相關性，殘差與<span class="math notranslate nohighlight">\(X^2\)</span>顯示心臟病患者與中風的關聯性甚至比高血壓之於中風要高。</em></span></p>
+</div>
+</div>
+<div class="section" id="id15">
+<h4>綜合比較<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/oddsratio_bar.png"><img alt="oddsratio_bar" class="bg-primary mb-1 align-center" src="_images/oddsratio_bar.png" style="width: 400px;" /></a>
+<ul class="simple">
+<li><p>與中風有相關性: 婚姻、高血壓、心臟病</p></li>
+</ul>
+</div>
+</div>
+<span id="document-multiplecategorical"></span><div class="section" id="id1">
+<h3>列聯表分析:多重類別型<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<style>
+.blue {
+    color: blue;
+}
+
+.awk {
+    color: #b6b4cf;
+}
+</style>
+<div class="section" id="id2">
+<h4>中風與抽煙習慣<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id3">
+<h5>分類成兩組<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>smoke包含smokes與formerly smoked</p></li>
+<li><p>never smoke自己一組</p></li>
+<li><p>註記: unknown有1544個資料點，被拿掉了</p></li>
+<li><p>基本假設:有抽煙的人比較容易中風</p></li>
+</ul>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Smoke</p></th>
+<th class="head"><p>Never Smoke</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Stroke</p></td>
+<td><p>112</p></td>
+<td><p>90</p></td>
+<td><p>202</p></td>
+</tr>
+<tr class="row-odd"><td><p>Non-stroke</p></td>
+<td><p>1562</p></td>
+<td><p>1802</p></td>
+<td><p>3364</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p>1674</p></td>
+<td><p>1892</p></td>
+<td><p>3566</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="odds-ratio">
+<h6>Odds Ratio:<a class="headerlink" href="#odds-ratio" title="Permalink to this headline">¶</a></h6>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{\theta}=1.436\)</span></p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(0.076, 0.647)\)</span></p></li>
+<li><p>95%的信賴區間不包含0，表示 <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}\)</span> 與0有顯著差異。</p></li>
+</ul>
+<p><span class ="blue"><em>中風跟抽煙有關聯。但相比於婚姻、壓力與心臟病，抽煙的<span class="math notranslate nohighlight">\(\hat{\theta}\)</span>比較靠近<span class="math notranslate nohighlight">\(1\)</span>，表示抽煙相對來說不是一個重要的因子</em></span></p>
+<div class="section" id="fix-row">
+<h7>Fix Row比較:<a class="headerlink" href="#fix-row" title="Permalink to this headline">¶</a></h7>
+<ul class="simple">
+<li><p>中風患者: <span class="math notranslate nohighlight">\(\frac{\text{Smoke}}{\text{Never smoke}}=1.24\)</span></p></li>
+<li><p>非中風者: <span class="math notranslate nohighlight">\(\frac{\text{Smoke}}{\text{Never smoke}}=0.87\)</span></p></li>
+</ul>
+<p><span class ="blue"><em>符和基本假設，中風患者中有抽煙的比例高</em></span></p>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h5>三組分開做<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="chi-square">
+<h6>Chi-square<a class="headerlink" href="#chi-square" title="Permalink to this headline">¶</a></h6>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Stroke</p></th>
+<th class="head"><p>No Stroke</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>smokes</p></td>
+<td><p>42</p></td>
+<td><p>747</p></td>
+<td><p>789</p></td>
+</tr>
+<tr class="row-odd"><td><p>formerly</p></td>
+<td><p>70</p></td>
+<td><p>815</p></td>
+<td><p>885</p></td>
+</tr>
+<tr class="row-even"><td><p>never</p></td>
+<td><p>90</p></td>
+<td><p>1802</p></td>
+<td><p>1892</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sum</p></td>
+<td><p>202</p></td>
+<td><p>3364</p></td>
+<td><p>3566</p></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 11.436, df = 2, p-value = 0.003285</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt; round(smokeStroke_chi$residuals, 3)
+</pre></div>
+</div>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Stroke</p></th>
+<th class="head"><p>No Stroke</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>smokes</p></td>
+<td><p>-0.403</p></td>
+<td><p>0.099</p></td>
+</tr>
+<tr class="row-odd"><td><p>formerly</p></td>
+<td><p><strong>2.806</strong></p></td>
+<td><p>-0.688</p></td>
+</tr>
+<tr class="row-even"><td><p>never</p></td>
+<td><p>-1.659</p></td>
+<td><p>0.407</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>結論:</p>
+<ul>
+<li><p><strong>曾經抽菸者甚至比正有抽菸習慣者更容易中風</strong></p></li>
+<li><p><strong>應該要區分formely與smokes</strong></p></li>
+<li><p>從不抽菸者還是最不容易中風</p></li>
+<li><p>即便右欄未大於0.5，要說未曾抽菸者不容易中風可能較勉強，但前一項odds ratio已能補足這結論</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h4>中風與工作<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id6">
+<h5>資料清理<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h5>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Stroke</p></th>
+<th class="head"><p>No Stroke</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Government</p></td>
+<td><p>23</p></td>
+<td><p>491</p></td>
+<td><p>514</p></td>
+</tr>
+<tr class="row-odd"><td><p>Private</p></td>
+<td><p>109</p></td>
+<td><p>2092</p></td>
+<td><p>2201</p></td>
+</tr>
+<tr class="row-even"><td><p>Self-empl</p></td>
+<td><p>48</p></td>
+<td><p>581</p></td>
+<td><p>629</p></td>
+</tr>
+<tr class="row-odd"><td><p>children</p></td>
+<td><p><strong>2</strong></p></td>
+<td><p>685</p></td>
+<td><p>687</p></td>
+</tr>
+<tr class="row-even"><td><p>NeverWork</p></td>
+<td><p><strong>0</strong></p></td>
+<td><p>22</p></td>
+<td><p>22</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sum</p></td>
+<td><p>108</p></td>
+<td><p>3164</p></td>
+<td><p>3344</p></td>
+</tr>
+</tbody>
+</table>
+<p><span class ="blue"><em>孩童與未曾工作者的樣本數不適用於卡方檢定</em></span></p>
+</div>
+<div class="section" id="id7">
+<h5>Chi-square<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Stroke</p></th>
+<th class="head"><p>No Stroke</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Government</p></td>
+<td><p>23</p></td>
+<td><p>491</p></td>
+<td><p>514</p></td>
+</tr>
+<tr class="row-odd"><td><p>Private</p></td>
+<td><p>109</p></td>
+<td><p>2092</p></td>
+<td><p>2201</p></td>
+</tr>
+<tr class="row-even"><td><p>Self-empl</p></td>
+<td><p>48</p></td>
+<td><p>581</p></td>
+<td><p>629</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sum</p></td>
+<td><p>108</p></td>
+<td><p>3164</p></td>
+<td><p>3344</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 7.8764, df = 2, p-value = 0.01948</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt; round(workStroke_chi$residuals, 3)
+</pre></div>
+</div>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Stroke</p></th>
+<th class="head"><p>No Stroke</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Government</p></td>
+<td><p>-0.887</p></td>
+<td><p>0.212</p></td>
+</tr>
+<tr class="row-odd"><td><p>Private</p></td>
+<td><p>-0.870</p></td>
+<td><p>0.208</p></td>
+</tr>
+<tr class="row-even"><td><p>Self-empl</p></td>
+<td><p><strong>2.430</strong></p></td>
+<td><p>-0.580</p></td>
+</tr>
+</tbody>
+</table>
+<p><span class="blue"><em>創業者在兩種分類的卡方檢定中，均顯示較容易中風，且具有統計意義，故在後續迴歸分析中，仍會考慮是否將工作類型作為解釋變數</em></span></p>
+</div>
+<div class="section" id="id8">
+<h5>兩兩分組做chi-square<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="private">
+<h6>Private<a class="headerlink" href="#private" title="Permalink to this headline">¶</a></h6>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Work</span> <span class="n">Type</span> <span class="mi">1</span><span class="p">:</span> <span class="n">children</span><span class="p">,</span> <span class="n">Govt_job</span><span class="p">,</span> <span class="n">Self</span><span class="o">-</span><span class="n">employed</span><span class="p">,</span> <span class="n">Never_worked</span>
+<span class="n">Work</span> <span class="n">Type</span> <span class="mi">2</span><span class="p">:</span> <span class="n">Private</span>
+</pre></div>
+</div>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Stroke</p></th>
+<th class="head"><p>No Stroke</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Work type 1</p></td>
+<td><p>100</p></td>
+<td><p>2085</p></td>
+<td><p>2185</p></td>
+</tr>
+<tr class="row-odd"><td><p>Work type 2</p></td>
+<td><p>149</p></td>
+<td><p>2776</p></td>
+<td><p>2925</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>249</p></td>
+<td><p>4861</p></td>
+<td><p>5110</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 0.6149, df = 1, p-value = 0.4329</p></li>
+<li><p>因此工作類型是否是私人企業(Private)與中風沒有顯著的關聯性</p></li>
+</ul>
+</div>
+<div class="section" id="self-employed">
+<h6>Self-employed<a class="headerlink" href="#self-employed" title="Permalink to this headline">¶</a></h6>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Work</span> <span class="n">Type</span> <span class="mi">1</span><span class="p">:</span> <span class="n">children</span><span class="p">,</span> <span class="n">Govt_job</span><span class="p">,</span> <span class="n">Private</span><span class="p">,</span> <span class="n">Never_worked</span>
+<span class="n">Work</span> <span class="n">Type</span> <span class="mi">2</span><span class="p">:</span> <span class="n">Self</span><span class="o">-</span><span class="n">employed</span>
+</pre></div>
+</div>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Stroke</p></th>
+<th class="head"><p>No Stroke</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Work type 1</p></td>
+<td><p>184</p></td>
+<td><p>4107</p></td>
+<td><p>4291</p></td>
+</tr>
+<tr class="row-odd"><td><p>Work type 2</p></td>
+<td><p>65</p></td>
+<td><p>754</p></td>
+<td><p>819</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>249</p></td>
+<td><p>4861</p></td>
+<td><p>5110</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 18.97, df = 1, p-value = 1.328e-05</p></li>
+<li><p>因此工作類型是否是自行創業者(Self-employed)與中風有顯著的關聯性</p></li>
+</ul>
+</div>
+<div class="section" id="govt-job">
+<h6>Govt_job<a class="headerlink" href="#govt-job" title="Permalink to this headline">¶</a></h6>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Work</span> <span class="n">Type</span> <span class="mi">1</span><span class="p">:</span> <span class="n">children</span><span class="p">,</span> <span class="n">Self</span><span class="o">-</span><span class="n">employed</span><span class="p">,</span> <span class="n">Private</span><span class="p">,</span> <span class="n">Never_worked</span>
+<span class="n">Work</span> <span class="n">Type</span> <span class="mi">2</span><span class="p">:</span> <span class="n">Govt_job</span>
+</pre></div>
+</div>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Stroke</p></th>
+<th class="head"><p>No Stroke</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Work type 1</p></td>
+<td><p>216</p></td>
+<td><p>4237</p></td>
+<td><p>4453</p></td>
+</tr>
+<tr class="row-odd"><td><p>Work type 2</p></td>
+<td><p>33</p></td>
+<td><p>624</p></td>
+<td><p>657</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>249</p></td>
+<td><p>4861</p></td>
+<td><p>5110</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 0.0088896, df = 1, p-value = 0.9249</p></li>
+<li><p>因此工作類型是否在政府機關(Govt_job)與中風沒有顯著的關聯性</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<span id="document-numerical"></span><div class="section" id="id1">
+<h3>列聯表分析:數值型<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h4>中風與年齡<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="chi-square">
+<h5>Chi-square<a class="headerlink" href="#chi-square" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/age_stroke.png"><img alt="age_stroke" class="bg-primary mb-1 align-center" src="_images/age_stroke.png" style="width: 800px;" /></a>
+</div>
+</div>
+<div class="section" id="id3">
+<h4>中風與血糖<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id4">
+<h5>Chi-square<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/glucose_stroke.png"><img alt="glucose_stroke" class="bg-primary mb-1 align-center" src="_images/glucose_stroke.png" style="width: 800px;" /></a>
+</div>
+</div>
+<div class="section" id="bmi">
+<h4>中風與BMI<a class="headerlink" href="#bmi" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id5">
+<h5>Chi-square<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/bmi_stroke.png"><img alt="glucose_stroke" class="bg-primary mb-1 align-center" src="_images/bmi_stroke.png" style="width: 800px;" /></a>
+</div>
+</div>
+</div>
+<span id="document-conti_table_summary"></span><div class="section" id="id1">
+<h3>列聯表分析:綜合結論<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h4>變數之間關係<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p><img alt="" src="https://i.imgur.com/VD9XXMc.jpg" /></p>
+</div>
+</div>
+<span id="document-interaction_plot"></span><div class="section" id="id1">
+<h3>解釋變數與中風的交互作用<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h4>簡單類別型<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id3">
+<h5>中風與性別<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>下面這張圖呈現的是條件機率  <span class="math notranslate nohighlight">\(P(\text{stroke}|\text{age:group}, \text{gender})\)</span></p>
+<ul>
+<li><p>舉例來說: <span class="math notranslate nohighlight">\(P(\text{stroke}|\text{70-79}, \text{Female})\)</span> 代表 「70-79歲的女性中，有17%中風」
+<img alt="" src="https://i.imgur.com/T7q9OQA.png" /></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h5>中風與居住環境<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>待補</p></li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h5>中風與婚姻<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
+<p><img alt="" src="https://i.imgur.com/5oKtCM1.png" /></p>
+<ul class="simple">
+<li><p>說明文字待補</p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h5>中風與高血壓<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h5>
+<p><img alt="" src="https://i.imgur.com/q4pyPxR.png" /></p>
+<ul class="simple">
+<li><p>說明文字待補</p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h5>中風與心臟病<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
+<p><img alt="" src="https://i.imgur.com/heQiMwj.png" /></p>
+<ul class="simple">
+<li><p>說明文字待補</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id8">
+<h4>多重類別型<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id9">
+<h5>中風與抽煙習慣<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h5>
+<p><img alt="" src="https://i.imgur.com/9LMyMgS.png" /></p>
+<ul class="simple">
+<li><p>說明文字待補</p></li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h5>中風與工作<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h5>
+<p><img alt="" src="https://i.imgur.com/x9X51qL.png" /></p>
+<ul class="simple">
+<li><p>說明文字待補</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id11">
+<h4>數值型<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id12">
+<h5>中風與年齡<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h5>
+<p><img alt="" src="https://i.imgur.com/Kuystnc.png" /></p>
+<ul class="simple">
+<li><p>說明文字待補</p></li>
+</ul>
+</div>
+<div class="section" id="id13">
+<h5>中風與血糖<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h5>
+<p><img alt="" src="https://i.imgur.com/9bywdcC.png" /></p>
+<ul class="simple">
+<li><p>說明文字待補</p></li>
+<li><p>下面這張圖呈現兩種條件機率</p>
+<ul>
+<li><p>淡藍色: <span class="math notranslate nohighlight">\(P(\text{Glu:group}|\text{stroke})\)</span></p></li>
+<li><p>深藍色: <span class="math notranslate nohighlight">\(P(\text{Glu:group}|\text{Non-stroke})\)</span>
+<img alt="" src="https://i.imgur.com/iCWkL9m.png" /></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="bmi">
+<h5>中風與BMI<a class="headerlink" href="#bmi" title="Permalink to this headline">¶</a></h5>
+<p><img alt="" src="https://i.imgur.com/XNNKLve.png" /></p>
+<ul class="simple">
+<li><p>說明文字待補</p></li>
+<li><p>下面這張圖呈現兩種條件機率</p>
+<ul>
+<li><p>淡藍色: <span class="math notranslate nohighlight">\(P(\text{BMI:group}|\text{stroke})\)</span></p></li>
+<li><p>深藍色: <span class="math notranslate nohighlight">\(P(\text{BMI:group}|\text{Non-stroke})\)</span>
+<img alt="" src="https://i.imgur.com/ZPF2Pta.png" /></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<span id="document-regression_categorical"></span><div class="section" id="id1">
+<h3>迴歸分析1: 類別型變數<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>由於列聯表分析只能探討中風與一種解釋變數之間的關係，迴歸分析則可以提供我們一次分析多種解釋變數對於中風的影響。
+在這個部份，我們首先做了只有類別型變數的迴歸模型，下一個部份則做了只有數值型變數的迴歸模型，第三部份結合了所有的變數並做出一個最終模型。</p>
+<p><span style="color:blue"> <em>從前面列聯表分析中: 中風與”性別”及”住處型態”無關，因此在迴歸分析是直接被拿掉的</em></span></p>
+<div class="section" id="id2">
+<h4>讀取資料<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">strokedata</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s">&#39;../data/healthcare-dataset-stroke-data-cleanbmi.csv&#39;</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">strokedata</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>age</th><th scope=col>hypertension</th><th scope=col>heart_disease</th><th scope=col>ever_married</th><th scope=col>work_type</th><th scope=col>avg_glucose_level</th><th scope=col>bmi</th><th scope=col>smoking_status</th><th scope=col>stroke</th></tr></thead>
+<tbody>
+	<tr><td>67             </td><td>0              </td><td>1              </td><td>Yes            </td><td>Private        </td><td>228.69         </td><td>36.6           </td><td>formerly smoked</td><td>1              </td></tr>
+	<tr><td>80             </td><td>0              </td><td>1              </td><td>Yes            </td><td>Private        </td><td>105.92         </td><td>32.5           </td><td>never smoked   </td><td>1              </td></tr>
+	<tr><td>49             </td><td>0              </td><td>0              </td><td>Yes            </td><td>Private        </td><td>171.23         </td><td>34.4           </td><td>smokes         </td><td>1              </td></tr>
+	<tr><td>79             </td><td>1              </td><td>0              </td><td>Yes            </td><td>Self-employed  </td><td>174.12         </td><td>24.0           </td><td>never smoked   </td><td>1              </td></tr>
+	<tr><td>81             </td><td>0              </td><td>0              </td><td>Yes            </td><td>Private        </td><td>186.21         </td><td>29.0           </td><td>formerly smoked</td><td>1              </td></tr>
+	<tr><td>74             </td><td>1              </td><td>1              </td><td>Yes            </td><td>Private        </td><td> 70.09         </td><td>27.4           </td><td>never smoked   </td><td>1              </td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<ul class="simple">
+<li><p>被清理的資料是符合以下條件的:</p>
+<ul>
+<li><p>Gender為Other</p></li>
+<li><p>BMI為N/A</p></li>
+<li><p>Smoking status為Unknown</p></li>
+</ul>
+</li>
+<li><p>清理完的資料含有3425資料點</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">nrow</span><span class="p">(</span><span class="n">strokedata</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">3425</div></div>
+</div>
+</div>
+<div class="section" id="simple-models">
+<h4>Simple Models: 只含有一個解釋變數<a class="headerlink" href="#simple-models" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id3">
+<h5>高血壓:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_hypert</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">hypertension</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_hypert</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ hypertension, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.5486  -0.2885  -0.2885  -0.2885   2.5298  
+
+Coefficients:
+             Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)  -3.15821    0.09206 -34.305  &lt; 2e-16 ***
+hypertension  1.34048    0.16991   7.889 3.04e-15 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1358.1  on 3423  degrees of freedom
+AIC: 1362.1
+
+Number of Fisher Scoring iterations: 6
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><span style="color:blue"> <span class="math notranslate nohighlight">\(\beta\)</span>的z-test的p-value很小，高血壓與中風的預測是顯著的 </span></p></li>
+<li><p><span style="color:blue"> <span class="math notranslate nohighlight">\(\beta_{\rm{hypert}}=1.34 &gt; 0\)</span> : 表示有高血壓會增加中風的機率 </span></p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h5>心臟病<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{heartd}}x_{\rm{heartd}}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_heartd</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">heart_disease</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_heartd</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ heart_disease, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.6198  -0.3025  -0.3025  -0.3025   2.4928  
+
+Coefficients:
+              Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)   -3.06125    0.08525 -35.908  &lt; 2e-16 ***
+heart_disease  1.50897    0.20231   7.459 8.73e-14 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1367.2  on 3423  degrees of freedom
+AIC: 1371.2
+
+Number of Fisher Scoring iterations: 5
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><span style="color:blue"> <span class="math notranslate nohighlight">\(\beta\)</span>的z-test的p-value很小，心臟病與中風的預測是顯著的 </span></p></li>
+<li><p><span style="color:blue"> <span class="math notranslate nohighlight">\(\beta_{\rm{heartd}}=1.509 &gt; 0\)</span> : 表示有心臟病會增加中風的機率 </span></p></li>
+</ul>
+</div>
+<div class="section" id="ever-married">
+<h5>Ever-Married(結婚有無)<a class="headerlink" href="#ever-married" title="Permalink to this headline">¶</a></h5>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{marry}}x_{\rm{marry}}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_marry</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">ever_married</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_marry</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ ever_married, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.3565  -0.3565  -0.3565  -0.2214   2.7279  
+
+Coefficients:
+                Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)      -3.6964     0.2264  -16.33  &lt; 2e-16 ***
+ever_marriedYes   0.9722     0.2406    4.04 5.34e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1390.4  on 3423  degrees of freedom
+AIC: 1394.4
+
+Number of Fisher Scoring iterations: 6
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><span style="color:blue"> <span class="math notranslate nohighlight">\(\beta_{\rm{marry}}=0.9722 &gt; 0\)</span> : 表示”有結過婚”會增加中風的機率 </span></p></li>
+<li><p><span style="color:blue"> 目前這裡的資料是含有”未達已婚年齡者的”，我們會在後面討論年齡與婚姻的對於中風預測的相互影響</span></p></li>
+</ul>
+</div>
+<div class="section" id="work-type">
+<h5>Work-type(工作類型)<a class="headerlink" href="#work-type" title="Permalink to this headline">¶</a></h5>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{GovJob}}x_{\rm{GovJob}} + \beta_{\rm{Neverworked}}x_{\rm{Neverworked}} + \beta_{\rm{Private}}x_{\rm{Private}} + \beta_{\rm{Selfemployed}}x_{\rm{Selfemployed}}
+\]</div>
+<ul class="simple">
+<li><p>Baseline group: children</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_worktype</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">work_type</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_worktype</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ work_type, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.3985  -0.3188  -0.3188  -0.3188   2.4927  
+
+Coefficients:
+                         Estimate Std. Error z value Pr(&gt;|z|)
+(Intercept)            -1.757e+01  4.798e+02  -0.037    0.971
+work_typeGovt_job       1.451e+01  4.798e+02   0.030    0.976
+work_typeNever_worked  -1.793e-08  1.161e+03   0.000    1.000
+work_typePrivate        1.461e+01  4.798e+02   0.030    0.976
+work_typeSelf-employed  1.507e+01  4.798e+02   0.031    0.975
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1394.7  on 3420  degrees of freedom
+AIC: 1404.7
+
+Number of Fisher Scoring iterations: 16
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><span style="color:blue"> z-test的p-value都很大，表示我們沒辦法拒絕下面的<span class="math notranslate nohighlight">\(H_0\)</span> </span></p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp;H_0: \beta_{\rm{GovJob}} = 0 \\
+&amp;H_0: \beta_{\rm{Neverworked}} = 0 \\ 
+&amp;H_0: \beta_{\rm{Private}} = 0 \\
+&amp;H_0: \beta_{\rm{Selfemployed}} = 0
+\end{align*}\]</div>
+<ul class="simple">
+<li><p><span style="color:blue"> 因此，工作型態對於預測中風是沒有幫助的，後面的模型不會考慮此解釋變數</span></p></li>
+</ul>
+</div>
+<div class="section" id="smoke-status">
+<h5>Smoke Status(沒抽過煙、戒煙的人、正在抽煙的人)<a class="headerlink" href="#smoke-status" title="Permalink to this headline">¶</a></h5>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{Former-smoke}}x_{\rm{Former-smoke}} + \beta_{\rm{smoke}}x_{\rm{smoke}}
+\]</div>
+<ul class="simple">
+<li><p>Baseline group: ‘never smoked’</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">strokedata</span><span class="o">$</span><span class="n">smoking_status</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">strokedata</span><span class="o">$</span><span class="n">smoking_status</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;never smoked&#39;</span><span class="p">,</span> <span class="s">&#39;formerly smoked&#39;</span><span class="p">,</span> <span class="s">&#39;smokes&#39;</span><span class="p">))</span>
+<span class="n">model_smoke</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">smoking_status</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_smoke</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ smoking_status, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.3758  -0.3297  -0.3047  -0.3047   2.4872  
+
+Coefficients:
+                              Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)                    -3.0468     0.1117 -27.287   &lt;2e-16 ***
+smoking_statusformerly smoked   0.4318     0.1769   2.441   0.0146 *  
+smoking_statussmokes            0.1621     0.1988   0.815   0.4149    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1405.1  on 3422  degrees of freedom
+AIC: 1411.1
+
+Number of Fisher Scoring iterations: 5
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><span style="color:blue"><span class="math notranslate nohighlight">\(\beta_{\rm{Former-smoke}}&gt;0\)</span>, <span class="math notranslate nohighlight">\(\beta_{\rm{smoke}}&gt;0\)</span>:  相比於不抽煙的人(Baseline)，有抽過煙會增加中風的機率</span></p></li>
+<li><p><span style="color:blue"><span class="math notranslate nohighlight">\(\beta_{\rm{Former-smoke}}&gt;\beta_{\rm{smoke}}\)</span>: 這裡是比較違反直覺的地方，”戒煙的人”竟然比”目前還在抽煙的人”更容易中風</span></p></li>
+<li><p><span style="color:blue"><span class="math notranslate nohighlight">\(\beta_{\rm{smoke}}\)</span> Z-test的p-value=0.4149: 表示抽煙狀態對於預測中風，沒有前面幾個變數來的重要</span></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="model-selection-with-without-smoke-status">
+<h4>Model Selection: with/without smoke status<a class="headerlink" href="#model-selection-with-without-smoke-status" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><span style="color:blue"> 為了決定是否要將smoke status考慮進去最後的模型，我們用likelihood-ratio test做Model Selection</span></p></li>
+<li><p>Full Model:
+$<span class="math notranslate nohighlight">\(
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{marry}}x_{\rm{marry}} + \beta_{\rm{Former-smoke}}x_{\rm{Former-smoke}} + \beta_{\rm{smoke}}x_{\rm{smoke}}
+\)</span>$</p></li>
+<li><p>Reduced Model:
+$<span class="math notranslate nohighlight">\(
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{marry}}x_{\rm{marry}}
+\)</span>$</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_full</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">hypertension</span> <span class="o">+</span> <span class="n">heart_disease</span> <span class="o">+</span> <span class="n">ever_married</span> <span class="o">+</span> <span class="n">smoking_status</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_full</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ hypertension + heart_disease + ever_married + 
+    smoking_status, family = binomial(link = &quot;logit&quot;), data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.9457  -0.3195  -0.2799  -0.2228   2.8188  
+
+Coefficients:
+                              Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)                    -3.9539     0.2399 -16.479  &lt; 2e-16 ***
+hypertension                    1.1381     0.1748   6.510 7.52e-11 ***
+heart_disease                   1.2388     0.2099   5.902 3.60e-09 ***
+ever_marriedYes                 0.7338     0.2451   2.994  0.00275 ** 
+smoking_statusformerly smoked   0.2704     0.1824   1.482  0.13822    
+smoking_statussmokes            0.0779     0.2036   0.383  0.70202    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1311.8  on 3419  degrees of freedom
+AIC: 1323.8
+
+Number of Fisher Scoring iterations: 6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_reduce</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">hypertension</span> <span class="o">+</span> <span class="n">heart_disease</span> <span class="o">+</span> <span class="n">ever_married</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_reduce</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ hypertension + heart_disease + ever_married, 
+    family = binomial(link = &quot;logit&quot;), data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.8899  -0.2930  -0.2930  -0.2013   2.7961  
+
+Coefficients:
+                Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)      -3.8888     0.2308 -16.852  &lt; 2e-16 ***
+hypertension      1.1373     0.1746   6.513 7.37e-11 ***
+heart_disease     1.2674     0.2085   6.080 1.20e-09 ***
+ever_marriedYes   0.7621     0.2443   3.120  0.00181 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1313.9  on 3421  degrees of freedom
+AIC: 1321.9
+
+Number of Fisher Scoring iterations: 6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="likelihood-ratio-test">
+<h5>Likelihood-Ratio Test<a class="headerlink" href="#likelihood-ratio-test" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>Full Model與Reduced Model的差異可以轉換成  <span class="math notranslate nohighlight">\(H_0: \beta_{\rm{Former-smoke}} = \beta_{\rm{smoke}}= 0\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">anova</span><span class="p">(</span><span class="n">model_reduce</span><span class="p">,</span> <span class="n">model_full</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="s">&quot;LRT&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>Resid. Df</th><th scope=col>Resid. Dev</th><th scope=col>Df</th><th scope=col>Deviance</th><th scope=col>Pr(&gt;Chi)</th></tr></thead>
+<tbody>
+	<tr><td>3421     </td><td>1313.945 </td><td>NA       </td><td>      NA </td><td>       NA</td></tr>
+	<tr><td>3419     </td><td>1311.770 </td><td> 2       </td><td>2.175009 </td><td>0.3370566</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<ul class="simple">
+<li><p>根據Deviance的p-value=0.3370</p>
+<ul>
+<li><p><span style="color:blue"> 不能拒絕 <span class="math notranslate nohighlight">\(H_0\)</span>，所以Final Model將不考慮”抽煙狀態”的變數</span></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="final-model">
+<h4>Final Model<a class="headerlink" href="#final-model" title="Permalink to this headline">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{marry}}x_{\rm{marry}}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">model_reduce</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ hypertension + heart_disease + ever_married, 
+    family = binomial(link = &quot;logit&quot;), data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.8899  -0.2930  -0.2930  -0.2013   2.7961  
+
+Coefficients:
+                Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)      -3.8888     0.2308 -16.852  &lt; 2e-16 ***
+hypertension      1.1373     0.1746   6.513 7.37e-11 ***
+heart_disease     1.2674     0.2085   6.080 1.20e-09 ***
+ever_marriedYes   0.7621     0.2443   3.120  0.00181 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1313.9  on 3421  degrees of freedom
+AIC: 1321.9
+
+Number of Fisher Scoring iterations: 6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h5>模型解釋:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
+<p>由於這三個解釋變數都是類別型，我們可以用final model來探討不同的狀況</p>
+<ul class="simple">
+<li><p>例如: 最左邊的藍色點，代表的是 “沒有結婚” “沒有高血壓” “沒有心臟病”的中風機率，可以看到非常的低。</p></li>
+</ul>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/cate_model_full_plot.png"><img alt="glucose_stroke" class="bg-primary mb-1 align-center" src="_images/cate_model_full_plot.png" style="width: 800px;" /></a>
+<ul class="simple">
+<li><p><span style="color:blue"> <span class="math notranslate nohighlight">\(\beta_{\rm{heartd}} &gt; \beta_{\rm{hypert}} &gt; \beta_{\rm{marry}}&gt;0\)</span></span></p>
+<ul>
+<li><p>“有高血壓”、”有心臟疾病”與”有結過婚”都會增加中風機率。如上圖最右邊灰色的點，三種狀況都有，擁有最高的中風機率</p></li>
+<li><p>有心臟病的影響是最大的，其次是高血壓，最後是結婚狀態</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<span id="document-regression_numerical"></span><div class="section" id="id1">
+<h3>迴歸分析2: 數值型變數<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>在迴歸分析的第二部份，我們將專注的探討三個數值型變數:年齡、血糖、BMI。主要的目的是了解這三個變數中哪些對中風的預測是重要的。</p>
+<div class="section" id="id2">
+<h4>讀取資料<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">strokedata</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s">&#39;../data/healthcare-dataset-stroke-data-cleanbmi.csv&#39;</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">strokedata</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>age</th><th scope=col>hypertension</th><th scope=col>heart_disease</th><th scope=col>ever_married</th><th scope=col>work_type</th><th scope=col>avg_glucose_level</th><th scope=col>bmi</th><th scope=col>smoking_status</th><th scope=col>stroke</th></tr></thead>
+<tbody>
+	<tr><td>67             </td><td>0              </td><td>1              </td><td>Yes            </td><td>Private        </td><td>228.69         </td><td>36.6           </td><td>formerly smoked</td><td>1              </td></tr>
+	<tr><td>80             </td><td>0              </td><td>1              </td><td>Yes            </td><td>Private        </td><td>105.92         </td><td>32.5           </td><td>never smoked   </td><td>1              </td></tr>
+	<tr><td>49             </td><td>0              </td><td>0              </td><td>Yes            </td><td>Private        </td><td>171.23         </td><td>34.4           </td><td>smokes         </td><td>1              </td></tr>
+	<tr><td>79             </td><td>1              </td><td>0              </td><td>Yes            </td><td>Self-employed  </td><td>174.12         </td><td>24.0           </td><td>never smoked   </td><td>1              </td></tr>
+	<tr><td>81             </td><td>0              </td><td>0              </td><td>Yes            </td><td>Private        </td><td>186.21         </td><td>29.0           </td><td>formerly smoked</td><td>1              </td></tr>
+	<tr><td>74             </td><td>1              </td><td>1              </td><td>Yes            </td><td>Private        </td><td> 70.09         </td><td>27.4           </td><td>never smoked   </td><td>1              </td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="simple-models">
+<h4>Simple Models: 只含有一個解釋變數<a class="headerlink" href="#simple-models" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="age">
+<h5>Age(年齡)<a class="headerlink" href="#age" title="Permalink to this headline">¶</a></h5>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{age}}x_{\rm{age}}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_age</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">age</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_age</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ age, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.7433  -0.3532  -0.2094  -0.1101   3.1488  
+
+Coefficients:
+             Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept) -7.386079   0.413419  -17.87   &lt;2e-16 ***
+age          0.076109   0.006051   12.58   &lt;2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1180.3  on 3423  degrees of freedom
+AIC: 1184.3
+
+Number of Fisher Scoring iterations: 7
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><span style="color:blue"> <span class="math notranslate nohighlight">\(\beta\)</span>的z-test的p-value很小，年紀對中風的預測是顯著的 </span></p></li>
+<li><p><span style="color:blue"> <span class="math notranslate nohighlight">\(\beta_{\rm{age}}=0.076 &gt; 0\)</span> : 年紀增加，中風的機率也會提升 </span></p></li>
+<li><p><span style="color:blue"> 下圖藍色線是上述模型的圖像化，可以看到大約過了六十歲，中風的機率開始快速地增高 </span></p></li>
+</ul>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/nume_model_age.png"><img alt="nume_model_age.png" class="bg-primary mb-1 align-center" src="_images/nume_model_age.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="average-glucose-level">
+<h5>Average Glucose Level(血糖)<a class="headerlink" href="#average-glucose-level" title="Permalink to this headline">¶</a></h5>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{glucose}}x_{\rm{glucose}}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_glucose</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">avg_glucose_level</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_glucose</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ avg_glucose_level, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.6637  -0.3162  -0.2829  -0.2614   2.6723  
+
+Coefficients:
+                   Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)       -4.109552   0.188746 -21.773  &lt; 2e-16 ***
+avg_glucose_level  0.010116   0.001286   7.868  3.6e-15 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1355.3  on 3423  degrees of freedom
+AIC: 1359.3
+
+Number of Fisher Scoring iterations: 6
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><span style="color:blue"> <span class="math notranslate nohighlight">\(\beta\)</span>的z-test的p-value很小，血糖對中風的預測是顯著的 </span></p></li>
+<li><p><span style="color:blue"> <span class="math notranslate nohighlight">\(\beta_{\rm{glucose}}=0.01 &gt; 0\)</span> : 血糖增加，中風的機率也會提升 </span></p></li>
+<li><p><span style="color:blue"> 下圖藍色線是上述模型的圖像化。隨著血糖增加，中風機率會增加。相比於年紀，增加的斜率比較小。表示血糖相對於年紀對於中風的影響性比較小。</span></p></li>
+</ul>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/nume_model_glucose.png"><img alt="nume_model_glucose.png" class="bg-primary mb-1 align-center" src="_images/nume_model_glucose.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="bmi">
+<h5>BMI(身體質量指數)<a class="headerlink" href="#bmi" title="Permalink to this headline">¶</a></h5>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{bmi}}x_{\rm{bmi}}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_bmi</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">bmi</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_bmi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ bmi, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.4039  -0.3322  -0.3266  -0.3221   2.4638  
+
+Coefficients:
+             Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept) -3.103070   0.321963  -9.638   &lt;2e-16 ***
+bmi          0.006932   0.010210   0.679    0.497    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1410.4  on 3423  degrees of freedom
+AIC: 1414.4
+
+Number of Fisher Scoring iterations: 5
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><span style="color:blue"> <span class="math notranslate nohighlight">\(\beta_{\rm{glucose}}=0.006 &gt; 0\)</span> : BMI增加，中風的機率也會提升 </span></p></li>
+<li><p><span style="color:blue"> <span class="math notranslate nohighlight">\(\beta\)</span>的z-test的p-value很大，BMI對中風的預測是不顯著的，我們因此在Final Model不考慮此變數 </span></p></li>
+<li><p><span style="color:blue"> 下圖藍色線是上述模型的圖像化。隨著BMI增加，中風機率非常緩慢的增加</span></p></li>
+</ul>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/nume_model_bmi.png"><img alt="nume_model_bmi" class="bg-primary mb-1 align-center" src="_images/nume_model_bmi.png" style="width: 800px;" /></a>
+</div>
+</div>
+<div class="section" id="final-model">
+<h4>Final Model:<a class="headerlink" href="#final-model" title="Permalink to this headline">¶</a></h4>
+<p>由上述簡單模型的分析，最終模型為</p>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{age}}x_{\rm{age}} + \beta_{\rm{glucose}}x_{\rm{glucose}}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">final_model</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">age</span> <span class="o">+</span> <span class="n">avg_glucose_level</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">final_model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ age + avg_glucose_level, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.9513  -0.3432  -0.1975  -0.1068   3.1971  
+
+Coefficients:
+                   Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)       -7.845280   0.434300  -18.06  &lt; 2e-16 ***
+age                0.072699   0.006177   11.77  &lt; 2e-16 ***
+avg_glucose_level  0.005443   0.001311    4.15 3.32e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1163.8  on 3422  degrees of freedom
+AIC: 1169.8
+
+Number of Fisher Scoring iterations: 7
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><span style="color:blue"> <span class="math notranslate nohighlight">\(\beta_{\rm{age}} &gt; \beta_{\rm{glucose}} &gt; 0\)</span></span></p>
+<ul>
+<li><p>年齡相較於血糖，對於中風機率的影響是比較大的</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<span id="document-regression_mix"></span><div class="section" id="id1">
+<h3>迴歸分析3: 綜合模型<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>在迴歸分析的第三部份，我們結合了前兩部份的模型。</p>
+<div class="section" id="id2">
+<h4>讀取資料<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">strokedata</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s">&#39;../data/healthcare-dataset-stroke-data-cleanbmi.csv&#39;</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">strokedata</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>age</th><th scope=col>hypertension</th><th scope=col>heart_disease</th><th scope=col>ever_married</th><th scope=col>work_type</th><th scope=col>avg_glucose_level</th><th scope=col>bmi</th><th scope=col>smoking_status</th><th scope=col>stroke</th></tr></thead>
+<tbody>
+	<tr><td>67             </td><td>0              </td><td>1              </td><td>Yes            </td><td>Private        </td><td>228.69         </td><td>36.6           </td><td>formerly smoked</td><td>1              </td></tr>
+	<tr><td>80             </td><td>0              </td><td>1              </td><td>Yes            </td><td>Private        </td><td>105.92         </td><td>32.5           </td><td>never smoked   </td><td>1              </td></tr>
+	<tr><td>49             </td><td>0              </td><td>0              </td><td>Yes            </td><td>Private        </td><td>171.23         </td><td>34.4           </td><td>smokes         </td><td>1              </td></tr>
+	<tr><td>79             </td><td>1              </td><td>0              </td><td>Yes            </td><td>Self-employed  </td><td>174.12         </td><td>24.0           </td><td>never smoked   </td><td>1              </td></tr>
+	<tr><td>81             </td><td>0              </td><td>0              </td><td>Yes            </td><td>Private        </td><td>186.21         </td><td>29.0           </td><td>formerly smoked</td><td>1              </td></tr>
+	<tr><td>74             </td><td>1              </td><td>1              </td><td>Yes            </td><td>Private        </td><td> 70.09         </td><td>27.4           </td><td>never smoked   </td><td>1              </td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="model-1-categorical-numerical">
+<h4>Model 1: Categorical + Numerical<a class="headerlink" href="#model-1-categorical-numerical" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><span style="color:blue"> 在類別型的分析中: 高血壓、心臟病與結婚狀態 </span></p></li>
+<li><p><span style="color:blue"> 在數值型的分析中: 年齡、血糖</span></p></li>
+<li><p><span style="color:blue"> 因此，我們提出了以下的模型</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{marry}}x_{\rm{marry}}+ \beta_{\rm{age}}x_{\rm{age}} + \beta_{\rm{glucose}}x_{\rm{glucose}}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model1</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">hypertension</span> <span class="o">+</span> <span class="n">heart_disease</span> <span class="o">+</span> <span class="n">ever_married</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="n">avg_glucose_level</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ hypertension + heart_disease + ever_married + 
+    age + avg_glucose_level, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.2018  -0.3344  -0.1915  -0.1090   3.2072  
+
+Coefficients:
+                   Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)       -7.526184   0.470428 -15.999  &lt; 2e-16 ***
+hypertension       0.567110   0.181509   3.124 0.001782 ** 
+heart_disease      0.449095   0.216933   2.070 0.038433 *  
+ever_marriedYes   -0.153133   0.260976  -0.587 0.557358    
+age                0.068184   0.006361  10.720  &lt; 2e-16 ***
+avg_glucose_level  0.004733   0.001336   3.542 0.000398 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1149.6  on 3419  degrees of freedom
+AIC: 1161.6
+
+Number of Fisher Scoring iterations: 7
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><span style="color:blue"> 高血壓、心臟病、年齡、血糖的<span class="math notranslate nohighlight">\(\beta\)</span>都大於零，表示這幾個因素都是中風的負面因子，與前面的分析一致</span></p></li>
+<li><p><span style="color:red"> <span class="math notranslate nohighlight">\(\beta_{\rm{marry}}&lt;0\)</span>表示結婚會降低中風的機率，這與前面的分析矛盾。我們認為婚姻背後的confounding factor是年齡，會在下個部份討論</span></p></li>
+<li><p><span style="color:blue"> 此外，<span class="math notranslate nohighlight">\(\beta_{\rm{marry}}\)</span> 的z-test p-value大，表示無法拒絕 <span class="math notranslate nohighlight">\(H_0: \beta_{\rm{marry}} = 0\)</span></span></p></li>
+</ul>
+</div>
+<div class="section" id="model-2">
+<h4>Model 2<a class="headerlink" href="#model-2" title="Permalink to this headline">¶</a></h4>
+<p>在Model 1中，我們發現無法拒絕 <span class="math notranslate nohighlight">\(H_0: \beta_{\rm{marry}} = 0\)</span>，因此提出了下面的模型，並會用Deviance來比較Model 1 跟 Model 2</p>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{age}}x_{\rm{age}} + \beta_{\rm{glucose}}x_{\rm{glucose}}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model2</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">hypertension</span> <span class="o">+</span> <span class="n">heart_disease</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="n">avg_glucose_level</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ hypertension + heart_disease + age + avg_glucose_level, 
+    family = binomial(link = &quot;logit&quot;), data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.1420  -0.3358  -0.1927  -0.1074   3.1975  
+
+Coefficients:
+                   Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)       -7.632239   0.439507 -17.365  &lt; 2e-16 ***
+hypertension       0.568359   0.181384   3.133 0.001728 ** 
+heart_disease      0.453716   0.216659   2.094 0.036247 *  
+age                0.067765   0.006359  10.656  &lt; 2e-16 ***
+avg_glucose_level  0.004701   0.001334   3.524 0.000425 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1149.9  on 3420  degrees of freedom
+AIC: 1159.9
+
+Number of Fisher Scoring iterations: 7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="likelihood-ratio-test">
+<h5>Likelihood-Ratio Test<a class="headerlink" href="#likelihood-ratio-test" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>Full Model與Reduced Model的差異可以轉換成 <span class="math notranslate nohighlight">\(H_0: \beta_{\rm{marry}} = 0\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">anova</span><span class="p">(</span><span class="n">model1</span><span class="p">,</span> <span class="n">model2</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="s">&quot;LRT&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>Resid. Df</th><th scope=col>Resid. Dev</th><th scope=col>Df</th><th scope=col>Deviance</th><th scope=col>Pr(&gt;Chi)</th></tr></thead>
+<tbody>
+	<tr><td>3419      </td><td>1149.567  </td><td>NA        </td><td>        NA</td><td>      NA  </td></tr>
+	<tr><td>3420      </td><td>1149.903  </td><td>-1        </td><td>-0.3352499</td><td>0.562584  </td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<ul class="simple">
+<li><p>根據Deviance的p-value=0.5626</p>
+<ul>
+<li><p><span style="color:blue">不能拒絕 <span class="math notranslate nohighlight">\(H_0\)</span>，所以我們選擇Model 2當作Final Model</span></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="final-model">
+<h4>Final Model<a class="headerlink" href="#final-model" title="Permalink to this headline">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{age}}x_{\rm{age}} + \beta_{\rm{glucose}}x_{\rm{glucose}}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">model2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ hypertension + heart_disease + age + avg_glucose_level, 
+    family = binomial(link = &quot;logit&quot;), data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.1420  -0.3358  -0.1927  -0.1074   3.1975  
+
+Coefficients:
+                   Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)       -7.632239   0.439507 -17.365  &lt; 2e-16 ***
+hypertension       0.568359   0.181384   3.133 0.001728 ** 
+heart_disease      0.453716   0.216659   2.094 0.036247 *  
+age                0.067765   0.006359  10.656  &lt; 2e-16 ***
+avg_glucose_level  0.004701   0.001334   3.524 0.000425 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1149.9  on 3420  degrees of freedom
+AIC: 1159.9
+
+Number of Fisher Scoring iterations: 7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h5>Final Model圖像化與討論<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<p>以下四張圖，是我們將Final Model圖像化。四張圖對應到四組血糖(80,110,150,200)。每一張圖的橫軸是age，一張圖裏面的四條線分別對應到高血壓與心臟病的不同狀況。</p>
+<ul class="simple">
+<li><p><span style="color:blue">年齡的影響大約是在50-60歲之後開始增加中風的機率</span></p></li>
+<li><p><span style="color:blue">高血壓與心臟病的影響是差不多的。對於年紀大的人，兩者都有(紅色線)對比於兩者都沒有(藍色線)，中風的機率大概相差0.2</span></p></li>
+<li><p><span style="color:blue">比較四張圖，血糖的影響沒這麼大。對於年紀大的人，血糖250對比於血糖80，中風的機率大概相差0.1</span></p></li>
+</ul>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/regr_final_model_glu_80.png"><img alt="regr_final_model_glu_80" class="bg-primary mb-1 align-center" src="_images/regr_final_model_glu_80.png" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/regr_final_model_glu_110.png"><img alt="regr_final_model_glu_110" class="bg-primary mb-1 align-center" src="_images/regr_final_model_glu_110.png" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/regr_final_model_glu_150.png"><img alt="regr_final_model_glu_110" class="bg-primary mb-1 align-center" src="_images/regr_final_model_glu_150.png" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/regr_final_model_glu_200.png"><img alt="regr_final_model_glu_110" class="bg-primary mb-1 align-center" src="_images/regr_final_model_glu_200.png" style="width: 800px;" /></a>
+</div>
+</div>
+<div class="section" id="id4">
+<h4>討論: 結婚狀態與年齡<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>類別型簡單模型的分析指出有結婚的人，中風的機率會提升，且顯著性高。不過，在上面的Model 1，則說有結婚的人，中風的機率會下降，而且顯著性下降很多。我們直覺上認為有結婚與沒結婚這個資訊含有年齡的資訊。<br />
+<span style="color:blue">因此，我們以下面四個模型來看是哪個變數造成<span class="math notranslate nohighlight">\(\beta_{\rm{marry}}\)</span>變號</span></p>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{marry}}x_{\rm{marry}}+ \beta_{\rm{hypert}}x_{\rm{hypert}}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_age_hypert</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">ever_married</span> <span class="o">+</span> <span class="n">hypertension</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_age_hypert</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ ever_married + hypertension, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.5655  -0.3119  -0.3119  -0.2091   2.7691  
+
+Coefficients:
+                Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)      -3.8122     0.2283 -16.695  &lt; 2e-16 ***
+ever_marriedYes   0.8133     0.2431   3.345 0.000822 ***
+hypertension      1.2465     0.1714   7.271 3.58e-13 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1344.7  on 3422  degrees of freedom
+AIC: 1350.7
+
+Number of Fisher Scoring iterations: 6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{marry}}x_{\rm{marry}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_age_heartd</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">ever_married</span> <span class="o">+</span> <span class="n">heart_disease</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_age_heartd</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ ever_married + heart_disease, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.6412  -0.3273  -0.3273  -0.2130   2.7560  
+
+Coefficients:
+                Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)      -3.7752     0.2277 -16.579  &lt; 2e-16 ***
+ever_marriedYes   0.8751     0.2422   3.614 0.000302 ***
+heart_disease     1.4225     0.2036   6.987  2.8e-12 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1351.2  on 3422  degrees of freedom
+AIC: 1357.2
+
+Number of Fisher Scoring iterations: 6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{marry}}x_{\rm{marry}}+ \beta_{\rm{age}}x_{\rm{age}}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_age_marry</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">ever_married</span> <span class="o">+</span> <span class="n">age</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_age_marry</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ ever_married + age, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.7898  -0.3501  -0.2070  -0.1125   3.1579  
+
+Coefficients:
+                Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)     -7.27687    0.44943 -16.191   &lt;2e-16 ***
+ever_marriedYes -0.15000    0.25746  -0.583     0.56    
+age              0.07648    0.00605  12.642   &lt;2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1180.0  on 3422  degrees of freedom
+AIC: 1186
+
+Number of Fisher Scoring iterations: 7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{marry}}x_{\rm{marry}} + \beta_{\rm{glucose}}x_{\rm{glucose}}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_age_glc</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">ever_married</span> <span class="o">+</span> <span class="n">avg_glucose_level</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_age_glc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ ever_married + avg_glucose_level, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.6736  -0.3292  -0.2946  -0.2381   2.8574  
+
+Coefficients:
+                   Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)       -4.685927   0.270481 -17.324  &lt; 2e-16 ***
+ever_marriedYes    0.801892   0.243289   3.296 0.000981 ***
+avg_glucose_level  0.009397   0.001294   7.263  3.8e-13 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1342.3  on 3422  degrees of freedom
+AIC: 1348.3
+
+Number of Fisher Scoring iterations: 6
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><span style="color:blue">跟我們的猜想一樣，是”年齡”造成<span class="math notranslate nohighlight">\(\beta_{\rm{marry}}\)</span>變號與不顯著的</span></p></li>
+<li><p><span style="color:blue">所以當我們在簡單模型裡只考慮婚姻這個參數時，年齡是背後的Confounding factor</span></p>
+<ul>
+<li><p><span style="color:blue">結婚的人通常年紀比較大，因此容易中風。年紀小則反之。</span></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<span id="document-clustering"></span><div class="section" id="cluster-analysis">
+<h3>Cluster analysis: 測試與中風組內分群<a class="headerlink" href="#cluster-analysis" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h4>資料前置處理<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id2">
+<h5>隨機抽樣<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+<ol class="simple">
+<li><p>將中風的人分組看關聯性，但是如果做180個人可能會跑出密密麻麻的樹，所以我們從中抽20人，如下</p>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/NQ4NJXL.jpg" /></p></li>
+</ul>
+</li>
+<li><p>並把數值跟類別變數換成成二元變數。</p></li>
+<li><p>分組依據: 參考前面分類，大致分成正常跟不正常。</p></li>
+<li><p>只有工作型態把兒童跟工作者分開。</p></li>
+</ol>
+<div class="section" id="id3">
+<h6>轉換後的資料：<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h6>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/nYT6ZYx.png" /></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h4>相似矩陣與距離矩陣<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>根據12章講義，我是用<span class="math notranslate nohighlight">\(\frac{a+d}{p}\)</span>的公式，也就是把兩個人相同的變數數量除以總變數量，在這裡總共有8個變數，所以是除以8就是兩個人之間的相似度。距離矩陣就是用1去減相似度矩陣得到的。</p>
+</div>
+<div class="section" id="id5">
+<h4>群聚樹<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id6">
+<h5>最大距離:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/uROuQjN.png" /></p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h5>平均距離：<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/Bv95vx7.png" /></p></li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h5>最小距離：<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/tDTuB0s.png" /></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id9">
+<h4>分析<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="complete-linkage">
+<h5>Complete-linkage<a class="headerlink" href="#complete-linkage" title="Permalink to this headline">¶</a></h5>
+<p><img alt="" src="https://i.imgur.com/CLfsYmG.png" /></p>
+<ul class="simple">
+<li><p>依照Complete-linkage cluster dendrogram可大致分成五群，以下為各群的詳細抽樣內容說明：</p>
+<ul>
+<li><p><font color="#3433FF">第一群：共通點為「無心臟疾病、大於50歲、已婚、有工作、BMI異常」</font></p>
+<ol class="simple">
+<li><p>第一層有兩小群：兩小群合併於第三層，一個差異在於<font color="#9133FF">”血糖是否正常“</font></p>
+<ul>
+<li><p>(8, 1, 7): 高血壓、無心臟疾病、大於50歲、已婚、有工作、血糖正常、BMI異常、有抽煙史</p></li>
+<li><p>(17, 5, 15): 高血壓、無心臟疾病、大於50歲、已婚、有工作、血糖異常、BMI異常、有抽煙史</p></li>
+</ul>
+</li>
+<li><p>第二層：(2)與(8, 1, 7)合併，一個差異在於<font color="#9133FF">”有無高血壓“</font></p>
+<ul>
+<li><p>(2): 無高血壓、無心臟疾病、大於50歲、已婚、有工作、血糖正常、BMI異常、有抽煙史</p></li>
+</ul>
+</li>
+<li><p>第三層：(6)與(2, 8, 1, 7)和(17, 5, 15)合併，三個差異在於<font color="#9133FF">“有無高血壓”、“血糖是否正常”、“有無抽菸史”</font></p>
+<ul>
+<li><p>(6): 高血壓、無心臟疾病、大於50歲、已婚、有工作、血糖正常、BMI異常、無抽煙史</p></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><font color="#3433FF">第二群：共通點為「高血壓、無心臟疾病、大於50歲、已婚、有工作、血糖異常、無抽煙史」</font></p>
+<ol class="simple">
+<li><p>第一層：</p>
+<ul>
+<li><p>(3, 10): 高血壓、無心臟疾病、大於50歲、已婚、有工作、血糖異常、BMI正常、無抽煙史</p></li>
+</ul>
+</li>
+<li><p>第二層：(18)與(3, 10)合併，一個差異在於<font color="#9133FF">“BMI是否正常”</font></p>
+<ul>
+<li><p>(18): 高血壓、無心臟疾病、大於50歲、已婚、有工作、血糖異常、BMI異常、無抽煙史</p></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><font color="#3433FF">第三群：共通點為「無高血壓、大於50歲、已婚、有工作、血糖異常、BMI異常、有抽煙史」</font></p>
+<ol class="simple">
+<li><p>第一層有兩小群：兩小群合併於第二層，一個差異在於<font color="#9133FF">“有無心臟疾病”</font></p>
+<ul>
+<li><p>(4, 16): 無高血壓、有心臟疾病、大於50歲、已婚、有工作、血糖異常、BMI異常、有抽煙史</p></li>
+<li><p>(20, 14, 12, 13): 無高血壓、無心臟疾病、大於50歲、已婚、有工作、血糖異常、BMI異常、有抽煙史</p></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><font color="F83344">以上，第一、二、三群合併於第四層，共通點為「大於50歲、已婚、有工作」</font></p></li>
+<li><p><font color="#3433FF">第四群：共通點為「高血壓、有心臟疾病、大於50歲、未婚、有工作、BMI正常、有抽煙史」</font></p>
+<ol class="simple">
+<li><p>第一層：在整體的第二層出現，一個差異在於<font color="#9133FF">“血糖是否異常”</font></p>
+<ul>
+<li><p>(9): 高血壓、有心臟疾病、大於50歲、未婚、有工作、血糖異常、BMI正常、有抽煙</p></li>
+<li><p>(19): 高血壓、有心臟疾病、大於50歲、未婚、有工作、血糖正常、BMI正常、有抽煙</p></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><font color="F83344">以上，第四群與第一、二、三群合併於第五層，共通點為「大於50歲、有工作」</font></p></li>
+<li><p><font color="#3433FF">第五群：</font></p>
+<ol class="simple">
+<li><p>第一層：只有一位</p>
+<ul>
+<li><p>(11): 無高血壓、無心臟疾病、小於50歲、未婚、有工作、血糖正常、BMI正常、有抽煙史</p></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><font color="F83344">全圖，第五群與第一、二、三、四群合併於第六層，共通點為「有工作」</font></p></li>
+</ul>
+</li>
+<li><p>各群的第一個決策點：</p>
+<ol class="simple">
+<li><p>第一群中，(2)與(8, 1, 7)的決策為「是否有高血壓」</p></li>
+<li><p>第二群中，(18)與(3, 10)的決策為「BMI是否正常」</p></li>
+<li><p>第三群中，(4, 16)與(20, 14, 12, 13)的決策為「有無心臟疾病」</p></li>
+<li><p>第四群中，(9)與(19)的決策為「是否有高血壓」</p></li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="section" id="average-linkage">
+<h5>Average-linkage<a class="headerlink" href="#average-linkage" title="Permalink to this headline">¶</a></h5>
+<p><img alt="" src="https://i.imgur.com/YEtZkus.png" /></p>
+<ul class="simple">
+<li><p>在Average-linkage cluster dendrogram中，可以發現與Complete-linkage cluster dendrogram只有些微的不同。</p>
+<ul>
+<li><p>(6)被提出到更下一層: 代表(6)、(17, 5, 15)、(2, 8, 1, 7)這三小群的最大距離相同，但在平均距離上，(6)與其他兩小群的平均距離比(17, 5, 15)和(2, 8, 1, 7)的平均距離更大。</p></li>
+<li><p>(9, 19)也被提出到更下一層</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<span id="document-clustering_batch"></span><div class="section" id="cluster-analysis">
+<h3>Cluster analysis: 中風者與非中風者做分群<a class="headerlink" href="#cluster-analysis" title="Permalink to this headline">¶</a></h3>
+<style>
+.blue {
+    color: blue;
+}
+
+.awk {
+    color: #b6b4cf;
+}
+</style>
+<p><span class="blue"><em>在這部份，我們從中風與非中風的樣本中各隨機抽樣10人進行分群分類，觀察前面列聯表分析與回歸分析中顯示對中風具有相關性的變數，能造成中風與非中風者的分群。在分群距離計算方法中方法中，我們一開始考慮了single linkage、complete linkage、average linkage clustering，然而，single-linkage分群結果較不顯著，complete linkage與average-linkage的結果類似，我們最後採用complete linkage完成後續分析。</em></span></p>
+<div class="section" id="id1">
+<h4>中風者與非中風者各抽樣10人進行分組分析<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>隨機抽樣資料</p>
+<ul>
+<li><p>1-10號是有中風的人，11-20號是抽樣無中風的人
+<img alt="" src="https://i.imgur.com/9MD58ie.png" /></p></li>
+<li><p>原始數據
+<img alt="" src="https://i.imgur.com/Ptmqx54.png" /></p></li>
+</ul>
+</li>
+<li><p>群聚樹分析：</p>
+<ol class="simple">
+<li><p>Single-linkage cluster dendrogram
+<img alt="" src="https://i.imgur.com/xppKwGa.jpg" /></p>
+<ul>
+<li><p>用最小距離分群的結果看起來很怪異，沒有一個分群的感覺。</p></li>
+</ul>
+</li>
+<li><p>Complete-linkage cluster dendrogram
+<img alt="" src="https://i.imgur.com/43crdm1.jpg" /></p>
+<ul>
+<li><p>由上圖可以大致分成三組：
+<img alt="" src="https://i.imgur.com/MBMvqWk.jpg" /></p>
+<ol class="simple">
+<li><p>第一群：含有<font color="#F71E86">9個中風者(81.8%)</font>、<font color="#0517B7">2個無中風者(18.2%)</font>，屬「高風險族群」</p>
+<ul>
+<li><p>共通點為「大於50歲」、「已婚」、「有工作」</p></li>
+<li><p>這組混雜了較多的抽樣，因此共通點較少。但看細一點可發現此群可以再細分為三小群。若只依照這幾個健康數據分析，當中
+(1)最右邊的小群其身體狀況最差，皆為中風患者，皆有血糖異常與抽菸史
+(2)中間的小群中含有一個非中風樣本，健康狀況中等，雖也皆有血糖異常與抽菸史，但全部皆無高血壓
+(3)左邊的小群含有一個非中風樣本，身體狀況大部分正常，只有一個有BMI的問題</p></li>
+<li><p>這群較特別的是涵蓋了所有有抽菸史的樣本</p></li>
+</ul>
+</li>
+<li><p>第二群：含有<font color="#F71E86">1個中風者(25%)</font>、<font color="#0517B7">3個無中風者(75%)</font>，屬「中風險族群」</p>
+<ul>
+<li><p>共通點為「高血壓」、「大於50歲」、「有工作」、「BMI異常」、「無抽煙」</p></li>
+<li><p>雖然這群也混雜了中風與非中風樣本，但可以發現唯一的一位中風患者被分在最外層，是這群中較不一樣的，最大距離最遠。</p></li>
+</ul>
+</li>
+<li><p>第三群：含有<font color="#0517B7">5個無中風者(100%)</font>，屬「低風險族群」</p>
+<ul>
+<li><p>共通點為「無高血壓」、「無心臟疾病」、「小於50歲」、「血糖正常」、「BMI正常」、「無抽菸史」</p></li>
+<li><p>這群皆為非中風樣本，可以明顯地發現他們的身體狀況與生活型態皆較健康</p></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>綜合結果：以最大距離分群可以初略得將樣本歸類在高風險、中風險與低風險等三族群，但單以分群似乎無法作出準確的判斷是否中風</p></li>
+</ul>
+</li>
+<li><p>Average-linkage cluster dendrogram
+<img alt="" src="https://i.imgur.com/eY0RS00.jpg" /></p>
+<ul>
+<li><p>與Complete-linkage cluster dendrogram比較，大部分分群結果相似：</p>
+<ol class="simple">
+<li><p>(9)從高風險族群跑到中風險族群，但仍在較外層，因此仍然屬於中風險族群中較不健康的樣本</p></li>
+<li><p>低風險族群的樣本都沒變</p></li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="section" id="ten-trees">
+<h4>Ten Trees<a class="headerlink" href="#ten-trees" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>＊抽樣方法：從中風與非中風的兩群人中，個別隨機抽樣10組不重複的10個人。
+＊分群資料：每顆群聚樹含有中風與非中風各一組隨機抽樣樣本，共20人。
+        (1-10為有中風，11-20為沒中風)
+＊分群方法：Complete-linkage cluster dendrogram
+＊比例計算：同群裡去算多少比例有中風、多少比例沒中風。
+          例如某一個小群裡有10人(100%)，有2人中風(20%)，有8人沒中風(80%)。
+
+＊初步結論：只有Tree1, 2, 3, 8, 9有較明顯的中風與非中風分群
+</pre></div>
+</div>
+<div class="section" id="tree-1">
+<h5>Tree 1 👍<a class="headerlink" href="#tree-1" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>隨機抽樣資料：
+<img alt="" src="https://i.imgur.com/UdQGtoU.png" />
+<img alt="" src="https://i.imgur.com/maGCLmZ.png" /></p></li>
+<li><p>群聚樹分析：
+<img alt="" src="https://i.imgur.com/gmJ4fBh.jpg" /></p>
+<ul>
+<li><p>最外層可分為兩群：</p>
+<ul>
+<li><p>左：含有<font color="#F71E86">10個中風者(76.9%)</font>、<font color="#0517B7">3個無中風者(23.1%)</font></p>
+<ul>
+<li><p>共通點：已婚、有工作</p></li>
+<li><p>其他重點：92.3%大於50歲、92.3%BMI異常、84.6%有抽煙</p></li>
+</ul>
+</li>
+<li><p>右：含有<font color="#0517B7">7個無中風者(100%)</font></p>
+<ul>
+<li><p>共通點：無高血壓、無心臟疾病、有工作、血糖正常</p></li>
+<li><p>其他重點：71.4%小於50歲</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>綜合此組抽樣的數據，此群聚樹的分群重點為<font color="F83344">有無高血壓、有無心臟疾病、血糖是否正常</font>。當樣本的這三項數據皆正常時，將會被準確的分到無中風風險的族群，相反的，若是有其中一項異常則會有中風的風險。另外，左群高中風風險的族群大部分大於50歲，而右群無中風風險的族群大部分小於50歲，因此認為<font color="F83344">年齡是否大於50歲</font>也是個關鍵的變數。</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="tree-2">
+<h5>Tree 2 👍<a class="headerlink" href="#tree-2" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>隨機抽樣資料：
+<img alt="" src="https://i.imgur.com/nV5wYOP.png" />
+<img alt="" src="https://i.imgur.com/IS9pHxW.png" /></p></li>
+<li><p>群聚樹分析：
+<img alt="" src="https://i.imgur.com/kXm5XuT.jpg" /></p>
+<ul>
+<li><p>最外層可分為兩群：</p>
+<ul>
+<li><p>左：含有<font color="#F71E86">6個中風者(85.7%)</font>、<font color="#0517B7">1個無中風者(14.3%)</font></p>
+<ul>
+<li><p>共通點：大於50歲、已婚、有工作、血糖異常</p></li>
+<li><p>其他重點：71.4%BMI異常</p></li>
+</ul>
+</li>
+<li><p>右：含有<font color="#F71E86">4個中風者(30.8%)</font>、<font color="#0517B7">9個無中風者(69.2%)</font></p>
+<ul>
+<li><p>共通點：無心臟疾病、有工作、血糖正常</p></li>
+<li><p>其他重點：53.8%小於50歲、92.3%BMI異常</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>綜合此組抽樣的數據，此群聚樹的分群重點為<font color="F83344">血糖是否異常</font>。另外，在左群的皆大於50歲，而右群的一半以上小於50歲，因此<font color="F83344">年齡是否大於50歲</font>似乎也是分群的潛在關鍵因素之一。</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="tree-3">
+<h5>Tree 3 👍<a class="headerlink" href="#tree-3" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>隨機抽樣資料：
+<img alt="" src="https://i.imgur.com/bBcdDZk.png" />
+<img alt="" src="https://i.imgur.com/6n9Dc0L.png" /></p></li>
+<li><p>群聚樹分析：
+<img alt="" src="https://i.imgur.com/SBXhdxe.jpg" /></p>
+<ul>
+<li><p>最外層可分為兩群：</p>
+<ul>
+<li><p>左：含有<font color="#F71E86">6個中風者(85.7%)</font>、<font color="#0517B7">1個無中風者(14.3%)</font></p>
+<ul>
+<li><p>共通點：大於50歲、已婚、有工作、BMI異常、有抽菸史</p></li>
+<li><p>其他重點：57.1%有高血壓</p></li>
+</ul>
+</li>
+<li><p>右：含有<font color="#F71E86">4個中風者(30.8%)</font>、<font color="#0517B7">9個無中風者(69.2%)</font></p>
+<ul>
+<li><p>共通點：無心臟疾病、有工作</p></li>
+<li><p>其他重點：92.3%無高血壓、53.8%無抽菸史</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>綜合此組抽樣的數據，此群聚數沒有很明顯的分群因素，但可以發現<font color="F83344">是否大於50歲、BMI是否正常、是否有抽煙史</font>是可能影響分群的關鍵變數，因當此三者同時異常時，將會被分到具有較高比例中風者的族群。另外，在未中風較多的右群中，大部分的樣本皆無高血壓，同時也都沒有心臟疾病，因此推論<font color="F83344">是否有高血壓與是否有心臟疾病</font>也是分群的潛在因素。</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="tree-4">
+<h5>Tree 4 ☠️<a class="headerlink" href="#tree-4" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>隨機抽樣資料：
+<img alt="" src="https://i.imgur.com/FHQ3MqH.png" />
+<img alt="" src="https://i.imgur.com/weam0Oa.png" /></p></li>
+<li><p>群聚樹分析：
+<img alt="" src="https://i.imgur.com/zwQnp3F.jpg" /></p>
+<ul>
+<li><p>此棵樹沒有明顯的中風與非中風分群關係</p></li>
+<li><p>最外層可分為兩群：</p>
+<ul>
+<li><p>左：含有<font color="#F71E86">2個中風者(40%)</font>、<font color="#0517B7">3個無中風者(60%)</font></p></li>
+<li><p>右：含有<font color="#F71E86">8個中風者(53.3%)</font>、<font color="#0517B7">7個無中風者(46.7%)</font></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="tree-5">
+<h5>Tree 5 ☠️<a class="headerlink" href="#tree-5" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>隨機抽樣資料：
+<img alt="" src="https://i.imgur.com/zEAqYX4.png" />
+<img alt="" src="https://i.imgur.com/OoLZ5YX.png" /></p></li>
+<li><p>群聚樹分析：
+<img alt="" src="https://i.imgur.com/RkTtwOD.jpg" /></p>
+<ul>
+<li><p>此棵樹沒有明顯的中風與非中風分群關係</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="tree-6">
+<h5>Tree 6 ☠️<a class="headerlink" href="#tree-6" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>隨機抽樣資料：
+<img alt="" src="https://i.imgur.com/SDLlOWw.png" />
+<img alt="" src="https://i.imgur.com/zcw0Dtv.png" /></p></li>
+<li><p>群聚樹分析：
+<img alt="" src="https://i.imgur.com/HNQyQaE.jpg" /></p>
+<ul>
+<li><p>此棵樹沒有明顯的中風與非中風分群關係</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="tree-7">
+<h5>Tree 7 ☠️<a class="headerlink" href="#tree-7" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>隨機抽樣資料：
+<img alt="" src="https://i.imgur.com/hQQjqJb.png" />
+<img alt="" src="https://i.imgur.com/lxPIWjj.png" /></p></li>
+<li><p>群聚樹分析：
+<img alt="" src="https://i.imgur.com/7GPOzP6.jpg" /></p>
+<ul>
+<li><p>此棵樹沒有明顯的中風與非中風分群關係</p></li>
+<li><p>最外層可分為兩群：</p>
+<ul>
+<li><p>左：含有<font color="#F71E86">7個中風者(50%)</font>、<font color="#0517B7">7個無中風者(50%)</font></p></li>
+<li><p>右：含有<font color="#F71E86">3個中風者(50%)</font>、<font color="#0517B7">3個無中風者(50%)</font></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="tree-8">
+<h5>Tree 8 👍<a class="headerlink" href="#tree-8" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>隨機抽樣資料：
+<img alt="" src="https://i.imgur.com/FoKXj3R.png" />
+<img alt="" src="https://i.imgur.com/B1pG8eg.png" /></p></li>
+<li><p>群聚樹分析：
+<img alt="" src="https://i.imgur.com/SVCuMNs.jpg" /></p>
+<ul>
+<li><p>最外層可分為兩群：</p>
+<ul>
+<li><p>左：含有<font color="#F71E86">4個中風者(100%)</font></p>
+<ul>
+<li><p>共通點：有高血壓、無心臟疾病、大於50歲、已婚、有工作</p></li>
+<li><p>其他重點：75%有抽煙史</p></li>
+</ul>
+</li>
+<li><p>右：含有<font color="#F71E86">6個中風者(37.5%)</font>、<font color="#0517B7">10個無中風者(62.5%)</font></p>
+<ul>
+<li><p>共通點：無心臟疾病、有工作、血糖正常</p></li>
+<li><p>其他重點：87.5%無高血壓、87.5%無抽菸史</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>綜合此組抽樣的數據，此群聚數的分群重點為<font color="F83344">有無高血壓、有無抽菸史</font>，因為這兩項數據在兩群中是相對立的：在左群皆是中風者的族群中皆有高血壓且高比例有抽煙史，而在右群無中風者比例較高的族群中大部分為無高血壓且無抽菸史。</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="tree-9">
+<h5>Tree 9 👍<a class="headerlink" href="#tree-9" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>隨機抽樣資料：
+<img alt="" src="https://i.imgur.com/cpTRuDx.png" />
+<img alt="" src="https://i.imgur.com/kHR84Cn.png" /></p></li>
+<li><p>群聚樹分析：
+<img alt="" src="https://i.imgur.com/AgnXfN4.jpg" /></p>
+<ul>
+<li><p>最外層可分為兩群：</p>
+<ul>
+<li><p>左：含有<font color="#0517B7">3個無中風者(100%)</font></p>
+<ul>
+<li><p>共通點：無高血壓、無心臟疾病、小於50遂、未婚、有工作、無抽菸史</p></li>
+<li><p>其他重點：66.7%BMI正常</p></li>
+</ul>
+</li>
+<li><p>右：含有<font color="#F71E86">10個中風者(58.8%)</font>、<font color="#0517B7">7個無中風者(41.2%)</font></p>
+<ul>
+<li><p>共通點：已婚、有工作</p></li>
+<li><p>其他重點：88.2%大於50歲、64.7%BMI異常</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>綜合此組抽樣的數據，此群聚數沒有很明顯的分群因素，但可以發現<font color="F83344">是否大於50歲、BMI是否正常</font>是可能影響分群的潛在因素。因左群皆為無中風族群裡的樣本皆小於50歲且高比例BMI正常，而右群中中風比例較高的族群大部分大於50歲且高比例BMI異常。</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="tree-10">
+<h5>Tree 10 ☠️<a class="headerlink" href="#tree-10" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>隨機抽樣資料：
+<img alt="" src="https://i.imgur.com/SkHF6II.png" />
+<img alt="" src="https://i.imgur.com/04hovCr.png" /></p></li>
+<li><p>群聚樹分析：
+<img alt="" src="https://i.imgur.com/q9lpaWv.jpg" /></p>
+<ul>
+<li><p>此棵樹沒有明顯的中風與非中風分群關係</p></li>
+<li><p>最外層可分為兩群：</p>
+<ul>
+<li><p>左：含有<font color="#F71E86">2個中風者(50%)</font>、<font color="#0517B7">2個無中風者(50%)</font></p></li>
+<li><p>右：含有<font color="#F71E86">8個中風者(50%)</font>、<font color="#0517B7">8個無中風者(50%)</font></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h5>總結論<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>這部分做了十次不重複抽樣的cluster analysis，想知道分群方法能否適用於分析此筆數據。</p></li>
+<li><p>從結果發現此方法沒有辦法將中風與非中風準確的分成兩群，且其中只有50%的群聚樹能夠較明顯的將中風與非中風分群。但仍然可以透過分析有較明顯分群的群聚數去與迴歸分析的結果做比較。</p></li>
+<li><p>在最終選擇的迴歸模型中，使用的變數為高血壓、心臟疾病、年齡與血糖。而在cluster analysis中，高血壓、心臟疾病、血糖、年齡、BMI、抽菸史等五個分群變數都曾出現在五顆有明顯分群的群聚樹中，其中以年齡這個變數出現的次數最多，其次為高血壓。</p></li>
+<li><p>因此，cluster analysis雖無法準確得分開中風與非中風，但是有機會能分出像高中風風險族群或低中風風險族群的分群，且分群的關鍵因素也能與最終迴歸模型取的變數相呼應。</p></li>
+</ul>
+</div>
+</div>
+</div>
+<span id="document-append_dataexplore"></span><div class="section" id="id1">
+<h3>補充:資料清理前統計分析<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<style>
+.blue {
+    color: blue;
+}
+
+.grey {
+    color: grey;
+}
+
+.awk {
+    color: #b6b4cf;
+}
+</style>
+<div class="section" id="id2">
+<h4>資料基本型態<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>資料總數: 5110個人</p></li>
+<li><p>類別型: gender, hypertension, heart_disease, ever_married, work_type, Residence_type, smoking_status, stroke</p></li>
+<li><p>數值型: age, avg_glucose_level, bmi</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h4>單變數分析: 類別型<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="gender">
+<h5>gender<a class="headerlink" href="#gender" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/gender_bar_pie.png"><img alt="gender" class="bg-primary mb-1 align-center" src="_images/gender_bar_pie.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="hypertension">
+<h5>Hypertension<a class="headerlink" href="#hypertension" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/hypert_bar_pie.png"><img alt="hypertension" class="bg-primary mb-1 align-center" src="_images/hypert_bar_pie.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="heart-disease">
+<h5>Heart Disease<a class="headerlink" href="#heart-disease" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/heartd_bar_pie.png"><img alt="heartdisease" class="bg-primary mb-1 align-center" src="_images/heartd_bar_pie.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="ever-married">
+<h5>Ever married<a class="headerlink" href="#ever-married" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/evermarry_bar_pie.png"><img alt="evermarry" class="bg-primary mb-1 align-center" src="_images/evermarry_bar_pie.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="residence-type">
+<h5>Residence type<a class="headerlink" href="#residence-type" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/resit_bar_chart.png"><img alt="residtype" class="bg-primary mb-1 align-center" src="_images/resit_bar_chart.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="stroke">
+<h5>Stroke<a class="headerlink" href="#stroke" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/stroke_bar_pie.png"><img alt="strokebar" class="bg-primary mb-1 align-center" src="_images/stroke_bar_pie.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="smoking-status">
+<h5>Smoking status<a class="headerlink" href="#smoking-status" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/smoking_bar_pie.png"><img alt="smoking" class="bg-primary mb-1 align-center" src="_images/smoking_bar_pie.png" style="width: 800px;" /></a>
+<p><span class="blue"><em>Unknown資料於使用到smoking_status的變數的類別型分析中均已剃除，值得注意的是，下面histogram紀錄所有抽菸狀態未知的資料總共1544筆，其中635筆為小於等於十六歲的樣本(虛線)，也就是說剔除的樣本約有一半屬於孩童或是青少年</em></span>
+<img alt="" src="https://i.imgur.com/qQdT9fT.png" /></p>
+</div>
+<div class="section" id="work-type">
+<h5>Work type<a class="headerlink" href="#work-type" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/worktype_bar_pie.png"><img alt="worktype" class="bg-primary mb-1 align-center" src="_images/worktype_bar_pie.png" style="width: 800px;" /></a>
+</div>
+</div>
+<div class="section" id="id4">
+<h4>單變數分析: 數值型<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id5">
+<h5>年齡<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id6">
+<h6>整體資料年齡分佈<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h6>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/age_distribution.png"><img alt="age" class="bg-primary mb-1 align-center" src="_images/age_distribution.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="id7">
+<h6>分成中風與非中風<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h6>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/mwyEex0.png"><img alt="age" class="bg-primary mb-1 align-center" src="https://i.imgur.com/mwyEex0.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="id8">
+<h6>所有中風的人:年紀與性別的分佈<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h6>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/eHOKXqd.png"><img alt="age" class="bg-primary mb-1 align-center" src="https://i.imgur.com/eHOKXqd.png" style="width: 800px;" /></a>
+</div>
+</div>
+<div class="section" id="average-glucose-level">
+<h5>Average glucose level<a class="headerlink" href="#average-glucose-level" title="Permalink to this headline">¶</a></h5>
+<p><span class="grey"><em>註: 雖然不確定收集資料時是取飯前(FPG)或是飯後血糖(OGTT)，本報告仍先採用空腹血糖做為參考標準。</em></span></p>
+<div class="section" id="id9">
+<h6>整體資料血糖分佈<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h6>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/avg_glucose_distribution.png"><img alt="avg_glucose" class="bg-primary mb-1 align-center" src="_images/avg_glucose_distribution.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="id10">
+<h6>分成中風與非中風<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h6>
+<ul class="simple">
+<li><p>下圖呈現條件機率 <span class="math notranslate nohighlight">\(P(\text{stroke}|\text{Glu:group})\)</span> 與 <span class="math notranslate nohighlight">\(P(\text{Non-stroke}|\text{Glu:group})\)</span></p></li>
+<li><p><img alt="" src="https://i.imgur.com/Wf9P7xi.png" /></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="bmi">
+<h5>BMI<a class="headerlink" href="#bmi" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id11">
+<h6>整體資料BMI分佈<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h6>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/bmi_distribution.png"><img alt="bmi_distribution" class="bg-primary mb-1 align-center" src="_images/bmi_distribution.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="id12">
+<h6>分成中風與非中風<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h6>
+<ul class="simple">
+<li><p>下圖呈現條件機率 <span class="math notranslate nohighlight">\(P(\text{stroke}|\text{BMI:group})\)</span> 與 <span class="math notranslate nohighlight">\(P(\text{Non-stroke}|\text{BMI:group})\)</span></p></li>
+<li><p><img alt="" src="https://i.imgur.com/DMvA9b9.png" /></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="id13">
+<h4>資料綜觀<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<p><img alt="" src="https://i.imgur.com/dwN9pcL.png" /></p>
+</div>
+</div>
+<span id="document-interaction1"></span><div class="section" id="id1">
+<h3>補充: 因素之間交互作用<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h4>其他因素與心臟病的關聯<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id3">
+<h5>心臟病與性別<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="odds-ratio">
+<h6>Odds Ratio<a class="headerlink" href="#odds-ratio" title="Permalink to this headline">¶</a></h6>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/k7QT2XQ.png" /></p></li>
+<li><p>Odds ratio <span class="math notranslate nohighlight">\(\hat{\theta}=2.129\)</span></p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(0.509, 1.002)\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="chi-square">
+<h6>Chi-square<a class="headerlink" href="#chi-square" title="Permalink to this headline">¶</a></h6>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Female</p></th>
+<th class="head"><p>Male</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HeartD</p></td>
+<td><p>113</p></td>
+<td><p>162</p></td>
+<td><p>206</p></td>
+</tr>
+<tr class="row-odd"><td><p>Normal</p></td>
+<td><p>2881</p></td>
+<td><p>1952</p></td>
+<td><p>3112</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p>2994</p></td>
+<td><p>2114</p></td>
+<td><p>5108</p></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p>gender of others were not included</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X^2\)</span> = 36.031,  df = 1,  p-value = 1.942e-09</p>
+<ul>
+<li><p>故性別與心臟病關係並不獨立，與odds ratio結果相符</p></li>
+</ul>
+</li>
+<li><p>且根據residual下表顯示，女性較不容易罹患心臟疾病，男性則有較高機會罹患心臟病</p></li>
+</ul>
+<ul>
+<li><p>round(result_cvdGender$residuals, 3)</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Female</p></th>
+<th class="head"><p>Male</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HeartD</p></td>
+<td><p>-3.796</p></td>
+<td><p>4.517</p></td>
+</tr>
+<tr class="row-odd"><td><p>Normal</p></td>
+<td><p>0.905</p></td>
+<td><p>-1.077</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id4">
+<h5>心臟病與居住環境<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id5">
+<h6>Odds Ratio<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h6>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/tdhkXh9.png" /></p></li>
+<li><p>Odds ratio <span class="math notranslate nohighlight">\(\hat{\theta}=0.973\)</span></p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(-0.270, 0.215)\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h6>Chi-square<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h6>
+<ul class="simple">
+<li><p>以下範圍為年紀&gt;=16之統計</p></li>
+</ul>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Residence</p></th>
+<th class="head"><p>Rural</p></th>
+<th class="head"><p>Urban</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HeartD</p></td>
+<td><p>134</p></td>
+<td><p>141</p></td>
+<td><p>275</p></td>
+</tr>
+<tr class="row-odd"><td><p>normal</p></td>
+<td><p>2013</p></td>
+<td><p>2078</p></td>
+<td><p>4091</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p>2147</p></td>
+<td><p>2219</p></td>
+<td><p>4366</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X^2\)</span> = 0.0083308,  df = 1,  p-value = 0.9273</p></li>
+<li><p>故居住地與心臟病關係並<strong>無顯著相關性</strong>，與odds ratio結果相符</p></li>
+</ul>
+<blockquote>
+<div><p>若將資料涵蓋小於16歲的樣本，也可見同樣的趨勢</p>
+</div></blockquote>
+<ul>
+<li><p>round(result_CVDresid$residuals, 3)</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Residence</p></th>
+<th class="head"><p>Rural</p></th>
+<th class="head"><p>Urban</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HeartD</p></td>
+<td><p>-0.106</p></td>
+<td><p>0.104</p></td>
+</tr>
+<tr class="row-odd"><td><p>Normal</p></td>
+<td><p>0.027</p></td>
+<td><p>-0.027</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id7">
+<h5>心臟病與婚姻<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id8">
+<h6>Odds Ratio<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h6>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/E0kh7xu.png" /></p></li>
+<li><p>Odds ratio <span class="math notranslate nohighlight">\(\hat{\theta}=  4.231\)</span></p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(1.069, 1.816)\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h6>Chi-square<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h6>
+<ul class="simple">
+<li><p>以下範圍為年紀&gt;=16之統計</p></li>
+</ul>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>EverMarr</p></th>
+<th class="head"><p>Yes</p></th>
+<th class="head"><p>No</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HeartD</p></td>
+<td><p>244</p></td>
+<td><p>31</p></td>
+<td><p>275</p></td>
+</tr>
+<tr class="row-odd"><td><p>normal</p></td>
+<td><p>3109</p></td>
+<td><p>982</p></td>
+<td><p>4091</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p>206</p></td>
+<td><p>3113</p></td>
+<td><p>4366</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X^2\)</span> = 22.73,  df = 1,  p-value = 1.864e-06
+-故結婚經驗有否與心臟病關係並不獨立，與odds ratio結果相符，且根據residual下表顯示，有婚姻經驗較容易罹患心臟病</p></li>
+</ul>
+<ul>
+<li><p>round(result_cvdGender$residuals, 3)</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>EverMarr</p></th>
+<th class="head"><p>Yes</p></th>
+<th class="head"><p>No</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HeartD</p></td>
+<td><p>2.257</p></td>
+<td><p>-4.107</p></td>
+</tr>
+<tr class="row-odd"><td><p>Normal</p></td>
+<td><p>-0.585</p></td>
+<td><p>1.065</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id10">
+<h5>心臟病與高血壓<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id11">
+<h6>Odds Ratio<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h6>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/yRSczJF.png" /></p></li>
+<li><p>Odds ratio <span class="math notranslate nohighlight">\(\hat{\theta}=3.061\)</span></p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(0.822, 1.415)\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h6>Chi-square<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h6>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Residence</p></th>
+<th class="head"><p>Hyper</p></th>
+<th class="head"><p>Normal</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HeartD</p></td>
+<td><p>64</p></td>
+<td><p>434</p></td>
+<td><p>498</p></td>
+</tr>
+<tr class="row-odd"><td><p>normal</p></td>
+<td><p>212</p></td>
+<td><p>4400</p></td>
+<td><p>4612</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p>276</p></td>
+<td><p>4834</p></td>
+<td><p>5110</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X^2\)</span> = 58.337,  df = 1,  p-value = 2.209e-14</p></li>
+<li><p>故高血壓與心臟病關係<strong>具顯著相關性</strong>，與odds ratio結果相符，且具高血壓的患者易伴隨有心臟病。</p></li>
+</ul>
+<ul>
+<li><p>round(result_HDhyper$residuals, 3)</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Residence</p></th>
+<th class="head"><p>Hyper</p></th>
+<th class="head"><p>Normal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HeartD</p></td>
+<td><p>7.154</p></td>
+<td><p>-1.709</p></td>
+</tr>
+<tr class="row-odd"><td><p>Normal</p></td>
+<td><p>-2.351</p></td>
+<td><p>0.562</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id13">
+<h5>心臟病與抽煙<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id14">
+<h6>Odds Ratio<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h6>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/YNKlrv7.png" /></p></li>
+<li><p>Odds ratio <span class="math notranslate nohighlight">\(\hat{\theta}=1.799\)</span></p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(0.313, 0.861)\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="id15">
+<h6>Chi-square<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h6>
+<blockquote>
+<div><p>smoking status of unknown is removed</p>
+</div></blockquote>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>smoking</p></th>
+<th class="head"><p>smokes</p></th>
+<th class="head"><p>formerly</p></th>
+<th class="head"><p>never</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HeartD</p></td>
+<td><p>61</p></td>
+<td><p>77</p></td>
+<td><p>90</p></td>
+<td><p>228</p></td>
+</tr>
+<tr class="row-odd"><td><p>Normal</p></td>
+<td><p>728</p></td>
+<td><p>808</p></td>
+<td><p>1802</p></td>
+<td><p>3338</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p>789</p></td>
+<td><p>885</p></td>
+<td><p>1892</p></td>
+<td><p>3566</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X^2\)</span> = 18.698,  df = 2,  p-value = 8.707e-05</p></li>
+<li><p>故抽菸習慣與心臟病關係<strong>具顯著相關性</strong>，與odds ratio結果相符，由residual觀察曾有抽菸習慣者，甚至比正在抽菸者有更高機會罹患心臟病，與中風傾向相同。</p></li>
+</ul>
+<ul>
+<li><p>round(result_HDsmoke$residuals, 3)</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>smoking</p></th>
+<th class="head"><p>smokes</p></th>
+<th class="head"><p>formerly</p></th>
+<th class="head"><p>never</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HeartD</p></td>
+<td><p>1.486</p></td>
+<td><p>2.714</p></td>
+<td><p>-2.816</p></td>
+</tr>
+<tr class="row-odd"><td><p>Normal</p></td>
+<td><p>-0.388</p></td>
+<td><p>-0.709</p></td>
+<td><p>0.736</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="id16">
+<h4>其他因素與婚姻的關聯<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id17">
+<h5>婚姻與性別<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id18">
+<h6>Odds Ratio<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h6>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/FHIOPXF.png" /></p></li>
+<li><p>Odds ratio <span class="math notranslate nohighlight">\(\hat{\theta}= 0.879\)</span>，表示<strong>婚姻與性別有相關</strong>。</p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(-0.245, -0.012)\)</span></p>
+<ul>
+<li><p>95%的信賴區間不包含0</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id19">
+<h6>Chi-square<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h6>
+<blockquote>
+<div><p>remove the gender of others</p>
+</div></blockquote>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>gender</p></th>
+<th class="head"><p>Female</p></th>
+<th class="head"><p>Male</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Married</p></td>
+<td><p>2001</p></td>
+<td><p>1352</p></td>
+<td><p>3353</p></td>
+</tr>
+<tr class="row-odd"><td><p>NevMarr</p></td>
+<td><p>1352</p></td>
+<td><p>370</p></td>
+<td><p>1012</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p>2643</p></td>
+<td><p>1722</p></td>
+<td><p>4365</p></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(X^2\)</span> = 4.4469, df = 1, p-value = 0.03497</p>
+<ul>
+<li><p>round(result_MarGender$residuals, 3)</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>gender</p></th>
+<th class="head"><p>Female</p></th>
+<th class="head"><p>Male</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Married</p></td>
+<td><p>-0.649</p></td>
+<td><p>0.804</p></td>
+</tr>
+<tr class="row-odd"><td><p>NevMarr</p></td>
+<td><p>1.181</p></td>
+<td><p>-1.463</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ul class="simple">
+<li><p>結果顯示<strong>婚姻與性別關係不獨立</strong>，女性較傾向單身，男性易有結婚經驗。然而須注意的是，在如此巨大的樣本數下，多種情況即便差異不大也會顯示具有統計顯著性，而在本檢定中，p-value僅稍稍小於0.05，且我們不確定採樣的母體是否位於同性婚姻合法化的地區，或是樣本是否為自願受試，而婚姻經驗又與受試意願不夠獨立。倘若同性婚姻合法為否，男女結婚狀況比例應一致，倘若為是，依據下面連結所示，女性具有婚姻經驗的結果應較高，residual應為正，故本檢定結果可能在本報告中無法被解釋。</p>
+<ul>
+<li><p><a class="reference external" href="https://www.abc.net.au/news/2019-11-29/same-sex-gay-marriage-women-more-likely-to-wed-marry/11555456">Gay marriage data shows more women are tying the knot</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id20">
+<h5>婚姻與高血壓<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id21">
+<h6>Odds Ratio<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h6>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/njZCKOB.png" /></p></li>
+<li><p>Odds ratio <span class="math notranslate nohighlight">\(\hat{\theta}= 4.920\)</span>，表示<strong>婚姻與高血壓不是獨立的</strong>。</p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(1.302, 1.884)\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="id22">
+<h6>Chi-square<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h6>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>hyperT</p></th>
+<th class="head"><p>hyperT</p></th>
+<th class="head"><p>Normal</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Married</p></td>
+<td><p>445</p></td>
+<td><p>2908</p></td>
+<td><p>3353</p></td>
+</tr>
+<tr class="row-odd"><td><p>NevMarr</p></td>
+<td><p>53</p></td>
+<td><p>960</p></td>
+<td><p>1013</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p>498</p></td>
+<td><p>3868</p></td>
+<td><p>4366</p></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(X^2\)</span> = 48.969, df = 1, p-value =2.601e-12</p>
+<ul>
+<li><p>round(result_MarHypertension$residuals, 3)</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>hyperT</p></th>
+<th class="head"><p>hyperT</p></th>
+<th class="head"><p>Normal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Married</p></td>
+<td><p>3.198</p></td>
+<td><p>-1.148</p></td>
+</tr>
+<tr class="row-odd"><td><p>NevMarr</p></td>
+<td><p>-5.819</p></td>
+<td><p>2.088</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ul class="simple">
+<li><p>結果顯示<strong>婚姻經驗與高血壓相關</strong>，婚姻經驗者傾向有高血壓。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id23">
+<h5>婚姻與抽煙<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id24">
+<h6>Odds Ratio<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h6>
+<ul class="simple">
+<li><p><img alt="" src="https://i.imgur.com/NWC2Dxp.png" /></p></li>
+<li><p>Odds ratio <span class="math notranslate nohighlight">\(\hat{\theta}= 1.609\)</span>，表示<strong>婚姻與抽煙不是獨立的</strong>。</p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(0.318, 0.633)\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="id25">
+<h6>Chi-square<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h6>
+<blockquote>
+<div><p>data with unknown smoking status were not taken into consideration</p>
+</div></blockquote>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>smoking</p></th>
+<th class="head"><p>smokes</p></th>
+<th class="head"><p>formerly</p></th>
+<th class="head"><p>never</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Married</p></td>
+<td><p>610</p></td>
+<td><p>738</p></td>
+<td><p>1362</p></td>
+<td><p>2710</p></td>
+</tr>
+<tr class="row-odd"><td><p>NevMarr</p></td>
+<td><p>176</p></td>
+<td><p>128</p></td>
+<td><p>443</p></td>
+<td><p>747</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p>786</p></td>
+<td><p>866</p></td>
+<td><p>866</p></td>
+<td><p>3457</p></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(X^2\)</span>  = 33.295, df = 2, p-value = 5.891e-08</p>
+<ul class="simple">
+<li><p>與odds ration結果相近，<strong>婚姻與抽菸習慣並不獨立</strong>，針對下表或許我們可以這樣解讀：對於曾有結婚經驗者，他們有較高機會成為成功戒菸者(formerly smoked)，對於單身者而言，則明顯較難，但他們與已婚者(或離婚失婚者相比)更有可能從未有抽菸習慣。</p></li>
+</ul>
+<ul>
+<li><p>round(result_HDsmoke$residuals, 3)</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>smoking</p></th>
+<th class="head"><p>smokes</p></th>
+<th class="head"><p>formerly</p></th>
+<th class="head"><p>never</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Married</p></td>
+<td><p>-0.248</p></td>
+<td><p>2.269</p></td>
+<td><p>-1.408</p></td>
+</tr>
+<tr class="row-odd"><td><p>NevMarr</p></td>
+<td><p>0.473</p></td>
+<td><p>-4.322</p></td>
+<td><p>2.682</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="bmi">
+<h5>婚姻與bmi<a class="headerlink" href="#bmi" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id26">
+<h6>Chi-square<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h6>
+<blockquote>
+<div><p>移除BMI unknown值</p>
+</div></blockquote>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Category</p></th>
+<th class="head"><p>BMI</p></th>
+<th class="head"><p>Married</p></th>
+<th class="head"><p>NevMarri</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>underWeight</p></td>
+<td><p>&lt;18.5</p></td>
+<td><p>26</p></td>
+<td><p>16</p></td>
+<td><p>42</p></td>
+</tr>
+<tr class="row-odd"><td><p>healthy</p></td>
+<td><p>18.5-24</p></td>
+<td><p>422</p></td>
+<td><p>285</p></td>
+<td><p>707</p></td>
+</tr>
+<tr class="row-even"><td><p>overWeight</p></td>
+<td><p>24-27</p></td>
+<td><p>584</p></td>
+<td><p>175</p></td>
+<td><p>759</p></td>
+</tr>
+<tr class="row-odd"><td><p>slightObesi</p></td>
+<td><p>27-30</p></td>
+<td><p>655</p></td>
+<td><p>165</p></td>
+<td><p>820</p></td>
+</tr>
+<tr class="row-even"><td><p>mid-Obesity</p></td>
+<td><p>30-35</p></td>
+<td><p>793</p></td>
+<td><p>165</p></td>
+<td><p>958</p></td>
+</tr>
+<tr class="row-odd"><td><p>heaviObesi</p></td>
+<td><p>&gt;35</p></td>
+<td><p>724</p></td>
+<td><p>172</p></td>
+<td><p>896</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p></p></td>
+<td><p>3204</p></td>
+<td><p>978</p></td>
+<td><p>4182</p></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(X^2\)</span> = 152.12,  df = 5,  p-value &lt; 2.2e-16</p>
+<p>結果顯示<strong>婚姻與BMI不獨立</strong>，曾有結婚經驗者有高傾向成為肥胖，單身者同時體態健康則較為容易。–&gt;幸福肥？</p>
+<ul>
+<li><p>round(result_bmiMarital$residuals, 3)</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Category</p></th>
+<th class="head"><p>BMI</p></th>
+<th class="head"><p>Married</p></th>
+<th class="head"><p>NevMarri</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>underWeight</p></td>
+<td><p>&lt;18.5</p></td>
+<td><p>-1.089</p></td>
+<td><p>1.971</p></td>
+</tr>
+<tr class="row-odd"><td><p>healthy</p></td>
+<td><p>18.5-24</p></td>
+<td><p>-5.142</p></td>
+<td><p>9.306</p></td>
+</tr>
+<tr class="row-even"><td><p>overWeight</p></td>
+<td><p>24-27</p></td>
+<td><p>0.104</p></td>
+<td><p>-0.188</p></td>
+</tr>
+<tr class="row-odd"><td><p>slightObesi</p></td>
+<td><p>27-30</p></td>
+<td><p>1.068</p></td>
+<td><p>-1.933</p></td>
+</tr>
+<tr class="row-even"><td><p>mid-Obesity</p></td>
+<td><p>30-35</p></td>
+<td><p>2.179</p></td>
+<td><p>-3.944</p></td>
+</tr>
+<tr class="row-odd"><td><p>heaviObesi</p></td>
+<td><p>&gt;35</p></td>
+<td><p>1.433</p></td>
+<td><p>-2.593</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="bmi-age">
+<h4>BMI &amp; Age<a class="headerlink" href="#bmi-age" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id27">
+<h5>Chi-square<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>BMI的計算本不適用於嬰兒，故移除小於(含)兩歲之嬰兒，並移除BMI unknown值</p></li>
+<li><p>Since sample size of youth was too small, heavily obesity was then merged into mid-Obesity.</p></li>
+</ul>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>BMI/Age</p></th>
+<th class="head"><p>Age Range</p></th>
+<th class="head"><p>UnderWei</p></th>
+<th class="head"><p>Healthy</p></th>
+<th class="head"><p>OverWei</p></th>
+<th class="head"><p>slight Obe</p></th>
+<th class="head"><p>Obesity</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>BMI Ran</p></td>
+<td><p></p></td>
+<td><p>&lt;18.5</p></td>
+<td><p>18.5-24</p></td>
+<td><p>24-27</p></td>
+<td><p>27-30</p></td>
+<td><p>&gt;30</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>youth</p></td>
+<td><p>02 - 12</p></td>
+<td><p>186</p></td>
+<td><p>135</p></td>
+<td><p>16</p></td>
+<td><p>13</p></td>
+<td><p>10</p></td>
+<td><p>360</p></td>
+</tr>
+<tr class="row-even"><td><p>teen</p></td>
+<td><p>13 - 17</p></td>
+<td><p>31</p></td>
+<td><p>135</p></td>
+<td><p>54</p></td>
+<td><p>30</p></td>
+<td><p>57</p></td>
+<td><p>307</p></td>
+</tr>
+<tr class="row-odd"><td><p>youngAd</p></td>
+<td><p>18 - 35</p></td>
+<td><p>12</p></td>
+<td><p>276</p></td>
+<td><p>207</p></td>
+<td><p>171</p></td>
+<td><p>347</p></td>
+<td><p>1013</p></td>
+</tr>
+<tr class="row-even"><td><p>mid-Age</p></td>
+<td><p>36 - 55</p></td>
+<td><p>18</p></td>
+<td><p>194</p></td>
+<td><p>287</p></td>
+<td><p>356</p></td>
+<td><p>741</p></td>
+<td><p>1469</p></td>
+</tr>
+<tr class="row-odd"><td><p>elder</p></td>
+<td><p>56-</p></td>
+<td><p>8</p></td>
+<td><p>190</p></td>
+<td><p>247</p></td>
+<td><p>283</p></td>
+<td><p>736</p></td>
+<td><p>1591</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p></p></td>
+<td><p>255</p></td>
+<td><p>930</p></td>
+<td><p>811</p></td>
+<td><p>853</p></td>
+<td><p>1891</p></td>
+<td><p>4740</p></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(X^2\)</span> = 2194.1,  df = 16,  p-value &lt; 2.2e-16</p>
+<ul class="simple">
+<li><p>登燈，驚不驚喜？意不意外？<strong>年齡與BMI有顯著相關性</strong></p></li>
+</ul>
+<ul>
+<li><p>round(result_bmiAge$residuals, 3)</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>BMI/Age</p></th>
+<th class="head"><p>Age Range</p></th>
+<th class="head"><p>UnderWei</p></th>
+<th class="head"><p>Healthy</p></th>
+<th class="head"><p>OverWei</p></th>
+<th class="head"><p>slight Obe</p></th>
+<th class="head"><p>Obes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>BMI Ran</p></td>
+<td><p></p></td>
+<td><p>&lt;18.5</p></td>
+<td><p>18.5-24</p></td>
+<td><p>24-27</p></td>
+<td><p>27-30</p></td>
+<td><p>&gt;30</p></td>
+</tr>
+<tr class="row-odd"><td><p>youth</p></td>
+<td><p>02 - 12</p></td>
+<td><p>==37.864==</p></td>
+<td><p>==7.659==</p></td>
+<td><p>-5.810</p></td>
+<td><p>-6.434</p></td>
+<td><p>-11.150</p></td>
+</tr>
+<tr class="row-even"><td><p>teen</p></td>
+<td><p>13 - 17</p></td>
+<td><p>==3.564==</p></td>
+<td><p>==9.633==</p></td>
+<td><p>0.203</p></td>
+<td><p>-3.397</p></td>
+<td><p>-5.916</p></td>
+</tr>
+<tr class="row-odd"><td><p>youngAd</p></td>
+<td><p>18 - 35</p></td>
+<td><p>-5.757</p></td>
+<td><p>==5.479==</p></td>
+<td><p>==2.558==</p></td>
+<td><p>-0.837</p></td>
+<td><p>-2.842</p></td>
+</tr>
+<tr class="row-even"><td><p>mid-Age</p></td>
+<td><p>36 - 55</p></td>
+<td><p>-7.990</p></td>
+<td><p>-5.786</p></td>
+<td><p>-0.274</p></td>
+<td><p>==1.147==</p></td>
+<td><p>==6.401==</p></td>
+</tr>
+<tr class="row-odd"><td><p>elder</p></td>
+<td><p>56-</p></td>
+<td><p>-7.306</p></td>
+<td><p>-6.688</p></td>
+<td><p>0.896</p></td>
+<td><p>==4.118==</p></td>
+<td><p>==4.020==</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ul class="simple">
+<li><p>MURMUR: 就演化或是人類生長週期(?)的角度而言，其實這樣的分布狀況是可以理解的，青少年以前，生長快速，代謝的迅速程度讓身體無暇儲存養分，青少年後段至青壯年時期，生長停滯，且處於人生巔峰期，體態自然維持在最佳狀態，故而可見體重趨勢在青少年由過輕，漸漸往健康移動，到了中年與老年，細胞本身工作能力已降低，對於細胞本身而言，更趨向休眠狀態，更遑論已趨衰老抵抗氧化壓力等等能力大幅降低下，會自然更趨向儲存能量，故而在人體反應肥胖狀態。</p></li>
+</ul>
+</div>
+</div>
+</div>
+<span id="document-interaction2"></span><div class="section" id="id1">
+<h3>補充: 因素之間交互作用(數值型)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>在卡方檢定中，我們已經知道年齡、bmi、血糖與中風不是獨立的</p></li>
+</ul>
+<div class="section" id="id2">
+<h4>三種數值型變數兩兩關係<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>這一個部份，我們想了解這三個變數所含有的資訊是否有重疊?</p></li>
+</ul>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/numerical_scatter.png"><img alt="numerical_scatter" class="bg-primary mb-1 align-center" src="_images/numerical_scatter.png" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/numerical_pearsonr.png"><img alt="numerical_pearsonr" class="bg-primary mb-1 align-center" src="_images/numerical_pearsonr.png" style="width: 800px;" /></a>
+<ul class="simple">
+<li><p>先用Scatter plots提供視覺化的資訊</p>
+<ul>
+<li><p>年紀小的，中風的機率小</p></li>
+</ul>
+</li>
+<li><p>我們分成中風與沒有中風兩組，分別算出相關係數</p>
+<ul>
+<li><p>可以看到相關係數都靠近0，表示三個解釋變數的相關性低</p></li>
+</ul>
+</li>
+<li><p>因此，之後的模型中，這三個解釋變數都得考慮</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h4>變數關聯性分析<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>由列聯表分析，我們總結出了下面這張圖</p>
+<ul>
+<li><p>“+”代表有關聯</p></li>
+<li><p>“-“代表無關連</p></li>
+</ul>
+</li>
+</ul>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/all_vari_corre.jpg"><img alt="all_vari_corre" class="bg-primary mb-1 align-center" src="_images/all_vari_corre.jpg" style="width: 800px;" /></a>
+</div>
+</div>
+<span id="document-appen_classify_ref"></span><div class="section" id="bmi">
+<h3>補充: 血糖與BMI分類依據<a class="headerlink" href="#bmi" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="average-glucose-level">
+<h4>Average glucose level<a class="headerlink" href="#average-glucose-level" title="Permalink to this headline">¶</a></h4>
+<p><img alt="" src="https://i.imgur.com/odgJgbX.png" /></p>
+</div>
+<div class="section" id="id1">
+<h4>BMI<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>BMI的計算與BMI數值的意義</p>
+<ul>
+<li><p><img alt="" src="https://i.imgur.com/Q7nEzN6.jpg" /></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<span id="document-bibliography"></span><div class="section" id="id1">
+<h3>參考資料<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p id="id2"><dl class="citation">
+<dt class="label" id="id12"><span class="brackets">BEE17</span></dt>
+<dd><p>Amelia K. Boehme, Charles Esenwa, and Mitchell S.V. Elkind. Stroke Risk Factors, Genetics, and Prevention. <em>Circulation Research</em>, 120(3):472–495, feb 2017. URL: <a class="reference external" href="https://www.ahajournals.org/doi/10.1161/CIRCRESAHA.116.308398">https://www.ahajournals.org/doi/10.1161/CIRCRESAHA.116.308398</a>, <a class="reference external" href="https://doi.org/10.1161/CIRCRESAHA.116.308398">doi:10.1161/CIRCRESAHA.116.308398</a>.</p>
+</dd>
+<dt class="label" id="id5"><span class="brackets">Col18</span></dt>
+<dd><p>The GBD 2016 Lifetime Risk of Stroke Collaborators. Global, Regional, and Country-Specific Lifetime Risks of Stroke, 1990 and 2016. <em>New England Journal of Medicine</em>, 379(25):2429–2437, dec 2018. URL: <a class="reference external" href="http://www.nejm.org/doi/10.1056/NEJMoa1804492">http://www.nejm.org/doi/10.1056/NEJMoa1804492</a>, <a class="reference external" href="https://doi.org/10.1056/NEJMoa1804492">doi:10.1056/NEJMoa1804492</a>.</p>
+</dd>
+<dt class="label" id="id3"><span class="brackets">JNR+19</span></dt>
+<dd><p>Catherine Owens Johnson, Minh Nguyen, Gregory A Roth, Emma Nichols, Tahiya Alam, Degu Abate, Foad Abd-Allah, Ahmed Abdelalim, Haftom Niguse Abraha, Niveen ME Abu-Rmeileh, Oladimeji M Adebayo, Abiodun Moshood Adeoye, Gina Agarwal, Sutapa Agrawal, Amani Nidhal Aichour, Ibtihel Aichour, Miloud Taki Eddine Aichour, Fares Alahdab, Raghib Ali, Nelson Alvis-Guzman, Nahla Hamed Anber, Mina Anjomshoa, Jalal Arabloo, Antonio Arauz, Johan Ärnlöv, Amit Arora, Ashish Awasthi, Maciej Banach, Miguel A Barboza, Suzanne Lyn Barker-Collo, Till Winfried Bärnighausen, Sanjay Basu, Abate Bekele Belachew, Yaschilal Muche Belayneh, Derrick A. Bennett, Isabela M Bensenor, Krittika Bhattacharyya, Belete Biadgo, Ali Bijani, Boris Bikbov, Muhammad Shahdaat Bin Sayeed, Zahid A Butt, Lucero Cahuana-Hurtado, Juan J Carrero, Félix Carvalho, Carlos A Castañeda-Orjuela, Franz Castro, Ferrán Catalá-López, Yazan Chaiah, Peggy Pei-Chia Chiang, Jee-Young J Choi, Hanne Christensen, Dinh-Toi Chu, Monica Cortinovis, Albertino Antonio Moura Damasceno, Lalit Dandona, Rakhi Dandona, Ahmad Daryani, Kairat Davletov, Barbora de Courten, Vanessa De la Cruz-Góngora, Meaza Girma Degefa, Samath Dhamminda Dharmaratne, Daniel Diaz, Manisha Dubey, Eyasu Ejeta Duken, Dumessa Edessa, Matthias Endres, EMERITO JOSE A FARAON, Farshad Farzadfar, Eduarda Fernandes, Florian Fischer, Luisa Sorio Flor, Morsaleh Ganji, Abadi Kahsu Gebre, Teklu Gebrehiwo Gebremichael, Birhanu Geta, Kebede Embaye Gezae, Paramjit Singh Gill, Elena V. Gnedovskaya, Hector Gómez-Dantés, Alessandra C Goulart, Giuseppe Grosso, Yuming Guo, Rajeev Gupta, Arvin Haj-Mirzaian, Arya Haj-Mirzaian, Samer Hamidi, Graeme J. Hankey, Hamid Yimam Hassen, Simon I. Hay, Mohamed I Hegazy, Behnam Heidari, Nabeel A Herial, Mohammad Ali Hosseini, Sorin Hostiuc, Seyed Sina Naghibi Irvani, Sheikh Mohammed Shariful Islam, Nader Jahanmehr, Mehdi Javanbakht, Ravi Prakash Jha, Jost B. Jonas, Jacek Jerzy Jozwiak, Mikk Jürisson, Amaha Kahsay, Rizwan Kalani, Yogeshwar Kalkonde, Teshome Abegaz Kamil, Tanuj Kanchan, André Karch, Narges Karimi, Hamidreza Karimi-Sari, Amir Kasaeian, Tesfaye Dessale Kassa, Hossein Kazemeini, Adane Teshome Kefale, Yousef Saleh Khader, Ibrahim A. Khalil, Ejaz Ahmad Khan, Young-Ho Khang, Jagdish Khubchandani, Daniel Kim, Yun Jin Kim, Adnan Kisa, Mika Kivimäki, Ai Koyanagi, Rita K Krishnamurthi, G Anil Kumar, Alessandra Lafranconi, Sarah Lewington, Shanshan Li, Warren David Lo, Alan D Lopez, Stefan Lorkowski, Paulo A. Lotufo, Mark T Mackay, Marek Majdan, Reza Majdzadeh, Azeem Majeed, Reza Malekzadeh, Navid Manafi, Mohammad Ali Mansournia, Man Mohan Mehndiratta, Varshil Mehta, Getnet Mengistu, Atte Meretoja, Tuomo J Meretoja, Bartosz Miazgowski, Tomasz Miazgowski, Ted R Miller, Erkin M Mirrakhimov, Bahram Mohajer, Yousef Mohammad, Milad Mohammadoo-khorasani, Shafiu Mohammed, Farnam Mohebi, Ali H Mokdad, Yaser Mokhayeri, Ghobad Moradi, Lidia Morawska, Ilais Moreno Velásquez, Seyyed Meysam Mousavi, Oumer Sada S Muhammed, Walter Muruet, Mehdi Naderi, Mohsen Naghavi, Gurudatta Naik, Bruno Ramos Nascimento, Ruxandra Irina Negoi, Cuong Tat Nguyen, Long Hoang Nguyen, Yirga Legesse Nirayo, Bo Norrving, Jean Jacques Noubiap, Richard Ofori-Asenso, Felix Akpojene Ogbo, Andrew T Olagunju, Tinuke O Olagunju, Mayowa Ojo Owolabi, Jeyaraj Durai Pandian, Shanti Patel, Norberto Perico, Michael A Piradov, Suzanne Polinder, Maarten J Postma, Hossein Poustchi, V Prakash, Mostafa Qorbani, Alireza Rafiei, Fakher Rahim, Kazem Rahimi, Vafa Rahimi-Movaghar, Mahfuzar Rahman, Muhammad Aziz Rahman, Cesar Reis, Giuseppe Remuzzi, Andre M.N. Renzaho, Stefano Ricci, Nicholas L S Roberts, Stephen R Robinson, Leonardo Roever, Gholamreza Roshandel, Parisa Sabbagh, Hosein Safari, Saeed Safari, Saeid Safiri, Amirhossein Sahebkar, Saleh Salehi Zahabi, Abdallah M. Samy, Paola Santalucia, Itamar S Santos, João Vasco Santos, Milena M Santric Milicevic, Benn Sartorius, Arundhati R Sawant, Aletta Elisabeth Schutte, Sadaf G. Sepanlou, Azadeh Shafieesabet, Masood Ali Shaikh, Mehran Shams-Beyranvand, Aziz Sheikh, Kevin N. Sheth, Kenji Shibuya, Mika Shigematsu, Min-Jeong Shin, Ivy Shiue, Soraya Siabani, Badr Hasan Sobaih, Luciano A. Sposato, Ipsita Sutradhar, PN Sylaja, Cassandra E I Szoeke, Braden James Te Ao, Mohamad-Hani Temsah, Omar Temsah, Amanda G Thrift, Marcello Tonelli, Roman Topor-Madry, Bach Xuan Tran, Khanh Bao Tran, Thomas Clement Truelsen, Afewerki Gebremeskel Tsadik, Irfan Ullah, Olalekan A Uthman, Muthiah Vaduganathan, Pascual R Valdez, Tommi Juhani Vasankari, Rajagopalan Vasanthan, Narayanaswamy Venketasubramanian, Kia Vosoughi, Giang Thu Vu, Yasir Waheed, Elisabete Weiderpass, Kidu Gidey Weldegwergs, Ronny Westerman, Charles D A Wolfe, Dawit Zewdu Wondafrash, Gelin Xu, Ali Yadollahpour, Tomohide Yamada, Hiroshi Yatsuya, Ebrahim M Yimer, Naohiro Yonemoto, Mahmoud Yousefifard, Chuanhua Yu, Zoubida Zaidi, Mohammad Zamani, Afshin Zarghi, Yunquan Zhang, Sanjay Zodpey, Valery L. Feigin, Theo Vos, and Christopher J L Murray. Global, regional, and national burden of stroke, 1990–2016: a systematic analysis for the Global Burden of Disease Study 2016. <em>The Lancet Neurology</em>, 18(5):439–458, may 2019. URL: <a class="reference external" href="https://linkinghub.elsevier.com/retrieve/pii/S1474442219300341">https://linkinghub.elsevier.com/retrieve/pii/S1474442219300341</a>, <a class="reference external" href="https://doi.org/10.1016/S1474-4422(19)30034-1">doi:10.1016/S1474-4422(19)30034-1</a>.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets">JOOS16</span></dt>
+<dd><p>Walter Johnson, Oyere Onuma, Mayowa Owolabi, and Sonal Sachdev. Stroke: a global response is needed. <em>Bulletin of the World Health Organization</em>, 94(9):634–634A, sep 2016. URL: <a class="reference external" href="http://www.who.int/entity/bulletin/volumes/94/9/16-181636.pdf">http://www.who.int/entity/bulletin/volumes/94/9/16-181636.pdf</a>, <a class="reference external" href="https://doi.org/10.2471/BLT.16.181636">doi:10.2471/BLT.16.181636</a>.</p>
+</dd>
+<dt class="label" id="id10"><span class="brackets">KSC10</span></dt>
+<dd><p>Sandeep Kumar, Magdy H Selim, and Louis R Caplan. Medical complications after stroke. <em>The Lancet Neurology</em>, 9(1):105–118, jan 2010. URL: <a class="reference external" href="https://linkinghub.elsevier.com/retrieve/pii/S1474442209702662">https://linkinghub.elsevier.com/retrieve/pii/S1474442209702662</a>, <a class="reference external" href="https://doi.org/10.1016/S1474-4422(09)70266-2">doi:10.1016/S1474-4422(09)70266-2</a>.</p>
+</dd>
+<dt class="label" id="id9"><span class="brackets">LSR+00</span></dt>
+<dd><p>P. Langhorne, D. J. Stott, L. Robertson, J. MacDonald, L. Jones, C. McAlpine, F. Dick, G. S. Taylor, and G. Murray. Medical Complications After Stroke. <em>Stroke</em>, 31(6):1223–1229, jun 2000. URL: <a class="reference external" href="https://www.ahajournals.org/doi/10.1161/01.STR.31.6.1223">https://www.ahajournals.org/doi/10.1161/01.STR.31.6.1223</a>, <a class="reference external" href="https://doi.org/10.1161/01.STR.31.6.1223">doi:10.1161/01.STR.31.6.1223</a>.</p>
+</dd>
+<dt class="label" id="id11"><span class="brackets">Org21</span></dt>
+<dd><p>World Health Organization. Stroke, Cerebrovascular Accident. 2021.</p>
+</dd>
+<dt class="label" id="id7"><span class="brackets">18a</span></dt>
+<dd><p>衛生福利部統計處. 死因統計. 2018. URL: <a class="reference external" href="https://dep.mohw.gov.tw/DOS/np-1776-113.html">https://dep.mohw.gov.tw/DOS/np-1776-113.html</a>.</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets">20</span></dt>
+<dd><p>衛福部-慢性疾病防治組. 健康主題:慢性病防治-腦血管疾病. 2020. URL: <a class="reference external" href="https://www.hpa.gov.tw/Pages/List.aspx?nodeid=213">https://www.hpa.gov.tw/Pages/List.aspx?nodeid=213</a>.</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets">18b</span></dt>
+<dd><p>邱弘毅. 腦中風之現況與流行病學特徵. 2018. URL: <a class="reference external" href="https://www.stroke.org.tw/GoWeb2/include/index.php?Page=5-1&amp;paper02=4156067525bc96c3a9ee9b">https://www.stroke.org.tw/GoWeb2/include/index.php?Page=5-1&amp;paper02=4156067525bc96c3a9ee9b</a>.</p>
+</dd>
+</dl>
+</p>
 </div>
 </div>
 </div>
@@ -361,7 +3857,6 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='right-next' id="next-link" href="dataexplore.html" title="next page">資料探討</a>
 
         </div>
         
