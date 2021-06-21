@@ -3,7 +3,7 @@
 #
 - file: intro
 - file: dataexplore
-- file: simplecategorical
+- file: simplecategorical.ipynb
 - file: multiplecategorical
 - file: numerical
 - file: conti_table_summary

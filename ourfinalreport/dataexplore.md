@@ -30,31 +30,6 @@
 - 數值型: age, avg_glucose_level, bmi
 
 ## 單變數分析: 類別型
-
-### gender
-```{image} https://i.imgur.com/VOikmMR.png
-:alt: gender
-:class: bg-primary mb-1
-:width: 800px
-:align: center
-```
-
-### Hypertension
-```{image} https://i.imgur.com/V2ls7hO.png
-:alt: hypertension
-:class: bg-primary mb-1
-:width: 800px
-:align: center
-```
-
-### Heart Disease
-```{image} https://i.imgur.com/IMe8y6F.png
-:alt: heartdisease
-:class: bg-primary mb-1
-:width: 800px
-:align: center
-```
-
 ### Ever married
 ```{image} https://i.imgur.com/Pua54Dk.png
 :alt: evermarry
@@ -63,14 +38,6 @@
 :align: center
 ```
 <span class="blue">*簡單類別型解釋變數分析中，若用於分析婚姻經驗與其他變數的關係，剔除年齡小於16歲的資料*</span>
-
-### Residence type
-```{image} https://i.imgur.com/3UNDxmf.png
-:alt: residtype
-:class: bg-primary mb-1
-:width: 800px
-:align: center
-```
 
 ### Stroke
 ```{image} https://i.imgur.com/BJbNHxr.png

@@ -127,7 +127,7 @@
  </li>
  <li class="toctree-l1 toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="intro.html#document-simplecategorical">
-   列聯表分析:簡單類別型
+   列聯表分析1:簡單類別型
   </a>
  </li>
  <li class="toctree-l1 toc-h1 nav-item toc-entry">
@@ -303,26 +303,10 @@
 </div>
 <div class="section" id="id5">
 <h4>單變數分析: 類別型<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="gender">
-<h5>gender<a class="headerlink" href="#gender" title="Permalink to this headline">¶</a></h5>
-<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/VOikmMR.png"><img alt="gender" class="bg-primary mb-1 align-center" src="https://i.imgur.com/VOikmMR.png" style="width: 800px;" /></a>
-</div>
-<div class="section" id="hypertension">
-<h5>Hypertension<a class="headerlink" href="#hypertension" title="Permalink to this headline">¶</a></h5>
-<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/V2ls7hO.png"><img alt="hypertension" class="bg-primary mb-1 align-center" src="https://i.imgur.com/V2ls7hO.png" style="width: 800px;" /></a>
-</div>
-<div class="section" id="heart-disease">
-<h5>Heart Disease<a class="headerlink" href="#heart-disease" title="Permalink to this headline">¶</a></h5>
-<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/IMe8y6F.png"><img alt="heartdisease" class="bg-primary mb-1 align-center" src="https://i.imgur.com/IMe8y6F.png" style="width: 800px;" /></a>
-</div>
 <div class="section" id="ever-married">
 <h5>Ever married<a class="headerlink" href="#ever-married" title="Permalink to this headline">¶</a></h5>
 <a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/Pua54Dk.png"><img alt="evermarry" class="bg-primary mb-1 align-center" src="https://i.imgur.com/Pua54Dk.png" style="width: 800px;" /></a>
 <p><span class="blue"><em>簡單類別型解釋變數分析中，若用於分析婚姻經驗與其他變數的關係，剔除年齡小於16歲的資料</em></span></p>
-</div>
-<div class="section" id="residence-type">
-<h5>Residence type<a class="headerlink" href="#residence-type" title="Permalink to this headline">¶</a></h5>
-<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/3UNDxmf.png"><img alt="residtype" class="bg-primary mb-1 align-center" src="https://i.imgur.com/3UNDxmf.png" style="width: 800px;" /></a>
 </div>
 <div class="section" id="stroke">
 <h5>Stroke<a class="headerlink" href="#stroke" title="Permalink to this headline">¶</a></h5>
@@ -391,223 +375,83 @@
 </div>
 </div>
 <span id="document-simplecategorical"></span><div class="section" id="id1">
-<h3>列聯表分析:簡單類別型<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<style>
-.blue {
-    color: blue;
-}
-
-.awk {
-    color: #b6b4cf;
-}
-</style>
+<h3>列聯表分析1:簡單類別型<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>列聯表分析的第一部份，會針對五個簡單類別變數做Two-by-two table的分析。簡單類別型變數只有兩個值，例如: 有高血壓就是1，沒高血壓就是0，也因此Two-by-two table跟Odds Ratio適合分析這種變數與中風的關係。</p>
+<div class="section" id="a">
+<h4>A. 中風與性別<a class="headerlink" href="#a" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="id2">
-<h4>中風與性別<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<h5>性別的分佈與比例<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/VOikmMR.png"><img alt="gender" class="bg-primary mb-1 align-center" src="https://i.imgur.com/VOikmMR.png" style="width: 800px;" /></a>
 <ul class="simple">
-<li><p>基本假設:性別與中風沒有關聯</p></li>
+<li><p><span style="color:blue">在這筆資料中，女生佔了61%，男生佔了39%</span></p></li>
 </ul>
-<table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>Female</p></th>
-<th class="head"><p>Male</p></th>
-<th class="head"><p>Sum</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Stroke</p></td>
-<td><p>141</p></td>
-<td><p>108</p></td>
-<td><p>249</p></td>
-</tr>
-<tr class="row-odd"><td><p>Non-stroke</p></td>
-<td><p>2853</p></td>
-<td><p>2007</p></td>
-<td><p>4860</p></td>
-</tr>
-<tr class="row-even"><td><p>Sum</p></td>
-<td><p>2994</p></td>
-<td><p>1225</p></td>
-<td><p>5109</p></td>
-</tr>
-</tbody>
-</table>
+</div>
+<div class="section" id="two-by-two-table">
+<h5>Two-by-two table<a class="headerlink" href="#two-by-two-table" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/twobytwo_table_gender.png"><img alt="twobytwo_table_gender" class="bg-primary mb-1 align-center" src="_images/twobytwo_table_gender.png" style="width: 800px;" /></a>
+</div>
 <div class="section" id="odds-ratio">
 <h5>Odds Ratio:<a class="headerlink" href="#odds-ratio" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\hat{\theta}=1.089\)</span></p></li>
-<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(-0.172, 0.342)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\theta}=1.119\)</span></p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(-0.192, 0.417)\)</span></p></li>
+<li><p><span style="color:blue">上面的信賴區間包含0，表示對於性別與中風，未有證據支持具有相關性</span></p></li>
+<li><p><span style="color:blue">雖然相關沒有統計顯著，但由上方的Bar圖，可以知道在這組資料中，如果已知是男生，那中風的機率是稍微高一點的</span></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="b">
+<h4>B. 中風與居住環境<a class="headerlink" href="#b" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id3">
+<h5>居住環境的分佈與比例<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/3UNDxmf.png"><img alt="residtype" class="bg-primary mb-1 align-center" src="https://i.imgur.com/3UNDxmf.png" style="width: 800px;" /></a>
+<ul class="simple">
+<li><p><span style="color:blue">在這筆資料中，鄉下與城市的人們大約各佔一半，鄉下佔了49%，城市佔了51%</span></p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h5>Two-by-two table<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/twobytwo_table_residence_type.png"><img alt="twobytwo_table_residence_type" class="bg-primary mb-1 align-center" src="_images/twobytwo_table_residence_type.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="id5">
+<h5>Odds Ratio:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{\theta}=0.948\)</span></p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(-0.354, 0.247)\)</span></p></li>
+<li><p><span style="color:blue">95%的信賴區間包含0，表示住在城市與鄉下與中風並無相關性</span></p></li>
+<li><p><span style="color:blue">由上方的Bar圖的條件機率，也顯示住在城市與鄉下得到中風的機率是類似的</span></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="c">
+<h4>C. 中風與高血壓<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id6">
+<h5>高血壓的分佈與比例<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/V2ls7hO.png"><img alt="hypertension" class="bg-primary mb-1 align-center" src="https://i.imgur.com/V2ls7hO.png" style="width: 800px;" /></a>
+<ul class="simple">
+<li><p><span style="color:blue">在這筆資料中，有高血壓的人佔了12%，沒高血壓的人佔了88%</span></p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h5>Two-by-two table<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/twobytwo_table_hypertension.png"><img alt="residtype" class="bg-primary mb-1 align-center" src="_images/twobytwo_table_hypertension.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="id8">
+<h5>Odds Ratio:<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{\theta}=3.821\)</span></p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(1.007, 1.673)\)</span></p></li>
+<li><p>95%的信賴區間不包含0，表示 <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}\)</span> 與0有顯著差異</p></li>
+<li><p><span style="color:blue">表示中風與高血壓是顯著相關的</span></p></li>
+<li><p><span style="color:blue">由上方Bar圖，在高血壓患者中，中風的機率是0.14。然而，在非高血壓的人中，中風的機率是0.04。可以知道，有高血壓的人比沒有高血壓的人容易中風。</span></p></li>
 </ul>
 </div>
 <div class="section" id="chi-square">
 <h5>Chi-square:<a class="headerlink" href="#chi-square" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 0.34, df = 1, p-value = 0.5598</p></li>
-</ul>
-<p><span class ="blue"><em>性別與中風的關係在兩項檢定中均未有證據支持具有相關性</em></span></p>
-</div>
-</div>
-<div class="section" id="id3">
-<h4>中風與居住環境<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li><p>基本假設:只有一點點關聯，鄉下的中風比例可能比住在城市的低</p></li>
-</ul>
-<table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>Urban</p></th>
-<th class="head"><p>Rural</p></th>
-<th class="head"><p>Sum</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Stroke</p></td>
-<td><p>135</p></td>
-<td><p>141</p></td>
-<td><p>249</p></td>
-</tr>
-<tr class="row-odd"><td><p>Non-stroke</p></td>
-<td><p>2461</p></td>
-<td><p>2400</p></td>
-<td><p>4861</p></td>
-</tr>
-<tr class="row-even"><td><p>Sum</p></td>
-<td><p>2596</p></td>
-<td><p>2514</p></td>
-<td><p>5110</p></td>
-</tr>
-</tbody>
-</table>
-<div class="section" id="id4">
-<h5>Odds Ratio:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\hat{\theta}=0.866\)</span></p></li>
-<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(-0.400, 0.112)\)</span></p></li>
-<li><p>雖然資料符合我們的猜想，鄉下中風的比例比較低，但是95%的信賴區間包含0，表示 <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}\)</span> 與0無顯著差異</p></li>
-</ul>
-</div>
-<div class="section" id="id5">
-<h5>Chi-square:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 1.0816, df = 1, p-value = 0.2983</p></li>
-</ul>
-<p><span class ="blue"><em>居住環境與中風的關係在兩項檢定中均未有證據支持具有相關性</em></span></p>
-</div>
-</div>
-<div class="section" id="id6">
-<h4>中風與婚姻<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li><p>基本假設:婚姻與中風沒有關聯</p></li>
-</ul>
-<table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>Married</p></th>
-<th class="head"><p>NevMar</p></th>
-<th class="head"><p>Sum</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Stroke</p></td>
-<td><p>220</p></td>
-<td><p>27</p></td>
-<td><p>247</p></td>
-</tr>
-<tr class="row-odd"><td><p>Non-stroke</p></td>
-<td><p>3133</p></td>
-<td><p>986</p></td>
-<td><p>4119</p></td>
-</tr>
-<tr class="row-even"><td><p>Sum</p></td>
-<td><p>3353</p></td>
-<td><p>1013</p></td>
-<td><p>4366</p></td>
-</tr>
-</tbody>
-</table>
-<div class="section" id="id7">
-<h5>Odds Ratio:<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\hat{\theta}=2.564\)</span></p></li>
-<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(0.536, 1.348)\)</span></p></li>
-<li><p>95%的信賴區間不包含0，表示 <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}\)</span> 與0有顯著差異。</p></li>
-</ul>
-</div>
-<div class="section" id="id8">
-<h5>Chi-square:<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h5>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 21.4, df = 1, p-value = 3.728e-06</p></li>
-</ul>
-<p><span class ="blue"><em>婚姻經驗與中風的在本檢定中顯示具有相關性，如同odds ratio所顯示，進一步分析殘差瞭解其分布：</em></span></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>round(result_StrokeMarri$residuals, 3)
-</pre></div>
-</div>
-<table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>Married</p></th>
-<th class="head"><p>NevMar</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Stroke</p></td>
-<td><p>2.201</p></td>
-<td><p>-4.004</p></td>
-</tr>
-<tr class="row-odd"><td><p>Non-stroke</p></td>
-<td><p>-0.539</p></td>
-<td><p>0.980</p></td>
-</tr>
-</tbody>
-</table>
-<p><span class ="blue"><em>發現未曾有婚姻經驗者，較不容易中風，而婚姻經驗除了在附表(?)中可見與高血壓有關連性之外，相對於未結婚者也較容易中風</em></span></p>
-</div>
-</div>
-<div class="section" id="id9">
-<h4>中風與高血壓<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li><p>基本假設:高血壓愈大的人愈容易中風</p></li>
-</ul>
-<table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>hypertension</p></th>
-<th class="head"><p>Normal</p></th>
-<th class="head"><p>Sum</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Stroke</p></td>
-<td><p>66</p></td>
-<td><p>183</p></td>
-<td><p>249</p></td>
-</tr>
-<tr class="row-odd"><td><p>Non-stroke</p></td>
-<td><p>432</p></td>
-<td><p>4429</p></td>
-<td><p>4861</p></td>
-</tr>
-<tr class="row-even"><td><p>Sum</p></td>
-<td><p>498</p></td>
-<td><p>4612</p></td>
-<td><p>5110</p></td>
-</tr>
-</tbody>
-</table>
-<div class="section" id="id10">
-<h5>Odds Ratio:<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h5>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\hat{\theta}=3.698\)</span></p></li>
-<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(1.009, 1.606)\)</span></p></li>
-<li><p>95%的信賴區間不包含0，表示 <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}\)</span> 與0有顯著差異。</p></li>
-</ul>
-</div>
-<div class="section" id="id11">
-<h5>Chi-square:<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h5>
-<ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 81.605, df = 1, p-value &lt; 2.2e-16</p></li>
+<li><p>高血壓與中風的在本檢定中顯示具有高度相關性，如同odds ratio所顯示，進一步分析殘差了解其分布：</p></li>
 </ul>
-<p><span class ="blue"><em>高血壓與中風的在本檢定中顯示具有高度相關性，如同odds ratio所顯示，進一步分析殘差了解其分布：</em></span></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;round(result_StrokeHyper$residuals, 3)
 </pre></div>
 </div>
@@ -629,54 +473,40 @@
 </tr>
 </tbody>
 </table>
-<p><span class ="blue"><em>高血壓與中風的發生有高度相關性，殘差顯示血壓正常者與高血壓者在中風條件下有最大的差異。</em></span></p>
+<ul class="simple">
+<li><p><span style="color:blue"> 高血壓與中風的發生有高度相關性，殘差顯示血壓正常者與高血壓者在中風條件下有最大的差異</span></p></li>
+</ul>
 </div>
+</div>
+<div class="section" id="d">
+<h4>D. 中風與心臟病<a class="headerlink" href="#d" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id9">
+<h5>心臟病的分佈與比例<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/IMe8y6F.png"><img alt="heartdisease" class="bg-primary mb-1 align-center" src="https://i.imgur.com/IMe8y6F.png" style="width: 800px;" /></a>
+<ul class="simple">
+<li><p><span style="color:blue">在這筆資料中，有心臟病的人佔了6%，沒心臟病的人佔了94%</span></p></li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h5>Two-by-two table<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/twobytwo_table_heartDisease.png"><img alt="heartDisease" class="bg-primary mb-1 align-center" src="_images/twobytwo_table_heartDisease.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="id11">
+<h5>Odds Ratio:<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{\theta}=4.522\)</span></p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(1.112, 1.905)\)</span></p></li>
+<li><p>95%的信賴區間不包含0，表示 <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}\)</span> 與0有顯著差異。</p></li>
+<li><p><span style="color:blue">表示中風與心臟病是顯著相關的</span></p></li>
+<li><p><span style="color:blue">由上方Bar圖，在心臟病患者中，中風的機率是0.175。然而，在非心臟病患者中，中風的機率是0.045。可以知道，有心臟病的人比沒有心臟病的人容易中風。</span></p></li>
+</ul>
 </div>
 <div class="section" id="id12">
-<h4>中風與心臟病<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li><p>基本假設:中風是心血管疾病，要與心臟病相關</p></li>
-</ul>
-<table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>heart D</p></th>
-<th class="head"><p>Normal</p></th>
-<th class="head"><p>Sum</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Stroke</p></td>
-<td><p>47</p></td>
-<td><p>202</p></td>
-<td><p>249</p></td>
-</tr>
-<tr class="row-odd"><td><p>Non-stroke</p></td>
-<td><p>229</p></td>
-<td><p>4632</p></td>
-<td><p>4861</p></td>
-</tr>
-<tr class="row-even"><td><p>Sum</p></td>
-<td><p>276</p></td>
-<td><p>4834</p></td>
-<td><p>5110</p></td>
-</tr>
-</tbody>
-</table>
-<div class="section" id="id13">
-<h5>Odds Ratio:<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h5>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\hat{\theta}=4.706\)</span></p></li>
-<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(1.205, 1.893)\)</span></p></li>
-<li><p>95%的信賴區間不包含0，表示 <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}\)</span> 與0有顯著差異。</p></li>
-</ul>
-</div>
-<div class="section" id="id14">
-<h5>Chi-square:<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h5>
+<h5>Chi-square:<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 90.26, df = 1, p-value &lt; 2.2e-16</p></li>
+<li><p>心臟病與中風的在本檢定中顯示具有高度相關性，如同odds ratio所顯示，進一步分析殘差瞭解其分布：</p></li>
 </ul>
-<p><span class ="blue"><em>心臟病與中風的在本檢定中顯示具有高度相關性，如同odds ratio所顯示，進一步分析殘差瞭解其分布：</em></span></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;round(result_StrokeHD$residuals, 3)
 </pre></div>
 </div>
@@ -698,14 +528,73 @@
 </tr>
 </tbody>
 </table>
-<p><span class ="blue"><em>心臟病與中風的發生有高度相關性，殘差與<span class="math notranslate nohighlight">\(X^2\)</span>顯示心臟病患者與中風的關聯性甚至比高血壓之於中風要高。</em></span></p>
+<p><span style="color:blue">心臟病與中風的發生有高度相關性，殘差與<span class="math notranslate nohighlight">\(\chi^2\)</span>: 顯示心臟病患者與中風的關聯性甚至比高血壓之於中風要高。</span></p>
 </div>
+</div>
+<div class="section" id="e">
+<h4>E. 中風與婚姻<a class="headerlink" href="#e" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id13">
+<h5>結婚的分佈與比例<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/Pua54Dk.png"><img alt="evermarry" class="bg-primary mb-1 align-center" src="https://i.imgur.com/Pua54Dk.png" style="width: 800px;" /></a>
+<ul class="simple">
+<li><p><span style="color:blue">在這筆資料中，有結婚的人佔了76%，未婚的人佔了24%</span></p></li>
+</ul>
+</div>
+<div class="section" id="id14">
+<h5>Two-by-two table<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/twobytwo_table_marry.png"><img alt="heartDisease" class="bg-primary mb-1 align-center" src="_images/twobytwo_table_marry.png" style="width: 800px;" /></a>
 </div>
 <div class="section" id="id15">
-<h4>綜合比較<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<h5>Odds Ratio:<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{\theta}=2.644\)</span></p></li>
+<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(0.501, 1.444)\)</span></p></li>
+<li><p>95%的信賴區間不包含0，表示 <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}\)</span> 與0有顯著差異。</p></li>
+<li><p><span style="color:blue">表示中風與婚姻狀態是顯著相關的</span></p></li>
+<li><p><span style="color:blue">我們一開始認為婚姻不應該跟中風有關聯，上方Bar圖告訴我們有結過婚的人比較容易中風</span></p></li>
+<li><p><span style="color:blue">在後續的分析，我們會發現婚姻帶有年齡的資訊。換句話說，婚姻與中風關聯背後的Confounding factor是年齡</span></p></li>
+</ul>
+</div>
+<div class="section" id="id16">
+<h5>Chi-square:<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 21.4, df = 1, p-value = 3.728e-06</p></li>
+<li><p>婚姻經驗與中風的在本檢定中顯示具有相關性，如同odds ratio所顯示，進一步分析殘差瞭解其分布：</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>round(result_StrokeMarri$residuals, 3)
+</pre></div>
+</div>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Married</p></th>
+<th class="head"><p>NevMar</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Stroke</p></td>
+<td><p>2.201</p></td>
+<td><p>-4.004</p></td>
+</tr>
+<tr class="row-odd"><td><p>Non-stroke</p></td>
+<td><p>-0.539</p></td>
+<td><p>0.980</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><span style="color:blue">發現未曾有婚姻經驗者，較不容易中風</span></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id17">
+<h4>綜合比較<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/oddsratio_bar.png"><img alt="oddsratio_bar" class="bg-primary mb-1 align-center" src="_images/oddsratio_bar.png" style="width: 400px;" /></a>
 <ul class="simple">
-<li><p>與中風有相關性: 婚姻、高血壓、心臟病</p></li>
+<li><p><span style="color:blue"> 我們把這五個簡單變數的Odds Ratio 畫在一起做比較，如上圖。</span></p></li>
+<li><p><span style="color:blue"> 與中風不相關的變數: 性別與居住地</span></p></li>
+<li><p><span style="color:blue"> 與中風相關的三個變數: 婚姻、高血壓、心臟病 </span></p></li>
+<li><p><span style="color:blue"> 婚姻與中風相關是比較意外的結果，下面會做年齡與婚姻相關的分析，就可以知道婚姻是帶有年齡的資訊的。</span></p></li>
 </ul>
 </div>
 </div>
