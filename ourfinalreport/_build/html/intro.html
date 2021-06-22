@@ -132,7 +132,7 @@
  </li>
  <li class="toctree-l1 toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="intro.html#document-multiplecategorical">
-   列聯表分析:多重類別型
+   列聯表分析2:多重類別型
   </a>
  </li>
  <li class="toctree-l1 toc-h1 nav-item toc-entry">
@@ -303,22 +303,9 @@
 </div>
 <div class="section" id="id5">
 <h4>單變數分析: 類別型<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="ever-married">
-<h5>Ever married<a class="headerlink" href="#ever-married" title="Permalink to this headline">¶</a></h5>
-<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/Pua54Dk.png"><img alt="evermarry" class="bg-primary mb-1 align-center" src="https://i.imgur.com/Pua54Dk.png" style="width: 800px;" /></a>
-<p><span class="blue"><em>簡單類別型解釋變數分析中，若用於分析婚姻經驗與其他變數的關係，剔除年齡小於16歲的資料</em></span></p>
-</div>
 <div class="section" id="stroke">
 <h5>Stroke<a class="headerlink" href="#stroke" title="Permalink to this headline">¶</a></h5>
 <a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/BJbNHxr.png"><img alt="strokebar" class="bg-primary mb-1 align-center" src="https://i.imgur.com/BJbNHxr.png" style="width: 800px;" /></a>
-</div>
-<div class="section" id="smoking-status">
-<h5>Smoking status<a class="headerlink" href="#smoking-status" title="Permalink to this headline">¶</a></h5>
-<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/wn6c5i3.png"><img alt="smoking" class="bg-primary mb-1 align-center" src="https://i.imgur.com/wn6c5i3.png" style="width: 800px;" /></a>
-</div>
-<div class="section" id="work-type">
-<h5>Work type<a class="headerlink" href="#work-type" title="Permalink to this headline">¶</a></h5>
-<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/foUU50y.png"><img alt="worktype" class="bg-primary mb-1 align-center" src="https://i.imgur.com/foUU50y.png" style="width: 800px;" /></a>
 </div>
 </div>
 <div class="section" id="id6">
@@ -599,367 +586,54 @@
 </div>
 </div>
 <span id="document-multiplecategorical"></span><div class="section" id="id1">
-<h3>列聯表分析:多重類別型<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<style>
-.blue {
-    color: blue;
-}
-
-.awk {
-    color: #b6b4cf;
-}
-</style>
+<h3>列聯表分析2:多重類別型<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="a">
+<h4>A. 中風與抽煙習慣<a class="headerlink" href="#a" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="id2">
-<h4>中風與抽煙習慣<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<h5>抽煙習慣的分佈與比例<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/wn6c5i3.png"><img alt="smoking" class="bg-primary mb-1 align-center" src="https://i.imgur.com/wn6c5i3.png" style="width: 800px;" /></a>
+<ul class="simple">
+<li><p><span style="color:blue">在這筆資料中，不曾抽煙者佔了54%，曾抽過煙但戒掉的人佔了24.5%，現在抽煙者佔了21.5%</span></p></li>
+</ul>
+</div>
+<div class="section" id="contingency-table">
+<h5>Contingency table<a class="headerlink" href="#contingency-table" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/contingency_table_smoke.png"><img alt="contingency_table_smoke" class="bg-primary mb-1 align-center" src="_images/contingency_table_smoke.png" style="width: 1000px;" /></a>
+</div>
+<div class="section" id="chi-square">
+<h5>Chi-square:<a class="headerlink" href="#chi-square" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 6.03, df=2, p-value=4.906e-02</p></li>
+<li><p><span style="color:blue">p-value<span class="math notranslate nohighlight">\(&lt;\)</span>0.05，顯示抽煙狀態與中風具有高度相關性</span></p></li>
+<li><p><span style="color:blue">由Contingency Table的期望值可以發現，造成統計顯著性的是”Never smoke”與”Formerly Smoke”</span></p></li>
+<li><p><span style="color:blue">Never Smoke的觀測值比期望值低，表示不抽煙者中風的機率較低</span></p></li>
+<li><p><span style="color:blue">Formerly Smoke的觀測值比期望值高，表示戒煙者中風的機率提高</span></p></li>
+<li><p><span style="color:blue">Bar圖也指出，Formerly Smoke的中風機率是最高的。這個結果讓我們懷疑戒煙者是不是也隱含著年齡比較大的資訊，這在後續的分析會一併討論</span></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="b">
+<h4>B. 中風與工作<a class="headerlink" href="#b" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="id3">
-<h5>分類成兩組<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<h5>工作的分佈與比例<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/foUU50y.png"><img alt="worktype" class="bg-primary mb-1 align-center" src="https://i.imgur.com/foUU50y.png" style="width: 800px;" /></a>
 <ul class="simple">
-<li><p>smoke包含smokes與formerly smoked</p></li>
-<li><p>never smoke自己一組</p></li>
-<li><p>註記: unknown有1544個資料點，被拿掉了</p></li>
-<li><p>基本假設:有抽煙的人比較容易中風</p></li>
+<li><p><span style="color:blue">在這筆資料中，私人企業工作佔了64%，self-employed的人佔了18%，政府機關工作的人佔了15%，剩下的則是不曾工作者與小孩</span></p></li>
+<li><p><span style="color:gray">我們會在下面的Contigency Table跟卡方分析把”孩童”與”未曾工作”的資料點清理掉</span></p></li>
 </ul>
-<table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>Smoke</p></th>
-<th class="head"><p>Never Smoke</p></th>
-<th class="head"><p>Sum</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Stroke</p></td>
-<td><p>112</p></td>
-<td><p>90</p></td>
-<td><p>202</p></td>
-</tr>
-<tr class="row-odd"><td><p>Non-stroke</p></td>
-<td><p>1562</p></td>
-<td><p>1802</p></td>
-<td><p>3364</p></td>
-</tr>
-<tr class="row-even"><td><p>Sum</p></td>
-<td><p>1674</p></td>
-<td><p>1892</p></td>
-<td><p>3566</p></td>
-</tr>
-</tbody>
-</table>
-<div class="section" id="odds-ratio">
-<h6>Odds Ratio:<a class="headerlink" href="#odds-ratio" title="Permalink to this headline">¶</a></h6>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\hat{\theta}=1.436\)</span></p></li>
-<li><p>95% Confidence Interval of <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}=(0.076, 0.647)\)</span></p></li>
-<li><p>95%的信賴區間不包含0，表示 <span class="math notranslate nohighlight">\(\log{(\hat{\theta})}\)</span> 與0有顯著差異。</p></li>
-</ul>
-<p><span class ="blue"><em>中風跟抽煙有關聯。但相比於婚姻、壓力與心臟病，抽煙的<span class="math notranslate nohighlight">\(\hat{\theta}\)</span>比較靠近<span class="math notranslate nohighlight">\(1\)</span>，表示抽煙相對來說不是一個重要的因子</em></span></p>
-<div class="section" id="fix-row">
-<h7>Fix Row比較:<a class="headerlink" href="#fix-row" title="Permalink to this headline">¶</a></h7>
-<ul class="simple">
-<li><p>中風患者: <span class="math notranslate nohighlight">\(\frac{\text{Smoke}}{\text{Never smoke}}=1.24\)</span></p></li>
-<li><p>非中風者: <span class="math notranslate nohighlight">\(\frac{\text{Smoke}}{\text{Never smoke}}=0.87\)</span></p></li>
-</ul>
-<p><span class ="blue"><em>符和基本假設，中風患者中有抽煙的比例高</em></span></p>
-</div>
-</div>
 </div>
 <div class="section" id="id4">
-<h5>三組分開做<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
-<div class="section" id="chi-square">
-<h6>Chi-square<a class="headerlink" href="#chi-square" title="Permalink to this headline">¶</a></h6>
-<table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>Stroke</p></th>
-<th class="head"><p>No Stroke</p></th>
-<th class="head"><p>Sum</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>smokes</p></td>
-<td><p>42</p></td>
-<td><p>747</p></td>
-<td><p>789</p></td>
-</tr>
-<tr class="row-odd"><td><p>formerly</p></td>
-<td><p>70</p></td>
-<td><p>815</p></td>
-<td><p>885</p></td>
-</tr>
-<tr class="row-even"><td><p>never</p></td>
-<td><p>90</p></td>
-<td><p>1802</p></td>
-<td><p>1892</p></td>
-</tr>
-<tr class="row-odd"><td><p>Sum</p></td>
-<td><p>202</p></td>
-<td><p>3364</p></td>
-<td><p>3566</p></td>
-</tr>
-</tbody>
-</table>
-<p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 11.436, df = 2, p-value = 0.003285</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt; round(smokeStroke_chi$residuals, 3)
-</pre></div>
-</div>
-<table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>Stroke</p></th>
-<th class="head"><p>No Stroke</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>smokes</p></td>
-<td><p>-0.403</p></td>
-<td><p>0.099</p></td>
-</tr>
-<tr class="row-odd"><td><p>formerly</p></td>
-<td><p><strong>2.806</strong></p></td>
-<td><p>-0.688</p></td>
-</tr>
-<tr class="row-even"><td><p>never</p></td>
-<td><p>-1.659</p></td>
-<td><p>0.407</p></td>
-</tr>
-</tbody>
-</table>
-<ul class="simple">
-<li><p>結論:</p>
-<ul>
-<li><p><strong>曾經抽菸者甚至比正有抽菸習慣者更容易中風</strong></p></li>
-<li><p><strong>應該要區分formely與smokes</strong></p></li>
-<li><p>從不抽菸者還是最不容易中風</p></li>
-<li><p>即便右欄未大於0.5，要說未曾抽菸者不容易中風可能較勉強，但前一項odds ratio已能補足這結論</p></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
+<h5>Contingency table<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/contingency_table_worktype.png"><img alt="contingency_table_worktype" class="bg-primary mb-1 align-center" src="_images/contingency_table_worktype.png" style="width: 1000px;" /></a>
 </div>
 <div class="section" id="id5">
-<h4>中風與工作<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="id6">
-<h5>資料清理<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h5>
-<table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>Stroke</p></th>
-<th class="head"><p>No Stroke</p></th>
-<th class="head"><p>Sum</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Government</p></td>
-<td><p>23</p></td>
-<td><p>491</p></td>
-<td><p>514</p></td>
-</tr>
-<tr class="row-odd"><td><p>Private</p></td>
-<td><p>109</p></td>
-<td><p>2092</p></td>
-<td><p>2201</p></td>
-</tr>
-<tr class="row-even"><td><p>Self-empl</p></td>
-<td><p>48</p></td>
-<td><p>581</p></td>
-<td><p>629</p></td>
-</tr>
-<tr class="row-odd"><td><p>children</p></td>
-<td><p><strong>2</strong></p></td>
-<td><p>685</p></td>
-<td><p>687</p></td>
-</tr>
-<tr class="row-even"><td><p>NeverWork</p></td>
-<td><p><strong>0</strong></p></td>
-<td><p>22</p></td>
-<td><p>22</p></td>
-</tr>
-<tr class="row-odd"><td><p>Sum</p></td>
-<td><p>108</p></td>
-<td><p>3164</p></td>
-<td><p>3344</p></td>
-</tr>
-</tbody>
-</table>
-<p><span class ="blue"><em>孩童與未曾工作者的樣本數不適用於卡方檢定</em></span></p>
-</div>
-<div class="section" id="id7">
-<h5>Chi-square<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
-<table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>Stroke</p></th>
-<th class="head"><p>No Stroke</p></th>
-<th class="head"><p>Sum</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Government</p></td>
-<td><p>23</p></td>
-<td><p>491</p></td>
-<td><p>514</p></td>
-</tr>
-<tr class="row-odd"><td><p>Private</p></td>
-<td><p>109</p></td>
-<td><p>2092</p></td>
-<td><p>2201</p></td>
-</tr>
-<tr class="row-even"><td><p>Self-empl</p></td>
-<td><p>48</p></td>
-<td><p>581</p></td>
-<td><p>629</p></td>
-</tr>
-<tr class="row-odd"><td><p>Sum</p></td>
-<td><p>108</p></td>
-<td><p>3164</p></td>
-<td><p>3344</p></td>
-</tr>
-</tbody>
-</table>
+<h5>Chi-square:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 7.8764, df = 2, p-value = 0.01948</p></li>
+<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 7.87, df=2, p-value=1.959e-02</p></li>
+<li><p><span style="color:blue"> p-value <span class="math notranslate nohighlight">\(&lt;\)</span> 0.05，顯示工作與中風具有高度相關性</span></p></li>
+<li><p><span style="color:blue"> 在私人企業與政府單位工作的人的中風觀測值都比中風期望值低。然而，對於自己開業的人，中風的觀測值比期望值高。從右方條件機率的Bar圖也顯示自己開業的人中風的機率最高</span></p></li>
+<li><p><span style="color:blue"> 我們猜測背後的原因是，自行創業的壓力比領人薪水的壓力大，以致於中風的機率高</span></p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt; round(workStroke_chi$residuals, 3)
-</pre></div>
-</div>
-<table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>Stroke</p></th>
-<th class="head"><p>No Stroke</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Government</p></td>
-<td><p>-0.887</p></td>
-<td><p>0.212</p></td>
-</tr>
-<tr class="row-odd"><td><p>Private</p></td>
-<td><p>-0.870</p></td>
-<td><p>0.208</p></td>
-</tr>
-<tr class="row-even"><td><p>Self-empl</p></td>
-<td><p><strong>2.430</strong></p></td>
-<td><p>-0.580</p></td>
-</tr>
-</tbody>
-</table>
-<p><span class="blue"><em>創業者在兩種分類的卡方檢定中，均顯示較容易中風，且具有統計意義，故在後續迴歸分析中，仍會考慮是否將工作類型作為解釋變數</em></span></p>
-</div>
-<div class="section" id="id8">
-<h5>兩兩分組做chi-square<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h5>
-<div class="section" id="private">
-<h6>Private<a class="headerlink" href="#private" title="Permalink to this headline">¶</a></h6>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Work</span> <span class="n">Type</span> <span class="mi">1</span><span class="p">:</span> <span class="n">children</span><span class="p">,</span> <span class="n">Govt_job</span><span class="p">,</span> <span class="n">Self</span><span class="o">-</span><span class="n">employed</span><span class="p">,</span> <span class="n">Never_worked</span>
-<span class="n">Work</span> <span class="n">Type</span> <span class="mi">2</span><span class="p">:</span> <span class="n">Private</span>
-</pre></div>
-</div>
-<table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>Stroke</p></th>
-<th class="head"><p>No Stroke</p></th>
-<th class="head"><p></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Work type 1</p></td>
-<td><p>100</p></td>
-<td><p>2085</p></td>
-<td><p>2185</p></td>
-</tr>
-<tr class="row-odd"><td><p>Work type 2</p></td>
-<td><p>149</p></td>
-<td><p>2776</p></td>
-<td><p>2925</p></td>
-</tr>
-<tr class="row-even"><td><p></p></td>
-<td><p>249</p></td>
-<td><p>4861</p></td>
-<td><p>5110</p></td>
-</tr>
-</tbody>
-</table>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 0.6149, df = 1, p-value = 0.4329</p></li>
-<li><p>因此工作類型是否是私人企業(Private)與中風沒有顯著的關聯性</p></li>
-</ul>
-</div>
-<div class="section" id="self-employed">
-<h6>Self-employed<a class="headerlink" href="#self-employed" title="Permalink to this headline">¶</a></h6>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Work</span> <span class="n">Type</span> <span class="mi">1</span><span class="p">:</span> <span class="n">children</span><span class="p">,</span> <span class="n">Govt_job</span><span class="p">,</span> <span class="n">Private</span><span class="p">,</span> <span class="n">Never_worked</span>
-<span class="n">Work</span> <span class="n">Type</span> <span class="mi">2</span><span class="p">:</span> <span class="n">Self</span><span class="o">-</span><span class="n">employed</span>
-</pre></div>
-</div>
-<table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>Stroke</p></th>
-<th class="head"><p>No Stroke</p></th>
-<th class="head"><p></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Work type 1</p></td>
-<td><p>184</p></td>
-<td><p>4107</p></td>
-<td><p>4291</p></td>
-</tr>
-<tr class="row-odd"><td><p>Work type 2</p></td>
-<td><p>65</p></td>
-<td><p>754</p></td>
-<td><p>819</p></td>
-</tr>
-<tr class="row-even"><td><p></p></td>
-<td><p>249</p></td>
-<td><p>4861</p></td>
-<td><p>5110</p></td>
-</tr>
-</tbody>
-</table>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 18.97, df = 1, p-value = 1.328e-05</p></li>
-<li><p>因此工作類型是否是自行創業者(Self-employed)與中風有顯著的關聯性</p></li>
-</ul>
-</div>
-<div class="section" id="govt-job">
-<h6>Govt_job<a class="headerlink" href="#govt-job" title="Permalink to this headline">¶</a></h6>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Work</span> <span class="n">Type</span> <span class="mi">1</span><span class="p">:</span> <span class="n">children</span><span class="p">,</span> <span class="n">Self</span><span class="o">-</span><span class="n">employed</span><span class="p">,</span> <span class="n">Private</span><span class="p">,</span> <span class="n">Never_worked</span>
-<span class="n">Work</span> <span class="n">Type</span> <span class="mi">2</span><span class="p">:</span> <span class="n">Govt_job</span>
-</pre></div>
-</div>
-<table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>Stroke</p></th>
-<th class="head"><p>No Stroke</p></th>
-<th class="head"><p></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Work type 1</p></td>
-<td><p>216</p></td>
-<td><p>4237</p></td>
-<td><p>4453</p></td>
-</tr>
-<tr class="row-odd"><td><p>Work type 2</p></td>
-<td><p>33</p></td>
-<td><p>624</p></td>
-<td><p>657</p></td>
-</tr>
-<tr class="row-even"><td><p></p></td>
-<td><p>249</p></td>
-<td><p>4861</p></td>
-<td><p>5110</p></td>
-</tr>
-</tbody>
-</table>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 0.0088896, df = 1, p-value = 0.9249</p></li>
-<li><p>因此工作類型是否在政府機關(Govt_job)與中風沒有顯著的關聯性</p></li>
-</ul>
-</div>
 </div>
 </div>
 </div>

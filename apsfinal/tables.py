@@ -142,13 +142,15 @@ class TwoByTwoTable:
 
 class ContigencyAgent:
     feature_cates = {'age': ['<50', '50-60', '60-70', '70-80', '>80'],
-                     'work_type': ['Private', 'Govt_job', 'Self-employed', 'Never_worked', 'children'],
+                     'work_type': ['Private', 'Self-employed', 'Govt_job'],
+                     'smoking_status' : ['never smoked', 'formerly smoked', 'smokes'],
                      'avg_glucose_level': ['<80', '80-110', '110-160', '>160'],
                      'bmi': ['<24', '24-27', '27-30', '30-35', '>35'],
                      'stroke': ['Stroke', 'No Stroke']}
 
     feature_values = {'age': ['<50', '50-60', '60-70', '70-80', '>80'],
-                      'work_type': ['Private', 'Govt_job', 'Self-employed', 'Never_worked', 'children'],
+                      'work_type': ['Private', 'Self-employed', 'Govt_job'],
+                     'smoking_status' : ['never smoked', 'formerly smoked', 'smokes'],
                       'avg_glucose_level': ['<80', '80-110', '110-160', '>160'],
                       'bmi': ['<24', '24-27', '27-30', '30-35', '>35'],
                       'stroke': [1, 0]}
@@ -158,11 +160,22 @@ class ContigencyAgent:
 
     def show_contingency_table(self, feature1, feature2):
         data_array = self.initialize_data_array(feature1, feature2)
-        data_array, table = self.get_table(data_array, feature1, feature2)
+        data_array = self.get_table(data_array, feature1, feature2)
+        table = tabulate(data_array, tablefmt='fancy_grid')
         print(table)
         chi2, p, dof, ex = self.get_chi_square(data_array, feature1)
         print(f'X-square={chi2:.2f}, df={dof}, p-value={p:.3e}')
         return data_array
+
+    def show_contingency_table_include_expected_values(self, feature1, feature2):
+        data_array = self.initialize_data_array(feature1, feature2)
+        data_array = self.get_table(data_array, feature1, feature2)
+        chi2, p, dof, ex = self.get_chi_square(data_array, feature1)
+        data_array = self.add_expected_value_into_data_array(data_array, ex, feature1, feature2)
+        table = tabulate(data_array, tablefmt='fancy_grid')
+        print(table)
+        print(f'X-square={chi2:.2f}, df={dof}, p-value={p:.3e}')
+        return data_array, ex
 
     def get_table_shape(self, feature1, feature2):
         n_row = len(self.feature_cates[feature2]) + 2
@@ -199,6 +212,9 @@ class ContigencyAgent:
                 elif feature2 == 'bmi':
                     mask = self.get_bmi_mask(df_temp_1, subfeature2)
                     df_temp_2 = df_temp_1[mask]
+                elif feature2 == 'smoking_status':
+                    mask = (df_temp_1[feature2] == subfeature2)
+                    df_temp_2 = df_temp_1[mask]
 
                 data_array[idx_f2+1, idx_f1+1] = df_temp_2.shape[0]
 
@@ -212,7 +228,16 @@ class ContigencyAgent:
 
         # Total
         data_array[n_row-1, n_col-1] = data_array[1:-1, n_col-1].sum()
-        return data_array, tabulate(data_array, tablefmt='fancy_grid')
+        return data_array
+
+    def add_expected_value_into_data_array(self, data_array, expected_values, feature1, feature2):
+        for idx_f1 in range(len(self.feature_values[feature1])):
+            for idx_f2 in range(len(self.feature_values[feature2])):
+                observed_value = data_array[idx_f2+1, idx_f1+1]
+                expected_value = expected_values[idx_f1, idx_f2]
+                new_data_value = f'{observed_value} ({expected_value:.1f})'
+                data_array[idx_f2+1, idx_f1+1] = new_data_value
+        return data_array
 
     def get_age_mask(self, df_in, age_range):
         d_mask = {'<50': df_in['age'] < 50, 

@@ -30,34 +30,9 @@
 - 數值型: age, avg_glucose_level, bmi
 
 ## 單變數分析: 類別型
-### Ever married
-```{image} https://i.imgur.com/Pua54Dk.png
-:alt: evermarry
-:class: bg-primary mb-1
-:width: 800px
-:align: center
-```
-<span class="blue">*簡單類別型解釋變數分析中，若用於分析婚姻經驗與其他變數的關係，剔除年齡小於16歲的資料*</span>
-
 ### Stroke
 ```{image} https://i.imgur.com/BJbNHxr.png
 :alt: strokebar
-:class: bg-primary mb-1
-:width: 800px
-:align: center
-```
-
-### Smoking status
-```{image} https://i.imgur.com/wn6c5i3.png
-:alt: smoking
-:class: bg-primary mb-1
-:width: 800px
-:align: center
-```
-
-### Work type
-```{image} https://i.imgur.com/foUU50y.png
-:alt: worktype
 :class: bg-primary mb-1
 :width: 800px
 :align: center

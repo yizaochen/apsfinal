@@ -4,7 +4,7 @@
 - file: intro
 - file: dataexplore
 - file: simplecategorical.ipynb
-- file: multiplecategorical
+- file: multiplecategorical.ipynb
 - file: numerical
 - file: conti_table_summary
 - file: interaction_plot
