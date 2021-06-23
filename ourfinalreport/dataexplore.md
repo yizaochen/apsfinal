@@ -39,44 +39,13 @@
 ```
 
 ## 單變數分析: 數值型
-### 年齡
-#### 整體資料年齡分佈
-```{image} https://i.imgur.com/Uie1iYd.png
-:alt: age
-:class: bg-primary mb-1
-:width: 800px
-:align: center
-```
-#### 分成中風與非中風
-```{image} https://i.imgur.com/mwyEex0.png
-:alt: age
-:class: bg-primary mb-1
-:width: 800px
-:align: center
-```
-
-#### 所有中風的人:年紀與性別的分佈
+### 所有中風的人:年紀與性別的分佈
 ```{image} https://i.imgur.com/eHOKXqd.png
 :alt: age
 :class: bg-primary mb-1
 :width: 800px
 :align: center
 ```
-
-### Average glucose level
-<span class="grey">*註: 雖然不確定收集資料時是取飯前(FPG)或是飯後血糖(OGTT)，本報告仍先採用空腹血糖做為參考標準。*</span>
-
-#### 整體資料血糖分佈
-```{image} https://i.imgur.com/5Gwb4HB.png
-:alt: avg_glucose
-:class: bg-primary mb-1
-:width: 800px
-:align: center
-```
-#### 分成中風與非中風
-- 下圖呈現條件機率 $P(\text{stroke}|\text{Glu:group})$ 與 $P(\text{Non-stroke}|\text{Glu:group})$
-- ![](https://i.imgur.com/Wf9P7xi.png)
-
 ### BMI
 #### 整體資料BMI分佈
 ```{image} https://i.imgur.com/UoOZ8vh.png

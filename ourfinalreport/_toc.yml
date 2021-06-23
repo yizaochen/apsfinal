@@ -5,7 +5,7 @@
 - file: dataexplore
 - file: simplecategorical.ipynb
 - file: multiplecategorical.ipynb
-- file: numerical
+- file: numerical.ipynb
 - file: conti_table_summary
 - file: interaction_plot
 - file: regression_categorical.ipynb

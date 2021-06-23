@@ -141,18 +141,20 @@ class TwoByTwoTable:
 
 
 class ContigencyAgent:
-    feature_cates = {'age': ['<50', '50-60', '60-70', '70-80', '>80'],
+    feature_cates = {'age': ['<50', '50-60', '60-70', '70-80', '80-90'],
+                     'age_detail': ['10-20', '20-30', '30-40', '40-50', '50-60', '60-70', '70-80', '80-90'],
                      'work_type': ['Private', 'Self-employed', 'Govt_job'],
                      'smoking_status' : ['never smoked', 'formerly smoked', 'smokes'],
                      'avg_glucose_level': ['<80', '80-110', '110-160', '>160'],
-                     'bmi': ['<24', '24-27', '27-30', '30-35', '>35'],
+                     'bmi': ['Underweight', 'Normal', 'Overweight'],
                      'stroke': ['Stroke', 'No Stroke']}
 
-    feature_values = {'age': ['<50', '50-60', '60-70', '70-80', '>80'],
+    feature_values = {'age': ['<50', '50-60', '60-70', '70-80', '80-90'],
+                      'age_detail': ['10-20', '20-30', '30-40', '40-50', '50-60', '60-70', '70-80', '80-90'],
                       'work_type': ['Private', 'Self-employed', 'Govt_job'],
-                     'smoking_status' : ['never smoked', 'formerly smoked', 'smokes'],
+                      'smoking_status' : ['never smoked', 'formerly smoked', 'smokes'],
                       'avg_glucose_level': ['<80', '80-110', '110-160', '>160'],
-                      'bmi': ['<24', '24-27', '27-30', '30-35', '>35'],
+                      'bmi': ['Underweight', 'Normal', 'Overweight'],
                       'stroke': [1, 0]}
 
     def __init__(self, csv_in):
@@ -204,6 +206,9 @@ class ContigencyAgent:
                 if feature2 == 'age':
                     mask = self.get_age_mask(df_temp_1, subfeature2)
                     df_temp_2 = df_temp_1[mask]
+                elif feature2 == 'age_detail':
+                    mask = self.get_age_detail_mask(df_temp_1, subfeature2)
+                    df_temp_2 = df_temp_1[mask]                    
                 elif feature2 == 'work_type':
                     df_temp_2 = df_temp_1[df_temp_1[feature2] == subfeature2]
                 elif feature2 == 'avg_glucose_level':
@@ -244,7 +249,18 @@ class ContigencyAgent:
                   '50-60': (df_in['age'] >= 50) & (df_in['age'] < 60), 
                   '60-70': (df_in['age'] >= 60) & (df_in['age'] < 70), 
                   '70-80': (df_in['age'] >= 70) & (df_in['age'] < 80),
-                  '>80': df_in['age'] >= 80}
+                  '80-90': df_in['age'] >= 80}
+        return d_mask[age_range]
+
+    def get_age_detail_mask(self, df_in, age_range):
+        d_mask = {'10-20': (df_in['age'] >= 10) & (df_in['age'] < 20),
+                  '20-30': (df_in['age'] >= 20) & (df_in['age'] < 30),
+                  '30-40': (df_in['age'] >= 30) & (df_in['age'] < 40),
+                  '40-50': (df_in['age'] >= 40) & (df_in['age'] < 50),
+                  '50-60': (df_in['age'] >= 50) & (df_in['age'] < 60), 
+                  '60-70': (df_in['age'] >= 60) & (df_in['age'] < 70), 
+                  '70-80': (df_in['age'] >= 70) & (df_in['age'] < 80),
+                  '80-90': (df_in['age'] >= 80) & (df_in['age'] < 90)}
         return d_mask[age_range]
 
     def get_glucose_mask(self, df_in, glu_range):
@@ -255,11 +271,9 @@ class ContigencyAgent:
         return d_mask[glu_range]
 
     def get_bmi_mask(self, df_in, bmi_range):
-        d_mask = {'<24': df_in['bmi'] < 24, 
-                  '24-27': (df_in['bmi'] >= 24) & (df_in['bmi'] < 27), 
-                  '27-30': (df_in['bmi'] >= 27) & (df_in['bmi'] < 30), 
-                  '30-35': (df_in['bmi'] >= 30) & (df_in['bmi'] < 35), 
-                  '>35': df_in['bmi'] >= 35}
+        d_mask = {'Underweight': df_in['bmi'] < 18.5, 
+                  'Normal': (df_in['bmi'] >= 18.5) & (df_in['bmi'] < 25), 
+                  'Overweight': (df_in['bmi'] >= 27) & (df_in['bmi'] < 30)}
         return d_mask[bmi_range]
     
     def get_chi_square(self, data_array, feature1):

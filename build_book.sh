@@ -2,7 +2,7 @@ echo "Start"
 jb=/home/yizaochen/miniconda3/envs/apsfinal/bin/jupyter-book
 cd /home/yizaochen/courses/apsfinal
 
-cp notebooks/multiplecategorical.ipynb ./ourfinalreport/
+cp notebooks/numerical.ipynb ./ourfinalreport/
 
 #$jb build ourfinalreport
 $jb build ourfinalreport --builder pdfhtml
