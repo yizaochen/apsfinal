@@ -137,7 +137,7 @@
  </li>
  <li class="toctree-l1 toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="intro.html#document-numerical">
-   列聯表分析:數值型
+   列聯表分析3:數值型
   </a>
  </li>
  <li class="toctree-l1 toc-h1 nav-item toc-entry">
@@ -311,43 +311,17 @@
 <div class="section" id="id6">
 <h4>單變數分析: 數值型<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="id7">
-<h5>年齡<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
-<div class="section" id="id8">
-<h6>整體資料年齡分佈<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h6>
-<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/Uie1iYd.png"><img alt="age" class="bg-primary mb-1 align-center" src="https://i.imgur.com/Uie1iYd.png" style="width: 800px;" /></a>
-</div>
-<div class="section" id="id9">
-<h6>分成中風與非中風<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h6>
-<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/mwyEex0.png"><img alt="age" class="bg-primary mb-1 align-center" src="https://i.imgur.com/mwyEex0.png" style="width: 800px;" /></a>
-</div>
-<div class="section" id="id10">
-<h6>所有中風的人:年紀與性別的分佈<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h6>
+<h5>所有中風的人:年紀與性別的分佈<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
 <a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/eHOKXqd.png"><img alt="age" class="bg-primary mb-1 align-center" src="https://i.imgur.com/eHOKXqd.png" style="width: 800px;" /></a>
-</div>
-</div>
-<div class="section" id="average-glucose-level">
-<h5>Average glucose level<a class="headerlink" href="#average-glucose-level" title="Permalink to this headline">¶</a></h5>
-<p><span class="grey"><em>註: 雖然不確定收集資料時是取飯前(FPG)或是飯後血糖(OGTT)，本報告仍先採用空腹血糖做為參考標準。</em></span></p>
-<div class="section" id="id11">
-<h6>整體資料血糖分佈<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h6>
-<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/5Gwb4HB.png"><img alt="avg_glucose" class="bg-primary mb-1 align-center" src="https://i.imgur.com/5Gwb4HB.png" style="width: 800px;" /></a>
-</div>
-<div class="section" id="id12">
-<h6>分成中風與非中風<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h6>
-<ul class="simple">
-<li><p>下圖呈現條件機率 <span class="math notranslate nohighlight">\(P(\text{stroke}|\text{Glu:group})\)</span> 與 <span class="math notranslate nohighlight">\(P(\text{Non-stroke}|\text{Glu:group})\)</span></p></li>
-<li><p><img alt="" src="https://i.imgur.com/Wf9P7xi.png" /></p></li>
-</ul>
-</div>
 </div>
 <div class="section" id="bmi">
 <h5>BMI<a class="headerlink" href="#bmi" title="Permalink to this headline">¶</a></h5>
-<div class="section" id="id13">
-<h6>整體資料BMI分佈<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id8">
+<h6>整體資料BMI分佈<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h6>
 <a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/UoOZ8vh.png"><img alt="bmi_distribution" class="bg-primary mb-1 align-center" src="https://i.imgur.com/UoOZ8vh.png" style="width: 800px;" /></a>
 </div>
-<div class="section" id="id14">
-<h6>分成中風與非中風<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id9">
+<h6>分成中風與非中風<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h6>
 <ul class="simple">
 <li><p>下圖呈現條件機率 <span class="math notranslate nohighlight">\(P(\text{stroke}|\text{BMI:group})\)</span> 與 <span class="math notranslate nohighlight">\(P(\text{Non-stroke}|\text{BMI:group})\)</span></p></li>
 <li><p><img alt="" src="https://i.imgur.com/DMvA9b9.png" /></p></li>
@@ -355,8 +329,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="id15">
-<h4>資料綜觀<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id10">
+<h4>資料綜觀<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
 <p><img alt="" src="https://i.imgur.com/KF0MfYP.png" /></p>
 <p><span class="grey"><em>註: 以上資料在類別變數分析中，均會依據狀況刪去部分資料，因此各項初步分析中的資料數可能不盡一致。但在分群分析與迴歸分析中，若有任一欄為「unknown」、「N/A」、或「null」，該筆資料會整筆刪除，採用內容一致的資料集。</em></span></p>
 </div>
@@ -638,26 +612,99 @@
 </div>
 </div>
 <span id="document-numerical"></span><div class="section" id="id1">
-<h3>列聯表分析:數值型<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>列聯表分析3:數值型<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="a">
+<h4>A. 中風與年齡<a class="headerlink" href="#a" title="Permalink to this headline">¶</a></h4>
+<p>在這部份的分析，我們用10歲當間距，把年齡歸成8個分類(10-20,20-30,…,80-90)</p>
 <div class="section" id="id2">
-<h4>中風與年齡<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="chi-square">
-<h5>Chi-square<a class="headerlink" href="#chi-square" title="Permalink to this headline">¶</a></h5>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/age_stroke.png"><img alt="age_stroke" class="bg-primary mb-1 align-center" src="_images/age_stroke.png" style="width: 800px;" /></a>
+<h5>年齡的分佈與比例<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/age_distribution.png"><img alt="age_distribution" class="bg-primary mb-1 align-center" src="_images/age_distribution.png" style="width: 600px;" /></a>
+<ul class="simple">
+<li><p><span style="color:blue">在這筆資料中，最多人是介於50-60歲，佔了19.3%。最年輕的族群是10-20，佔了6.7%。最年長的是80-90，佔了4.4%</span></p></li>
+</ul>
 </div>
+<div class="section" id="contigency-table">
+<h5>Contigency Table<a class="headerlink" href="#contigency-table" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/contigency_table_age1.png"><img alt="contigency_table_age1" class="bg-primary mb-1 align-center" src="_images/contigency_table_age1.png" style="width: 800px;" /></a>
+<ul class="simple">
+<li><p><span style="color:gray">從上方表格發現，10-20與20-30歲的人都屬於非中風族群。因此，為了做卡方分析，我們會把10-20,20-30,30-40,40-50合併成一組</span></p></li>
+<li><p><span style="color:blue">從上方條件機率Bar圖來看，中風的機率顯然是隨著年齡而增加</span></p></li>
+</ul>
 </div>
 <div class="section" id="id3">
-<h4>中風與血糖<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<h5>Contigency Table(合併組別後)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/contigency_table_age2.png"><img alt="contigency_table_age2" class="bg-primary mb-1 align-center" src="_images/contigency_table_age2.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="chi-square">
+<h5>Chi-square:<a class="headerlink" href="#chi-square" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 242.12, df=4, p-value=3.243e-51</p></li>
+<li><p><span style="color:blue"> p-value <span class="math notranslate nohighlight">\(&lt;\)</span> 0.05，顯示年齡與中風具有高度相關性</span></p></li>
+<li><p><span style="color:red"> 觀測值與期望值的差別、條件機率Bar圖都指出，年齡愈大，中風機率愈高</span></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="b">
+<h4>B. 中風與血糖<a class="headerlink" href="#b" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="id4">
-<h5>Chi-square<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/glucose_stroke.png"><img alt="glucose_stroke" class="bg-primary mb-1 align-center" src="_images/glucose_stroke.png" style="width: 800px;" /></a>
+<h5>血糖的分佈<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<p><em>註: 雖然不確定收集資料時是取飯前(FPG)或是飯後血糖(OGTT)，本報告仍先採用空腹血糖做為參考標準。</em></p>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/5Gwb4HB.png"><img alt="avg_glucose" class="bg-primary mb-1 align-center" src="https://i.imgur.com/5Gwb4HB.png" style="width: 600px;" /></a>
+<ul class="simple">
+<li><p><span style="color:blue">可以看到血糖的分佈呈現雙峰，左邊高峰與正常血糖範圍(80-110)交疊，而右邊的高峰是血糖過高的區域</span></p></li>
+</ul>
 </div>
-</div>
-<div class="section" id="bmi">
-<h4>中風與BMI<a class="headerlink" href="#bmi" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="id5">
-<h5>Chi-square<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/bmi_stroke.png"><img alt="glucose_stroke" class="bg-primary mb-1 align-center" src="_images/bmi_stroke.png" style="width: 800px;" /></a>
+<h5>Contigency Table<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
+<p>我們接著參考日本糖尿病協會的分類標準(Appendix)，把血糖分為四群</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/contingency_table_glucose.png"><img alt="contingency_table_glucose" class="bg-primary mb-1 align-center" src="_images/contingency_table_glucose.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="id6">
+<h5>Chi-square:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 79.24, df=3, p-value=4.478e-17</p></li>
+<li><p><span style="color:blue"> p-value <span class="math notranslate nohighlight">\(&lt;\)</span> 0.05，顯示血糖與中風具有高度相關性</span></p></li>
+<li><p><span style="color:blue"> 由條件機率可以發現，血糖小於160對於中風的機率都差不多</span></p></li>
+<li><p><span style="color:red"> 血糖大於160的組別，中風的機率特別高。對照上面的分佈圖，右邊高血糖的族群就是容易中風的族群</span></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="c-bmi">
+<h4>C. 中風與BMI<a class="headerlink" href="#c-bmi" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="bmi">
+<h5>BMI的分佈<a class="headerlink" href="#bmi" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/bmi_distribution.png"><img alt="bmi_distribution" class="bg-primary mb-1 align-center" src="_images/bmi_distribution.png" style="width: 800px;" /></a>
+<ul class="simple">
+<li><p>首先，我們把BMI分成三類，18.5與25這兩個數值是分類的切點，如上圖</p></li>
+<li><p><span style="color:blue">由上面的分佈圖大概可以知道，這組資料集大部分的人是過胖的</span></p></li>
+</ul>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/bmi_distri_compare.png"><img alt="bmi_distribution" class="bg-primary mb-1 align-center" src="_images/bmi_distri_compare.png" style="width: 800px;" /></a>
+<ul class="simple">
+<li><p>這組資料是麥肯錫這間美國企業舉辦活動釋出的，因此我們比較了一下這組資料BMI與美國十萬個成人的BMI分佈，最後還找了台灣人的分佈</p></li>
+<li><p><span style="color:blue">由上圖，這組資料集的確是比較符合美國人的分佈，甚至胖上許多。所以拿這組資料研究中風可能就有偏差，因為大部份人是過胖的</span></p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h5>Contigency Table<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/contingency_table_bmi.png"><img alt="contingency_table_bmi" class="bg-primary mb-1 align-center" src="_images/contingency_table_bmi.png" style="width: 800px;" /></a>
+<ul class="simple">
+<li><p>因為Underweight-stroke那一欄是1，表示這樣的分組不適合做卡方，因此在這裡我們就只看條件機率</p></li>
+<li><p><span style="color:blue"> 由條件機率可以發現，過胖的人，中風機率是比較高的</span></p></li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h5>討論: 過輕族群的唯一一個中風者<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>我們把過輕族群唯一一個中風者的資料抓出來看</p></li>
+<li><p><span style="color:blue"> 她是: 81歲女性，沒有高血壓，沒有心臟病，有結婚，自營事業者，住在鄉村，血糖82，不曾抽煙</span></p></li>
+<li><p><span style="color:blue"> 由上面所有的分析，她只俱備年紀大這個風險因素，所以我們推測以下種可能</span></p>
+<ul>
+<li><p>年紀大，容易中風</p></li>
+<li><p>她可能基因上有中風因子</p></li>
+<li><p>可能因為中風，生病後才變瘦的</p></li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 </div>
