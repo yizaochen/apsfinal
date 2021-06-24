@@ -7,6 +7,7 @@
 - file: multiplecategorical.ipynb
 - file: numerical.ipynb
 - file: conti_table_summary
+- file: cond_prob_given_stroke_nonstroke.ipynb
 - file: interaction_plot
 - file: regression_categorical.ipynb
 - file: regression_numerical.ipynb

@@ -46,18 +46,6 @@
 :width: 800px
 :align: center
 ```
-### BMI
-#### 整體資料BMI分佈
-```{image} https://i.imgur.com/UoOZ8vh.png
-:alt: bmi_distribution
-:class: bg-primary mb-1
-:width: 800px
-:align: center
-```
-#### 分成中風與非中風
-- 下圖呈現條件機率 $P(\text{stroke}|\text{BMI:group})$ 與 $P(\text{Non-stroke}|\text{BMI:group})$
-- ![](https://i.imgur.com/DMvA9b9.png)  
-  
 
 ## 資料綜觀
 ![](https://i.imgur.com/KF0MfYP.png)
