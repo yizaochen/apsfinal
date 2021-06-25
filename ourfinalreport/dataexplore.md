@@ -1,19 +1,5 @@
-資料探討
+Chapter 2: 資料集基本介紹
 =======================
-<style>
-.blue {
-    color: blue;
-}
-
-.grey {
-    color: grey;
-}
-
-.awk {
-    color: #b6b4cf;
-}
-</style>
-
 ## 資料來源
 - 我們選擇了一筆2018年釋出的網路資料
   - [McKinsey Analytics: Online Hackathon on Healthcare](https://datahack.analyticsvidhya.com/contest/mckinsey-analytics-online-hackathon/)
@@ -29,25 +15,21 @@
 - 類別型: gender, hypertension, heart_disease, ever_married, work_type, Residence_type, smoking_status, stroke
 - 數值型: age, avg_glucose_level, bmi
 
-## 單變數分析: 類別型
-### Stroke
+## 中風的分佈
 ```{image} https://i.imgur.com/BJbNHxr.png
 :alt: strokebar
 :class: bg-primary mb-1
 :width: 800px
 :align: center
 ```
+- 在這組資料裏面，中風的人佔了5%，非中風的人佔了95%
+<p style="page-break-before: always">
 
-## 單變數分析: 數值型
-### 所有中風的人:年紀與性別的分佈
-```{image} https://i.imgur.com/eHOKXqd.png
-:alt: age
+## 其他變數分佈
+```{image} https://i.imgur.com/ShTO5La.png
+:alt: strokebar
 :class: bg-primary mb-1
 :width: 800px
 :align: center
 ```
-
-## 資料綜觀
-![](https://i.imgur.com/KF0MfYP.png)
-
-<span class="grey">*註: 以上資料在類別變數分析中，均會依據狀況刪去部分資料，因此各項初步分析中的資料數可能不盡一致。但在分群分析與迴歸分析中，若有任一欄為「unknown」、「N/A」、或「null」，該筆資料會整筆刪除，採用內容一致的資料集。*</span>
+<p style="page-break-before: always">

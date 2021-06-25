@@ -28,3 +28,5 @@ summary(model_reduce)
 anova(model_reduce, model_full, test="LRT")
 
 summary(model_reduce)
+
+

@@ -1,21 +1,20 @@
 # Table of content
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
+
 - file: intro
+- file: intro1
 - file: dataexplore
 - file: simplecategorical.ipynb
 - file: multiplecategorical.ipynb
 - file: numerical.ipynb
-- file: conti_table_summary
 - file: cond_prob_given_stroke_nonstroke.ipynb
+- file: age_confounder.ipynb
 - file: interaction_plot
 - file: regression_categorical.ipynb
 - file: regression_numerical.ipynb
 - file: regression_mix.ipynb
 - file: clustering
 - file: clustering_batch
-- file: append_dataexplore
-- file: interaction1
-- file: interaction2
-- file: appen_classify_ref
+- file: conti_table_summary
 - file: bibliography

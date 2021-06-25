@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# 列聯表分析2:多重類別型
+# Chapter 4: 列聯表分析2-多重類別型
 # =======================
 # 在列聯表分析的第二部份，主要是探討兩個類別型變數，抽煙狀態與工作。這兩個變數都含有兩個以上的類別。下面主要使用的統計方法為卡方檢定。
 
@@ -33,7 +33,7 @@
 
 # ## B. 中風與工作
 # ### 工作的分佈與比例
-# ```{image} https://i.imgur.com/foUU50y.png
+# ```{image} ./images/worktype_distribution.png
 # :alt: worktype
 # :class: bg-primary mb-1
 # :width: 800px
@@ -55,3 +55,4 @@
 # - <span style="color:blue"> p-value $<$ 0.05，顯示工作與中風具有高度相關性</span>
 # - <span style="color:blue"> 在私人企業與政府單位工作的人的中風觀測值都比中風期望值低。然而，對於自己開業的人，中風的觀測值比期望值高。從右方條件機率的Bar圖也顯示自己開業的人中風的機率最高</span>
 # - <span style="color:blue"> 我們猜測背後的原因是，自行創業的壓力比領人薪水的壓力大，以致於中風的機率高</span>
+# <p style="page-break-before: always">

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# 列聯表分析1:簡單類別型
+# Chapter 3: 列聯表分析1-簡單類別型
 # =======================
 # 列聯表分析的第一部份，會針對五個簡單類別變數做Two-by-two table的分析。簡單類別型變數只有兩個值，例如: 有高血壓就是1，沒高血壓就是0，也因此Two-by-two table跟Odds Ratio適合分析這種變數與中風的關係。
 
@@ -188,3 +188,6 @@
 # - <span style="color:blue"> 與中風不相關的變數: 性別與居住地</span>
 # - <span style="color:blue"> 與中風相關的三個變數: 婚姻、高血壓、心臟病 </span>
 # - <span style="color:blue"> 婚姻與中風相關是比較意外的結果，下面會做年齡與婚姻相關的分析，就可以知道婚姻是帶有年齡的資訊的。</span>
+# <p style="page-break-before: always">
+
+# <p style="page-break-before: always">
