@@ -4,7 +4,7 @@
 title: 腦中風資料的統計分析與探討
 author: 陳奕造 施奕如 楊欣儒 李長穎
 logo: logo.png
-
+copyright: "2021"  # Copyright year to be placed in the footer
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:

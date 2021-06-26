@@ -121,6 +121,11 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="intro.html#document-tablecontent">
+   Table of contents
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="intro.html#document-intro1">
    Chapter 1: 背景與動機
   </a>
@@ -191,6 +196,11 @@
   </a>
  </li>
  <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="intro.html#document-feedback">
+   Chapter 15: 心得
+  </a>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="intro.html#document-bibliography">
    參考資料
   </a>
@@ -211,6 +221,15 @@
 <p><span style="opacity: 0.0">$<span class="math notranslate nohighlight">\(\int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}\)</span>$</span></p>
 <p style="page-break-before: always">
 <div class="toctree-wrapper compound">
+<span id="document-tablecontent"></span><div class="section" id="table-of-contents">
+<h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="chapter-1">
+<h3><a class="reference internal" href="intro.html#document-intro1"><span class="doc std std-doc">Chapter 1: 背景與動機</span></a><a class="headerlink" href="#chapter-1" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="chapter-2">
+<h3><a class="reference internal" href="intro.html#document-dataexplore"><span class="doc std std-doc">Chapter 2: 資料集基本介紹</span></a><a class="headerlink" href="#chapter-2" title="Permalink to this headline">¶</a></h3>
+<p style="page-break-before: always"></div>
+</div>
 <span id="document-intro1"></span><div class="section" id="chapter-1">
 <h2>Chapter 1: 背景與動機<a class="headerlink" href="#chapter-1" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
@@ -236,7 +255,10 @@
 <li><p>迴歸分析可以一次考慮多個變數，利用迴歸分析建立出統計模型</p></li>
 <li><p>最後以cluster analysis來獨立探討</p></li>
 </ol>
+<div class="section" id="id14">
+<h5><a class="reference internal" href="intro.html#document-tablecontent"><span class="doc std std-doc">回到目錄</span></a><a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h5>
 <p style="page-break-before: always"></div>
+</div>
 </div>
 </div>
 <span id="document-dataexplore"></span><div class="section" id="chapter-2">
@@ -702,7 +724,11 @@
 <ul class="simple">
 <li><p>上圖中，淡藍色Bar 代表的是 <span class="math notranslate nohighlight">\(P(\text{BMI Group}~|~\text{Stroke})\)</span></p></li>
 <li><p>深藍色Bar 代表的是 <span class="math notranslate nohighlight">\(P(\text{BMI Group}~|~\text{Non-Stroke})\)</span></p></li>
+<li><p><span style="color:blue">中風族群裡，正常BMI跟微胖的人大約佔了27%，27<span class="math notranslate nohighlight">\(&lt;\)</span>BMI<span class="math notranslate nohighlight">\(&lt;\)</span>35 的人大約佔了50%</span></p></li>
+<li><p><span style="color:blue">非中風族群裡，正常BMI跟微胖的人大約佔了34%，27<span class="math notranslate nohighlight">\(&lt;\)</span>BMI<span class="math notranslate nohighlight">\(&lt;\)</span>35 的人大約佔了42%</span></p></li>
+<li><p><span style="color:blue">中風族群裡BMI&gt;35的比例與非中風族群裡&gt;35的比例是差不多的，都是21%</span></p></li>
 </ul>
+<p style="page-break-before: always">
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/stroke_BMI_scale_percentage.png"><img alt="glucose_stroke_scale_percentage" class="bg-primary mb-1 align-center" src="_images/stroke_BMI_scale_percentage.png" style="width: 600px;" /></a>
 <ul class="simple">
 <li><p>由於做了更細的分類，我們再一次的呈現反向的條件機率</p></li>
@@ -740,7 +766,10 @@
 <h3>Age and Marry<a class="headerlink" href="#age-and-marry" title="Permalink to this headline">¶</a></h3>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/age_marry.png"><img alt="age_marry" class="bg-primary mb-1 align-center" src="_images/age_marry.png" style="width: 600px;" /></a>
 <ul class="simple">
-<li><p><span style="color:blue">未有婚姻經驗的人總共826人，但其中中風的僅有20人，人數過少，在連續型的line plot上，可見出現斷層。若忽略斷層，可見年齡上升對於有婚姻經驗者的中風貢獻較低，但其餘資訊由於未婚者中風人數過少而難以判讀。</span></p></li>
+<li><p><span style="color:blue">未有婚姻經驗的人總共826人，但其中中風的僅有20人。換句話說，<span class="math notranslate nohighlight">\(P(\text{Stroke}|\text{Never Marry})=0.02\)</span>，這會讓模型本身看到未婚者，就容易猜沒中風。中風者裡未婚者過少的這件事情，可能是讓婚姻成為重要解釋變數的主要原因。</span></p></li>
+<li><p>淺綠色Bar代表<span class="math notranslate nohighlight">\(P(\text{Stroke}|\text{Marry},\text{Age-Group})\)</span>，粉紅色Bar代表<span class="math notranslate nohighlight">\(P(\text{Stroke}|\text{Never Marry},\text{Age-Group})\)</span></p></li>
+<li><p><span style="color:blue"> 單純看這張圖60-79、70-79的區段，其實”老、未婚的人”罹患中風的比例是比”老、結婚的人”罹患中風的比例還高的。</span></p></li>
+<li><p><span style="color:blue"> 但認真把count看清楚，會發現，90%的中風者都是已婚，而且這群已婚又中風的人大部份都是大於五十歲的。因此，在之後的模型，結婚這件事情對於中風，其實是隱含年紀大的資訊的。</span></p></li>
 </ul>
 <p style="page-break-before: always"></div>
 <div class="section" id="age-and-smoking-status">
@@ -748,7 +777,14 @@
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/age_smoke.png"><img alt="age_smoke" class="bg-primary mb-1 align-center" src="_images/age_smoke.png" style="width: 600px;" /></a>
 <ul class="simple">
 <li><p>三組均大於39人。</p></li>
-<li><p><span style="color:blue">對於維持抽菸習慣者，觀察右表斜率，年齡之於中風的影響大致可分為三個階段，壯年、(50歲)更年期後十年、邁入老年70歲以後。壯年時期維持抽菸的人口不多，不確定是否具有意義，但可以發現50歲以後之抽菸者，到七十歲以前這段區間若具有抽菸習慣對於罹患中風具有正向影響。然而值得注意的是，雖然在卡方檢定中，我們發現曾經有過抽菸習慣的成功戒菸者們，罹患中風的機會較高，但是本表中可以發現對於60多歲跳到70歲這個階級中，無論是成功戒菸者或是有抽菸習慣者，年齡均會影響其抽菸習慣增加中風機會，兩組斜率均出現變動，因此不排除在卡方檢定中的結果，受到年齡因素的干擾</span></p></li>
+<li><p><span style="color:blue">對於維持抽菸習慣者，觀察右表斜率，年齡之於中風的影響大致可分為三個階段，壯年、(50歲)更年期後十年、邁入老年70歲以後。壯年時期維持抽菸的人口不多，不確定是否具有意義，但可以發現50歲以後之抽菸者，到七十歲以前這段區間若具有抽菸習慣對於罹患中風具有正向影響。然而值得注意的是，雖然在卡方檢定中，我們發現曾經有過抽菸習慣的成功戒菸者們，罹患中風的機會較高，但是本表中可以發現對於60多歲跳到70歲這個階級中，無論是成功戒菸者或是有抽菸習慣者，年齡均會影響其抽菸習慣增加中風機會，兩組斜率均出現變動，因此不排除在卡方檢定中的結果，有受到年齡因素的干擾。原先認為已經成功戒菸者可能菸齡已久，故引導出卡方檢定的結果，然而，目前可得的資料僅能得知平均戒菸年齡，約在40歲以前，又本資料中小於40歲的中風人數過少，故而不在本份報告得以解釋的範圍內。</span></p></li>
+</ul>
+</div>
+<div class="section" id="age-and-glucose">
+<h3>Age and Glucose<a class="headerlink" href="#age-and-glucose" title="Permalink to this headline">¶</a></h3>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/age_glucose.png"><img alt="age_glucose" class="bg-primary mb-1 align-center" src="_images/age_glucose.png" style="width: 600px;" /></a>
+<ul class="simple">
+<li><p><span style="color:blue">前面注意到，血糖會被分成兩群，初步用scatter plot對age，可以看到這種情況，高血糖的第二個distribution可以看到集中在年齡四十歲以上</span></p></li>
 </ul>
 <p style="page-break-before: always"></div>
 </div>
@@ -2124,7 +2160,9 @@ Number of Fisher Scoring iterations: 6
 </div>
 <span id="document-conti_table_summary"></span><div class="section" id="chapter-14">
 <h2>Chapter 14: 結論與討論<a class="headerlink" href="#chapter-14" title="Permalink to this headline">¶</a></h2>
-<p>在看完所有變數的分佈與列聯表分析後，我們做了一張矩陣表格來總結變數之間的關係</p>
+<div class="section" id="id1">
+<h3>資跳探討、列聯表、機率分析<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>首先，根據列聯表、分佈圖還有機率分析，我們做了一張矩陣表格來總結變數之間的關係</p>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/all_vari_corre.jpg"><img alt="all_vari_corre" class="bg-primary mb-1 align-center" src="_images/all_vari_corre.jpg" style="width: 800px;" /></a>
 <ul class="simple">
 <li><p>綠色+號格子代表，兩兩變數是有關聯的</p></li>
@@ -2137,7 +2175,68 @@ Number of Fisher Scoring iterations: 6
 </ul>
 </li>
 </ul>
+</div>
+<div class="section" id="age-as-confounding-effect">
+<h3>Age as Confounding Effect<a class="headerlink" href="#age-as-confounding-effect" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>如果已知年齡，高血壓對於中風提供的資訊相對就少</p></li>
+<li><p>年齡與心臟病對中風的提升是相互加成，尤其是對於60-69歲,80-89歲這兩個區段</p></li>
+<li><p>目前懷疑可能是因為中風人數小於50歲的過少，導致年齡最能觀察出的更年期現象在這次的分析中看不太出有什麼影響力。不過有趣的是，在多組分組分析中，過了60-69歲這個門檻，我們就姑且說70歲吧，到下一個年齡層的斜率會上升，可見年齡對於該組別中風的影響到了70歲之後越趨上升，例如戒菸者、未曾抽菸者、女性，但在心臟病者中，50~80歲，年齡對中風機會的影響幾無改變，但整體而言，年齡都會和這些類別變數產生交互作用。</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3>累積機率探討交戶作用<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>採用累積機率的方式探討不同變數因子對於中風是否具有交互作用。將其中一變數作為橫軸劃分區間，另一變數依類別個別畫出累積分佈曲線，經由累積分佈曲線的斜率變化可以判斷是否在不同的橫軸變數區間產生交互影響。而如果圖形大致重疊則可以判斷變數之間並無交互作用。</p></li>
+<li><p>採用機率分佈取代實際數量的好處，在於可以去除不同族群個數的差異，將資料正規化(normalization)，比較可以看出不同族群間整體變化的趨勢進而做比較。</p></li>
+<li><p>在實作過程中，若橫軸變數的類別順序固定的情況下，對於不同變數的累積分佈曲線，產生敏感變化的區間會不盡相同。因此對於橫軸類別順序的選擇必須隨著觀察資料適時調整，才比較能看出變化的趨勢。</p></li>
+</ul>
+</div>
+<div class="section" id="logistic-regression">
+<h3>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{age}}x_{\rm{age}} + \beta_{\rm{glucose}}x_{\rm{glucose}}
+\]</div>
+<ul class="simple">
+<li><p>最後考量的解釋變數為: 年齡、高血壓、心臟病、血糖，可以發現結婚這個變數被拿掉了。</p></li>
+</ul>
+</div>
+<div class="section" id="cluster-analysis">
+<h3>Cluster Analysis<a class="headerlink" href="#cluster-analysis" title="Permalink to this headline">¶</a></h3>
+<p>綜合兩部分的cluster analysis，中風與非中風樣本皆無法完全地分群，但都有某個小群中涵蓋較多的中風比例，進而可推測該群的非中風樣本健康狀態有較高的中風風險。</p>
 <p style="page-break-before: always"></div>
+</div>
+<span id="document-feedback"></span><div class="section" id="chapter-15">
+<h2>Chapter 15: 心得<a class="headerlink" href="#chapter-15" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>欣儒<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>原先想說，中風-慢性疾病這種研究到爛的題目，再做一次會不會很像在應付作業，但是每份資料的組成不同、限制不同，再加上分析切入點不同，後來發現就我微薄的能力而言，完全不會有這個問題，學得非常多。這份報告與其說，讓敝人學到中風對於慢性疾病的關聯，收穫更多的是「如何善用統計工具」、「提供一個看待創造與學習知識不同的角度」。</p>
+<p>在這次報告自己的工作我覺得有些部分滿可惜的，像是一開始覺得要刪除部分填寫不齊、難以分析的資料，後面又考慮到可能會有偏差或是帶著眼光影響結果，和組員討論過後決定先放棄；後面經過一段時間，做了更多檢定、更了解整份資料集之後，和組員討論又再調整了一次刪減的標準。</p>
+<p>起初有些自責是不是自己工作沒做好，很害怕繼續做下一步，但是越到後面，需要計算、考慮的條件越多，有點理解老師跟助教所說，其實p-value不是全部，更重要的是，看資料分析員想要透過這份資料，傳達出什麼訊息。180個中風病人，明明都是考慮年紀，會因為加入了心臟病，或是改放入性別，而出現迥然不同的分布情況；或是明明在前端只考慮中風與否，和抽菸的關係可以看到影響，但是經過交互作用的觀察後，顯示卻似乎不是如此。</p>
+<p>以往可能覺得學術就是探討真理，所以應該只能有一種宏觀角度，然而經過這陣子的經驗，尤其完成這份報告，對於學術與知識，我的理解可能更像：「那是未探究的內容，沒有人知道正確答案為何，所以一個人，或是特定一群人看每件事可能有侷限性的理解，只要證明過程合理，侷限也沒有關係。學術研究客觀的要旨，或許反而在瞭解這樣的觀點侷限在哪裡吧」。</p>
+<p>也很感謝組員們在每次有所變動後，都願意協助後續互相補足，春假後每週都頻繁溝通每個階段的資料分析的調整事項，甚至不是自己的工作範圍也善意提醒可能會遇到的問題。每個人的忙碌時間不同，也能互相體諒、提出問題也能互相分擔工作，（其實我就是被分擔最多的那個吧，哈哈哈，真的謝謝大家的幫忙），不少次隔著螢幕腦力激盪更讓整份報告完整的方法，真的很謝謝諸位給我那麼好的分組報告體驗。</p>
+<p>最後，王老師是敝人經驗過上課最認真的老師之一，但真正讓王老師對敝人而言特別的地方，是老師會同理學生的角度，不只是隨著每屆學生的反應調整上課內容，甚至不吝分享自己的時間跟非自己的研究生討論、與學生產生近距離的連結，連帶著助教也非常認真。非常謝謝老師跟助教帶給我這一學年的統計課。</p>
+</div>
+<div class="section" id="id2">
+<h3>奕如<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>這門課相較於上學期的生物統計多了實際應用的部分，在課堂上學習的統計理論也能夠隨著實作而更加的理解。這次期末報告選擇stroke相關的數據集當題目是我較為熟悉的主題，資料裡的變數也是生活中熟悉的名詞，因此在理解資料上相對沒那麼的困難。但我在將統計理論放到資料研究上的應用能力較弱，一開始毫無頭緒的時候，只想到先將資料畫成視覺化的統計圖做初步的分析，幸好我的隊友們相當的凱瑞，我能跟著他們的想法及建議去思考，一同分工，再一步一步去完成。在期末報告實作的過程中，我對於將理論套到實際的資料有更近一步的理解，試著更謹慎地思考數據，在寫R程式的部分也進步了很多。另外，那天與老師的線上討論也令我印象深刻，老師總是能看到資料背後更深一層的意義，找到隱藏在資料中的秘密並給出相當有系統的建議，使我們報告的能更加的完整。</p>
+</div>
+<div class="section" id="id3">
+<h3>長穎<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>這次的期末作業讓我發現做實際資料的困難點，在於當資料與課堂授課內容不同時，就不知道如何應用統計方法或者軟體進行分析。花了很多時間將資料整理成可以分析的狀態，而在呈現資料時，發現採用不同的變數，用不同的方法或圖表來呈現分析結果時，可能會有不同的解釋，某種程度上已經是哲學或者是藝術角度的問題。由於沒有一定的標準，有可人為操作的空間，這可能是統計學家常會被人詬病的地方，但也是最有趣的地方，同時呈現科學和人文學科的因素在內。</p>
+<ul class="simple">
+<li><p>這是一份小組報告，感謝其他組員的貢獻，尤其是期末普遍大家都焦頭爛額準備考試報告時，在自己分身無暇時仍有組員默默推進報告的進度，讓自己有動力把東西生出來。</p></li>
+<li><p>也感謝老師在我們已經做到沒有方向時指點迷津，但同時也出現更多挑戰，感覺好像重新來過一次。但報告完成後自己也覺得很有成就感，或許這就是研究工作的醍醐味吧。</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>奕造<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>從2012年進入交大大學部唸到現在交大博士班四年級，在交大的最後兩門課，就是老師的生物統計跟這門應用統計課，覺得真是個值回票價的收尾。成為研究生後，我認為只要把自己的Domain Knowledge精進到純熟，在完成研究生學業的路途上，應該這些工具就夠用了。顯然，我這種認知是錯的。我在博士班二年級，有幸被交大送去美國普林斯頓大學化學系當訪問研究生，而那時候待的實驗室的強項，正是利用統計方法將實驗的訊號轉換成有用的化學知識，我才發現做自然科學研究，統計太重要了。回國後，選了老師的這兩門課，讓我對基礎的統計有了很好的認識，老師講課也會搭配一些有趣的科學史，非常引人入勝。此外，我博士班論文是將Bayesian Network應用在一個非平衡統計熱力學上的問題，每個禮拜三早晨的統計課總是能修正我平常做研究想錯的一些觀念。</p>
+<p>這個期末作業讓我知道現實世界的問題真的比在實驗室一些很理想化的問題困難多了，而且真的要以很多面向去切入。謝謝組員們百忙中，都能每個禮拜積極的討論，還有很謝謝老師花時間陪我們視訊開會，幫我們釐清了很多問題。最後這兩門課加上期末作業，我對統計的想法是，人類的頭腦很神奇，看到資料大概就能猜出一些模式(Pattern)，但要能把這些模式轉換成科學語言或具有科學意義的證據，統計就是不可或缺的知識。</p>
+<p style="page-break-before: always">
+</div>
+</div>
 <span id="document-bibliography"></span><div class="section" id="id1">
 <h2>參考資料<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p id="id2"><dl class="citation">
@@ -2213,7 +2312,7 @@ Number of Fisher Scoring iterations: 6
         
           By 陳奕造 施奕如 楊欣儒 李長穎<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>

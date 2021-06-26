@@ -3,6 +3,7 @@
 #
 
 - file: intro
+- file: tablecontent
 - file: intro1
 - file: dataexplore
 - file: simplecategorical.ipynb
@@ -17,4 +18,5 @@
 - file: clustering
 - file: clustering_batch
 - file: conti_table_summary
+- file: feedback
 - file: bibliography

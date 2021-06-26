@@ -19,4 +19,7 @@ Chapter 1: 背景與動機
 3. 迴歸分析可以一次考慮多個變數，利用迴歸分析建立出統計模型
 4. 最後以cluster analysis來獨立探討
 
+
+
+#### [回到目錄](./tablecontent.md)
 <p style="page-break-before: always">

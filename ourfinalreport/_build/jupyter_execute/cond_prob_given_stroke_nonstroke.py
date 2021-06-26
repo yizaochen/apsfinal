@@ -59,6 +59,10 @@
 # 
 # - 上圖中，淡藍色Bar 代表的是 $P(\text{BMI Group}~|~\text{Stroke})$
 # - 深藍色Bar 代表的是 $P(\text{BMI Group}~|~\text{Non-Stroke})$
+# - <span style="color:blue">中風族群裡，正常BMI跟微胖的人大約佔了27%，27$<$BMI$<$35 的人大約佔了50%</span>
+# - <span style="color:blue">非中風族群裡，正常BMI跟微胖的人大約佔了34%，27$<$BMI$<$35 的人大約佔了42%</span>
+# - <span style="color:blue">中風族群裡BMI>35的比例與非中風族群裡>35的比例是差不多的，都是21%</span>
+# <p style="page-break-before: always">
 # 
 # ```{image} ./images/stroke_BMI_scale_percentage.png
 # :alt: glucose_stroke_scale_percentage
