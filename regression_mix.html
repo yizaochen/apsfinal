@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>迴歸分析: 綜合模型 &#8212; 腦中風資料的統計分析與探討</title>
+    <title>Chapter 11: 迴歸分析3-綜合模型 &#8212; 腦中風資料的統計分析與探討</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Cluster analysis: 測試與中風組內分群" href="clustering.html" />
-    <link rel="prev" title="迴歸分析: 數值型變數" href="regression_numerical.html" />
+    <link rel="next" title="Chapter 12: Cluster analysis 1-使用全部的變數去計算" href="clustering.html" />
+    <link rel="prev" title="Chapter 10: 迴歸分析2-數值型變數" href="regression_numerical.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -87,84 +87,89 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
-   前言：背景與動機
+   Cover Page
   </a>
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="tablecontent.html">
+   目錄
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro1.html">
+   Chapter 1: 背景與動機
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="dataexplore.html">
-   資料探討
+   Chapter 2: 資料集基本介紹
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="simplecategorical.html">
-   列聯表分析:簡單類別型
+   Chapter 3: 列聯表分析1-簡單類別型
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="multiplecategorical.html">
-   列聯表分析:多重類別型
+   Chapter 4: 列聯表分析2-多重類別型
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="numerical.html">
-   列聯表分析:數值型
+   Chapter 5: 列聯表分析3-數值型
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="conti_table_summary.html">
-   列聯表分析:綜合結論
+  <a class="reference internal" href="cond_prob_given_stroke_nonstroke.html">
+   Chapter 6: “中風組內分佈”與”非中風組內分佈”
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="age_confounder.html">
+   Chapter 7: Age as Confounding Factor
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="interaction_plot.html">
-   解釋變數與中風的交互作用
+   Chapter 8: 以累積機率探討交互作用
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="regression_categorical.html">
-   迴歸分析: 類別型變數
+   Chapter 9: 迴歸分析1-類別型變數
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="regression_numerical.html">
-   迴歸分析: 數值型變數
+   Chapter 10: 迴歸分析2-數值型變數
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   迴歸分析: 綜合模型
+   Chapter 11: 迴歸分析3-綜合模型
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="clustering.html">
-   Cluster analysis: 測試與中風組內分群
+   Chapter 12: Cluster analysis 1-使用全部的變數去計算
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="clustering_batch.html">
-   Cluster analysis: 中風者與非中風者做分群
+   Chatper 13: Cluster analysis 2-使用迴歸分析final model中的變數去計算
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="append_dataexplore.html">
-   補充:資料清理前統計分析
+  <a class="reference internal" href="conti_table_summary.html">
+   Chapter 14: 結論與討論
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="interaction1.html">
-   補充: 因素之間交互作用
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="interaction2.html">
-   補充: 因素之間交互作用(數值型)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="appen_classify_ref.html">
-   補充: 血糖與BMI分類依據
+  <a class="reference internal" href="feedback.html">
+   Chapter 15: 心得
   </a>
  </li>
  <li class="toctree-l1">
@@ -277,65 +282,49 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   讀取與清理資料
+  <a class="reference internal nav-link" href="#id1">
+   讀取資料
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#model-1-categorical-numerical">
    Model 1: Categorical + Numerical
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-2">
+   Model 2
+  </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#full-model">
-     Full Model
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reduce-model">
-     Reduce Model
-    </a>
-   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#likelihood-ratio-test">
      Likelihood-Ratio Test
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#final-model">
+   Final Model
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#final-selection">
-     Final Selection:
+    <a class="reference internal nav-link" href="#id2">
+     Final Model圖像化與討論
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#model-2-categorical">
-   Model 2: Categorical
+  <a class="reference internal nav-link" href="#id3">
+   討論: 結婚狀態與年齡
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     資料處理
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id4">
-     Full Model
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     Reduce Model
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     Likelihood-Ratio Test
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     Final Selection:
+     <span class="xref myst">
+      回到目錄
+     </span>
     </a>
    </li>
   </ul>
@@ -351,18 +340,11 @@
         
               <div>
                 
-  <div class="section" id="id1">
-<h1>迴歸分析: 綜合模型<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id2">
-<h2>讀取與清理資料<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>資料清理</p>
-<ul>
-<li><p>BMI為Null</p></li>
-<li><p>Smoking status為unknown</p></li>
-</ul>
-</li>
-</ul>
+  <div class="section" id="chapter-11-3">
+<h1>Chapter 11: 迴歸分析3-綜合模型<a class="headerlink" href="#chapter-11-3" title="Permalink to this headline">¶</a></h1>
+<p>在迴歸分析的第三部份，我們結合了前兩部份的模型。</p>
+<div class="section" id="id1">
+<h2>讀取資料<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">strokedata</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s">&#39;../data/healthcare-dataset-stroke-data-cleanbmi.csv&#39;</span><span class="p">)</span>
@@ -387,13 +369,19 @@
 </div>
 <div class="section" id="model-1-categorical-numerical">
 <h2>Model 1: Categorical + Numerical<a class="headerlink" href="#model-1-categorical-numerical" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="full-model">
-<h3>Full Model<a class="headerlink" href="#full-model" title="Permalink to this headline">¶</a></h3>
-<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{marry}}x_{\rm{marry}}+ \beta_{\rm{age}}x_{\rm{age}} + \beta_{\rm{glucose}}x_{\rm{glucose}}\)</span></p>
+<ul class="simple">
+<li><p><span style="color:blue"> 在類別型的分析中: 高血壓、心臟病與結婚狀態 </span></p></li>
+<li><p><span style="color:blue"> 在數值型的分析中: 年齡、血糖</span></p></li>
+<li><p><span style="color:blue"> 因此，我們提出了以下的模型</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{marry}}x_{\rm{marry}}+ \beta_{\rm{age}}x_{\rm{age}} + \beta_{\rm{glucose}}x_{\rm{glucose}}
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model1_full</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">hypertension</span> <span class="o">+</span> <span class="n">heart_disease</span> <span class="o">+</span> <span class="n">ever_married</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="n">avg_glucose_level</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">model1_full</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model1</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">hypertension</span> <span class="o">+</span> <span class="n">heart_disease</span> <span class="o">+</span> <span class="n">ever_married</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="n">avg_glucose_level</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -405,23 +393,23 @@ glm(formula = stroke ~ hypertension + heart_disease + ever_married +
 
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
--1.2017  -0.3344  -0.1915  -0.1090   3.2073  
+-1.2018  -0.3344  -0.1915  -0.1090   3.2072  
 
 Coefficients:
                    Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)       -7.527041   0.470374 -16.002  &lt; 2e-16 ***
-hypertension       0.567135   0.181510   3.125 0.001781 ** 
-heart_disease      0.449092   0.216934   2.070 0.038435 *  
-ever_marriedYes   -0.152803   0.260974  -0.586 0.558205    
-age                0.068193   0.006360  10.722  &lt; 2e-16 ***
-avg_glucose_level  0.004732   0.001336   3.541 0.000398 ***
+(Intercept)       -7.526184   0.470428 -15.999  &lt; 2e-16 ***
+hypertension       0.567110   0.181509   3.124 0.001782 ** 
+heart_disease      0.449095   0.216933   2.070 0.038433 *  
+ever_marriedYes   -0.153133   0.260976  -0.587 0.557358    
+age                0.068184   0.006361  10.720  &lt; 2e-16 ***
+avg_glucose_level  0.004733   0.001336   3.542 0.000398 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
-    Null deviance: 1411.0  on 3425  degrees of freedom
-Residual deviance: 1149.6  on 3420  degrees of freedom
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1149.6  on 3419  degrees of freedom
 AIC: 1161.6
 
 Number of Fisher Scoring iterations: 7
@@ -430,21 +418,22 @@ Number of Fisher Scoring iterations: 7
 </div>
 </div>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\hat{\beta}_{\rm{marry}}\)</span> 的z-test p-value大，因此沒辦法拒絕下面的<span class="math notranslate nohighlight">\(H_0\)</span></p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\(H_0: \beta_{\rm{marry}} = 0\)</span></p></li>
-</ul>
-</li>
-<li><p>下一部份用Deviance來判斷是否要捨棄<span class="math notranslate nohighlight">\(x_{\rm{marry}}\)</span></p></li>
+<li><p><span style="color:blue"> 高血壓、心臟病、年齡、血糖的<span class="math notranslate nohighlight">\(\beta\)</span>都大於零，表示這幾個因素都是中風的負面因子，與前面的分析一致</span></p></li>
+<li><p><span style="color:red"> <span class="math notranslate nohighlight">\(\beta_{\rm{marry}}&lt;0\)</span>表示結婚會降低中風的機率，這與前面的分析矛盾。我們認為婚姻背後的confounding factor是年齡，會在下個部份討論</span></p></li>
+<li><p><span style="color:blue"> 此外，<span class="math notranslate nohighlight">\(\beta_{\rm{marry}}\)</span> 的z-test p-value大，表示無法拒絕 <span class="math notranslate nohighlight">\(H_0: \beta_{\rm{marry}} = 0\)</span></span></p></li>
 </ul>
 </div>
-<div class="section" id="reduce-model">
-<h3>Reduce Model<a class="headerlink" href="#reduce-model" title="Permalink to this headline">¶</a></h3>
-<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{age}}x_{\rm{age}} + \beta_{\rm{glucose}}x_{\rm{glucose}}\)</span></p>
+<div class="section" id="model-2">
+<h2>Model 2<a class="headerlink" href="#model-2" title="Permalink to this headline">¶</a></h2>
+<p>在Model 1中，我們發現無法拒絕 <span class="math notranslate nohighlight">\(H_0: \beta_{\rm{marry}} = 0\)</span>，因此提出了下面的模型，並會用Deviance來比較Model 1 跟 Model 2</p>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{age}}x_{\rm{age}} + \beta_{\rm{glucose}}x_{\rm{glucose}}
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model1_reduce</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">hypertension</span> <span class="o">+</span> <span class="n">heart_disease</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="n">avg_glucose_level</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">model1_reduce</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model2</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">hypertension</span> <span class="o">+</span> <span class="n">heart_disease</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="n">avg_glucose_level</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -455,27 +444,26 @@ glm(formula = stroke ~ hypertension + heart_disease + age + avg_glucose_level,
 
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
--1.1420  -0.3357  -0.1927  -0.1072   3.1976  
+-1.1420  -0.3358  -0.1927  -0.1074   3.1975  
 
 Coefficients:
                    Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)       -7.632810   0.439480 -17.368  &lt; 2e-16 ***
-hypertension       0.568379   0.181386   3.134 0.001727 ** 
-heart_disease      0.453704   0.216660   2.094 0.036253 *  
-age                0.067773   0.006359  10.659  &lt; 2e-16 ***
-avg_glucose_level  0.004701   0.001334   3.524 0.000426 ***
+(Intercept)       -7.632239   0.439507 -17.365  &lt; 2e-16 ***
+hypertension       0.568359   0.181384   3.133 0.001728 ** 
+heart_disease      0.453716   0.216659   2.094 0.036247 *  
+age                0.067765   0.006359  10.656  &lt; 2e-16 ***
+avg_glucose_level  0.004701   0.001334   3.524 0.000425 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
-    Null deviance: 1411.0  on 3425  degrees of freedom
-Residual deviance: 1149.9  on 3421  degrees of freedom
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1149.9  on 3420  degrees of freedom
 AIC: 1159.9
 
 Number of Fisher Scoring iterations: 7
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -486,7 +474,7 @@ Number of Fisher Scoring iterations: 7
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">anova</span><span class="p">(</span><span class="n">model1_reduce</span><span class="p">,</span> <span class="n">model1_full</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="s">&quot;LRT&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">anova</span><span class="p">(</span><span class="n">model1</span><span class="p">,</span> <span class="n">model2</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="s">&quot;LRT&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -494,188 +482,248 @@ Number of Fisher Scoring iterations: 7
 <div class="output text_html"><table>
 <thead><tr><th scope=col>Resid. Df</th><th scope=col>Resid. Dev</th><th scope=col>Df</th><th scope=col>Deviance</th><th scope=col>Pr(&gt;Chi)</th></tr></thead>
 <tbody>
-	<tr><td>3421     </td><td>1149.914 </td><td>NA       </td><td>       NA</td><td>       NA</td></tr>
-	<tr><td>3420     </td><td>1149.580 </td><td> 1       </td><td>0.3338298</td><td>0.5634126</td></tr>
+	<tr><td>3419      </td><td>1149.567  </td><td>NA        </td><td>        NA</td><td>      NA  </td></tr>
+	<tr><td>3420      </td><td>1149.903  </td><td>-1        </td><td>-0.3352499</td><td>0.562584  </td></tr>
 </tbody>
 </table>
 </div></div>
 </div>
 <ul class="simple">
-<li><p>根據Deviance的p-value=0.5643</p>
+<li><p>根據Deviance的p-value=0.5626</p>
 <ul>
-<li><p>不能拒絕 <span class="math notranslate nohighlight">\(H_0\)</span>，所以最終模型將會捨棄掉結婚狀態的變數</p></li>
+<li><p><span style="color:blue">不能拒絕 <span class="math notranslate nohighlight">\(H_0\)</span>，所以我們選擇Model 2當作Final Model</span></p></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="section" id="final-selection">
-<h3>Final Selection:<a class="headerlink" href="#final-selection" title="Permalink to this headline">¶</a></h3>
-<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{age}}x_{\rm{age}} + \beta_{\rm{glucose}}x_{\rm{glucose}}\)</span></p>
 </div>
-</div>
-<div class="section" id="model-2-categorical">
-<h2>Model 2: Categorical<a class="headerlink" href="#model-2-categorical" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>資料處理<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="final-model">
+<h2>Final Model<a class="headerlink" href="#final-model" title="Permalink to this headline">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{age}}x_{\rm{age}} + \beta_{\rm{glucose}}x_{\rm{glucose}}
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">strokedata</span><span class="o">$</span><span class="n">age_group</span> <span class="o">&lt;-</span> <span class="nf">with</span><span class="p">(</span><span class="n">strokedata</span><span class="p">,</span> <span class="nf">ifelse</span><span class="p">(</span>
-    <span class="n">age</span> <span class="o">&lt;</span> <span class="m">50</span><span class="p">,</span> <span class="s">&#39;0-49&#39;</span><span class="p">,</span> <span class="nf">ifelse</span><span class="p">(</span>
-    <span class="n">age</span> <span class="o">&gt;=</span> <span class="m">50</span> <span class="o">&amp;</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="m">60</span><span class="p">,</span> <span class="s">&#39;50-59&#39;</span><span class="p">,</span> <span class="nf">ifelse</span><span class="p">(</span>
-    <span class="n">age</span> <span class="o">&gt;=</span> <span class="m">60</span> <span class="o">&amp;</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="m">70</span><span class="p">,</span> <span class="s">&#39;60-69&#39;</span><span class="p">,</span> <span class="s">&#39;&gt;=70&#39;</span><span class="p">))))</span>
-<span class="n">strokedata</span><span class="o">$</span><span class="n">age_group</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">strokedata</span><span class="o">$</span><span class="n">age_group</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;0-49&#39;</span><span class="p">,</span> <span class="s">&#39;50-59&#39;</span><span class="p">,</span> <span class="s">&#39;60-69&#39;</span><span class="p">,</span> <span class="s">&#39;&gt;=70&#39;</span><span class="p">))</span>
-<span class="n">strokedata</span><span class="o">$</span><span class="n">glc_group</span> <span class="o">&lt;-</span> <span class="nf">with</span><span class="p">(</span><span class="n">strokedata</span><span class="p">,</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">avg_glucose_level</span> <span class="o">&lt;</span> <span class="m">160</span><span class="p">,</span> <span class="s">&#39;&lt;160&#39;</span><span class="p">,</span> <span class="s">&#39;&gt;=160&#39;</span><span class="p">))</span>
-<span class="n">strokedata</span><span class="o">$</span><span class="n">glc_group</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">strokedata</span><span class="o">$</span><span class="n">glc_group</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;&lt;160&#39;</span><span class="p">,</span> <span class="s">&#39;&gt;=160&#39;</span><span class="p">))</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">strokedata</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table>
-<thead><tr><th scope=col>age</th><th scope=col>hypertension</th><th scope=col>heart_disease</th><th scope=col>ever_married</th><th scope=col>work_type</th><th scope=col>avg_glucose_level</th><th scope=col>bmi</th><th scope=col>smoking_status</th><th scope=col>stroke</th><th scope=col>age_group</th><th scope=col>glc_group</th></tr></thead>
-<tbody>
-	<tr><td>67                                                   </td><td>0                                                    </td><td>1                                                    </td><td>Yes                                                  </td><td><span style=white-space:pre-wrap>Private      </span></td><td>228.69                                               </td><td>36.6                                                 </td><td>formerly smoked                                      </td><td>1                                                    </td><td>60-69                                                </td><td>&gt;=160                                             </td></tr>
-	<tr><td>80                                                     </td><td>0                                                      </td><td>1                                                      </td><td>Yes                                                    </td><td><span style=white-space:pre-wrap>Private      </span>  </td><td>105.92                                                 </td><td>32.5                                                   </td><td><span style=white-space:pre-wrap>never smoked   </span></td><td>1                                                      </td><td>&gt;=70                                                </td><td>&lt;160                                                </td></tr>
-	<tr><td>49                                                     </td><td>0                                                      </td><td>0                                                      </td><td>Yes                                                    </td><td><span style=white-space:pre-wrap>Private      </span>  </td><td>171.23                                                 </td><td>34.4                                                   </td><td><span style=white-space:pre-wrap>smokes         </span></td><td>1                                                      </td><td>0-49                                                   </td><td>&gt;=160                                               </td></tr>
-	<tr><td>79                                                     </td><td>1                                                      </td><td>0                                                      </td><td>Yes                                                    </td><td>Self-employed                                          </td><td>174.12                                                 </td><td>24.0                                                   </td><td><span style=white-space:pre-wrap>never smoked   </span></td><td>1                                                      </td><td>&gt;=70                                                </td><td>&gt;=160                                               </td></tr>
-	<tr><td>81                                                   </td><td>0                                                    </td><td>0                                                    </td><td>Yes                                                  </td><td><span style=white-space:pre-wrap>Private      </span></td><td>186.21                                               </td><td>29.0                                                 </td><td>formerly smoked                                      </td><td>1                                                    </td><td>&gt;=70                                              </td><td>&gt;=160                                             </td></tr>
-	<tr><td>74                                                     </td><td>1                                                      </td><td>1                                                      </td><td>Yes                                                    </td><td><span style=white-space:pre-wrap>Private      </span>  </td><td> 70.09                                                 </td><td>27.4                                                   </td><td><span style=white-space:pre-wrap>never smoked   </span></td><td>1                                                      </td><td>&gt;=70                                                </td><td>&lt;160                                                </td></tr>
-</tbody>
-</table>
-</div></div>
-</div>
-</div>
-<div class="section" id="id4">
-<h3>Full Model<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{marry}}x_{\rm{marry}}+ \beta_{\rm{50&lt;=age&lt;=59}}~x_{\rm{50&lt;=age&lt;=59}}\\ + \beta_{\rm{60&lt;=age&lt;=69}}~x_{\rm{60&lt;=age&lt;=69}} + \beta_{\rm{age&gt;=70}}x_{\rm{age&gt;=70}} + \beta_{\rm{glc&gt;=160}}x_{\rm{glc&gt;=160}}\)</span></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model2_full</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">hypertension</span> <span class="o">+</span> <span class="n">heart_disease</span> <span class="o">+</span> <span class="n">ever_married</span> <span class="o">+</span> <span class="n">age_group</span> <span class="o">+</span> <span class="n">glc_group</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> 
-                  <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">model2_full</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">model2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
-glm(formula = stroke ~ hypertension + heart_disease + ever_married + 
-    age_group + glc_group, family = binomial(link = &quot;logit&quot;), 
+glm(formula = stroke ~ hypertension + heart_disease + age + avg_glucose_level, 
+    family = binomial(link = &quot;logit&quot;), data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.1420  -0.3358  -0.1927  -0.1074   3.1975  
+
+Coefficients:
+                   Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)       -7.632239   0.439507 -17.365  &lt; 2e-16 ***
+hypertension       0.568359   0.181384   3.133 0.001728 ** 
+heart_disease      0.453716   0.216659   2.094 0.036247 *  
+age                0.067765   0.006359  10.656  &lt; 2e-16 ***
+avg_glucose_level  0.004701   0.001334   3.524 0.000425 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1149.9  on 3420  degrees of freedom
+AIC: 1159.9
+
+Number of Fisher Scoring iterations: 7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Final Model圖像化與討論<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>以下四張圖，是我們將Final Model圖像化。四張圖對應到四組血糖(80,110,150,200)。每一張圖的橫軸是age，一張圖裏面的四條線分別對應到高血壓與心臟病的不同狀況。</p>
+<ul class="simple">
+<li><p><span style="color:blue">年齡的影響大約是在50-60歲之後開始增加中風的機率</span></p></li>
+<li><p><span style="color:blue">高血壓與心臟病的影響是差不多的。對於年紀大的人，兩者都有(紅色線)對比於兩者都沒有(藍色線)，中風的機率大概相差0.2</span></p></li>
+<li><p><span style="color:blue">比較四張圖，血糖的影響沒這麼大。對於年紀大的人，血糖250對比於血糖80，中風的機率大概相差0.1</span></p></li>
+</ul>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/regr_final_model_glu_80.png"><img alt="regr_final_model_glu_80" class="bg-primary mb-1 align-center" src="_images/regr_final_model_glu_80.png" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/regr_final_model_glu_110.png"><img alt="regr_final_model_glu_110" class="bg-primary mb-1 align-center" src="_images/regr_final_model_glu_110.png" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/regr_final_model_glu_150.png"><img alt="regr_final_model_glu_110" class="bg-primary mb-1 align-center" src="_images/regr_final_model_glu_150.png" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/regr_final_model_glu_200.png"><img alt="regr_final_model_glu_110" class="bg-primary mb-1 align-center" src="_images/regr_final_model_glu_200.png" style="width: 800px;" /></a>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>討論: 結婚狀態與年齡<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>類別型簡單模型的分析指出有結婚的人，中風的機率會提升，且顯著性高。不過，在上面的Model 1，則說有結婚的人，中風的機率會下降，而且顯著性下降很多。我們直覺上認為有結婚與沒結婚這個資訊含有年齡的資訊。<br />
+<span style="color:blue">因此，我們以下面四個模型來看是哪個變數造成<span class="math notranslate nohighlight">\(\beta_{\rm{marry}}\)</span>變號</span></p>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{marry}}x_{\rm{marry}}+ \beta_{\rm{hypert}}x_{\rm{hypert}}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_age_hypert</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">ever_married</span> <span class="o">+</span> <span class="n">hypertension</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_age_hypert</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ ever_married + hypertension, family = binomial(link = &quot;logit&quot;), 
     data = strokedata)
 
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
--1.0323  -0.3198  -0.1633  -0.1264   3.1093  
+-0.5655  -0.3119  -0.3119  -0.2091   2.7691  
 
 Coefficients:
                 Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)     -4.80277    0.30513 -15.740  &lt; 2e-16 ***
-hypertension     0.55933    0.18171   3.078 0.002082 ** 
-heart_disease    0.51525    0.21533   2.393 0.016718 *  
-ever_marriedYes -0.02324    0.26447  -0.088 0.929972    
-age_group50-59   1.56936    0.33027   4.752 2.02e-06 ***
-age_group60-69   1.87867    0.33125   5.671 1.42e-08 ***
-age_group&gt;=70    2.73247    0.30564   8.940  &lt; 2e-16 ***
-glc_group&gt;=160   0.64429    0.17358   3.712 0.000206 ***
+(Intercept)      -3.8122     0.2283 -16.695  &lt; 2e-16 ***
+ever_marriedYes   0.8133     0.2431   3.345 0.000822 ***
+hypertension      1.2465     0.1714   7.271 3.58e-13 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
-    Null deviance: 1411.0  on 3425  degrees of freedom
-Residual deviance: 1171.7  on 3418  degrees of freedom
-AIC: 1187.7
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1344.7  on 3422  degrees of freedom
+AIC: 1350.7
 
-Number of Fisher Scoring iterations: 7
+Number of Fisher Scoring iterations: 6
 </pre></div>
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\hat{\beta}_{\rm{marry}}\)</span> 的z-test p-value大，因此沒辦法拒絕下面的<span class="math notranslate nohighlight">\(H_0\)</span></p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\(H_0: \beta_{\rm{marry}} = 0\)</span></p></li>
-</ul>
-</li>
-<li><p>下一部份用Deviance來判斷是否要捨棄<span class="math notranslate nohighlight">\(x_{\rm{marry}}\)</span></p></li>
-</ul>
-</div>
-<div class="section" id="id5">
-<h3>Reduce Model<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{50&lt;=age&lt;=59}}~x_{\rm{50&lt;=age&lt;=59}}\\ + \beta_{\rm{60&lt;=age&lt;=69}}~x_{\rm{60&lt;=age&lt;=69}} + \beta_{\rm{age&gt;=70}}x_{\rm{age&gt;=70}} + \beta_{\rm{glc&gt;=160}}x_{\rm{glc&gt;=160}}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{marry}}x_{\rm{marry}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model2_reduce</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">hypertension</span> <span class="o">+</span> <span class="n">heart_disease</span> <span class="o">+</span>  <span class="n">age_group</span> <span class="o">+</span> <span class="n">glc_group</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">model2_reduce</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_age_heartd</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">ever_married</span> <span class="o">+</span> <span class="n">heart_disease</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_age_heartd</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
-glm(formula = stroke ~ hypertension + heart_disease + age_group + 
-    glc_group, family = binomial(link = &quot;logit&quot;), data = strokedata)
+glm(formula = stroke ~ ever_married + heart_disease, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
 
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
--1.0240  -0.3201  -0.1641  -0.1270   3.1064  
+-0.6412  -0.3273  -0.3273  -0.2130   2.7560  
 
 Coefficients:
-               Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)     -4.8168     0.2603 -18.503  &lt; 2e-16 ***
-hypertension     0.5596     0.1817   3.080 0.002071 ** 
-heart_disease    0.5158     0.2152   2.397 0.016537 *  
-age_group50-59   1.5619     0.3191   4.895 9.83e-07 ***
-age_group60-69   1.8712     0.3200   5.847 5.01e-09 ***
-age_group&gt;=70    2.7253     0.2943   9.259  &lt; 2e-16 ***
-glc_group&gt;=160   0.6439     0.1735   3.711 0.000207 ***
+                Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)      -3.7752     0.2277 -16.579  &lt; 2e-16 ***
+ever_marriedYes   0.8751     0.2422   3.614 0.000302 ***
+heart_disease     1.4225     0.2036   6.987  2.8e-12 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
-    Null deviance: 1411.0  on 3425  degrees of freedom
-Residual deviance: 1171.7  on 3419  degrees of freedom
-AIC: 1185.7
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1351.2  on 3422  degrees of freedom
+AIC: 1357.2
+
+Number of Fisher Scoring iterations: 6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{marry}}x_{\rm{marry}}+ \beta_{\rm{age}}x_{\rm{age}}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_age_marry</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">ever_married</span> <span class="o">+</span> <span class="n">age</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_age_marry</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ ever_married + age, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.7898  -0.3501  -0.2070  -0.1125   3.1579  
+
+Coefficients:
+                Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)     -7.27687    0.44943 -16.191   &lt;2e-16 ***
+ever_marriedYes -0.15000    0.25746  -0.583     0.56    
+age              0.07648    0.00605  12.642   &lt;2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1180.0  on 3422  degrees of freedom
+AIC: 1186
 
 Number of Fisher Scoring iterations: 7
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id6">
-<h3>Likelihood-Ratio Test<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Full Model與Reduced Model的差異可以轉換成 <span class="math notranslate nohighlight">\(H_0: \beta_{\rm{marry}} = 0\)</span></p></li>
-</ul>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{marry}}x_{\rm{marry}} + \beta_{\rm{glucose}}x_{\rm{glucose}}
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">anova</span><span class="p">(</span><span class="n">model2_reduce</span><span class="p">,</span> <span class="n">model2_full</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="s">&quot;LRT&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_age_glc</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">ever_married</span> <span class="o">+</span> <span class="n">avg_glucose_level</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_age_glc</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><table>
-<thead><tr><th scope=col>Resid. Df</th><th scope=col>Resid. Dev</th><th scope=col>Df</th><th scope=col>Deviance</th><th scope=col>Pr(&gt;Chi)</th></tr></thead>
-<tbody>
-	<tr><td>3419       </td><td>1171.707   </td><td>NA         </td><td>         NA</td><td>       NA  </td></tr>
-	<tr><td>3418       </td><td>1171.699   </td><td> 1         </td><td>0.007693608</td><td>0.9301046  </td></tr>
-</tbody>
-</table>
-</div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ ever_married + avg_glucose_level, family = binomial(link = &quot;logit&quot;), 
+    data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.6736  -0.3292  -0.2946  -0.2381   2.8574  
+
+Coefficients:
+                   Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)       -4.685927   0.270481 -17.324  &lt; 2e-16 ***
+ever_marriedYes    0.801892   0.243289   3.296 0.000981 ***
+avg_glucose_level  0.009397   0.001294   7.263  3.8e-13 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1342.3  on 3422  degrees of freedom
+AIC: 1348.3
+
+Number of Fisher Scoring iterations: 6
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
-<li><p>根據Deviance的p-value=0.9301</p>
+<li><p><span style="color:blue">跟我們的猜想一樣，是”年齡”造成<span class="math notranslate nohighlight">\(\beta_{\rm{marry}}\)</span>變號與不顯著的</span></p></li>
+<li><p><span style="color:blue">所以當我們在簡單模型裡只考慮婚姻這個參數時，年齡是背後的Confounding factor</span></p>
 <ul>
-<li><p>不能拒絕 <span class="math notranslate nohighlight">\(H_0\)</span>，所以最終模型將會捨棄掉結婚狀態的變數</p></li>
+<li><p><span style="color:blue">結婚的人通常年紀比較大，因此容易中風。年紀小則反之。</span></p></li>
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="id7">
-<h3>Final Selection:<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{50&lt;=age&lt;=59}}~x_{\rm{50&lt;=age&lt;=59}}\\ + \beta_{\rm{60&lt;=age&lt;=69}}~x_{\rm{60&lt;=age&lt;=69}} + \beta_{\rm{age&gt;=70}}x_{\rm{age&gt;=70}} + \beta_{\rm{glc&gt;=160}}x_{\rm{glc&gt;=160}}\)</span></p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/regr_cate_model_final_plot.png"><img alt="regr_cate_model_final_plot" class="bg-primary mb-1 align-center" src="_images/regr_cate_model_final_plot.png" style="width: 800px;" /></a>
-</div>
+<div class="section" id="id4">
+<h3><a class="reference internal" href="tablecontent.html"><span class="doc std std-doc">回到目錄</span></a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p style="page-break-before: always"></div>
 </div>
 </div>
 
@@ -704,8 +752,8 @@ Number of Fisher Scoring iterations: 7
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="regression_numerical.html" title="previous page">迴歸分析: 數值型變數</a>
-    <a class='right-next' id="next-link" href="clustering.html" title="next page">Cluster analysis: 測試與中風組內分群</a>
+    <a class='left-prev' id="prev-link" href="regression_numerical.html" title="previous page">Chapter 10: 迴歸分析2-數值型變數</a>
+    <a class='right-next' id="next-link" href="clustering.html" title="next page">Chapter 12: Cluster analysis 1-使用全部的變數去計算</a>
 
         </div>
         
@@ -717,7 +765,7 @@ Number of Fisher Scoring iterations: 7
         
           By 陳奕造 施奕如 楊欣儒 李長穎<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>

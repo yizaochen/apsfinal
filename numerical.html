@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>列聯表分析:數值型 &#8212; 腦中風資料的統計分析與探討</title>
+    <title>Chapter 5: 列聯表分析3-數值型 &#8212; 腦中風資料的統計分析與探討</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,10 +49,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="列聯表分析:綜合結論" href="conti_table_summary.html" />
-    <link rel="prev" title="列聯表分析:多重類別型" href="multiplecategorical.html" />
+    <link rel="next" title="Chapter 6: “中風組內分佈”與”非中風組內分佈”" href="cond_prob_given_stroke_nonstroke.html" />
+    <link rel="prev" title="Chapter 4: 列聯表分析2-多重類別型" href="multiplecategorical.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -85,84 +87,89 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
-   前言：背景與動機
+   Cover Page
   </a>
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="tablecontent.html">
+   目錄
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro1.html">
+   Chapter 1: 背景與動機
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="dataexplore.html">
-   資料探討
+   Chapter 2: 資料集基本介紹
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="simplecategorical.html">
-   列聯表分析:簡單類別型
+   Chapter 3: 列聯表分析1-簡單類別型
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="multiplecategorical.html">
-   列聯表分析:多重類別型
+   Chapter 4: 列聯表分析2-多重類別型
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   列聯表分析:數值型
+   Chapter 5: 列聯表分析3-數值型
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="conti_table_summary.html">
-   列聯表分析:綜合結論
+  <a class="reference internal" href="cond_prob_given_stroke_nonstroke.html">
+   Chapter 6: “中風組內分佈”與”非中風組內分佈”
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="age_confounder.html">
+   Chapter 7: Age as Confounding Factor
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="interaction_plot.html">
-   解釋變數與中風的交互作用
+   Chapter 8: 以累積機率探討交互作用
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="regression_categorical.html">
-   迴歸分析: 類別型變數
+   Chapter 9: 迴歸分析1-類別型變數
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="regression_numerical.html">
-   迴歸分析: 數值型變數
+   Chapter 10: 迴歸分析2-數值型變數
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="regression_mix.html">
-   迴歸分析: 綜合模型
+   Chapter 11: 迴歸分析3-綜合模型
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="clustering.html">
-   Cluster analysis: 測試與中風組內分群
+   Chapter 12: Cluster analysis 1-使用全部的變數去計算
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="clustering_batch.html">
-   Cluster analysis: 中風者與非中風者做分群
+   Chatper 13: Cluster analysis 2-使用迴歸分析final model中的變數去計算
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="append_dataexplore.html">
-   補充:資料清理前統計分析
+  <a class="reference internal" href="conti_table_summary.html">
+   Chapter 14: 結論與討論
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="interaction1.html">
-   補充: 因素之間交互作用
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="interaction2.html">
-   補充: 因素之間交互作用(數值型)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="appen_classify_ref.html">
-   補充: 血糖與BMI分類依據
+  <a class="reference internal" href="feedback.html">
+   Chapter 15: 心得
   </a>
  </li>
  <li class="toctree-l1">
@@ -211,9 +218,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/numerical.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/numerical.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -247,6 +254,23 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/numerical.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -258,38 +282,82 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   中風與年齡
+  <a class="reference internal nav-link" href="#a">
+   A. 中風與年齡
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     年齡的分佈與比例
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#contigency-table">
+     Contigency Table
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Contigency Table(合併組別後)
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#chi-square">
-     Chi-square
+     Chi-square:
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   中風與血糖
+  <a class="reference internal nav-link" href="#b">
+   B. 中風與血糖
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     血糖的分佈
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id4">
-     Chi-square
+     Contigency Table
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Chi-square:
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bmi">
-   中風與BMI
+  <a class="reference internal nav-link" href="#c-bmi">
+   C. 中風與BMI
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     Chi-square
+    <a class="reference internal nav-link" href="#bmi">
+     BMI的分佈
     </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Contigency Table
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     討論: 過輕族群的唯一一個中風者
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       <span class="xref myst">
+        回到目錄
+       </span>
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -304,27 +372,104 @@
         
               <div>
                 
-  <div class="section" id="id1">
-<h1>列聯表分析:數值型<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="chapter-5-3">
+<h1>Chapter 5: 列聯表分析3-數值型<a class="headerlink" href="#chapter-5-3" title="Permalink to this headline">¶</a></h1>
+<p>在第三部份，我們把數值型的三種變數想辦法分類，以便做出列聯表。再利用列聯表做卡方檢定跟算出條件機率。</p>
+<div class="section" id="a">
+<h2>A. 中風與年齡<a class="headerlink" href="#a" title="Permalink to this headline">¶</a></h2>
+<p>在這部份的分析，我們用10歲當間距，把年齡歸成8個分類(10-20,20-30,…,80-90)</p>
+<div class="section" id="id1">
+<h3>年齡的分佈與比例<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/age_distribution.png"><img alt="age_distribution" class="bg-primary mb-1 align-center" src="_images/age_distribution.png" style="width: 600px;" /></a>
+<ul class="simple">
+<li><p><span style="color:blue">在這筆資料中，最多人是介於50-60歲，佔了19.3%。最年輕的族群是10-20，佔了6.7%。最年長的是80-90，佔了4.4%</span></p></li>
+</ul>
+</div>
+<div class="section" id="contigency-table">
+<h3>Contigency Table<a class="headerlink" href="#contigency-table" title="Permalink to this headline">¶</a></h3>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/contigency_table_age1.png"><img alt="contigency_table_age1" class="bg-primary mb-1 align-center" src="_images/contigency_table_age1.png" style="width: 800px;" /></a>
+<ul class="simple">
+<li><p><span style="color:gray">從上方表格發現，10-20與20-30歲的人都屬於非中風族群。因此，為了做卡方分析，我們會把10-20,20-30,30-40,40-50合併成一組</span></p></li>
+<li><p><span style="color:blue">從上方條件機率Bar圖來看，中風的機率顯然是隨著年齡而增加</span></p></li>
+</ul>
+</div>
 <div class="section" id="id2">
-<h2>中風與年齡<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h3>Contigency Table(合併組別後)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/contigency_table_age2.png"><img alt="contigency_table_age2" class="bg-primary mb-1 align-center" src="_images/contigency_table_age2.png" style="width: 800px;" /></a>
+</div>
 <div class="section" id="chi-square">
-<h3>Chi-square<a class="headerlink" href="#chi-square" title="Permalink to this headline">¶</a></h3>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/age_stroke.png"><img alt="age_stroke" class="bg-primary mb-1 align-center" src="_images/age_stroke.png" style="width: 800px;" /></a>
+<h3>Chi-square:<a class="headerlink" href="#chi-square" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 242.12, df=4, p-value=3.243e-51</p></li>
+<li><p><span style="color:blue"> p-value <span class="math notranslate nohighlight">\(&lt;\)</span> 0.05，顯示年齡與中風具有高度相關性</span></p></li>
+<li><p><span style="color:red"> 觀測值與期望值的差別、條件機率Bar圖都指出，年齡愈大，中風機率愈高</span></p></li>
+</ul>
 </div>
 </div>
+<div class="section" id="b">
+<h2>B. 中風與血糖<a class="headerlink" href="#b" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id3">
-<h2>中風與血糖<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h3>血糖的分佈<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p><em>註: 雖然不確定收集資料時是取飯前(FPG)或是飯後血糖(OGTT)，本報告仍先採用空腹血糖做為參考標準。</em></p>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/5Gwb4HB.png"><img alt="avg_glucose" class="bg-primary mb-1 align-center" src="https://i.imgur.com/5Gwb4HB.png" style="width: 600px;" /></a>
+<ul class="simple">
+<li><p><span style="color:blue">可以看到血糖的分佈呈現雙峰，左邊高峰與正常血糖範圍(80-110)交疊，而右邊的高峰是血糖過高的區域</span></p></li>
+</ul>
+</div>
 <div class="section" id="id4">
-<h3>Chi-square<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/glucose_stroke.png"><img alt="glucose_stroke" class="bg-primary mb-1 align-center" src="_images/glucose_stroke.png" style="width: 800px;" /></a>
+<h3>Contigency Table<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>我們接著參考日本糖尿病協會的分類標準(Appendix)，把血糖分為四群</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/contingency_table_glucose.png"><img alt="contingency_table_glucose" class="bg-primary mb-1 align-center" src="_images/contingency_table_glucose.png" style="width: 800px;" /></a>
 </div>
-</div>
-<div class="section" id="bmi">
-<h2>中風與BMI<a class="headerlink" href="#bmi" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id5">
-<h3>Chi-square<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/bmi_stroke.png"><img alt="glucose_stroke" class="bg-primary mb-1 align-center" src="_images/bmi_stroke.png" style="width: 800px;" /></a>
+<h3>Chi-square:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\chi^2\)</span> = 79.24, df=3, p-value=4.478e-17</p></li>
+<li><p><span style="color:blue"> p-value <span class="math notranslate nohighlight">\(&lt;\)</span> 0.05，顯示血糖與中風具有高度相關性</span></p></li>
+<li><p><span style="color:blue"> 由條件機率可以發現，血糖小於160對於中風的機率都差不多</span></p></li>
+<li><p><span style="color:red"> 血糖大於160的組別，中風的機率特別高。對照上面的分佈圖，右邊高血糖的族群就是容易中風的族群</span></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="c-bmi">
+<h2>C. 中風與BMI<a class="headerlink" href="#c-bmi" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bmi">
+<h3>BMI的分佈<a class="headerlink" href="#bmi" title="Permalink to this headline">¶</a></h3>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/bmi_distribution.png"><img alt="bmi_distribution" class="bg-primary mb-1 align-center" src="_images/bmi_distribution.png" style="width: 800px;" /></a>
+<ul class="simple">
+<li><p>首先，我們把BMI分成三類，18.5與25這兩個數值是分類的切點，如上圖</p></li>
+<li><p><span style="color:blue">由上面的分佈圖大概可以知道，這組資料集大部分的人是過胖的</span></p></li>
+</ul>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/bmi_distri_compare.png"><img alt="bmi_distribution" class="bg-primary mb-1 align-center" src="_images/bmi_distri_compare.png" style="width: 800px;" /></a>
+<ul class="simple">
+<li><p>這組資料是麥肯錫這間美國企業舉辦活動釋出的，因此我們比較了一下這組資料BMI與美國十萬個成人的BMI分佈，最後還找了台灣人的分佈</p></li>
+<li><p><span style="color:blue">由上圖，這組資料集的確是比較符合美國人的分佈，甚至胖上許多。所以拿這組資料研究中風可能就有偏差，因為大部份人是過胖的</span></p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h3>Contigency Table<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/contingency_table_bmi.png"><img alt="contingency_table_bmi" class="bg-primary mb-1 align-center" src="_images/contingency_table_bmi.png" style="width: 800px;" /></a>
+<ul class="simple">
+<li><p>因為Underweight-stroke那一欄是1，表示這樣的分組不適合做卡方，因此在這裡我們就只看條件機率</p></li>
+<li><p><span style="color:blue"> 由條件機率可以發現，過胖的人，中風機率是比較高的</span></p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>討論: 過輕族群的唯一一個中風者<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>我們把過輕族群唯一一個中風者的資料抓出來看</p></li>
+<li><p><span style="color:blue"> 她是: 81歲女性，沒有高血壓，沒有心臟病，有結婚，自營事業者，住在鄉村，血糖82，不曾抽煙</span></p></li>
+<li><p><span style="color:blue"> 由上面所有的分析，她只俱備年紀大這個風險因素，所以我們推測以下種可能</span></p>
+<ul>
+<li><p>年紀大，容易中風</p></li>
+<li><p>她可能基因上有中風因子</p></li>
+<li><p>可能因為中風，生病後才變瘦的</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="id8">
+<h4><a class="reference internal" href="tablecontent.html"><span class="doc std std-doc">回到目錄</span></a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<p style="page-break-before: always"></div>
 </div>
 </div>
 </div>
@@ -354,8 +499,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="multiplecategorical.html" title="previous page">列聯表分析:多重類別型</a>
-    <a class='right-next' id="next-link" href="conti_table_summary.html" title="next page">列聯表分析:綜合結論</a>
+    <a class='left-prev' id="prev-link" href="multiplecategorical.html" title="previous page">Chapter 4: 列聯表分析2-多重類別型</a>
+    <a class='right-next' id="next-link" href="cond_prob_given_stroke_nonstroke.html" title="next page">Chapter 6: “中風組內分佈”與”非中風組內分佈”</a>
 
         </div>
         
@@ -367,7 +512,7 @@
         
           By 陳奕造 施奕如 楊欣儒 李長穎<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>
