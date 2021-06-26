@@ -66,10 +66,7 @@
 # :align: center
 # ```
 # - <span style="color:blue">前面注意到，血糖會被分成兩群，初步用scatter plot對age，可以看到這種情況，高血糖的第二個distribution可以看到集中在年齡四十歲以上</span>
+# 
+# 
+# #### [回到目錄](./tablecontent.md)
 # <p style="page-break-before: always">
-
-# In[ ]:
-
-
-
-

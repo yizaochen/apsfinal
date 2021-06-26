@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>列聯表分析:綜合結論 &#8212; 腦中風資料的統計分析與探討</title>
+    <title>Chapter 14: 結論與討論 &#8212; 腦中風資料的統計分析與探討</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,10 +49,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="解釋變數與中風的交互作用" href="interaction_plot.html" />
-    <link rel="prev" title="列聯表分析:數值型" href="numerical.html" />
+    <link rel="next" title="Chapter 15: 心得" href="feedback.html" />
+    <link rel="prev" title="Chatper 13: Cluster analysis 2-使用迴歸分析final model中的變數去計算" href="clustering_batch.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -85,84 +87,89 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
-   前言：背景與動機
+   Cover Page
   </a>
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="tablecontent.html">
+   目錄
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro1.html">
+   Chapter 1: 背景與動機
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="dataexplore.html">
-   資料探討
+   Chapter 2: 資料集基本介紹
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="simplecategorical.html">
-   列聯表分析:簡單類別型
+   Chapter 3: 列聯表分析1-簡單類別型
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="multiplecategorical.html">
-   列聯表分析:多重類別型
+   Chapter 4: 列聯表分析2-多重類別型
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="numerical.html">
-   列聯表分析:數值型
+   Chapter 5: 列聯表分析3-數值型
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   列聯表分析:綜合結論
+ <li class="toctree-l1">
+  <a class="reference internal" href="cond_prob_given_stroke_nonstroke.html">
+   Chapter 6: “中風組內分佈”與”非中風組內分佈”
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="age_confounder.html">
+   Chapter 7: Age as Confounding Factor
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="interaction_plot.html">
-   解釋變數與中風的交互作用
+   Chapter 8: 以累積機率探討交互作用
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="regression_categorical.html">
-   迴歸分析: 類別型變數
+   Chapter 9: 迴歸分析1-類別型變數
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="regression_numerical.html">
-   迴歸分析: 數值型變數
+   Chapter 10: 迴歸分析2-數值型變數
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="regression_mix.html">
-   迴歸分析: 綜合模型
+   Chapter 11: 迴歸分析3-綜合模型
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="clustering.html">
-   Cluster analysis: 測試與中風組內分群
+   Chapter 12: Cluster analysis 1-使用全部的變數去計算
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="clustering_batch.html">
-   Cluster analysis: 中風者與非中風者做分群
+   Chatper 13: Cluster analysis 2-使用迴歸分析final model中的變數去計算
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Chapter 14: 結論與討論
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="append_dataexplore.html">
-   補充:資料清理前統計分析
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="interaction1.html">
-   補充: 因素之間交互作用
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="interaction2.html">
-   補充: 因素之間交互作用(數值型)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="appen_classify_ref.html">
-   補充: 血糖與BMI分類依據
+  <a class="reference internal" href="feedback.html">
+   Chapter 15: 心得
   </a>
  </li>
  <li class="toctree-l1">
@@ -258,9 +265,38 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   變數之間關係
+  <a class="reference internal nav-link" href="#id1">
+   資跳探討、列聯表、機率分析
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#age-as-confounding-effect">
+   Age as Confounding Effect
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   累積機率探討交戶作用
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logistic-regression">
+   Logistic Regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cluster-analysis">
+   Cluster Analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     <span class="xref myst">
+      回到目錄
+     </span>
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -273,11 +309,56 @@
         
               <div>
                 
-  <div class="section" id="id1">
-<h1>列聯表分析:綜合結論<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="chapter-14">
+<h1>Chapter 14: 結論與討論<a class="headerlink" href="#chapter-14" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>資跳探討、列聯表、機率分析<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>首先，根據列聯表、分佈圖還有機率分析，我們做了一張矩陣表格來總結變數之間的關係</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/all_vari_corre.jpg"><img alt="all_vari_corre" class="bg-primary mb-1 align-center" src="_images/all_vari_corre.jpg" style="width: 800px;" /></a>
+<ul class="simple">
+<li><p>綠色+號格子代表，兩兩變數是有關聯的</p></li>
+<li><p>灰色-號格子代表，兩兩變數不相關</p></li>
+<li><p>在這裡，我們想了解其他解釋變數跟中風的關係，聚焦在第二個column</p>
+<ul>
+<li><p>與中風無關的解釋變數有兩個: 性別與居住地</p></li>
+<li><p><span style="color:blue"> 與中風高度相關的: 年齡、結婚、高血壓、心臟病、血糖 </span></p></li>
+<li><p><span style="color:blue"> 與中風有相關但不是很顯著: 工作、抽煙、BMI </span></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="age-as-confounding-effect">
+<h2>Age as Confounding Effect<a class="headerlink" href="#age-as-confounding-effect" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>如果已知年齡，高血壓對於中風提供的資訊相對就少</p></li>
+<li><p>年齡與心臟病對中風的提升是相互加成，尤其是對於60-69歲,80-89歲這兩個區段</p></li>
+<li><p>目前懷疑可能是因為中風人數小於50歲的過少，導致年齡最能觀察出的更年期現象在這次的分析中看不太出有什麼影響力。不過有趣的是，在多組分組分析中，過了60-69歲這個門檻，我們就姑且說70歲吧，到下一個年齡層的斜率會上升，可見年齡對於該組別中風的影響到了70歲之後越趨上升，例如戒菸者、未曾抽菸者、女性，但在心臟病者中，50~80歲，年齡對中風機會的影響幾無改變，但整體而言，年齡都會和這些類別變數產生交互作用。</p></li>
+</ul>
+</div>
 <div class="section" id="id2">
-<h2>變數之間關係<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p><img alt="" src="https://i.imgur.com/VD9XXMc.jpg" /></p>
+<h2>累積機率探討交戶作用<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>採用累積機率的方式探討不同變數因子對於中風是否具有交互作用。將其中一變數作為橫軸劃分區間，另一變數依類別個別畫出累積分佈曲線，經由累積分佈曲線的斜率變化可以判斷是否在不同的橫軸變數區間產生交互影響。而如果圖形大致重疊則可以判斷變數之間並無交互作用。</p></li>
+<li><p>採用機率分佈取代實際數量的好處，在於可以去除不同族群個數的差異，將資料正規化(normalization)，比較可以看出不同族群間整體變化的趨勢進而做比較。</p></li>
+<li><p>在實作過程中，若橫軸變數的類別順序固定的情況下，對於不同變數的累積分佈曲線，產生敏感變化的區間會不盡相同。因此對於橫軸類別順序的選擇必須隨著觀察資料適時調整，才比較能看出變化的趨勢。</p></li>
+</ul>
+</div>
+<div class="section" id="logistic-regression">
+<h2>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this headline">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{age}}x_{\rm{age}} + \beta_{\rm{glucose}}x_{\rm{glucose}}
+\]</div>
+<ul class="simple">
+<li><p>最後考量的解釋變數為: 年齡、高血壓、心臟病、血糖，可以發現結婚這個變數被拿掉了。</p></li>
+</ul>
+</div>
+<div class="section" id="cluster-analysis">
+<h2>Cluster Analysis<a class="headerlink" href="#cluster-analysis" title="Permalink to this headline">¶</a></h2>
+<p>綜合兩部分的cluster analysis，中風與非中風樣本皆無法完全地分群，但都有某個小群中涵蓋較多的中風比例，進而可推測該群的非中風樣本健康狀態有較高的中風風險。</p>
+<div class="section" id="id3">
+<h3><a class="reference internal" href="tablecontent.html"><span class="doc std std-doc">回到目錄</span></a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p style="page-break-before: always"></div>
 </div>
 </div>
 
@@ -306,8 +387,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="numerical.html" title="previous page">列聯表分析:數值型</a>
-    <a class='right-next' id="next-link" href="interaction_plot.html" title="next page">解釋變數與中風的交互作用</a>
+    <a class='left-prev' id="prev-link" href="clustering_batch.html" title="previous page">Chatper 13: Cluster analysis 2-使用迴歸分析final model中的變數去計算</a>
+    <a class='right-next' id="next-link" href="feedback.html" title="next page">Chapter 15: 心得</a>
 
         </div>
         
@@ -319,7 +400,7 @@
         
           By 陳奕造 施奕如 楊欣儒 李長穎<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>

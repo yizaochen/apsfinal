@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 7: Age as Confounding Factor &#8212; 腦中風資料的統計分析與探討</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chapter 8: 以累積機率探討交互作用" href="interaction_plot.html" />
+    <link rel="prev" title="Chapter 6: “中風組內分佈”與”非中風組內分佈”" href="cond_prob_given_stroke_nonstroke.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">腦中風資料的統計分析與探討</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Cover Page
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tablecontent.html">
+   目錄
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro1.html">
+   Chapter 1: 背景與動機
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dataexplore.html">
+   Chapter 2: 資料集基本介紹
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="simplecategorical.html">
+   Chapter 3: 列聯表分析1-簡單類別型
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="multiplecategorical.html">
+   Chapter 4: 列聯表分析2-多重類別型
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numerical.html">
+   Chapter 5: 列聯表分析3-數值型
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cond_prob_given_stroke_nonstroke.html">
+   Chapter 6: “中風組內分佈”與”非中風組內分佈”
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Chapter 7: Age as Confounding Factor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="interaction_plot.html">
+   Chapter 8: 以累積機率探討交互作用
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_categorical.html">
+   Chapter 9: 迴歸分析1-類別型變數
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_numerical.html">
+   Chapter 10: 迴歸分析2-數值型變數
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_mix.html">
+   Chapter 11: 迴歸分析3-綜合模型
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clustering.html">
+   Chapter 12: Cluster analysis 1-使用全部的變數去計算
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clustering_batch.html">
+   Chatper 13: Cluster analysis 2-使用迴歸分析final model中的變數去計算
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="conti_table_summary.html">
+   Chapter 14: 結論與討論
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="feedback.html">
+   Chapter 15: 心得
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliography.html">
+   參考資料
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/age_confounder.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fage_confounder.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/age_confounder.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#age-and-gender">
+   Age and Gender
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#age-and-hypertension">
+   Age and hypertension
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#age-and-herat-disease">
+   Age and Herat-Disease
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#age-and-marry">
+   Age and Marry
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#age-and-smoking-status">
+   Age and Smoking Status
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#age-and-glucose">
+   Age and Glucose
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     <span class="xref myst">
+      回到目錄
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="chapter-7-age-as-confounding-factor">
+<h1>Chapter 7: Age as Confounding Factor<a class="headerlink" href="#chapter-7-age-as-confounding-factor" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="age-and-gender">
+<h2>Age and Gender<a class="headerlink" href="#age-and-gender" title="Permalink to this headline">¶</a></h2>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/age_gender.png"><img alt="age_gender" class="bg-primary mb-1 align-center" src="_images/age_gender.png" style="width: 600px;" /></a>
+<ul class="simple">
+<li><p>barplot的部分是該年齡層某個性別的中風百分比 lineplot的部分是該性別的中風人數中每加一個年齡層的百分比</p></li>
+<li><p><span style="color:blue">性別會對年齡和中風的機率構成影響，美國平均女性更年期是50~52歲，因此可見從50~69該區段的斜率較先前趨緩，而男性過了50歲到79歲這段區間幾乎呈現斜率一致，顯示男性邁入老年後除非已過80，年齡對中風造成的差異一致，然女性可能因為賀爾蒙波動等因素造成每個年齡區段罹患中風的機率不斷波動</span></p></li>
+</ul>
+</div>
+<div class="section" id="age-and-hypertension">
+<h2>Age and hypertension<a class="headerlink" href="#age-and-hypertension" title="Permalink to this headline">¶</a></h2>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/age_ht.png"><img alt="age_ht" class="bg-primary mb-1 align-center" src="_images/age_ht.png" style="width: 600px;" /></a>
+<ul class="simple">
+<li><p><span style="color:blue">對於未有高血壓的病患，在老年以前對於罹患中風的正影響較低，顯示累積機率之斜率較低。值得注意的是在50歲以前，未有高血壓者罹患中風的比例較高，但過了50歲之後由累積機率的上升斜率可見，50~69歲高血壓對於罹患中風的正影響較為明顯，然過了70歲之後，本表未見高血壓對於中風的是否有影響。</span></p></li>
+</ul>
+<p style="page-break-before: always"></div>
+<div class="section" id="age-and-herat-disease">
+<h2>Age and Herat-Disease<a class="headerlink" href="#age-and-herat-disease" title="Permalink to this headline">¶</a></h2>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/age_HD.png"><img alt="age_HD" class="bg-primary mb-1 align-center" src="_images/age_HD.png" style="width: 600px;" /></a>
+<ul class="simple">
+<li><p><span style="color:blue">同時具有心臟疾病與中風的人數有36人，不確定是否會影響判讀，但就上圖，年齡對中風與否的影響，有一部份取決於是否有心臟疾病，未有心臟疾病者，年齡的影響較大。但對於有先心臟疾病者，一旦過了更年期(50歲)之後，右表中的橘色實線的斜率變化顯示，年齡增長對於罹患中風未見其正向影響。</span></p></li>
+</ul>
+</div>
+<div class="section" id="age-and-marry">
+<h2>Age and Marry<a class="headerlink" href="#age-and-marry" title="Permalink to this headline">¶</a></h2>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/age_marry.png"><img alt="age_marry" class="bg-primary mb-1 align-center" src="_images/age_marry.png" style="width: 600px;" /></a>
+<ul class="simple">
+<li><p><span style="color:blue">未有婚姻經驗的人總共826人，但其中中風的僅有20人。換句話說，<span class="math notranslate nohighlight">\(P(\text{Stroke}|\text{Never Marry})=0.02\)</span>，這會讓模型本身看到未婚者，就容易猜沒中風。中風者裡未婚者過少的這件事情，可能是讓婚姻成為重要解釋變數的主要原因。</span></p></li>
+<li><p>淺綠色Bar代表<span class="math notranslate nohighlight">\(P(\text{Stroke}|\text{Marry},\text{Age-Group})\)</span>，粉紅色Bar代表<span class="math notranslate nohighlight">\(P(\text{Stroke}|\text{Never Marry},\text{Age-Group})\)</span></p></li>
+<li><p><span style="color:blue"> 單純看這張圖60-79、70-79的區段，其實”老、未婚的人”罹患中風的比例是比”老、結婚的人”罹患中風的比例還高的。</span></p></li>
+<li><p><span style="color:blue"> 但認真把count看清楚，會發現，90%的中風者都是已婚，而且這群已婚又中風的人大部份都是大於五十歲的。因此，在之後的模型，結婚這件事情對於中風，其實是隱含年紀大的資訊的。</span></p></li>
+</ul>
+<p style="page-break-before: always"></div>
+<div class="section" id="age-and-smoking-status">
+<h2>Age and Smoking Status<a class="headerlink" href="#age-and-smoking-status" title="Permalink to this headline">¶</a></h2>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/age_smoke.png"><img alt="age_smoke" class="bg-primary mb-1 align-center" src="_images/age_smoke.png" style="width: 600px;" /></a>
+<ul class="simple">
+<li><p>三組均大於39人。</p></li>
+<li><p><span style="color:blue">對於維持抽菸習慣者，觀察右表斜率，年齡之於中風的影響大致可分為三個階段，壯年、(50歲)更年期後十年、邁入老年70歲以後。壯年時期維持抽菸的人口不多，不確定是否具有意義，但可以發現50歲以後之抽菸者，到七十歲以前這段區間若具有抽菸習慣對於罹患中風具有正向影響。然而值得注意的是，雖然在卡方檢定中，我們發現曾經有過抽菸習慣的成功戒菸者們，罹患中風的機會較高，但是本表中可以發現對於60多歲跳到70歲這個階級中，無論是成功戒菸者或是有抽菸習慣者，年齡均會影響其抽菸習慣增加中風機會，兩組斜率均出現變動，因此不排除在卡方檢定中的結果，有受到年齡因素的干擾。原先認為已經成功戒菸者可能菸齡已久，故引導出卡方檢定的結果，然而，目前可得的資料僅能得知平均戒菸年齡，約在40歲以前，又本資料中小於40歲的中風人數過少，故而不在本份報告得以解釋的範圍內。</span></p></li>
+</ul>
+</div>
+<div class="section" id="age-and-glucose">
+<h2>Age and Glucose<a class="headerlink" href="#age-and-glucose" title="Permalink to this headline">¶</a></h2>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/age_glucose.png"><img alt="age_glucose" class="bg-primary mb-1 align-center" src="_images/age_glucose.png" style="width: 600px;" /></a>
+<ul class="simple">
+<li><p><span style="color:blue">前面注意到，血糖會被分成兩群，初步用scatter plot對age，可以看到這種情況，高血糖的第二個distribution可以看到集中在年齡四十歲以上</span></p></li>
+</ul>
+<div class="section" id="id1">
+<h3><a class="reference internal" href="tablecontent.html"><span class="doc std std-doc">回到目錄</span></a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p style="page-break-before: always"></div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="cond_prob_given_stroke_nonstroke.html" title="previous page">Chapter 6: “中風組內分佈”與”非中風組內分佈”</a>
+    <a class='right-next' id="next-link" href="interaction_plot.html" title="next page">Chapter 8: 以累積機率探討交互作用</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By 陳奕造 施奕如 楊欣儒 李長穎<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

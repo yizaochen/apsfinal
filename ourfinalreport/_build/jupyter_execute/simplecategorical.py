@@ -188,6 +188,9 @@
 # - <span style="color:blue"> 與中風不相關的變數: 性別與居住地</span>
 # - <span style="color:blue"> 與中風相關的三個變數: 婚姻、高血壓、心臟病 </span>
 # - <span style="color:blue"> 婚姻與中風相關是比較意外的結果，下面會做年齡與婚姻相關的分析，就可以知道婚姻是帶有年齡的資訊的。</span>
+# 
+# 
+# #### [回到目錄](./tablecontent.md)
 # <p style="page-break-before: always">
 
 # <p style="page-break-before: always">

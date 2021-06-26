@@ -52,5 +52,6 @@ Chatper 13: Cluster analysis 2-使用迴歸分析final model中的變數去計�
         1. 中風與非中風的樣本數差異過大 
         2. 雖納入計算的變數可能導致中風，但可能需要更多詳細的健康資訊才能更準確地進行分群，例如：hypertension不要是binary variable，而是血壓的連續型數值。
         3. Gower distance計算易受到無標準化的連續型變量異常值影響，而此部分帶入計算的數據皆為無經過轉換的原始資料。
-        
+
+#### [回到目錄](./tablecontent.md)    
 <p style="page-break-before: always">

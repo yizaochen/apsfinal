@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>迴歸分析: 類別型變數 &#8212; 腦中風資料的統計分析與探討</title>
+    <title>Chapter 9: 迴歸分析1-類別型變數 &#8212; 腦中風資料的統計分析與探討</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="迴歸分析: 數值型變數" href="regression_numerical.html" />
-    <link rel="prev" title="解釋變數與中風的交互作用" href="interaction_plot.html" />
+    <link rel="next" title="Chapter 10: 迴歸分析2-數值型變數" href="regression_numerical.html" />
+    <link rel="prev" title="Chapter 8: 以累積機率探討交互作用" href="interaction_plot.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -87,84 +87,89 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
-   前言：背景與動機
+   Cover Page
   </a>
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="tablecontent.html">
+   目錄
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro1.html">
+   Chapter 1: 背景與動機
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="dataexplore.html">
-   資料探討
+   Chapter 2: 資料集基本介紹
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="simplecategorical.html">
-   列聯表分析:簡單類別型
+   Chapter 3: 列聯表分析1-簡單類別型
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="multiplecategorical.html">
-   列聯表分析:多重類別型
+   Chapter 4: 列聯表分析2-多重類別型
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="numerical.html">
-   列聯表分析:數值型
+   Chapter 5: 列聯表分析3-數值型
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="conti_table_summary.html">
-   列聯表分析:綜合結論
+  <a class="reference internal" href="cond_prob_given_stroke_nonstroke.html">
+   Chapter 6: “中風組內分佈”與”非中風組內分佈”
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="age_confounder.html">
+   Chapter 7: Age as Confounding Factor
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="interaction_plot.html">
-   解釋變數與中風的交互作用
+   Chapter 8: 以累積機率探討交互作用
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   迴歸分析: 類別型變數
+   Chapter 9: 迴歸分析1-類別型變數
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="regression_numerical.html">
-   迴歸分析: 數值型變數
+   Chapter 10: 迴歸分析2-數值型變數
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="regression_mix.html">
-   迴歸分析: 綜合模型
+   Chapter 11: 迴歸分析3-綜合模型
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="clustering.html">
-   Cluster analysis: 測試與中風組內分群
+   Chapter 12: Cluster analysis 1-使用全部的變數去計算
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="clustering_batch.html">
-   Cluster analysis: 中風者與非中風者做分群
+   Chatper 13: Cluster analysis 2-使用迴歸分析final model中的變數去計算
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="append_dataexplore.html">
-   補充:資料清理前統計分析
+  <a class="reference internal" href="conti_table_summary.html">
+   Chapter 14: 結論與討論
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="interaction1.html">
-   補充: 因素之間交互作用
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="interaction2.html">
-   補充: 因素之間交互作用(數值型)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="appen_classify_ref.html">
-   補充: 血糖與BMI分類依據
+  <a class="reference internal" href="feedback.html">
+   Chapter 15: 心得
   </a>
  </li>
  <li class="toctree-l1">
@@ -277,7 +282,7 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
+  <a class="reference internal nav-link" href="#id1">
    讀取資料
   </a>
  </li>
@@ -287,33 +292,28 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#hypertension">
-     Hypertension:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#heart-disease">
-     Heart-disease
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ever-married">
-     Ever-Married
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#work-type">
-     Work-type
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#smoke-status">
-     Smoke Status
+    <a class="reference internal nav-link" href="#id2">
+     高血壓:
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id3">
-     小節結論
+     心臟病
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ever-married">
+     Ever-Married(結婚有無)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#work-type">
+     Work-type(工作類型)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#smoke-status">
+     Smoke Status(沒抽過煙、戒煙的人、正在抽煙的人)
     </a>
    </li>
   </ul>
@@ -337,8 +337,17 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id4">
-     模型解釋
+     模型解釋:
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       <span class="xref myst">
+        回到目錄
+       </span>
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -353,13 +362,13 @@
         
               <div>
                 
-  <div class="section" id="id1">
-<h1>迴歸分析: 類別型變數<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="chapter-9-1">
+<h1>Chapter 9: 迴歸分析1-類別型變數<a class="headerlink" href="#chapter-9-1" title="Permalink to this headline">¶</a></h1>
 <p>由於列聯表分析只能探討中風與一種解釋變數之間的關係，迴歸分析則可以提供我們一次分析多種解釋變數對於中風的影響。
 在這個部份，我們首先做了只有類別型變數的迴歸模型，下一個部份則做了只有數值型變數的迴歸模型，第三部份結合了所有的變數並做出一個最終模型。</p>
 <p><span style="color:blue"> <em>從前面列聯表分析中: 中風與”性別”及”住處型態”無關，因此在迴歸分析是直接被拿掉的</em></span></p>
-<div class="section" id="id2">
-<h2>讀取資料<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h2>讀取資料<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">strokedata</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s">&#39;../data/healthcare-dataset-stroke-data-cleanbmi.csv&#39;</span><span class="p">)</span>
@@ -382,7 +391,14 @@
 </div></div>
 </div>
 <ul class="simple">
-<li><p>清理完的資料含有3426資料點</p></li>
+<li><p>被清理的資料是符合以下條件的:</p>
+<ul>
+<li><p>Gender為Other</p></li>
+<li><p>BMI為N/A</p></li>
+<li><p>Smoking status為Unknown</p></li>
+</ul>
+</li>
+<li><p>清理完的資料含有3425資料點</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -391,15 +407,17 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">3426</div></div>
+<div class="output text_html">3425</div></div>
 </div>
-</div>
+<p style="page-break-before: always"></div>
 <div class="section" id="simple-models">
 <h2>Simple Models: 只含有一個解釋變數<a class="headerlink" href="#simple-models" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="hypertension">
-<h3>Hypertension:<a class="headerlink" href="#hypertension" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>高血壓:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="math notranslate nohighlight">
-\[\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}\]</div>
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_hypert</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">hypertension</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
@@ -414,30 +432,37 @@ glm(formula = stroke ~ hypertension, family = binomial(link = &quot;logit&quot;)
 
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
--0.5486  -0.2885  -0.2885  -0.2885   2.5299  
+-0.5486  -0.2885  -0.2885  -0.2885   2.5298  
 
 Coefficients:
              Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)  -3.15856    0.09206 -34.309  &lt; 2e-16 ***
-hypertension  1.34082    0.16991   7.892 2.99e-15 ***
+(Intercept)  -3.15821    0.09206 -34.305  &lt; 2e-16 ***
+hypertension  1.34048    0.16991   7.889 3.04e-15 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
-    Null deviance: 1411.0  on 3425  degrees of freedom
-Residual deviance: 1358.2  on 3424  degrees of freedom
-AIC: 1362.2
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1358.1  on 3423  degrees of freedom
+AIC: 1362.1
 
 Number of Fisher Scoring iterations: 6
 </pre></div>
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p><span style="color:blue"> <span class="math notranslate nohighlight">\(\beta\)</span>的z-test的p-value很小，高血壓與中風的預測是顯著的 </span></p></li>
+<li><p><span style="color:blue"> <span class="math notranslate nohighlight">\(\beta_{\rm{hypert}}=1.34 &gt; 0\)</span> : 表示有高血壓會增加中風的機率 </span></p></li>
+</ul>
 </div>
-<div class="section" id="heart-disease">
-<h3>Heart-disease<a class="headerlink" href="#heart-disease" title="Permalink to this headline">¶</a></h3>
-<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{heartd}}x_{\rm{heartd}}\)</span></p>
+<div class="section" id="id3">
+<h3>心臟病<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{heartd}}x_{\rm{heartd}}
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_heartd</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">heart_disease</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
@@ -452,30 +477,37 @@ glm(formula = stroke ~ heart_disease, family = binomial(link = &quot;logit&quot;
 
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
--0.6198  -0.3025  -0.3025  -0.3025   2.4929  
+-0.6198  -0.3025  -0.3025  -0.3025   2.4928  
 
 Coefficients:
               Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)   -3.06157    0.08525  -35.91  &lt; 2e-16 ***
-heart_disease  1.50929    0.20231    7.46 8.62e-14 ***
+(Intercept)   -3.06125    0.08525 -35.908  &lt; 2e-16 ***
+heart_disease  1.50897    0.20231   7.459 8.73e-14 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
-    Null deviance: 1411.0  on 3425  degrees of freedom
-Residual deviance: 1367.3  on 3424  degrees of freedom
-AIC: 1371.3
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1367.2  on 3423  degrees of freedom
+AIC: 1371.2
 
 Number of Fisher Scoring iterations: 5
 </pre></div>
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p><span style="color:blue"> <span class="math notranslate nohighlight">\(\beta\)</span>的z-test的p-value很小，心臟病與中風的預測是顯著的 </span></p></li>
+<li><p><span style="color:blue"> <span class="math notranslate nohighlight">\(\beta_{\rm{heartd}}=1.509 &gt; 0\)</span> : 表示有心臟病會增加中風的機率 </span></p></li>
+</ul>
 </div>
 <div class="section" id="ever-married">
-<h3>Ever-Married<a class="headerlink" href="#ever-married" title="Permalink to this headline">¶</a></h3>
-<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{marry}}x_{\rm{marry}}\)</span></p>
+<h3>Ever-Married(結婚有無)<a class="headerlink" href="#ever-married" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{marry}}x_{\rm{marry}}
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_marry</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">ever_married</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
@@ -490,19 +522,19 @@ glm(formula = stroke ~ ever_married, family = binomial(link = &quot;logit&quot;)
 
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
--0.3565  -0.3565  -0.3565  -0.2213   2.7284  
+-0.3565  -0.3565  -0.3565  -0.2214   2.7279  
 
 Coefficients:
                 Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)      -3.6976     0.2264 -16.335  &lt; 2e-16 ***
-ever_marriedYes   0.9734     0.2406   4.045 5.22e-05 ***
+(Intercept)      -3.6964     0.2264  -16.33  &lt; 2e-16 ***
+ever_marriedYes   0.9722     0.2406    4.04 5.34e-05 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
-    Null deviance: 1411.0  on 3425  degrees of freedom
-Residual deviance: 1390.4  on 3424  degrees of freedom
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1390.4  on 3423  degrees of freedom
 AIC: 1394.4
 
 Number of Fisher Scoring iterations: 6
@@ -510,10 +542,17 @@ Number of Fisher Scoring iterations: 6
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p><span style="color:blue"> <span class="math notranslate nohighlight">\(\beta_{\rm{marry}}=0.9722 &gt; 0\)</span> : 表示”有結過婚”會增加中風的機率 </span></p></li>
+<li><p><span style="color:blue"> 目前這裡的資料是含有”未達已婚年齡者的”，我們會在後面討論年齡與婚姻的對於中風預測的相互影響</span></p></li>
+</ul>
 </div>
 <div class="section" id="work-type">
-<h3>Work-type<a class="headerlink" href="#work-type" title="Permalink to this headline">¶</a></h3>
-<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{GovJob}}x_{\rm{GovJob}} + \beta_{\rm{Neverworked}}x_{\rm{Neverworked}} + \beta_{\rm{Private}}x_{\rm{Private}} + \beta_{\rm{Selfemployed}}x_{\rm{Selfemployed}}\)</span></p>
+<h3>Work-type(工作類型)<a class="headerlink" href="#work-type" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{GovJob}}x_{\rm{GovJob}} + \beta_{\rm{Neverworked}}x_{\rm{Neverworked}} + \beta_{\rm{Private}}x_{\rm{Private}} + \beta_{\rm{Selfemployed}}x_{\rm{Selfemployed}}
+\]</div>
 <ul class="simple">
 <li><p>Baseline group: children</p></li>
 </ul>
@@ -531,21 +570,21 @@ glm(formula = stroke ~ work_type, family = binomial(link = &quot;logit&quot;),
 
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
--0.3985  -0.3187  -0.3187  -0.3187   2.4927  
+-0.3985  -0.3188  -0.3188  -0.3188   2.4927  
 
 Coefficients:
                          Estimate Std. Error z value Pr(&gt;|z|)
 (Intercept)            -1.757e+01  4.798e+02  -0.037    0.971
 work_typeGovt_job       1.451e+01  4.798e+02   0.030    0.976
-work_typeNever_worked   4.643e-09  1.161e+03   0.000    1.000
+work_typeNever_worked  -1.793e-08  1.161e+03   0.000    1.000
 work_typePrivate        1.461e+01  4.798e+02   0.030    0.976
 work_typeSelf-employed  1.507e+01  4.798e+02   0.031    0.975
 
 (Dispersion parameter for binomial family taken to be 1)
 
-    Null deviance: 1411.0  on 3425  degrees of freedom
-Residual deviance: 1394.8  on 3421  degrees of freedom
-AIC: 1404.8
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1394.7  on 3420  degrees of freedom
+AIC: 1404.7
 
 Number of Fisher Scoring iterations: 16
 </pre></div>
@@ -553,23 +592,32 @@ Number of Fisher Scoring iterations: 16
 </div>
 </div>
 <ul class="simple">
-<li><p>z-test的p-value都很大，表示我們沒辦法拒絕下面的<span class="math notranslate nohighlight">\(H_0\)</span><br />
-<span class="math notranslate nohighlight">\(H_0: \beta_{\rm{GovJob}} = 0\)</span><br />
-<span class="math notranslate nohighlight">\(H_0: \beta_{\rm{Neverworked}} = 0\)</span><br />
-<span class="math notranslate nohighlight">\(H_0: \beta_{\rm{Private}} = 0\)</span><br />
-<span class="math notranslate nohighlight">\(H_0: \beta_{\rm{Selfemployed}} = 0\)</span></p></li>
-<li><p>因此，工作型態對於預測中風是沒有幫助的</p></li>
+<li><p><span style="color:blue"> z-test的p-value都很大，表示我們沒辦法拒絕下面的<span class="math notranslate nohighlight">\(H_0\)</span> </span></p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp;H_0: \beta_{\rm{GovJob}} = 0 \\
+&amp;H_0: \beta_{\rm{Neverworked}} = 0 \\ 
+&amp;H_0: \beta_{\rm{Private}} = 0 \\
+&amp;H_0: \beta_{\rm{Selfemployed}} = 0
+\end{align*}\]</div>
+<ul class="simple">
+<li><p><span style="color:blue"> 因此，工作型態對於預測中風是沒有幫助的，後面的模型不會考慮此解釋變數</span></p></li>
 </ul>
 </div>
 <div class="section" id="smoke-status">
-<h3>Smoke Status<a class="headerlink" href="#smoke-status" title="Permalink to this headline">¶</a></h3>
-<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{Neversmoke}}x_{\rm{Neversmoke}} + \beta_{\rm{smoke}}x_{\rm{smoke}}\)</span></p>
+<h3>Smoke Status(沒抽過煙、戒煙的人、正在抽煙的人)<a class="headerlink" href="#smoke-status" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{Former-smoke}}x_{\rm{Former-smoke}} + \beta_{\rm{smoke}}x_{\rm{smoke}}
+\]</div>
 <ul class="simple">
-<li><p>Baseline group: ‘formerly smoked’</p></li>
+<li><p>Baseline group: ‘never smoked’</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_smoke</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">smoking_status</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">strokedata</span><span class="o">$</span><span class="n">smoking_status</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">strokedata</span><span class="o">$</span><span class="n">smoking_status</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;never smoked&#39;</span><span class="p">,</span> <span class="s">&#39;formerly smoked&#39;</span><span class="p">,</span> <span class="s">&#39;smokes&#39;</span><span class="p">))</span>
+<span class="n">model_smoke</span> <span class="o">=</span> <span class="nf">glm</span><span class="p">(</span><span class="n">stroke</span> <span class="o">~</span> <span class="n">smoking_status</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">strokedata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
 <span class="nf">summary</span><span class="p">(</span><span class="n">model_smoke</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -581,52 +629,46 @@ glm(formula = stroke ~ smoking_status, family = binomial(link = &quot;logit&quot
 
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
--0.3756  -0.3297  -0.3047  -0.3047   2.4872  
+-0.3758  -0.3297  -0.3047  -0.3047   2.4872  
 
 Coefficients:
-                           Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)                 -2.6162     0.1372 -19.068   &lt;2e-16 ***
-smoking_statusnever smoked  -0.4305     0.1769  -2.434   0.0149 *  
-smoking_statussmokes        -0.2684     0.2142  -1.253   0.2102    
+                              Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)                    -3.0468     0.1117 -27.287   &lt;2e-16 ***
+smoking_statusformerly smoked   0.4318     0.1769   2.441   0.0146 *  
+smoking_statussmokes            0.1621     0.1988   0.815   0.4149    
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
-    Null deviance: 1411.0  on 3425  degrees of freedom
-Residual deviance: 1405.3  on 3423  degrees of freedom
-AIC: 1411.3
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1405.1  on 3422  degrees of freedom
+AIC: 1411.1
 
 Number of Fisher Scoring iterations: 5
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id3">
-<h3>小節結論<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>從每一個Simple model對於<span class="math notranslate nohighlight">\(\beta\)</span>的z-test，可以發現</p>
-<ul>
-<li><p>高血壓、心臟疾病、結婚狀態與中風的預測是顯著相關的</p></li>
-<li><p>抽煙狀態就比較不這麼顯著</p>
-<ul>
-<li><p>formerly smoke, never smoke的p-value &lt; 5%: 還是有提供預測中風的資訊</p></li>
-<li><p>smoke的p-value=0.21: 對於預測中風，沒辦法提供什麼資訊</p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>為了決定是否要將smoke status考慮進去最後的模型，將在下個部份做Model Selection</p></li>
+<li><p><span style="color:blue"><span class="math notranslate nohighlight">\(\beta_{\rm{Former-smoke}}&gt;0\)</span>, <span class="math notranslate nohighlight">\(\beta_{\rm{smoke}}&gt;0\)</span>:  相比於不抽煙的人(Baseline)，有抽過煙會增加中風的機率</span></p></li>
+<li><p><span style="color:blue"><span class="math notranslate nohighlight">\(\beta_{\rm{Former-smoke}}&gt;\beta_{\rm{smoke}}\)</span>: 這裡是比較違反直覺的地方，”戒煙的人”竟然比”目前還在抽煙的人”更容易中風</span></p></li>
+<li><p><span style="color:blue"><span class="math notranslate nohighlight">\(\beta_{\rm{smoke}}\)</span> Z-test的p-value=0.4149: 表示抽煙狀態對於預測中風，沒有前面幾個變數來的重要</span></p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="model-selection-with-without-smoke-status">
 <h2>Model Selection: with/without smoke status<a class="headerlink" href="#model-selection-with-without-smoke-status" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
+<li><p><span style="color:blue"> 為了決定是否要將smoke status考慮進去最後的模型，我們用likelihood-ratio test做Model Selection</span></p></li>
 <li><p>Full Model:
-<span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{marry}}x_{\rm{marry}} + \beta_{\rm{Neversmoke}}x_{\rm{Neversmoke}} + \beta_{\rm{smoke}}x_{\rm{smoke}}\)</span></p></li>
-<li><p>Reduced Model: <span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{marry}}x_{\rm{marry}}\)</span></p></li>
+$<span class="math notranslate nohighlight">\(
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{marry}}x_{\rm{marry}} + \beta_{\rm{Former-smoke}}x_{\rm{Former-smoke}} + \beta_{\rm{smoke}}x_{\rm{smoke}}
+\)</span>$</p></li>
+<li><p>Reduced Model:
+$<span class="math notranslate nohighlight">\(
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{marry}}x_{\rm{marry}}
+\)</span>$</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -642,23 +684,23 @@ glm(formula = stroke ~ hypertension + heart_disease + ever_married +
 
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
--0.9456  -0.3194  -0.2799  -0.2226   2.8192  
+-0.9457  -0.3195  -0.2799  -0.2228   2.8188  
 
 Coefficients:
-                           Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)                 -3.6853     0.2682 -13.742  &lt; 2e-16 ***
-hypertension                 1.1382     0.1748   6.510 7.49e-11 ***
-heart_disease                1.2389     0.2099   5.902 3.58e-09 ***
-ever_marriedYes              0.7351     0.2451   3.000   0.0027 ** 
-smoking_statusnever smoked  -0.2698     0.1824  -1.479   0.1390    
-smoking_statussmokes        -0.1920     0.2196  -0.874   0.3820    
+                              Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)                    -3.9539     0.2399 -16.479  &lt; 2e-16 ***
+hypertension                    1.1381     0.1748   6.510 7.52e-11 ***
+heart_disease                   1.2388     0.2099   5.902 3.60e-09 ***
+ever_marriedYes                 0.7338     0.2451   2.994  0.00275 ** 
+smoking_statusformerly smoked   0.2704     0.1824   1.482  0.13822    
+smoking_statussmokes            0.0779     0.2036   0.383  0.70202    
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
-    Null deviance: 1411.0  on 3425  degrees of freedom
-Residual deviance: 1311.8  on 3420  degrees of freedom
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1311.8  on 3419  degrees of freedom
 AIC: 1323.8
 
 Number of Fisher Scoring iterations: 6
@@ -680,22 +722,22 @@ glm(formula = stroke ~ hypertension + heart_disease + ever_married,
 
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
--0.8899  -0.2930  -0.2930  -0.2012   2.7965  
+-0.8899  -0.2930  -0.2930  -0.2013   2.7961  
 
 Coefficients:
                 Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)      -3.8899     0.2308 -16.858  &lt; 2e-16 ***
-hypertension      1.1374     0.1746   6.513 7.34e-11 ***
-heart_disease     1.2675     0.2085   6.080 1.20e-09 ***
-ever_marriedYes   0.7631     0.2443   3.124  0.00178 ** 
+(Intercept)      -3.8888     0.2308 -16.852  &lt; 2e-16 ***
+hypertension      1.1373     0.1746   6.513 7.37e-11 ***
+heart_disease     1.2674     0.2085   6.080 1.20e-09 ***
+ever_marriedYes   0.7621     0.2443   3.120  0.00181 ** 
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
-    Null deviance: 1411  on 3425  degrees of freedom
-Residual deviance: 1314  on 3422  degrees of freedom
-AIC: 1322
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1313.9  on 3421  degrees of freedom
+AIC: 1321.9
 
 Number of Fisher Scoring iterations: 6
 </pre></div>
@@ -705,7 +747,7 @@ Number of Fisher Scoring iterations: 6
 <div class="section" id="likelihood-ratio-test">
 <h3>Likelihood-Ratio Test<a class="headerlink" href="#likelihood-ratio-test" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Full Model與Reduced Model的差異可以轉換成  <span class="math notranslate nohighlight">\(H_0: \beta_{\rm{Neversmoke}} = \beta_{\rm{smoke}}= 0\)</span></p></li>
+<li><p>Full Model與Reduced Model的差異可以轉換成  <span class="math notranslate nohighlight">\(H_0: \beta_{\rm{Former-smoke}} = \beta_{\rm{smoke}}= 0\)</span></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -717,16 +759,16 @@ Number of Fisher Scoring iterations: 6
 <div class="output text_html"><table>
 <thead><tr><th scope=col>Resid. Df</th><th scope=col>Resid. Dev</th><th scope=col>Df</th><th scope=col>Deviance</th><th scope=col>Pr(&gt;Chi)</th></tr></thead>
 <tbody>
-	<tr><td>3422     </td><td>1313.986 </td><td>NA       </td><td>     NA  </td><td>       NA</td></tr>
-	<tr><td>3420     </td><td>1311.820 </td><td> 2       </td><td>2.16591  </td><td>0.3385936</td></tr>
+	<tr><td>3421     </td><td>1313.945 </td><td>NA       </td><td>      NA </td><td>       NA</td></tr>
+	<tr><td>3419     </td><td>1311.770 </td><td> 2       </td><td>2.175009 </td><td>0.3370566</td></tr>
 </tbody>
 </table>
 </div></div>
 </div>
 <ul class="simple">
-<li><p>根據Deviance的p-value=0.3385</p>
+<li><p>根據Deviance的p-value=0.3370</p>
 <ul>
-<li><p>不能拒絕 <span class="math notranslate nohighlight">\(H_0\)</span>，所以最終模型將會捨棄掉抽煙的變數</p></li>
+<li><p><span style="color:blue"> 不能拒絕 <span class="math notranslate nohighlight">\(H_0\)</span>，所以Final Model將不考慮”抽煙狀態”的變數</span></p></li>
 </ul>
 </li>
 </ul>
@@ -734,23 +776,63 @@ Number of Fisher Scoring iterations: 6
 </div>
 <div class="section" id="final-model">
 <h2>Final Model<a class="headerlink" href="#final-model" title="Permalink to this headline">¶</a></h2>
-<p><span class="math notranslate nohighlight">\(\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{marry}}x_{\rm{marry}}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\log{\left(\frac{P[\rm{stroke}=1]}{P[\rm{stroke}=0]}\right)} = \beta_0 + \beta_{\rm{hypert}}x_{\rm{hypert}}+ \beta_{\rm{heartd}}x_{\rm{heartd}}+ \beta_{\rm{marry}}x_{\rm{marry}}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">model_reduce</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = stroke ~ hypertension + heart_disease + ever_married, 
+    family = binomial(link = &quot;logit&quot;), data = strokedata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.8899  -0.2930  -0.2930  -0.2013   2.7961  
+
+Coefficients:
+                Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)      -3.8888     0.2308 -16.852  &lt; 2e-16 ***
+hypertension      1.1373     0.1746   6.513 7.37e-11 ***
+heart_disease     1.2674     0.2085   6.080 1.20e-09 ***
+ever_marriedYes   0.7621     0.2443   3.120  0.00181 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1410.9  on 3424  degrees of freedom
+Residual deviance: 1313.9  on 3421  degrees of freedom
+AIC: 1321.9
+
+Number of Fisher Scoring iterations: 6
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="id4">
-<h3>模型解釋<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3>模型解釋:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>由於這三個解釋變數都是類別型，我們可以用final model來探討不同的狀況</p>
+<ul class="simple">
+<li><p>例如: 最左邊的藍色點，代表的是 “沒有結婚” “沒有高血壓” “沒有心臟病”的中風機率，可以看到非常的低。</p></li>
+</ul>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/cate_model_full_plot.png"><img alt="glucose_stroke" class="bg-primary mb-1 align-center" src="_images/cate_model_full_plot.png" style="width: 800px;" /></a>
 <ul class="simple">
-<li><p>首先，高血壓、心臟疾病與結婚都會增加中風機率</p>
+<li><p><span style="color:blue"> <span class="math notranslate nohighlight">\(\beta_{\rm{heartd}} &gt; \beta_{\rm{hypert}} &gt; \beta_{\rm{marry}}&gt;0\)</span></span></p>
 <ul>
-<li><p>最右邊灰色的點，三種狀況都有，擁有最高的中風機率</p></li>
-<li><p>最左邊藍色的點，三種狀況都沒有，中風機率最低</p></li>
-</ul>
-</li>
-<li><p>當 <span class="math notranslate nohighlight">\(x_{\rm{hypert}}+ x_{\rm{heartd}}+ x_{\rm{marry}}=1\)</span> 或是 <span class="math notranslate nohighlight">\(x_{\rm{hypert}}+ x_{\rm{heartd}}+ x_{\rm{marry}}=2\)</span></p>
-<ul>
-<li><p>婚姻的影響是小於高血壓與心臟疾病的</p></li>
+<li><p>“有高血壓”、”有心臟疾病”與”有結過婚”都會增加中風機率。如上圖最右邊灰色的點，三種狀況都有，擁有最高的中風機率</p></li>
+<li><p>有心臟病的影響是最大的，其次是高血壓，最後是結婚狀態</p></li>
 </ul>
 </li>
 </ul>
+<div class="section" id="id5">
+<h4><a class="reference internal" href="tablecontent.html"><span class="doc std std-doc">回到目錄</span></a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p style="page-break-before: always"></div>
 </div>
 </div>
 </div>
@@ -780,8 +862,8 @@ Number of Fisher Scoring iterations: 6
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="interaction_plot.html" title="previous page">解釋變數與中風的交互作用</a>
-    <a class='right-next' id="next-link" href="regression_numerical.html" title="next page">迴歸分析: 數值型變數</a>
+    <a class='left-prev' id="prev-link" href="interaction_plot.html" title="previous page">Chapter 8: 以累積機率探討交互作用</a>
+    <a class='right-next' id="next-link" href="regression_numerical.html" title="next page">Chapter 10: 迴歸分析2-數值型變數</a>
 
         </div>
         
@@ -793,7 +875,7 @@ Number of Fisher Scoring iterations: 6
         
           By 陳奕造 施奕如 楊欣儒 李長穎<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>

@@ -55,4 +55,13 @@
 # - <span style="color:blue"> p-value $<$ 0.05，顯示工作與中風具有高度相關性</span>
 # - <span style="color:blue"> 在私人企業與政府單位工作的人的中風觀測值都比中風期望值低。然而，對於自己開業的人，中風的觀測值比期望值高。從右方條件機率的Bar圖也顯示自己開業的人中風的機率最高</span>
 # - <span style="color:blue"> 我們猜測背後的原因是，自行創業的壓力比領人薪水的壓力大，以致於中風的機率高</span>
+# 
+# 
+# #### [回到目錄](./tablecontent.md)
 # <p style="page-break-before: always">
+
+# In[ ]:
+
+
+
+

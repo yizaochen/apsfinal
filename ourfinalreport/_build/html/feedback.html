@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 15: 心得 &#8212; 腦中風資料的統計分析與探討</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="參考資料" href="bibliography.html" />
+    <link rel="prev" title="Chapter 14: 結論與討論" href="conti_table_summary.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">腦中風資料的統計分析與探討</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Cover Page
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tablecontent.html">
+   目錄
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro1.html">
+   Chapter 1: 背景與動機
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dataexplore.html">
+   Chapter 2: 資料集基本介紹
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="simplecategorical.html">
+   Chapter 3: 列聯表分析1-簡單類別型
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="multiplecategorical.html">
+   Chapter 4: 列聯表分析2-多重類別型
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numerical.html">
+   Chapter 5: 列聯表分析3-數值型
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cond_prob_given_stroke_nonstroke.html">
+   Chapter 6: “中風組內分佈”與”非中風組內分佈”
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="age_confounder.html">
+   Chapter 7: Age as Confounding Factor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="interaction_plot.html">
+   Chapter 8: 以累積機率探討交互作用
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_categorical.html">
+   Chapter 9: 迴歸分析1-類別型變數
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_numerical.html">
+   Chapter 10: 迴歸分析2-數值型變數
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_mix.html">
+   Chapter 11: 迴歸分析3-綜合模型
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clustering.html">
+   Chapter 12: Cluster analysis 1-使用全部的變數去計算
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clustering_batch.html">
+   Chatper 13: Cluster analysis 2-使用迴歸分析final model中的變數去計算
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="conti_table_summary.html">
+   Chapter 14: 結論與討論
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Chapter 15: 心得
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliography.html">
+   參考資料
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/feedback.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ffeedback.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   欣儒
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   奕如
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   長穎
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   奕造
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     <span class="xref myst">
+      回到目錄
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="chapter-15">
+<h1>Chapter 15: 心得<a class="headerlink" href="#chapter-15" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>欣儒<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>原先想說，中風-慢性疾病這種研究到爛的題目，再做一次會不會很像在應付作業，但是每份資料的組成不同、限制不同，再加上分析切入點不同，後來發現就我微薄的能力而言，完全不會有這個問題，學得非常多。這份報告與其說，讓敝人學到中風對於慢性疾病的關聯，收穫更多的是「如何善用統計工具」、「提供一個看待創造與學習知識不同的角度」。</p>
+<p>在這次報告自己的工作我覺得有些部分滿可惜的，像是一開始覺得要刪除部分填寫不齊、難以分析的資料，後面又考慮到可能會有偏差或是帶著眼光影響結果，和組員討論過後決定先放棄；後面經過一段時間，做了更多檢定、更了解整份資料集之後，和組員討論又再調整了一次刪減的標準。</p>
+<p>起初有些自責是不是自己工作沒做好，很害怕繼續做下一步，但是越到後面，需要計算、考慮的條件越多，有點理解老師跟助教所說，其實p-value不是全部，更重要的是，看資料分析員想要透過這份資料，傳達出什麼訊息。180個中風病人，明明都是考慮年紀，會因為加入了心臟病，或是改放入性別，而出現迥然不同的分布情況；或是明明在前端只考慮中風與否，和抽菸的關係可以看到影響，但是經過交互作用的觀察後，顯示卻似乎不是如此。</p>
+<p>以往可能覺得學術就是探討真理，所以應該只能有一種宏觀角度，然而經過這陣子的經驗，尤其完成這份報告，對於學術與知識，我的理解可能更像：「那是未探究的內容，沒有人知道正確答案為何，所以一個人，或是特定一群人看每件事可能有侷限性的理解，只要證明過程合理，侷限也沒有關係。學術研究客觀的要旨，或許反而在瞭解這樣的觀點侷限在哪裡吧」。</p>
+<p>也很感謝組員們在每次有所變動後，都願意協助後續互相補足，春假後每週都頻繁溝通每個階段的資料分析的調整事項，甚至不是自己的工作範圍也善意提醒可能會遇到的問題。每個人的忙碌時間不同，也能互相體諒、提出問題也能互相分擔工作，（其實我就是被分擔最多的那個吧，哈哈哈，真的謝謝大家的幫忙），不少次隔著螢幕腦力激盪更讓整份報告完整的方法，真的很謝謝諸位給我那麼好的分組報告體驗。</p>
+<p>最後，王老師是敝人經驗過上課最認真的老師之一，但真正讓王老師對敝人而言特別的地方，是老師會同理學生的角度，不只是隨著每屆學生的反應調整上課內容，甚至不吝分享自己的時間跟非自己的研究生討論、與學生產生近距離的連結，連帶著助教也非常認真。非常謝謝老師跟助教帶給我這一學年的統計課。</p>
+</div>
+<div class="section" id="id2">
+<h2>奕如<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>這門課相較於上學期的生物統計多了實際應用的部分，在課堂上學習的統計理論也能夠隨著實作而更加的理解。這次期末報告選擇stroke相關的數據集當題目是我較為熟悉的主題，資料裡的變數也是生活中熟悉的名詞，因此在理解資料上相對沒那麼的困難。但我在將統計理論放到資料研究上的應用能力較弱，一開始毫無頭緒的時候，只想到先將資料畫成視覺化的統計圖做初步的分析，幸好我的隊友們相當的凱瑞，我能跟著他們的想法及建議去思考，一同分工，再一步一步去完成。在期末報告實作的過程中，我對於將理論套到實際的資料有更近一步的理解，試著更謹慎地思考數據，在寫R程式的部分也進步了很多。另外，那天與老師的線上討論也令我印象深刻，老師總是能看到資料背後更深一層的意義，找到隱藏在資料中的秘密並給出相當有系統的建議，使我們報告的能更加的完整。</p>
+</div>
+<div class="section" id="id3">
+<h2>長穎<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>這次的期末作業讓我發現做實際資料的困難點，在於當資料與課堂授課內容不同時，就不知道如何應用統計方法或者軟體進行分析。花了很多時間將資料整理成可以分析的狀態，而在呈現資料時，發現採用不同的變數，用不同的方法或圖表來呈現分析結果時，可能會有不同的解釋，某種程度上已經是哲學或者是藝術角度的問題。由於沒有一定的標準，有可人為操作的空間，這可能是統計學家常會被人詬病的地方，但也是最有趣的地方，同時呈現科學和人文學科的因素在內。</p>
+<ul class="simple">
+<li><p>這是一份小組報告，感謝其他組員的貢獻，尤其是期末普遍大家都焦頭爛額準備考試報告時，在自己分身無暇時仍有組員默默推進報告的進度，讓自己有動力把東西生出來。</p></li>
+<li><p>也感謝老師在我們已經做到沒有方向時指點迷津，但同時也出現更多挑戰，感覺好像重新來過一次。但報告完成後自己也覺得很有成就感，或許這就是研究工作的醍醐味吧。</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>奕造<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>從2012年進入交大大學部唸到現在交大博士班四年級，在交大的最後兩門課，就是老師的生物統計跟這門應用統計課，覺得真是個值回票價的收尾。成為研究生後，我認為只要把自己的Domain Knowledge精進到純熟，在完成研究生學業的路途上，應該這些工具就夠用了。顯然，我這種認知是錯的。我在博士班二年級，有幸被交大送去美國普林斯頓大學化學系當訪問研究生，而那時候待的實驗室的強項，正是利用統計方法將實驗的訊號轉換成有用的化學知識，我才發現做自然科學研究，統計太重要了。回國後，選了老師的這兩門課，讓我對基礎的統計有了很好的認識，老師講課也會搭配一些有趣的科學史，非常引人入勝。此外，我博士班論文是將Bayesian Network應用在一個非平衡統計熱力學上的問題，每個禮拜三早晨的統計課總是能修正我平常做研究想錯的一些觀念。</p>
+<p>這個期末作業讓我知道現實世界的問題真的比在實驗室一些很理想化的問題困難多了，而且真的要以很多面向去切入。謝謝組員們百忙中，都能每個禮拜積極的討論，還有很謝謝老師花時間陪我們視訊開會，幫我們釐清了很多問題。最後這兩門課加上期末作業，我對統計的想法是，人類的頭腦很神奇，看到資料大概就能猜出一些模式(Pattern)，但要能把這些模式轉換成科學語言或具有科學意義的證據，統計就是不可或缺的知識。</p>
+<div class="section" id="id5">
+<h3><a class="reference internal" href="tablecontent.html"><span class="doc std std-doc">回到目錄</span></a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p style="page-break-before: always">
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="conti_table_summary.html" title="previous page">Chapter 14: 結論與討論</a>
+    <a class='right-next' id="next-link" href="bibliography.html" title="next page">參考資料</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By 陳奕造 施奕如 楊欣儒 李長穎<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
